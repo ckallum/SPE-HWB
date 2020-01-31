@@ -13,14 +13,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
 import java.util.Map;
 
 
-public class SignUp extends AppCompatActivity {
+public class Register extends AppCompatActivity {
     EditText username, password, email;
     FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthS;
@@ -52,7 +50,7 @@ public class SignUp extends AppCompatActivity {
         signInText.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
-                                              Intent intent = new Intent(SignUp.this, MainActivity.class);
+                                              Intent intent = new Intent(Register.this, Main.class);
                                               startActivity(intent);
 
                                           }
@@ -76,13 +74,13 @@ public class SignUp extends AppCompatActivity {
             password.setError("Please enter a password");
             password.requestFocus();
         } else if (str_email.isEmpty() && str_password.isEmpty()) {
-            Toast.makeText(SignUp.this, "Fields are empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Register.this, "Fields are empty", Toast.LENGTH_SHORT).show();
         } else if (!(str_email.isEmpty()) && !(str_password.isEmpty())) {
-            mAuth.createUserWithEmailAndPassword(str_email, str_password).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(str_email, str_password).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (!task.isSuccessful()) {
-                        Toast.makeText(SignUp.this, "Sign up failed,Please try again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Register.this, "Sign up failed,Please try again", Toast.LENGTH_SHORT).show();
 
                     } else {
                        // String user_id = mAuth.getCurrentUser().getUid();
@@ -93,8 +91,8 @@ public class SignUp extends AppCompatActivity {
 
                         //current_user_db.setValue(newPost);
 
-                        Toast.makeText(SignUp.this, "Account created", Toast.LENGTH_SHORT).show();
-                        //startActivity(new Intent(SignUp.this, activity_homescreen.class));
+                        Toast.makeText(Register.this, "Account created", Toast.LENGTH_SHORT).show();
+                        //startActivity(new Intent(Register.this, Home.class));
                     }
 
                 }
@@ -102,7 +100,7 @@ public class SignUp extends AppCompatActivity {
 
 
         } else {
-            Toast.makeText(SignUp.this, "Please fill all boxes", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Register.this, "Please fill all boxes", Toast.LENGTH_SHORT).show();
         }
 
 

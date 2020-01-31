@@ -33,7 +33,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent toMain = new Intent(getActivity(),MainActivity.class);
+                Intent toMain = new Intent(getActivity(), Main.class);
 
                 startActivity(toMain);
             }

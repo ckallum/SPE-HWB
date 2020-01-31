@@ -9,16 +9,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
-import com.example.healthproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
-public class MainActivity extends AppCompatActivity {
+public class Main extends AppCompatActivity {
     EditText UsernameET, PasswordET;
     Button loginButton;
     FirebaseAuth mAuth;
@@ -47,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser firebaseUser = mAuth.getCurrentUser();
                 if(firebaseUser != null){
-                    Toast.makeText(MainActivity.this, "You are logged in already",Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(MainActivity.this,activity_homescreen.class);
+                    Toast.makeText(Main.this, "You are logged in already",Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(Main.this, Home.class);
 
                     startActivity(i);
                 }
 
                 else{
-                    Toast.makeText(MainActivity.this, "Please log in",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Main.this, "Please log in",Toast.LENGTH_SHORT).show();
 
 
                 }
@@ -66,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         signUpText.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
-                                              Intent intent = new Intent(MainActivity.this, SignUp.class);
+                                              Intent intent = new Intent(Main.this, Register.class);
                                               startActivity(intent);
 
                                           }
@@ -88,19 +86,19 @@ public class MainActivity extends AppCompatActivity {
             PasswordET.setError("Please enter a password");
             PasswordET.requestFocus();
         } else if (username.isEmpty() && username.isEmpty()) {
-            Toast.makeText(MainActivity.this, "Fields are empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Main.this, "Fields are empty", Toast.LENGTH_SHORT).show();
         } else if (!(username.isEmpty()) && !(password.isEmpty())) {
-            mAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(Main.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
 
                     if(!task.isSuccessful()){
-                        Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Main.this, "Error", Toast.LENGTH_SHORT).show();
 
 
                 }
                     else{
-                        Intent toHome = new Intent(MainActivity.this, activity_homescreen.class);
+                        Intent toHome = new Intent(Main.this, Home.class);
                         startActivity(toHome);
                     }
             }
@@ -114,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         else {
-            Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Main.this, "Error", Toast.LENGTH_SHORT).show();
         }
 
 
