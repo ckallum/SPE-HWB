@@ -14,12 +14,12 @@ import com.example.healthproject.Fragments.ProfileFragment;
 import com.example.healthproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class FragmentActivity extends AppCompatActivity {
+public class NavigationActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_viewcontroller);
+        setContentView(R.layout.activity_navigation);
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navbar);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
