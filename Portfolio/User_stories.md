@@ -1,0 +1,16 @@
+# User Stories
+---
+- ## Health and Wellbeing Department Staff
+   - To be able to register attendees for events that aren't currently integrated within Legend such as B:Active Residences, wider community events and Colour Run/Uni-wide events
+   - To be able to manage/control such events inside the application i.e. add and delete events depending on user privilige(administrator/user)
+   - To be able to track analytics for such event by integrating into some database system.
+---
+- ## Student Body/societies
+  - Be able to download the application, view all available events that aren't already integrated in the Legend system and view the details of such events and register interest.
+  - Centralised point for viewing ALL university wide events and be able to filter based on their societies and interests.
+  - A centralised platform for societies to post notifications and updates to all members that follow them on the application. i.e. provide a 'home page' for all societies.
+---
+- ## External Users/Wider Community
+  - Be able to download the application and view all available events that aren't affiliated with the university but are using university facilities.
+  - Register interest and view details of such events.
+  - External groups/clubs can have an account to find possible venues and provide a point of contact with the university to enquire about bookings. 
