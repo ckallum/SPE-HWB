@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.healthproject.Main;
+import com.example.healthproject.Activity.MainActivity;
 import com.example.healthproject.R;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -35,7 +35,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent toMain = new Intent(getActivity(), Main.class);
+                Intent toMain = new Intent(getActivity(), MainActivity.class);
 
                 startActivity(toMain);
             }
