@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HealthProject</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="desc">University of Bristol Sport</string>
+    <string name="login_button">LOGIN</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="username">Username</string>
+
+</resources>
+
