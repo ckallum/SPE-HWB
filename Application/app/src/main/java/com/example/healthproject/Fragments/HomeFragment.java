@@ -1,4 +1,4 @@
-package com.example.healthproject;
+package com.example.healthproject.Fragments;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -15,6 +15,8 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.healthproject.R;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

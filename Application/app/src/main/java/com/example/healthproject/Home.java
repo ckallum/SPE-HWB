@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.healthproject.Fragments.BookingsFragment;
+import com.example.healthproject.Fragments.EventsFragment;
+import com.example.healthproject.Fragments.HomeFragment;
+import com.example.healthproject.Fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Home extends AppCompatActivity {

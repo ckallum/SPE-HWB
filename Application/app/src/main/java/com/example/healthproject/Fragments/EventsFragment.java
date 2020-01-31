@@ -1,4 +1,4 @@
-package com.example.healthproject;
+package com.example.healthproject.Fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
