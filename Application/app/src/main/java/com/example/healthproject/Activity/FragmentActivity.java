@@ -1,4 +1,4 @@
-package com.example.healthproject;
+package com.example.healthproject.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,14 +11,15 @@ import com.example.healthproject.Fragments.BookingsFragment;
 import com.example.healthproject.Fragments.EventsFragment;
 import com.example.healthproject.Fragments.HomeFragment;
 import com.example.healthproject.Fragments.ProfileFragment;
+import com.example.healthproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Home extends AppCompatActivity {
+public class FragmentActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homescreen);
+        setContentView(R.layout.activity_viewcontroller);
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navbar);
         bottomNav.setOnNavigationItemSelectedListener(navListener);

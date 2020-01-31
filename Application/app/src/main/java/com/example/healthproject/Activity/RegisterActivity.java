@@ -1,4 +1,4 @@
-package com.example.healthproject;
+package com.example.healthproject.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
 
+import com.example.healthproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -18,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class Register extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
     EditText username, password, email;
     FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthS;
@@ -50,7 +51,7 @@ public class Register extends AppCompatActivity {
         signInText.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
-                                              Intent intent = new Intent(Register.this, Main.class);
+                                              Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                               startActivity(intent);
 
                                           }
@@ -74,13 +75,13 @@ public class Register extends AppCompatActivity {
             password.setError("Please enter a password");
             password.requestFocus();
         } else if (str_email.isEmpty() && str_password.isEmpty()) {
-            Toast.makeText(Register.this, "Fields are empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterActivity.this, "Fields are empty", Toast.LENGTH_SHORT).show();
         } else if (!(str_email.isEmpty()) && !(str_password.isEmpty())) {
-            mAuth.createUserWithEmailAndPassword(str_email, str_password).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(str_email, str_password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (!task.isSuccessful()) {
-                        Toast.makeText(Register.this, "Sign up failed,Please try again", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this, "Sign up failed,Please try again", Toast.LENGTH_SHORT).show();
 
                     } else {
                        // String user_id = mAuth.getCurrentUser().getUid();
@@ -91,8 +92,8 @@ public class Register extends AppCompatActivity {
 
                         //current_user_db.setValue(newPost);
 
-                        Toast.makeText(Register.this, "Account created", Toast.LENGTH_SHORT).show();
-                        //startActivity(new Intent(Register.this, Home.class));
+                        Toast.makeText(RegisterActivity.this, "Account created", Toast.LENGTH_SHORT).show();
+                        //startActivity(new Intent(RegisterActivity.this, FragmentActivity.class));
                     }
 
                 }
@@ -100,7 +101,7 @@ public class Register extends AppCompatActivity {
 
 
         } else {
-            Toast.makeText(Register.this, "Please fill all boxes", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterActivity.this, "Please fill all boxes", Toast.LENGTH_SHORT).show();
         }
 
 
