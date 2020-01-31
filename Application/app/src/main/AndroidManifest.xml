@@ -13,15 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.example.healthproject.Main">
+        <activity android:name="com.example.healthproject.Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Register" android:parentActivityName=".Main"/>
-        <activity android:name=".Home" android:parentActivityName=".Main"/>
+        <activity android:name=".Activity.RegisterActivity" android:parentActivityName=".Activity.MainActivity"/>
+        <activity android:name=".Activity.NavigationActivity" android:parentActivityName=".Activity.MainActivity"/>
 
     </application>
 

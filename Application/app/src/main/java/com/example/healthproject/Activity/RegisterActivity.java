@@ -29,7 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_register);
         TextView signInText = findViewById(R.id.signInLink);
         username = (EditText)findViewById(R.id.et_username);
         email = (EditText)findViewById(R.id.et_email);
@@ -93,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
                         //current_user_db.setValue(newPost);
 
                         Toast.makeText(RegisterActivity.this, "Account created", Toast.LENGTH_SHORT).show();
-                        //startActivity(new Intent(RegisterActivity.this, FragmentActivity.class));
+                        //startActivity(new Intent(RegisterActivity.this, NavigationActivity.class));
                     }
 
                 }

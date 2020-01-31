@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 FirebaseUser firebaseUser = mAuth.getCurrentUser();
                 if(firebaseUser != null){
                     Toast.makeText(MainActivity.this, "You are logged in already",Toast.LENGTH_SHORT).show();
-                    Intent i = new Intent(MainActivity.this, FragmentActivity.class);
+                    Intent i = new Intent(MainActivity.this, NavigationActivity.class);
 
                     startActivity(i);
                 }
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                     else{
-                        Intent toHome = new Intent(MainActivity.this, FragmentActivity.class);
+                        Intent toHome = new Intent(MainActivity.this, NavigationActivity.class);
                         startActivity(toHome);
                     }
             }
