@@ -1095,11 +1095,11 @@ public final class R {
         public static final int multiply = 0x7f0900a0;
         public static final int nav_controller_view_tag = 0x7f0900a1;
         public static final int navigation_header_container = 0x7f0900a2;
-        public static final int none = 0x7f0900a4;
-        public static final int normal = 0x7f0900a5;
-        public static final int notification_background = 0x7f0900a6;
-        public static final int notification_main_column = 0x7f0900a7;
-        public static final int notification_main_column_container = 0x7f0900a8;
+        public static final int none = 0x7f0900a5;
+        public static final int normal = 0x7f0900a6;
+        public static final int notification_background = 0x7f0900a7;
+        public static final int notification_main_column = 0x7f0900a8;
+        public static final int notification_main_column_container = 0x7f0900a9;
         public static final int outline = 0x7f0900ac;
         public static final int parallax = 0x7f0900ae;
         public static final int parentPanel = 0x7f0900b0;
@@ -1171,9 +1171,9 @@ public final class R {
         public static final int uniform = 0x7f09010a;
         public static final int unlabeled = 0x7f09010b;
         public static final int up = 0x7f09010c;
-        public static final int view_offset_helper = 0x7f09010f;
-        public static final int visible = 0x7f090110;
-        public static final int wrap_content = 0x7f090114;
+        public static final int view_offset_helper = 0x7f090110;
+        public static final int visible = 0x7f090111;
+        public static final int wrap_content = 0x7f090115;
     }
     public static final class integer {
         private integer() {}

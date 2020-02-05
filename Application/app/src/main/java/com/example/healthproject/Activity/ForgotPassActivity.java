@@ -46,9 +46,7 @@ public class ForgotPassActivity extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(userEmail)){
                     Toast.makeText(ForgotPassActivity.this, "Please enter an email",Toast.LENGTH_SHORT).show();
-
                 }
-
                 else{
                     mAuth.sendPasswordResetEmail(userEmail).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -56,12 +54,9 @@ public class ForgotPassActivity extends AppCompatActivity {
                             if(task.isSuccessful()){
                                 Toast.makeText(ForgotPassActivity.this, "Email Sent",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(ForgotPassActivity.this, MainActivity.class));
-
                             }
-
                             else{
                                 Toast.makeText(ForgotPassActivity.this, "Email does not exist",Toast.LENGTH_SHORT).show();
-
 
                             }
 

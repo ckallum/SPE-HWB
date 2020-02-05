@@ -69,13 +69,13 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="450dp"
         android:fontFamily="@font/blackout_1"
-        android:text="number:"
+        android:text="password:"
         android:textColor="#FFFFFF"
         android:textSize="25dp" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_width="117dp"
+        android:layout_height="47dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -83,9 +83,9 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="500dp"
         android:fontFamily="@font/blackout_1"
-        android:text="password:"
+        android:text="new password:"
         android:textColor="#FFFFFF"
-        android:textSize="25dp" />
+        android:textSize="20dp" />
 
     <ImageView
         android:layout_width="180dp"
@@ -124,7 +124,7 @@
         android:layout_marginRight="24dp"
         android:background="#FFFFFF"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="" />
     <EditText
         android:id="@+id/emailBox"
@@ -138,11 +138,26 @@
         android:layout_marginRight="24dp"
         android:background="#FFFFFF"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:text="" />
 
     <EditText
-        android:id="@+id/numberBox"
+        android:id="@+id/newPasswordBox"
+        android:layout_width="210dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="505dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/passwordBox"
         android:layout_width="210dp"
         android:layout_height="30dp"
         android:layout_alignParentTop="true"
@@ -153,34 +168,36 @@
         android:layout_marginRight="24dp"
         android:background="#FFFFFF"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="" />
-
-    <EditText
-        android:id="@+id/passwordBox"
-        android:layout_width="210dp"
-        android:layout_height="30dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="500dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:background="#FFFFFF"
-        android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:text="" />
 
     <Button
         android:id="@+id/logoutBtn"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginRight="31dp"
+        android:background="@drawable/button"
+        android:text="Log Out"
+        android:textColor="#FF0303" />
 
-
-        android:text = "Log Out"/>
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="290dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="9dp"
+        android:background="@drawable/button"
+        android:text="Save"
+        android:textColor="#FF0303" />
 
 
 </RelativeLayout>
