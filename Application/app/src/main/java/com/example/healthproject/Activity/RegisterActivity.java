@@ -17,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -76,6 +78,11 @@ public class RegisterActivity extends AppCompatActivity {
             password.requestFocus();
         } else if (str_email.isEmpty() && str_password.isEmpty()) {
             Toast.makeText(RegisterActivity.this, "Fields are empty", Toast.LENGTH_SHORT).show();
+        }else if(str_password.length() < 6) {
+            Toast.makeText(RegisterActivity.this, "Password is too short ", Toast.LENGTH_SHORT).show();
+        }else if(!(isValidPassword(str_password))){
+            Toast.makeText(RegisterActivity.this, "Please use a combo symbols/numbers", Toast.LENGTH_SHORT).show();
+
         } else if (!(str_email.isEmpty()) && !(str_password.isEmpty())) {
             mAuth.createUserWithEmailAndPassword(str_email, str_password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                 @Override
@@ -104,6 +111,19 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(RegisterActivity.this, "Please fill all boxes", Toast.LENGTH_SHORT).show();
         }
 
+
+    }
+
+
+    public static boolean isValidPassword(final String password) {
+
+        Pattern pattern;
+        Matcher matcher;
+        final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$";
+        pattern = Pattern.compile(PASSWORD_PATTERN);
+        matcher = pattern.matcher(password);
+
+        return matcher.matches();
 
     }
 }

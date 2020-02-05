@@ -5192,12 +5192,12 @@ public final class R {
     public static final int nav_controller_view_tag=0x7f0900a1;
     public static final int navigation_header_container=0x7f0900a2;
     public static final int never=0x7f0900a3;
-    public static final int none=0x7f0900a4;
-    public static final int normal=0x7f0900a5;
-    public static final int notification_background=0x7f0900a6;
-    public static final int notification_main_column=0x7f0900a7;
-    public static final int notification_main_column_container=0x7f0900a8;
-    public static final int numberBox=0x7f0900a9;
+    public static final int newPasswordBox=0x7f0900a4;
+    public static final int none=0x7f0900a5;
+    public static final int normal=0x7f0900a6;
+    public static final int notification_background=0x7f0900a7;
+    public static final int notification_main_column=0x7f0900a8;
+    public static final int notification_main_column_container=0x7f0900a9;
     public static final int off=0x7f0900aa;
     public static final int on=0x7f0900ab;
     public static final int outline=0x7f0900ac;
@@ -5297,14 +5297,15 @@ public final class R {
     public static final int uniform=0x7f09010a;
     public static final int unlabeled=0x7f09010b;
     public static final int up=0x7f09010c;
-    public static final int useLogo=0x7f09010d;
-    public static final int usernameBox=0x7f09010e;
-    public static final int view_offset_helper=0x7f09010f;
-    public static final int visible=0x7f090110;
-    public static final int wide=0x7f090111;
-    public static final int withText=0x7f090112;
-    public static final int wrap=0x7f090113;
-    public static final int wrap_content=0x7f090114;
+    public static final int updateButton=0x7f09010d;
+    public static final int useLogo=0x7f09010e;
+    public static final int usernameBox=0x7f09010f;
+    public static final int view_offset_helper=0x7f090110;
+    public static final int visible=0x7f090111;
+    public static final int wide=0x7f090112;
+    public static final int withText=0x7f090113;
+    public static final int wrap=0x7f090114;
+    public static final int wrap_content=0x7f090115;
   }
   public static final class integer {
     public static final int abc_config_activityDefaultDur=0x7f0a0000;

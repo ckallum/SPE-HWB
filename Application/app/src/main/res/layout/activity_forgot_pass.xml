@@ -28,8 +28,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="51dp"
-        android:layout_marginLeft="51dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
         android:layout_marginTop="303dp"
         android:background="#00F7F4F4"
         android:text="Please enter your email:"
@@ -84,5 +84,6 @@
         android:layout_marginEnd="42dp"
         android:layout_marginRight="42dp"
         android:background="#FFFFFF"
-        android:maxLines="1" />
+        android:maxLines="1"
+        android:inputType="text"/>
 </RelativeLayout>
