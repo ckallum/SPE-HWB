@@ -23,6 +23,7 @@
             android:layout_height="173dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentRight = "true"
 
 
             app:srcCompat="@drawable/unisportslogo" />
@@ -42,19 +43,6 @@
             android:text="@string/desc"
             android:textColor="#FFFFFF"
             android:textSize="24sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/input_group"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="50dp"
-        android:layout_alignParentBottom="true"
-        android:gravity="center">
 
         <EditText
             android:id="@+id/email"
@@ -76,6 +64,19 @@
             android:inputType="textPassword"
             android:padding="15dp" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/input_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="center">
+
         <Button
             android:id="@+id/buttonlogin"
             android:layout_width="match_parent"
@@ -87,6 +88,19 @@
             android:text="@string/login_button"
             android:textColor="@color/bristolColour"
             android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/forgotPassLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="sans-serif"
+            android:padding="10dp"
+            android:text="Forgotten Password?"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
 
         <TextView
             android:id="@+id/signUpLink"

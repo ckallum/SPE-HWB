@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton = (Button) findViewById(R.id.buttonlogin);
 
         TextView signUpText = (TextView) findViewById(R.id.signUpLink);
+        TextView forgotPassText = (TextView) findViewById(R.id.forgotPassLink);
 
 
         mAuthS = new FirebaseAuth.AuthStateListener() {
@@ -61,6 +62,15 @@ public class MainActivity extends AppCompatActivity {
             }
         };//stop
 
+
+        forgotPassText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ForgotPassActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         signUpText.setOnClickListener(new View.OnClickListener() {
                                           @Override
