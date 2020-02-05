@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "720714553824",
+    "firebase_url": "https://healthandwellbeing-1d84a.firebaseio.com",
+    "project_id": "healthandwellbeing-1d84a",
+    "storage_bucket": "healthandwellbeing-1d84a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720714553824:android:1e6619f84924a91782f385",
+        "android_client_info": {
+          "package_name": "com.example.healthproject_beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720714553824-amk9gh92rfrqhg9q2oiddifqj9f5dgnk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.healthproject_beta",
+            "certificate_hash": "2a71a5c5a06d551c3bdb8f4b4c0c133f1196af0a"
+          }
+        },
+        {
+          "client_id": "720714553824-gkce44eri7lfj3l0bml4vr35n18iq58u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgX0SpLtXQjeG8Oq6de-EgiEIKeiNqje0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720714553824-gkce44eri7lfj3l0bml4vr35n18iq58u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
