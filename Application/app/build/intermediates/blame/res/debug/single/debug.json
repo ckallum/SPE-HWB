@@ -92,6 +92,10 @@
         "source": "C:\\Users\\Shahin\\.gradle\\caches\\transforms-2\\files-2.1\\fc9a8d5df99331dac9a5fdc49a7080c6\\play-services-base-17.1.0\\res\\drawable-mdpi-v4\\common_google_signin_btn_text_dark_normal_background.9.png"
     },
     {
+        "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_forgot_pass.xml.flat",
+        "source": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\src\\main\\res\\layout\\activity_forgot_pass.xml"
+    },
+    {
         "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_bottom_nav_item_tint.xml.flat",
         "source": "C:\\Users\\Shahin\\.gradle\\caches\\transforms-2\\files-2.1\\4f3544d200097d1926e6df3e9bf8bd41\\material-1.0.0\\res\\color\\mtrl_bottom_nav_item_tint.xml"
     },
@@ -1208,10 +1212,6 @@
         "source": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_book_black_24dp.xml"
     },
     {
-        "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_forgot_password.xml.flat",
-        "source": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\src\\main\\res\\layout\\activity_forgot_password.xml"
-    },
-    {
         "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\Shahin\\.gradle\\caches\\transforms-2\\files-2.1\\290377ef3f04af0b2bf13aa0b54ad202\\core-1.1.0\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
     },
@@ -1230,10 +1230,6 @@
     {
         "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable_notification_tile_bg.xml.flat",
         "source": "C:\\Users\\Shahin\\.gradle\\caches\\transforms-2\\files-2.1\\290377ef3f04af0b2bf13aa0b54ad202\\core-1.1.0\\res\\drawable\\notification_tile_bg.xml"
-    },
-    {
-        "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mybutton.xml.flat",
-        "source": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\src\\main\\res\\drawable\\mybutton.xml"
     },
     {
         "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_secondary_text_material_light.xml.flat",
