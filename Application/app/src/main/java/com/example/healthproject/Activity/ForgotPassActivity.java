@@ -27,7 +27,15 @@ public class ForgotPassActivity extends AppCompatActivity {
 
         Button sendEmailBtn = findViewById(R.id.sendEmail);
         final EditText emailInput = findViewById(R.id.emailTxtBox);
+        Button backButton = findViewById(R.id.backButton);
 
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ForgotPassActivity.this, MainActivity.class));
+            }
+        });
 
 
 
