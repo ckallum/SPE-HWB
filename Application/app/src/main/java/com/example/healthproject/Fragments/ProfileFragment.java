@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.example.healthproject.Activity.MainActivity;
 import com.example.healthproject.R;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class ProfileFragment extends Fragment {
     Button logoutButton;
@@ -30,6 +32,32 @@ public class ProfileFragment extends Fragment {
 
 
         View rootView = inflater.inflate(R.layout.fragment_profile,container,false);
+
+        EditText emailText = (EditText) rootView.findViewById(R.id.emailBox);
+        final EditText passwordText = rootView.findViewById(R.id.password);
+        final EditText newPasswordText = rootView.findViewById(R.id.newPasswordBox);
+        //final EditText rePasswordText = rootView.findViewById(R.id.rePasswordBox);
+
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String userEmail = user.getEmail();
+
+            emailText.setText(userEmail);
+
+            // User is signed in
+        } else {
+            // No user is signed in
+        }
+
+
+
+
+
+
+
+
+
         logoutButton = rootView.findViewById(R.id.logoutBtn);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override

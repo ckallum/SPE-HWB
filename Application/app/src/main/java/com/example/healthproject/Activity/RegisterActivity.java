@@ -22,11 +22,12 @@ import java.util.regex.Pattern;
 
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText username, password, email;
+    EditText username, password, email,password2;
     FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthS;
 
-   EditText passReenter = (EditText)findViewById(R.id.et_password2);
+   //
+
 
 
     @Override
@@ -37,6 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
         username = (EditText)findViewById(R.id.et_username);
         email = (EditText)findViewById(R.id.et_email);
         password = (EditText)findViewById(R.id.et_password);
+        password2 = (EditText)findViewById(R.id.et_password2);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -70,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
         final String str_username = username.getText().toString();
         String str_password = password.getText().toString();
         String str_email = email.getText().toString();
-        String str_retypepass = passReenter.getText().toString();
+        //String str_retypepass = passReenter.getText().toString();
         String type = "signup";
 
         if (str_email.isEmpty()) {
@@ -79,15 +81,17 @@ public class RegisterActivity extends AppCompatActivity {
         } else if (str_password.isEmpty()) {
             password.setError("Please enter a password");
             password.requestFocus();
-        } else if (str_email.isEmpty() && str_password.isEmpty() && str_retypepass.isEmpty()) {
+        } else if (str_email.isEmpty() && str_password.isEmpty()){
             Toast.makeText(RegisterActivity.this, "Fields are empty", Toast.LENGTH_SHORT).show();
         }else if(str_password.length() < 6) {
             Toast.makeText(RegisterActivity.this, "Password is too short ", Toast.LENGTH_SHORT).show();
         }else if(!(isValidPassword(str_password))) {
             Toast.makeText(RegisterActivity.this, "Please use a combo symbols/numbers", Toast.LENGTH_SHORT).show();
-        }else if(!(str_password.equals(str_retypepass))){
-            Toast.makeText(RegisterActivity.this, "Re-entered Password is incorrect", Toast.LENGTH_SHORT).show();
-        } else if (!(str_email.isEmpty()) && !(str_password.isEmpty()) && str_password.equals(str_retypepass)) {
+
+        }else if(!(str_password.equals(password2.getText().toString()))){
+            Toast.makeText(RegisterActivity.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
+
+        } else if (!(str_email.isEmpty()) && !(str_password.isEmpty()) && str_password.equals(password2.getText().toString())) {
             mAuth.createUserWithEmailAndPassword(str_email, str_password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
