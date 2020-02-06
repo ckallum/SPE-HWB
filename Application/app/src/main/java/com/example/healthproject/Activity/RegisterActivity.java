@@ -26,6 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthS;
 
+   EditText passReenter = (EditText)findViewById(R.id.et_password2);
 
 
     @Override
@@ -36,6 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         username = (EditText)findViewById(R.id.et_username);
         email = (EditText)findViewById(R.id.et_email);
         password = (EditText)findViewById(R.id.et_password);
+
         mAuth = FirebaseAuth.getInstance();
 
 
@@ -68,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
         final String str_username = username.getText().toString();
         String str_password = password.getText().toString();
         String str_email = email.getText().toString();
+        String str_retypepass = passReenter.getText().toString();
         String type = "signup";
 
         if (str_email.isEmpty()) {
@@ -76,14 +79,15 @@ public class RegisterActivity extends AppCompatActivity {
         } else if (str_password.isEmpty()) {
             password.setError("Please enter a password");
             password.requestFocus();
-        } else if (str_email.isEmpty() && str_password.isEmpty()) {
+        } else if (str_email.isEmpty() && str_password.isEmpty() && str_retypepass.isEmpty()) {
             Toast.makeText(RegisterActivity.this, "Fields are empty", Toast.LENGTH_SHORT).show();
         }else if(str_password.length() < 6) {
             Toast.makeText(RegisterActivity.this, "Password is too short ", Toast.LENGTH_SHORT).show();
-        }else if(!(isValidPassword(str_password))){
+        }else if(!(isValidPassword(str_password))) {
             Toast.makeText(RegisterActivity.this, "Please use a combo symbols/numbers", Toast.LENGTH_SHORT).show();
-
-        } else if (!(str_email.isEmpty()) && !(str_password.isEmpty())) {
+        }else if(!(str_password.equals(str_retypepass))){
+            Toast.makeText(RegisterActivity.this, "Re-entered Password is incorrect", Toast.LENGTH_SHORT).show();
+        } else if (!(str_email.isEmpty()) && !(str_password.isEmpty()) && str_password.equals(str_retypepass)) {
             mAuth.createUserWithEmailAndPassword(str_email, str_password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {

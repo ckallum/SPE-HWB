@@ -83,7 +83,8 @@
         android:layout_marginTop="350dp"
         android:layout_marginEnd="42dp"
         android:layout_marginRight="42dp"
-        android:background="#FFFFFF"
+
+        android:background="@drawable/text_middle"
         android:maxLines="1"
         android:inputType="text"/>
 </RelativeLayout>
