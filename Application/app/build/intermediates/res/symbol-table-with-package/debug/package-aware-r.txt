@@ -1252,6 +1252,7 @@ id enterAlways
 id enterAlwaysCollapsed
 id et_email
 id et_password
+id et_password2
 id et_username
 id events
 id exitUntilCollapsed
