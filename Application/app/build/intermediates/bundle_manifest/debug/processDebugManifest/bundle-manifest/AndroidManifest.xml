@@ -24,6 +24,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.healthproject.Fragments.VenuesFragment" />
         <activity android:name="com.example.healthproject.Activity.ForgotPassActivity" />
         <activity android:name="com.example.healthproject.Activity.MainActivity" >
             <intent-filter>

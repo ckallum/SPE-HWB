@@ -25,7 +25,7 @@ public class ForgotPassActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_pass);
 
-        Button sendEmailBtn = findViewById(R.id.sendEmail);
+        Button sendEmailBtn = findViewById(R.id.sendEmail);              // inititialise
         final EditText emailInput = findViewById(R.id.emailTxtBox);
         Button backButton = findViewById(R.id.backButton);
 
