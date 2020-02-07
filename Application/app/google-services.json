@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "720714553824-6fqs73vh131asadgt55ka7geg7lrntfc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.healthproject_beta",
+            "certificate_hash": "36b441256571ecbfa262ec33b6288510178fc9b5"
+          }
+        },
+        {
           "client_id": "720714553824-amk9gh92rfrqhg9q2oiddifqj9f5dgnk.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
