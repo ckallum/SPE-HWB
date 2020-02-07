@@ -30,7 +30,7 @@ ListView rssList;
 
 
 
-        return inflater.inflate(R.layout.fragment_home1,container,false);
+        return inflater.inflate(R.layout.fragment_home,container,false);
 
     }
 
