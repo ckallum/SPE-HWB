@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
-        UsernameET = (EditText) findViewById(R.id.email);
+        UsernameET = (EditText) findViewById(R.id.email);       //create instances of each text box
         PasswordET = (EditText) findViewById(R.id.password);
         loginButton = (Button) findViewById(R.id.buttonlogin);
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         mAuthS = new FirebaseAuth.AuthStateListener() {
 
             @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {          //check if user is logged in already
                 FirebaseUser firebaseUser = mAuth.getCurrentUser();
                 if(firebaseUser != null){
                     Toast.makeText(MainActivity.this, "You are logged in already",Toast.LENGTH_SHORT).show();
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         forgotPassText.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {                 //allows text view to be clickable , if clicked, go to forgot password activity
                 Intent intent = new Intent(MainActivity.this, ForgotPassActivity.class);
                 startActivity(intent);
 
@@ -84,13 +84,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onLogin(View view) {
+    public void onLogin(View view) {                             // if log in button is pressed, do the following
         String username = UsernameET.getText().toString();
         String password = PasswordET.getText().toString();
         String type = "login";
 
 
-        if (username.isEmpty()) {
+        if (username.isEmpty()) {                              //check if user has entered something in either text boxes
             UsernameET.setError("Please enter an email");
             UsernameET.requestFocus();
         } else if (password.isEmpty()) {
@@ -101,15 +101,15 @@ public class MainActivity extends AppCompatActivity {
         } else if (!(username.isEmpty()) && !(password.isEmpty())) {
             mAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                 @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
+                public void onComplete(@NonNull Task<AuthResult> task) {     //add to firebase database
 
                     if(!task.isSuccessful()){
-                        Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();                    //if the task fails, i.e. user already exists
 
 
                 }
                     else{
-                        Intent toHome = new Intent(MainActivity.this, NavigationActivity.class);
+                        Intent toHome = new Intent(MainActivity.this, NavigationActivity.class);             // open home activity if successful
                         startActivity(toHome);
                     }
             }
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart() {
+    protected void onStart() {         //check if user is already signed in
         super.onStart();
         mAuth.addAuthStateListener(mAuthS);
     }

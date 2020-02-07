@@ -68,14 +68,14 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    public void onRegister(View view) {
+    public void onRegister(View view) {                 //once register button is pressed
         final String str_username = username.getText().toString();
         String str_password = password.getText().toString();
         String str_email = email.getText().toString();
         //String str_retypepass = passReenter.getText().toString();
         String type = "signup";
 
-        if (str_email.isEmpty()) {
+        if (str_email.isEmpty()) {                    //check each text field
             email.setError("Please enter an email");
             email.requestFocus();
         } else if (str_password.isEmpty()) {
@@ -102,7 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                        // String user_id = mAuth.getCurrentUser().getUid();
                         //final DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("users").child(user_id);
 
-                        Map newPost = new HashMap();
+                        Map newPost = new HashMap();          //add username to database, currently not working
                         newPost.put("username",str_username);
 
                         //current_user_db.setValue(newPost);
@@ -123,7 +123,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    public static boolean isValidPassword(final String password) {
+    public static boolean isValidPassword(final String password) {     //password validation
 
         Pattern pattern;
         Matcher matcher;

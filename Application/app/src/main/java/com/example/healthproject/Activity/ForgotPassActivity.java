@@ -25,14 +25,14 @@ public class ForgotPassActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_pass);
 
-        Button sendEmailBtn = findViewById(R.id.sendEmail);              // inititialise
+        Button sendEmailBtn = findViewById(R.id.sendEmail);              // create instances of buttons/txt fields
         final EditText emailInput = findViewById(R.id.emailTxtBox);
         Button backButton = findViewById(R.id.backButton);
 
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {                           // if back button pressed,go back to MainActivity
                 startActivity(new Intent(ForgotPassActivity.this, MainActivity.class));
             }
         });
@@ -42,9 +42,9 @@ public class ForgotPassActivity extends AppCompatActivity {
         sendEmailBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userEmail = emailInput.getText().toString();
+                String userEmail = emailInput.getText().toString();    // sends email if user has entered an email
 
-                if(TextUtils.isEmpty(userEmail)){
+                if(TextUtils.isEmpty(userEmail)){                     // if user does not enter an email
                     Toast.makeText(ForgotPassActivity.this, "Please enter an email",Toast.LENGTH_SHORT).show();
                 }
                 else{

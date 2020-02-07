@@ -41,7 +41,7 @@ public class ProfileFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_profile,container,false);
 
-        final EditText emailText = (EditText) rootView.findViewById(R.id.emailBox);
+        final EditText emailText = (EditText) rootView.findViewById(R.id.emailBox);     //rootView looks at what's on the fragment, not the navigation activity
         final EditText passwordText = rootView.findViewById(R.id.password);
         final EditText newPasswordText = rootView.findViewById(R.id.newPasswordBox);
         Button updateBtn = rootView.findViewById(R.id.updateButton);
@@ -63,12 +63,12 @@ public class ProfileFragment extends Fragment {
 
 
 
-        logoutButton = rootView.findViewById(R.id.logoutBtn);
+        logoutButton = rootView.findViewById(R.id.logoutBtn);                        //log the user out
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent toMain = new Intent(getActivity(), MainActivity.class);
+                Intent toMain = new Intent(getActivity(), MainActivity.class);       // open MainActivity
 
                 startActivity(toMain);
             }
