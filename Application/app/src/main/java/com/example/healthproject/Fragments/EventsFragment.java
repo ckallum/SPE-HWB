@@ -57,12 +57,12 @@ public class EventsFragment extends Fragment {
                 holder.list_link.setText(model.getLink());
                 holder.list_attendees.setText(model.getAttendees() + "");
                 holder.list_interested.setText(model.getInterested() + "");
-                holder.list_spaces.setText(model.getSpaces() + "");
+                holder.list_spaces.setText(model.getSpaces()+ "");
             }
         };
 
         mFirestoreList.setHasFixedSize(true);
-//        mFirestoreList.setLayoutManager(new LinearLayoutManager(this));
+        mFirestoreList.setLayoutManager(new LinearLayoutManager(getActivity()));
         mFirestoreList.setAdapter(adapter);
 
         return x;
