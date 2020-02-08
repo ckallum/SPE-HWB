@@ -22,6 +22,11 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import static androidx.constraintlayout.widget.Constraints.TAG;
 
@@ -45,13 +50,38 @@ public class ProfileFragment extends Fragment {
         final EditText passwordText = rootView.findViewById(R.id.password);
         final EditText newPasswordText = rootView.findViewById(R.id.newPasswordBox);
         Button updateBtn = rootView.findViewById(R.id.updateButton);
+        final EditText usernameBox = rootView.findViewById(R.id.usernameBox);
 
         //final EditText rePasswordText = rootView.findViewById(R.id.rePasswordBox);
 
 
        final  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+       String userid = user.getUid();
+
+
+
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+
+
+        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String name = dataSnapshot.child("username").getValue().toString();
+                usernameBox.setText(name);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
         if (user != null) {
             String userEmail = user.getEmail();
+
             emailText.setText(userEmail);
 
             // User is signed in

@@ -14,6 +14,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,6 +29,7 @@ import java.util.regex.Pattern;
 public class RegisterActivity extends AppCompatActivity {
     EditText username, password, email,password2;
     FirebaseAuth mAuth;
+
     private FirebaseAuth.AuthStateListener mAuthS;
 
    //
@@ -39,6 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
         email = (EditText)findViewById(R.id.et_email);
         password = (EditText)findViewById(R.id.et_password);
         password2 = (EditText)findViewById(R.id.et_password2);
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -70,18 +77,24 @@ public class RegisterActivity extends AppCompatActivity {
 
     public void onRegister(View view) {                 //once register button is pressed
         final String str_username = username.getText().toString();
-        String str_password = password.getText().toString();
-        String str_email = email.getText().toString();
+        final String str_password = password.getText().toString();
+        final String str_email = email.getText().toString();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+
         //String str_retypepass = passReenter.getText().toString();
         String type = "signup";
 
-        if (str_email.isEmpty()) {                    //check each text field
+
+        if (str_username.isEmpty()){
+            username.setError("Please enter a username");
+            username.requestFocus();
+        }else if (str_email.isEmpty()) {                    //check each text field
             email.setError("Please enter an email");
             email.requestFocus();
         } else if (str_password.isEmpty()) {
             password.setError("Please enter a password");
             password.requestFocus();
-        } else if (str_email.isEmpty() && str_password.isEmpty()){
+        }else if (str_email.isEmpty() && str_password.isEmpty() && str_username.isEmpty()){
             Toast.makeText(RegisterActivity.this, "Fields are empty", Toast.LENGTH_SHORT).show();
         }else if(str_password.length() < 6) {
             Toast.makeText(RegisterActivity.this, "Password is too short ", Toast.LENGTH_SHORT).show();
@@ -91,28 +104,73 @@ public class RegisterActivity extends AppCompatActivity {
         }else if(!(str_password.equals(password2.getText().toString()))){
             Toast.makeText(RegisterActivity.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
 
-        } else if (!(str_email.isEmpty()) && !(str_password.isEmpty()) && str_password.equals(password2.getText().toString())) {
-            mAuth.createUserWithEmailAndPassword(str_email, str_password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+        } else if (!(str_email.isEmpty()) && !(str_password.isEmpty()) && !(str_username.isEmpty()) && str_password.equals(password2.getText().toString())) {
+
+            ref.orderByChild("username").equalTo(str_username).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (!task.isSuccessful()) {
-                        Toast.makeText(RegisterActivity.this, "Sign up failed,Please try again", Toast.LENGTH_SHORT).show();
-
-                    } else {
-                       // String user_id = mAuth.getCurrentUser().getUid();
-                        //final DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("users").child(user_id);
-
-                        Map newPost = new HashMap();          //add username to database, currently not working
-                        newPost.put("username",str_username);
-
-                        //current_user_db.setValue(newPost);
-
-                        Toast.makeText(RegisterActivity.this, "Account created", Toast.LENGTH_SHORT).show();
-                        //startActivity(new Intent(RegisterActivity.this, NavigationActivity.class));
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.exists()){
+                        Toast.makeText(RegisterActivity.this, "Username taken ", Toast.LENGTH_SHORT).show();
                     }
+
+                    else{
+
+                        mAuth.createUserWithEmailAndPassword(str_email, str_password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (!task.isSuccessful()) {
+                                    Toast.makeText(RegisterActivity.this, "Sign up failed,Please try again", Toast.LENGTH_SHORT).show();
+
+                                } else {
+
+
+                                    User user = new User(str_username,str_email);
+
+                                    user.getEmail();
+                                    user.getUsername();
+
+                                    FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+
+
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+
+
+                                            if (task.isSuccessful()) {
+                                                Toast.makeText(RegisterActivity.this, "User Added", Toast.LENGTH_SHORT).show();
+
+
+                                            }
+                                            else {
+                                                Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+
+                                    });
+
+
+
+                                    //   current_user_db.child("users").child(user_id).setValue(newPost);
+
+                                    //Toast.makeText(RegisterActivity.this, "Account created", Toast.LENGTH_SHORT).show();
+                                    //startActivity(new Intent(RegisterActivity.this, NavigationActivity.class));
+                                }
+
+                            }
+                        });
+
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
                 }
             });
+
+
+
+
 
 
         } else {
@@ -134,6 +192,9 @@ public class RegisterActivity extends AppCompatActivity {
         return matcher.matches();
 
     }
+
+
+
 }
 
 

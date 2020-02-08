@@ -1506,7 +1506,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fragment_booking
 layout fragment_events
-layout fragment_home1
+layout fragment_home
 layout fragment_profile
 layout fragment_venues
 layout mtrl_layout_snackbar
