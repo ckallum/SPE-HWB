@@ -5401,7 +5401,7 @@ public final class R {
     public static final int design_text_input_password_icon=0x7f0c002e;
     public static final int fragment_booking=0x7f0c002f;
     public static final int fragment_events=0x7f0c0030;
-    public static final int fragment_home1=0x7f0c0031;
+    public static final int fragment_home=0x7f0c0031;
     public static final int fragment_profile=0x7f0c0032;
     public static final int fragment_venues=0x7f0c0033;
     public static final int mtrl_layout_snackbar=0x7f0c0034;
