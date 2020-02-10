@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.healthproject.Activity.MainActivity;
+import com.example.healthproject.Activity.RegisterActivity;
 import com.example.healthproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -74,6 +75,8 @@ public class ProfileFragment extends Fragment {
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getActivity(), "No Username", Toast.LENGTH_SHORT).show();
+
 
             }
         });

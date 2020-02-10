@@ -86,5 +86,5 @@
 
         android:background="@drawable/text_middle"
         android:maxLines="1"
-        android:inputType="text"/>
+        android:inputType="textEmailAddress"/>
 </RelativeLayout>
