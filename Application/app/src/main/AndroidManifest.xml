@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Fragments.VenuesFragment"></activity>
+        <activity android:name=".Fragments.ProfileFragment"></activity>
+
         <activity android:name=".Activity.ForgotPassActivity" />
         <activity android:name=".Activity.MainActivity">
             <intent-filter>

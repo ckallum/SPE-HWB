@@ -3,7 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/background">
+    android:background="@color/bristolColour"
+    android:fitsSystemWindows="true"
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FF0000"
+        android:foreground="@color/bristolColour" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -189,26 +197,12 @@
         android:text="Log Out"
         android:textColor="#FF0303" />
 
-    <Button
-
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="290dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginBottom="9dp"
-        android:background="@drawable/button"
-        android:text="Save"
-        android:textColor="#FF0303" />
-
     <androidx.cardview.widget.CardView
         android:layout_width="380dp"
         android:layout_height="500dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="95dp"
-        app:cardBackgroundColor="#F6F6F6"
+        app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="15dp">
 
 
@@ -350,6 +344,7 @@
                 android:layout_marginRight="50dp"
                 android:layout_marginBottom="25dp"
                 android:background="@drawable/button"
+                android:isScrollContainer="false"
                 android:text="Update"
                 android:textColor="#FF0000" />
 

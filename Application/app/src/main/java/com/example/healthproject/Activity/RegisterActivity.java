@@ -124,10 +124,11 @@ public class RegisterActivity extends AppCompatActivity {
                                 } else {
 
 
-                                    User user = new User(str_username,str_email);
+                                    User user = new User(str_username,str_email,false);
 
                                     user.getEmail();
                                     user.getUsername();
+                                    user.getIsAdmin();
 
                                     FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
 

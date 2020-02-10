@@ -82,6 +82,27 @@ public class ProfileFragment extends Fragment {
         });
 
 
+        //---Check if the user is an admin or not
+
+        ref.orderByChild("isAdmin").equalTo(true).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    Toast.makeText(getActivity(), "You're an admin", Toast.LENGTH_SHORT).show();
+
+                }
+
+                else{
+                    Toast.makeText(getActivity(), "Not an admin", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {   //error, can be left empty
+
+            }
+        });
+
         if (user != null) {
             String userEmail = user.getEmail();
 
@@ -92,6 +113,24 @@ public class ProfileFragment extends Fragment {
             // No user is signed in
         }
 
+
+
+        updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                user.updatePassword(newPasswordText.getText().toString())
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Log.d(TAG, "User password updated.");
+                                }
+                            }
+                        });
+
+            }
+        });
 
 
 
