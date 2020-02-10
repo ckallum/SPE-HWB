@@ -1,11 +1,12 @@
 package com.example.healthproject;
+import com.google.firebase.Timestamp;
 
 public class EventModel {
 
     private long attendees;
     private long interested;
     private long spaces;
-    private String link;
+    private Timestamp date;
     private String name;
     private String location;
 
@@ -13,11 +14,11 @@ public class EventModel {
 
     }
 
-    private EventModel(long attendees, long interested, long spaces, String link, String name, String location) {
+    private EventModel(long attendees, long interested, long spaces, Timestamp date, String name, String location) {
         this.attendees = attendees;
         this.interested = interested;
         this.spaces = spaces;
-        this.link = link;
+        this.date = date;
         this.name = name;
         this.location = location;
     }
@@ -46,12 +47,12 @@ public class EventModel {
         this.spaces = spaces;
     }
 
-    public String getLink() {
-        return link;
+    public Timestamp getDate() {
+        return date;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setDate(Timestamp link) {
+        this.date = link;
     }
 
     public String getName() {
