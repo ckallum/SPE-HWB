@@ -43,18 +43,36 @@ public class EventsFragment extends Fragment {
             @NonNull
             @Override
             public EventsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_2, parent, false);
                 return new EventsViewHolder(view);
             }
 
             @Override
-            protected void onBindViewHolder(@NonNull EventsViewHolder holder, int position, @NonNull EventModel model) {
+            protected void onBindViewHolder(@NonNull final EventsViewHolder holder, int position, @NonNull EventModel model) {
                 holder.list_name.setText(model.getName());
                 holder.list_location.setText(model.getLocation());
                 holder.list_date.setText(model.getDate().toDate()+ "");
                 holder.list_attendees.setText("Attendees:" + " " + model.getAttendees() + "");
                 holder.list_interested.setText("Interested:" + " " +model.getInterested() + "");
                 holder.list_spaces.setText("Spaces:" + " " +model.getSpaces()+ "");
+
+                holder.interested.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // do something
+                        holder.interested.setVisibility(View.INVISIBLE);
+                        holder.uninterested.setVisibility(View.VISIBLE);
+                    }
+                });
+
+                holder.uninterested.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        // xdddd some gay user shit
+                        holder.interested.setVisibility(View.VISIBLE);
+                        holder.uninterested.setVisibility(View.INVISIBLE);
+                    }
+                });
             }
         };
 
@@ -74,7 +92,8 @@ public class EventsFragment extends Fragment {
         private TextView list_attendees;
         private TextView list_interested;
         private TextView list_spaces;
-
+        private TextView interested;
+        private TextView uninterested;
 
         public EventsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -85,6 +104,8 @@ public class EventsFragment extends Fragment {
             list_attendees = itemView.findViewById(R.id.list_attendees);
             list_interested = itemView.findViewById(R.id.list_interested);
             list_spaces = itemView.findViewById(R.id.list_spaces);
+            interested = itemView.findViewById(R.id.interested);
+            uninterested = itemView.findViewById(R.id.uninterested);
         }
     }
 
