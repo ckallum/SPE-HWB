@@ -1136,6 +1136,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable round_border_text
 drawable text_bottom
 drawable text_middle
 drawable text_top
@@ -1339,7 +1340,6 @@ id radio
 id right
 id right_icon
 id right_side
-id rssList
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
