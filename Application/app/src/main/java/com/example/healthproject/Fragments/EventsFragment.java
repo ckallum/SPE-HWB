@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.*;
 
@@ -16,6 +17,11 @@ import com.example.healthproject.EventModel;
 import com.example.healthproject.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.core.Constants;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -27,7 +33,7 @@ public class EventsFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View x =  inflater.inflate(R.layout.fragment_events,container,false);
         mFirestoreList = x.findViewById(R.id.firestore_events);
         firebaseFirestore = FirebaseFirestore.getInstance();
@@ -48,7 +54,7 @@ public class EventsFragment extends Fragment {
             }
 
             @Override
-            protected void onBindViewHolder(@NonNull final EventsViewHolder holder, int position, @NonNull EventModel model) {
+            protected void onBindViewHolder(@NonNull final EventsViewHolder holder, int position, @NonNull final EventModel model) {
                 holder.list_name.setText(model.getName());
                 holder.list_location.setText(model.getLocation());
                 holder.list_date.setText(model.getDate().toDate()+ "");
@@ -62,13 +68,25 @@ public class EventsFragment extends Fragment {
                         // do something
                         holder.interested.setVisibility(View.INVISIBLE);
                         holder.uninterested.setVisibility(View.VISIBLE);
+                        //Gets current user to save the event
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        String uid = user.getUid();
+                        DatabaseReference eventRef = FirebaseDatabase.getInstance()
+                                .getReference().child(uid);
+
+                        DatabaseReference pushRef = eventRef.push();
+                        String pushId = pushRef.getKey();
+                        model.setPushId(pushId);
+                        pushRef.setValue(model);
+
+                        Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
                     }
                 });
 
                 holder.uninterested.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // xdddd some gay user shit
+                        // do something
                         holder.interested.setVisibility(View.VISIBLE);
                         holder.uninterested.setVisibility(View.INVISIBLE);
                     }

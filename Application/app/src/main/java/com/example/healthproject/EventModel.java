@@ -9,6 +9,7 @@ public class EventModel {
     private Timestamp date;
     private String name;
     private String location;
+    private String pushId;
 
     private EventModel() {
 
@@ -69,5 +70,13 @@ public class EventModel {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getPushId() {
+        return pushId;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 }
