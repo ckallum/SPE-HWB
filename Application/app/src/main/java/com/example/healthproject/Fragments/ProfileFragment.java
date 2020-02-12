@@ -50,8 +50,9 @@ public class ProfileFragment extends Fragment {
         final EditText emailText = (EditText) rootView.findViewById(R.id.emailBox);     //rootView looks at what's on the fragment, not the navigation activity
         final EditText passwordText = rootView.findViewById(R.id.password);
         final EditText newPasswordText = rootView.findViewById(R.id.newPasswordBox);
-        Button updateBtn = rootView.findViewById(R.id.updateButton);
+        final Button updateBtn = rootView.findViewById(R.id.updateButton);
         final EditText usernameBox = rootView.findViewById(R.id.usernameBox);
+
 
         //final EditText rePasswordText = rootView.findViewById(R.id.rePasswordBox);
 
@@ -63,6 +64,7 @@ public class ProfileFragment extends Fragment {
 
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+
 
 
         ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -84,17 +86,24 @@ public class ProfileFragment extends Fragment {
 
         //---Check if the user is an admin or not
 
-        ref.orderByChild("isAdmin").equalTo(true).addListenerForSingleValueEvent(new ValueEventListener() {
+        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists()){
-                    Toast.makeText(getActivity(), "You're an admin", Toast.LENGTH_SHORT).show();
+
+                    String adminStatus = dataSnapshot.child("isAdmin").getValue().toString();
+
+                    if(adminStatus.equals("true")) {
+                        Toast.makeText(getActivity(), "You're an admin", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(getActivity(), "Not an admin", Toast.LENGTH_SHORT).show();
+
+                    }
 
                 }
 
-                else{
-                    Toast.makeText(getActivity(), "Not an admin", Toast.LENGTH_SHORT).show();
-                }
+
             }
 
             @Override
