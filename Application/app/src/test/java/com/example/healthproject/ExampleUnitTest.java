@@ -1,5 +1,7 @@
 package com.example.healthproject;
 
+import com.example.healthproject.Activity.RegisterActivity;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -15,3 +17,5 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
 }
+
+    

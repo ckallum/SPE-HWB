@@ -60,14 +60,14 @@ public class ProfileFragment extends Fragment {
        final  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
        String userid = user.getUid();
 
-
+       updateBtn.setClickable(false);
 
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
 
 
 
-        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
+        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {  //find the username of the user and place it into the edittext box
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String name = dataSnapshot.child("username").getValue().toString();
@@ -95,10 +95,12 @@ public class ProfileFragment extends Fragment {
 
                     if(adminStatus.equals("true")) {
                         Toast.makeText(getActivity(), "You're an admin", Toast.LENGTH_SHORT).show();
+                        updateBtn.setClickable(true);
+
                     }
                     else{
                         Toast.makeText(getActivity(), "Not an admin", Toast.LENGTH_SHORT).show();
-
+                        updateBtn.setClickable(false);
                     }
 
                 }

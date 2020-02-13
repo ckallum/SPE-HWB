@@ -104,7 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
         }else if(!(str_password.equals(password2.getText().toString()))){
             Toast.makeText(RegisterActivity.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
 
-        } else if (!(str_email.isEmpty()) && !(str_password.isEmpty()) && !(str_username.isEmpty()) && str_password.equals(password2.getText().toString())) {
+        } else if (!(str_email.isEmpty()) && !(str_password.isEmpty()) && !(str_username.isEmpty()) && str_password.equals(password2.getText().toString())) { //check username is not taken already
 
             ref.orderByChild("username").equalTo(str_username).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
