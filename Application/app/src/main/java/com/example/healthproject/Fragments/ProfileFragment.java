@@ -67,7 +67,7 @@ public class ProfileFragment extends Fragment {
 
 
 
-        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {  //find the username of the user and place it into the edittext box
+        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {  //find the username of the user and place it into the edit text box
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String name = dataSnapshot.child("username").getValue().toString();
@@ -84,18 +84,18 @@ public class ProfileFragment extends Fragment {
         });
 
 
-        //---Check if the user is an admin or not
+        //---Check if the user is an admin or not. Use this code for when an admin logs in.
 
         ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) { //This part just checks if the user has an admin status child or not. Some of the accounts don't.
                 if(dataSnapshot.exists()){
 
-                    String adminStatus = dataSnapshot.child("isAdmin").getValue().toString();
+                    String adminStatus = dataSnapshot.child("isAdmin").getValue().toString(); //here we check if the admin status is true and if it is, they can press the update button
 
                     if(adminStatus.equals("true")) {
                         Toast.makeText(getActivity(), "You're an admin", Toast.LENGTH_SHORT).show();
-                        updateBtn.setClickable(true);
+                        updateBtn.setClickable(true);                                         //PLACEHOLDER: needs to be changed so that there is an admin option rather than the update btn
 
                     }
                     else{
