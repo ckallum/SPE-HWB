@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.MultiTransformation;
+import com.bumptech.glide.load.Transformation;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.healthproject.Activity.MainActivity;
 import com.example.healthproject.Activity.NavigationActivity;
 import com.example.healthproject.R;
@@ -79,6 +86,8 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        loadUserInformation();
+
         rootView.findViewById(R.id.button_save).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -88,6 +97,25 @@ public class ProfileFragment extends Fragment {
 
         return rootView;
 
+    }
+
+    private void loadUserInformation() {
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if (user != null) {
+            if (user.getPhotoUrl() != null) {
+                RequestOptions options = new RequestOptions();
+                options.centerCrop();
+                Glide.with(camera)
+                        .load(user.getPhotoUrl().toString())
+                        .apply(options)
+                        .into(camera);
+            }
+
+            if (user.getDisplayName() != null) {
+                username.setText(user.getDisplayName());
+            }
+        }
     }
 
     private void saveUserInformation() {
@@ -137,26 +165,57 @@ public class ProfileFragment extends Fragment {
     }
 
     private void uploadImageToFireBaseStorage() {
-        StorageReference storageRef =
-                FirebaseStorage.getInstance().getReference("profileimages/"+System.currentTimeMillis()+".jpg");
+//        StorageReference storageRef =
+//                FirebaseStorage.getInstance().getReference("profileimages/"+System.currentTimeMillis()+".jpg");
+//
+//        if(uriProfileImage != null) {
+//            progressBar.setVisibility(View.VISIBLE);
+//            storageRef.putFile(uriProfileImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//                @Override
+//                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                    progressBar.setVisibility(View.GONE);
+//
+//                    profileImageUrl = taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
+//                }
+//            })
+//            .addOnFailureListener(new OnFailureListener() {
+//                @Override
+//                public void onFailure(@NonNull Exception e) {
+//                    progressBar.setVisibility(View.GONE);
+//                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+//                }
+//            });
+//        }
 
-        if(uriProfileImage != null) {
+        final StorageReference profileImageRef = FirebaseStorage.getInstance().getReference("profileimages/" + System.currentTimeMillis() + ".jpg");
+
+        if (uriProfileImage != null) {
             progressBar.setVisibility(View.VISIBLE);
-            storageRef.putFile(uriProfileImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    progressBar.setVisibility(View.GONE);
 
-                    profileImageUrl = taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
-                }
-            })
-            .addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    progressBar.setVisibility(View.GONE);
-                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
+            profileImageRef.putFile(uriProfileImage)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            progressBar.setVisibility(View.GONE);
+                            // profileImageUrl taskSnapshot.getDownloadUrl().toString(); //this is depreciated
+
+                            //this is the new way to do it
+                            profileImageRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+                                    String profileImageUrl=task.getResult().toString();
+                                    Log.i("URL",profileImageUrl);
+                                }
+                            });
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(getActivity(), "aaa "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
         }
     }
 
