@@ -167,27 +167,6 @@ public class ProfileFragment extends Fragment {
     }
 
     private void uploadImageToFireBaseStorage() {
-//        StorageReference storageRef =
-//                FirebaseStorage.getInstance().getReference("profileimages/"+System.currentTimeMillis()+".jpg");
-//
-//        if(uriProfileImage != null) {
-//            progressBar.setVisibility(View.VISIBLE);
-//            storageRef.putFile(uriProfileImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                @Override
-//                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                    progressBar.setVisibility(View.GONE);
-//
-//                    profileImageUrl = taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
-//                }
-//            })
-//            .addOnFailureListener(new OnFailureListener() {
-//                @Override
-//                public void onFailure(@NonNull Exception e) {
-//                    progressBar.setVisibility(View.GONE);
-//                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//        }
 
         final StorageReference profileImageRef = FirebaseStorage.getInstance().getReference("profileimages/" + System.currentTimeMillis() + ".jpg");
 
@@ -199,9 +178,7 @@ public class ProfileFragment extends Fragment {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             progressBar.setVisibility(View.GONE);
-                            // profileImageUrl taskSnapshot.getDownloadUrl().toString(); //this is depreciated
 
-                            //this is the new way to do it
                             profileImageRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Uri> task) {
@@ -215,7 +192,7 @@ public class ProfileFragment extends Fragment {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             progressBar.setVisibility(View.GONE);
-                            Toast.makeText(getActivity(), "aaa "+e.getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
         }
