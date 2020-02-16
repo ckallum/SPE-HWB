@@ -105,10 +105,9 @@ public class ProfileFragment extends Fragment {
         if (user != null) {
             if (user.getPhotoUrl() != null) {
                 RequestOptions options = new RequestOptions();
-                options.centerCrop();
                 Glide.with(camera)
                         .load(user.getPhotoUrl().toString())
-                        .apply(options)
+                        .apply(options.centerCrop())
                         .into(camera);
             }
 
@@ -140,6 +139,9 @@ public class ProfileFragment extends Fragment {
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(getContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -203,7 +205,7 @@ public class ProfileFragment extends Fragment {
                             profileImageRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Uri> task) {
-                                    String profileImageUrl=task.getResult().toString();
+                                    profileImageUrl = task.getResult().toString();
                                     Log.i("URL",profileImageUrl);
                                 }
                             });
