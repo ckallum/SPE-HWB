@@ -40,6 +40,8 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+
         TextView signInText = findViewById(R.id.signInLink);
         username = (EditText)findViewById(R.id.et_username);
         email = (EditText)findViewById(R.id.et_email);
@@ -75,7 +77,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    public void onRegister(View view) {                 //once register button is pressed
+    public void onRegister(View view) {
+        //once register button is pressed
         final String str_username = username.getText().toString();
         final String str_password = password.getText().toString();
         final String str_email = email.getText().toString();

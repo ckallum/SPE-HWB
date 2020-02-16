@@ -15,6 +15,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     Button loginButton;
     FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthS;
+
+    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
+
 
 
     @Override
@@ -39,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
         TextView signUpText = (TextView) findViewById(R.id.signUpLink);
         TextView forgotPassText = (TextView) findViewById(R.id.forgotPassLink);
+
+
 
 
         mAuthS = new FirebaseAuth.AuthStateListener() {
@@ -104,24 +114,60 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {     //add to firebase database
 
                     if(!task.isSuccessful()){
-                        Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();                    //if the task fails, i.e. user already exists
+                        Toast.makeText(MainActivity.this, "Sorry, User doesn't  exist", Toast.LENGTH_SHORT).show();                    //if the task fails, i.e. user already exists
 
 
                 }
                     else{
-                        Intent toHome = new Intent(MainActivity.this, NavigationActivity.class);             // open home activity if successful
-                        startActivity(toHome);
+
+                        final  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        String userid = user.getUid();
+
+                        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) { //This part just checks if the user has an admin status child or not. Some of the accounts don't.
+                                if(dataSnapshot.exists()){
+
+                                    String adminStatus = dataSnapshot.child("isAdmin").getValue().toString(); //here we check if the admin status is true and if it is, they can press the update button
+
+                                    if(adminStatus.equals("true")) {
+                                        Toast.makeText(MainActivity.this, "You're an admin", Toast.LENGTH_SHORT).show();
+
+                                        //ADMIN CODE GOES HERE
+                                        //
+                                        //
+                                        //
+
+
+                                        Intent toHome = new Intent(MainActivity.this, NavigationActivity.class);             // Open Admin UI if an admin. NEED TO CHANGE
+                                        startActivity(toHome);
+
+
+                                    }
+                                    else{
+                                        Toast.makeText(MainActivity.this, "Not an admin", Toast.LENGTH_SHORT).show();
+                                        Intent toHome = new Intent(MainActivity.this, NavigationActivity.class);             // open home activity if successful
+                                        startActivity(toHome);
+
+                                    }
+
+                                }
+
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {   //error, can be left empty
+
+                            }
+                        });
+
                     }
             }
 
             });
 
         }
-
-
-
-
-
         else {
             Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
         }
