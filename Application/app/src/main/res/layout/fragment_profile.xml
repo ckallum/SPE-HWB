@@ -47,9 +47,8 @@
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:layout_gravity="center"/>
 
     </FrameLayout>
 
@@ -133,24 +132,11 @@
 
     </LinearLayout>
 
-
-    <!--    <ImageView-->
-    <!--        android:layout_width="180dp"-->
-    <!--        android:layout_height="200dp"-->
-    <!--        android:layout_marginStart="110dp"-->
-    <!--        android:layout_marginLeft="30dp"-->
-    <!--        android:layout_marginTop="90dp" />-->
-
     <Button
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="152dp"
-        android:layout_marginEnd="152dp"
-        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:text="Save" />
 
 </LinearLayout>

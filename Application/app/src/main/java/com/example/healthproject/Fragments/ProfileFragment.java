@@ -107,7 +107,7 @@ public class ProfileFragment extends Fragment {
                 RequestOptions options = new RequestOptions();
                 Glide.with(camera)
                         .load(user.getPhotoUrl().toString())
-                        .apply(options.centerCrop())
+                        .apply(options.circleCrop())
                         .into(camera);
             }
 
