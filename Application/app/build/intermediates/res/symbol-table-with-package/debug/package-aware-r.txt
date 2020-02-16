@@ -1109,6 +1109,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable gradient_btn
 drawable ic_book_black_24dp
 drawable ic_event_available_black_24dp
 drawable ic_event_black_24dp
@@ -1121,6 +1122,8 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_person_black_24dp
 drawable ic_place_black_24dp
+drawable ic_power_settings_new_black_24dp
+drawable logout
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon

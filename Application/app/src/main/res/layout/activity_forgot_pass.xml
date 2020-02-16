@@ -7,6 +7,37 @@
     tools:context="com.example.healthproject.Activity.ForgotPassActivity"
     android:background="@drawable/background">
 
+
+    <LinearLayout
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="0dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgotten Password"
+
+            android:fontFamily="@font/blackout_1"
+            android:textColor="@color/textBox"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="220dp"
+            />
+
+
+
+
+
+    </LinearLayout>
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="265dp"
@@ -15,76 +46,71 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="98dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="75dp"
         android:layout_marginRight="75dp"
         app:srcCompat="@drawable/unisportslogo" />
 
 
-    <TextView
 
-        android:layout_width="312dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="303dp"
-        android:background="#00F7F4F4"
-        android:text="Please enter your email:"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="380dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="260dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="15dp">
 
-    <Button
-        android:id="@+id/sendEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="200dp"
-        android:background="@drawable/button"
-        android:textColor="@color/bristolColour"
-        android:text="Send" />
 
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginLeft="42dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="270dp"
-        android:layout_marginRight="270dp"
-        android:layout_marginBottom="200dp"
-        android:background="@drawable/button"
-        android:text="Back"
-        android:textColor="@color/bristolColour" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/emailTxtBox"
-        android:layout_width="320dp"
-        android:layout_height="35dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="42dp"
-        android:layout_marginLeft="49dp"
-        android:layout_marginTop="350dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
+            <EditText
+                android:id="@+id/emailTxtBox"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="55dp"
 
-        android:background="@drawable/text_middle"
-        android:maxLines="1"
-        android:inputType="textEmailAddress"/>
+                android:hint="Please enter your email"
+                android:maxLines="1"
+                android:inputType="textEmailAddress"/>
+
+
+            <Button
+                android:id="@+id/sendEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="260dp"
+                android:layout_marginTop="130dp"
+                android:background="@drawable/button"
+
+                android:text="Send"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="130dp"
+                android:background="@drawable/button"
+                android:text="Back"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
 </RelativeLayout>

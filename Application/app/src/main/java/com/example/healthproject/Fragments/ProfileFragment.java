@@ -47,7 +47,7 @@ public class ProfileFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_profile,container,false);
 
-        final EditText emailText = (EditText) rootView.findViewById(R.id.emailBox);     //rootView looks at what's on the fragment, not the navigation activity
+        final EditText emailText = rootView.findViewById(R.id.emailBox);     //rootView looks at what's on the fragment, not the navigation activity
         final EditText passwordText = rootView.findViewById(R.id.password);
         final EditText newPasswordText = rootView.findViewById(R.id.newPasswordBox);
         final Button updateBtn = rootView.findViewById(R.id.updateButton);
@@ -58,7 +58,7 @@ public class ProfileFragment extends Fragment {
 
 
        final  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-       String userid = user.getUid();
+       String userId = user.getUid();
 
        updateBtn.setClickable(false);
 
@@ -67,7 +67,7 @@ public class ProfileFragment extends Fragment {
 
 
 
-        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {  //find the username of the user and place it into the edit text box
+        ref.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {  //find the username of the user and place it into the edit text box
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String name = dataSnapshot.child("username").getValue().toString();
@@ -86,7 +86,7 @@ public class ProfileFragment extends Fragment {
 
         //---Check if the user is an admin or not. Use this code for when an admin logs in.
 
-        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
+        ref.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) { //This part just checks if the user has an admin status child or not. Some of the accounts don't.
                 if(dataSnapshot.exists()){

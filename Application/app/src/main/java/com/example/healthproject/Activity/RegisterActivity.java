@@ -30,9 +30,8 @@ public class RegisterActivity extends AppCompatActivity {
     EditText username, password, email,password2;
     FirebaseAuth mAuth;
 
-    private FirebaseAuth.AuthStateListener mAuthS;
 
-   //
+
 
 
 
@@ -172,11 +171,6 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             });
 
-
-
-
-
-
         } else {
             Toast.makeText(RegisterActivity.this, "Please fill all boxes", Toast.LENGTH_SHORT).show();
         }
@@ -196,7 +190,6 @@ public class RegisterActivity extends AppCompatActivity {
         return matcher.matches();
 
     }
-
 
 
 }

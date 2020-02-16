@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#B01C2E</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#DC7BED</color>
+    <color name="colorPrimaryDark">#75CBC6</color>
+    <color name="colorAccent">#1CB4C6</color>
 
     <color name="bristolColour"> #B01C2E</color>
     <color name="bristolBlack">#000000</color>
