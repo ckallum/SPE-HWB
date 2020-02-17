@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.healthproject.Activity.ForgotPassActivity"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context="com.example.healthproject.Activity.ForgotPassActivity">
 
 
     <LinearLayout
@@ -23,94 +24,74 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Forgotten Password"
-
-            android:fontFamily="@font/blackout_1"
-            android:textColor="@color/textBox"
-            android:textSize="30sp"
             android:layout_centerHorizontal="true"
+
             android:layout_marginTop="220dp"
-            />
+            android:fontFamily="@font/blackout_1"
+            android:text="Forgotten Password"
+            android:textColor="@color/textBox"
+            android:textSize="30sp" />
 
-
-
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="265dp"
+            android:layout_height="173dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-190dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="20dp"
+            app:srcCompat="@drawable/unisportslogo" />
 
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="265dp"
-        android:layout_height="173dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginRight="75dp"
-        app:srcCompat="@drawable/unisportslogo" />
 
-
-
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="380dp"
         android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="260dp"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="15dp">
+        android:layout_gravity="center"
+
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_border_text"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/emailTxtBox"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:hint="Please enter your email"
+            android:inputType="textEmailAddress"
+            android:maxLines="1" />
 
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <Button
+            android:id="@+id/sendEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/button"
 
-            <EditText
-                android:id="@+id/emailTxtBox"
-                android:layout_width="320dp"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="55dp"
+            android:text="Send"
+            android:textColor="#FFFFFF" />
 
-                android:hint="Please enter your email"
-                android:maxLines="1"
-                android:inputType="textEmailAddress"/>
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="-50dp"
+            android:background="@drawable/button"
+            android:text="Back"
+            android:textColor="#FFFFFF" />
 
-
-            <Button
-                android:id="@+id/sendEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="260dp"
-                android:layout_marginTop="130dp"
-                android:background="@drawable/button"
-
-                android:text="Send"
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/backButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="130dp"
-                android:background="@drawable/button"
-                android:text="Back"
-                android:textColor="#FFFFFF" />
-
-        </RelativeLayout>
+    </LinearLayout>
 
 
-
-
-
-    </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-</RelativeLayout>
+</LinearLayout>
