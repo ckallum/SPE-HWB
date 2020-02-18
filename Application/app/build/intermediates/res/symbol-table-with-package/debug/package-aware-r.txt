@@ -1294,7 +1294,6 @@ id imageView
 id imageView2
 id imageView4
 id info
-id input_group
 id invisible
 id italic
 id item_touch_helper_previous_elevation

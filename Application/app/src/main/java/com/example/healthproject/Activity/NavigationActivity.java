@@ -26,12 +26,6 @@ public class NavigationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
 
-
-
-
-
-
-
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navbar);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 

@@ -16,7 +16,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="10dp"
+
         android:gravity="center"
         android:orientation="vertical">
 
@@ -54,7 +55,7 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
 
-        android:layout_marginTop="10dp"
+
         android:background="@drawable/round_border_text"
         android:orientation="vertical">
 
