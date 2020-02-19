@@ -1,6 +1,7 @@
 package com.example.healthproject.Fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,54 +70,40 @@ public class EventsFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         // do something
-                        holder.interested.setVisibility(View.INVISIBLE);
-                        holder.uninterested.setVisibility(View.VISIBLE);
                         //Gets current user to save the event
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         String uid = user.getUid();
-                        final DatabaseReference eventRef = FirebaseDatabase.getInstance()
-                                .getReference().child(uid);
+                        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+                        final DatabaseReference eventRef = rootRef.child(uid).child(model.getName());
 
-//                        eventRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//                            @Override
-//                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                                for (DataSnapshot data: dataSnapshot.getChildren()) {
-//                                    if (data.child(model.getName()).exists()) {
-//                                        Toast.makeText(getContext(), "Already saved", Toast.LENGTH_SHORT).show();
-//                                    }
-//                                    else {
-//                                        DatabaseReference pushRef = eventRef.push();
-//                                        String pushId = pushRef.getKey();
-//                                        model.setPushId(pushId);
-//                                        pushRef.setValue(model);
-//
-//                                        Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
-//                                    }
-//                                }
-//                            }
-//                            @Override
-//                            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                            }
-//                        });
+                        ValueEventListener eventListener = new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if(!dataSnapshot.exists()) {
+                                    DatabaseReference pushRef = eventRef.push();
+                                    String pushId = pushRef.getKey();
+                                    model.setPushId(pushId);
+                                    pushRef.setValue(model);
 
-                        DatabaseReference pushRef = eventRef.push();
-                        String pushId = pushRef.getKey();
-                        model.setPushId(pushId);
-                        pushRef.setValue(model);
+                                    Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    Toast.makeText(getContext(), "Already saved", Toast.LENGTH_SHORT).show();
+                                }
+                            }
 
-                        Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                Log.d("stefan", databaseError.getMessage());
+                            }
+                        };
+
+                        eventRef.addListenerForSingleValueEvent(eventListener);
+
+
                     }
                 });
 
-                holder.uninterested.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // do something
-                        holder.interested.setVisibility(View.VISIBLE);
-                        holder.uninterested.setVisibility(View.INVISIBLE);
-                    }
-                });
             }
         };
 
@@ -137,7 +124,6 @@ public class EventsFragment extends Fragment {
         private TextView list_interested;
         private TextView list_spaces;
         private TextView interested;
-        private TextView uninterested;
 
         public EventsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -149,7 +135,6 @@ public class EventsFragment extends Fragment {
             list_interested = itemView.findViewById(R.id.list_interested);
             list_spaces = itemView.findViewById(R.id.list_spaces);
             interested = itemView.findViewById(R.id.interested);
-            uninterested = itemView.findViewById(R.id.uninterested);
         }
     }
 
