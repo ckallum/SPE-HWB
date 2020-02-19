@@ -1124,6 +1124,7 @@ drawable ic_person_black_24dp
 drawable ic_place_black_24dp
 drawable ic_power_settings_new_black_24dp
 drawable logout
+drawable logout_w
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
