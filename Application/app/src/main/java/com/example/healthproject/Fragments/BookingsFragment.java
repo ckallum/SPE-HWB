@@ -15,8 +15,10 @@ public class BookingsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_booking,container,false);
 
 
-        return inflater.inflate(R.layout.fragment_booking,container,false);
+
+        return rootView;
     }
 }
