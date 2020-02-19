@@ -25,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
     EditText UsernameET, PasswordET;
     Button loginButton;
-    FirebaseAuth mAuth;
+    FirebaseAuth mAuth = FirebaseAuth.getInstance();;
     private FirebaseAuth.AuthStateListener mAuthS;
 
     DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
@@ -36,10 +36,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-
-        mAuth = FirebaseAuth.getInstance();
-
 
         UsernameET = (EditText) findViewById(R.id.email);       //create instances of each text box
         PasswordET = (EditText) findViewById(R.id.password);
@@ -57,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {          //check if user is logged in already
                 FirebaseUser firebaseUser = mAuth.getCurrentUser();
                 if(firebaseUser != null){
-                    Toast.makeText(MainActivity.this, "You are logged in already",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(MainActivity.this, "You are logged in already",Toast.LENGTH_SHORT).show();
                     Intent i = new Intent(MainActivity.this, NavigationActivity.class);
 
                     startActivity(i);
@@ -174,6 +170,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
 
     @Override
     protected void onStart() {         //check if user is already signed in
