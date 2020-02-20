@@ -8,13 +8,14 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="374dp"
-        android:layout_height="wrap_content"
 
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:gravity="center"
-        android:orientation="vertical"
 
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".2"
@@ -57,15 +58,15 @@
         <EditText
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
             android:layout_gravity="center"
-            android:hint="Event Name"
-            />
+            android:layout_marginTop="30dp"
+            android:hint="Event Name" />
+
         <EditText
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:hint="Spaces Available"
             android:inputType="number"
 
@@ -74,8 +75,8 @@
         <EditText
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:hint="Select a Date"
             android:inputType="date"
 
@@ -84,8 +85,8 @@
         <EditText
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:hint="Select a Time"
             android:inputType="time"
 
@@ -94,8 +95,8 @@
         <TextView
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:hint="Select a Venue:"
             android:inputType="time"
 
@@ -104,30 +105,33 @@
         <Spinner
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:hint="Venue"
 
 
             />
+
         <EditText
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:hint="Instructor"
             android:inputType="textPersonName"
 
             />
+
         <EditText
             android:layout_width="350dp"
             android:layout_height="100dp"
-            android:layout_marginTop="10dp"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:hint="Description"
             android:inputType="textMultiLine"
 
             />
+
         <Button
 
             android:layout_width="100dp"
@@ -144,11 +148,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="250dp"
             android:layout_marginTop="-48dp"
-            android:textColor="#FFFFFF"
             android:background="@drawable/button"
-            android:text="Delete"/>
-
-
+            android:text="Delete"
+            android:textColor="#FFFFFF" />
 
 
     </LinearLayout>
