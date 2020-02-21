@@ -23,6 +23,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import com.example.healthproject.Activity.LoginActivity;
+import com.example.healthproject.Data.FirebaseDataSource;
+import com.example.healthproject.Data.GlobalUser;
 import com.example.healthproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -50,11 +52,12 @@ public class ProfileFragment extends Fragment {
     Uri uriProfileImage;
     ProgressBar progressBar;
     String profileImageUrl;
+    GlobalUser user;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
+        user = GlobalUser.getInstance(new FirebaseDataSource());
 
         View rootView = inflater.inflate(R.layout.fragment_profile,container,false);
         logoutButton = rootView.findViewById(R.id.logoutBtn);
@@ -62,6 +65,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
+                user.logout();
                 Intent toMain = new Intent(getActivity(), LoginActivity.class);
 
                 startActivity(toMain);
