@@ -1,13 +1,11 @@
-package com.example.healthproject.Activity;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
+package com.example.healthproject.Activity.Navigation;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.example.healthproject.Fragments.BookingsFragment;
 import com.example.healthproject.Fragments.EventsFragment;
@@ -17,24 +15,20 @@ import com.example.healthproject.Fragments.VenuesFragment;
 import com.example.healthproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class NavigationActivity extends AppCompatActivity {
+public class AdminNavigationActivity extends AppCompatActivity {
 
+
+    BottomNavigationView bottomNav;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_navigation);
 
+        setContentView(R.layout.activity_user);
+        bottomNav = findViewById(R.id.user_navbar);
 
-
-
-
-
-
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navbar);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
-
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,  //a fragment container will store each activity
                 new HomeFragment()).commit();

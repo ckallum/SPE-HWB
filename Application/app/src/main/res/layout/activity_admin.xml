@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.User_Nav_Activity"
+    tools:context=".Activity.Navigation.AdminNavigationActivity"
     android:background="@drawable/background">
 
     <FrameLayout
@@ -14,16 +14,16 @@
 
 
 
-        android:layout_above="@id/bottom_navbar"
+        android:layout_above="@id/admin_navbar"
         />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navbar"
+        android:id="@+id/admin_navbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="#FFFFFF"
-        app:menu="@menu/bottom_nav" />
+        app:menu="@menu/admin_nav" />
 
 
 

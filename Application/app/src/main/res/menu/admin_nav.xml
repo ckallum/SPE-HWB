@@ -10,20 +10,20 @@
 
 
     <item
-        android:id = "@+id/booking"
-        android:title="Booking"
-        android:icon="@drawable/ic_event_black_24dp"
+        android:id = "@+id/add"
+        android:title="Add Event"
+        android:icon="@drawable/ic_add_circle_black_24dp"
         />
 
     <item
-        android:id = "@+id/venues"
-        android:title="Venues"
-        android:icon="@drawable/ic_place_black_24dp"/>
+        android:id = "@+id/manage"
+        android:title="Manage Event"
+        android:icon="@drawable/ic_edit_black_24dp"/>
 
-    <item
-        android:id = "@+id/events"
-        android:title="Events"
-        android:icon = "@drawable/ic_event_available_black_24dp"/>
+<!--    <item-->
+<!--        android:id = "@+id/events"-->
+<!--        android:title="Events"-->
+<!--        android:icon = "@drawable/ic_event_available_black_24dp"/>-->
 
     <item
         android:id = "@+id/profile"
