@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.spe.app"
+    package="com.example.healthproject_beta"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -22,23 +22,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.example.healthproject.Fragments.VenuesFragment" />
-        <activity android:name="com.example.healthproject.Fragments.ProfileFragment" />
-        <activity android:name="com.example.healthproject.Activity.ForgotPassActivity" />
-        <activity android:name="com.example.healthproject.Activity.MainActivity" >
+        <activity
+            android:name="com.example.healthproject.Activity.LoginActivity"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.example.healthproject.Activity.RegisterActivity"
-            android:parentActivityName="com.example.healthproject.Activity.MainActivity" />
-        <activity
-            android:name="com.example.healthproject.Activity.NavigationActivity"
-            android:parentActivityName="com.example.healthproject.Activity.MainActivity" />
+        <activity android:name="com.example.healthproject.Activity.ForgotActivity" />
+        <activity android:name="com.example.healthproject.Activity.RegisterActivity" />
+        <activity android:name="com.example.healthproject.Activity.MainActivity" />
+        <activity android:name="com.example.healthproject.Activity.Navigation.UserNavigationActivity" />
+        <activity android:name="com.example.healthproject.Activity.Navigation.AdminNavigationActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -126,7 +125,7 @@
 
         <provider
             android:name="com.firebase.ui.auth.data.client.AuthUiInitProvider"
-            android:authorities="com.spe.app.authuiinitprovider"
+            android:authorities="com.example.healthproject_beta.authuiinitprovider"
             android:exported="false"
             android:initOrder="90" />
 
@@ -222,12 +221,12 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            android:authorities="com.spe.app.firebaseinitprovider"
+            android:authorities="com.example.healthproject_beta.firebaseinitprovider"
             android:exported="false"
             android:initOrder="100" />
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-            android:authorities="com.spe.app.lifecycle-process"
+            android:authorities="com.example.healthproject_beta.lifecycle-process"
             android:exported="false"
             android:multiprocess="true" />
     </application>

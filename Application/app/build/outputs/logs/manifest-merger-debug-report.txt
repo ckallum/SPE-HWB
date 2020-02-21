@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-33:12
+ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-31:12
 MERGED from [com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/d2aaa5cc6c01293ebaf22068d1c13ad6/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:2:1-109:12
 MERGED from [com.google.android.material:material:1.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/88b8882e6a15c728169a63194a12dedc/material-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [me.zhanghai.android.materialprogressbar:library:1.6.1] /home/callum/.gradle/caches/transforms-2/files-2.1/5b5cfa52bb4902db4b00550f29d0fdba/library-1.6.1/AndroidManifest.xml:6:1-15:12
@@ -80,20 +80,20 @@ MERGED from [com.google.firebase:firebase-database-collection:17.0.0] /home/call
 MERGED from [com.google.firebase:protolite-well-known-types:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/dacab2ed7474744f5d85ca77b44b418e/protolite-well-known-types-17.0.0/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] /home/callum/.gradle/caches/transforms-2/files-2.1/5a7e99fa82c740da05f88b34ada1bfee/play-services-measurement-base-16.0.3/AndroidManifest.xml:2:1-9:12
 MERGED from [io.grpc:grpc-android:1.21.0] /home/callum/.gradle/caches/transforms-2/files-2.1/e784f8a678ea44afdc5d8546de0f1e45/grpc-android-1.21.0/AndroidManifest.xml:2:1-13:12
-INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-31:12
+INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-31:12
 	package
 		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:3:5-40
 		INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml
 		INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml
-		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-33:12
+		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-31:12
 		INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml
-		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-33:12
+		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:1-31:12
 		INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:2:11-69
@@ -120,7 +120,7 @@ MERGED from [com.google.firebase:firebase-iid:17.0.3] /home/callum/.gradle/cache
 	android:name
 		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:7:5-31:19
+ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:7:5-29:19
 MERGED from [com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/d2aaa5cc6c01293ebaf22068d1c13ad6/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:15:5-107:19
 MERGED from [com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/d2aaa5cc6c01293ebaf22068d1c13ad6/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:15:5-107:19
 MERGED from [com.google.android.material:material:1.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/88b8882e6a15c728169a63194a12dedc/material-1.1.0/AndroidManifest.xml:22:5-20
@@ -191,44 +191,42 @@ MERGED from [com.google.android.gms:play-services-measurement-base:16.0.3] /home
 		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:8:9-35
 	android:theme
 		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:13:9-40
-activity#com.example.healthproject.Fragments.VenuesFragment
-ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:14:9-71
+activity#com.example.healthproject.Activity.LoginActivity
+ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:15:9-23:20
+	android:label
+		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:17:13-45
 	android:name
-		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:14:19-59
-activity#com.example.healthproject.Fragments.ProfileFragment
-ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:15:9-72
-	android:name
-		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:15:19-60
-activity#com.example.healthproject.Activity.ForgotPassActivity
-ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:17:9-65
-	android:name
-		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:17:19-62
-activity#com.example.healthproject.Activity.MainActivity
-ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:18:9-24:20
-	android:name
-		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:18:19-56
+		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:16:13-76
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:19:13-23:29
+ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:18:13-22:29
 action#android.intent.action.MAIN
-ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:20:17-69
+ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:19:17-69
 	android:name
-		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:20:25-66
+		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:19:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:22:17-77
+ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:21:17-77
 	android:name
-		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:22:27-74
+		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:21:27-74
+activity#com.example.healthproject.Activity.ForgotActivity
+ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:24:9-61
+	android:name
+		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:24:19-58
 activity#com.example.healthproject.Activity.RegisterActivity
-ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:25:9-27:67
-	android:parentActivityName
-		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:27:13-64
+ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:25:9-62
 	android:name
-		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:26:13-54
-activity#com.example.healthproject.Activity.NavigationActivity
-ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:28:9-30:67
-	android:parentActivityName
-		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:30:13-64
+		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:25:19-60
+activity#com.example.healthproject.Activity.MainActivity
+ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:26:9-58
 	android:name
-		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:29:13-56
+		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:26:19-56
+activity#com.example.healthproject.Activity.Navigation.UserNavigationActivity
+ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:27:9-79
+	android:name
+		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:27:19-77
+activity#com.example.healthproject.Activity.Navigation.AdminNavigationActivity
+ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:28:9-80
+	android:name
+		ADDED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml:28:19-78
 uses-sdk
 INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/callum/Git/Second-Year/SPE-HWB/Application/app/src/main/AndroidManifest.xml
