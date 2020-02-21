@@ -1,44 +1,55 @@
 package com.example.healthproject.Fragments;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.healthproject.Activity.MainActivity;
-import com.example.healthproject.Activity.RegisterActivity;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+
+import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
-import static androidx.constraintlayout.widget.Constraints.TAG;
+import java.io.IOException;
+import java.util.Objects;
+
+import static android.app.Activity.RESULT_OK;
 
 public class ProfileFragment extends Fragment {
-    Button logoutButton;
+    private static final int CHOOSE_IMAGE = 808;
+    private Button logoutButton;
     FirebaseAuth mAuth;
-    private FirebaseAuth.AuthStateListener mAuthS;
 
-
-
-
+    ImageView camera;
+    EditText username;
+    Uri uriProfileImage;
+    ProgressBar progressBar;
+    String profileImageUrl;
 
     @Nullable
     @Override
@@ -46,117 +57,148 @@ public class ProfileFragment extends Fragment {
 
 
         View rootView = inflater.inflate(R.layout.fragment_profile,container,false);
-
-        final EditText emailText = (EditText) rootView.findViewById(R.id.emailBox);     //rootView looks at what's on the fragment, not the navigation activity
-        final EditText passwordText = rootView.findViewById(R.id.password);
-        final EditText newPasswordText = rootView.findViewById(R.id.newPasswordBox);
-        final Button updateBtn = rootView.findViewById(R.id.updateButton);
-        final EditText usernameBox = rootView.findViewById(R.id.usernameBox);
-
-
-        //final EditText rePasswordText = rootView.findViewById(R.id.rePasswordBox);
-
-
-       final  FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-       String userid = user.getUid();
-
-
-
-
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-
-
-
-        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String name = dataSnapshot.child("username").getValue().toString();
-                usernameBox.setText(name);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(getActivity(), "No Username", Toast.LENGTH_SHORT).show();
-
-
-            }
-        });
-
-
-        //---Check if the user is an admin or not
-
-        ref.child(userid).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.exists()){
-
-                    String adminStatus = dataSnapshot.child("isAdmin").getValue().toString();
-
-                    if(adminStatus.equals("true")) {
-                        Toast.makeText(getActivity(), "You're an admin", Toast.LENGTH_SHORT).show();
-                    }
-                    else{
-                        Toast.makeText(getActivity(), "Not an admin", Toast.LENGTH_SHORT).show();
-
-                    }
-
-                }
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {   //error, can be left empty
-
-            }
-        });
-
-        if (user != null) {
-            String userEmail = user.getEmail();
-
-            emailText.setText(userEmail);
-
-            // User is signed in
-        } else {
-            // No user is signed in
-        }
-
-
-
-        updateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                user.updatePassword(newPasswordText.getText().toString())
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                if (task.isSuccessful()) {
-                                    Log.d(TAG, "User password updated.");
-                                }
-                            }
-                        });
-
-            }
-        });
-
-
-
-
-        logoutButton = rootView.findViewById(R.id.logoutBtn);                        //log the user out
+        logoutButton = rootView.findViewById(R.id.logoutBtn);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent toMain = new Intent(getActivity(), MainActivity.class);       // open MainActivity
+                Intent toMain = new Intent(getActivity(), LoginActivity.class);
 
                 startActivity(toMain);
             }
         });
-        return  rootView;
+
+        mAuth = FirebaseAuth.getInstance();
+
+        camera = rootView.findViewById(R.id.cameraImage);
+        username = rootView.findViewById(R.id.usernameBox);
+        progressBar = rootView.findViewById(R.id.progressBar);
+
+        camera.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                showImageChooser();
+            }
+        });
+
+        loadUserInformation();
+
+        rootView.findViewById(R.id.button_save).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveUserInformation();
+            }
+        });
+
+        return rootView;
 
     }
 
+    private void loadUserInformation() {
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if (user != null) {
+            if (user.getPhotoUrl() != null) {
+                RequestOptions options = new RequestOptions();
+                Glide.with(camera)
+                        .load(user.getPhotoUrl().toString())
+                        .apply(options.circleCrop())
+                        .into(camera);
+            }
+
+            if (user.getDisplayName() != null) {
+                username.setText(user.getDisplayName());
+            }
+        }
+    }
+
+    private void saveUserInformation() {
+        String displayName = username.getText().toString();
+
+        if(displayName.isEmpty()) {
+            username.setError("Name required");
+            username.requestFocus();
+            return;
+
+        }
+
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        if (user != null && profileImageUrl != null) {
+            UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
+                    .setDisplayName(displayName)
+                    .setPhotoUri(Uri.parse(profileImageUrl)).build();
+
+            user.updateProfile(profile).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == CHOOSE_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
+            uriProfileImage = data.getData();
+
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(Objects.requireNonNull(getActivity()).getContentResolver(), uriProfileImage);
+                camera.setImageBitmap(bitmap);
+
+                uploadImageToFireBaseStorage();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void uploadImageToFireBaseStorage() {
+
+        final StorageReference profileImageRef = FirebaseStorage.getInstance().getReference("profileimages/" + System.currentTimeMillis() + ".jpg");
+
+        if (uriProfileImage != null) {
+            progressBar.setVisibility(View.VISIBLE);
+
+            profileImageRef.putFile(uriProfileImage)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            progressBar.setVisibility(View.GONE);
+
+                            profileImageRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+                                    profileImageUrl = task.getResult().toString();
+                                    Log.i("URL",profileImageUrl);
+                                }
+                            });
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            progressBar.setVisibility(View.GONE);
+                            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+    }
+
+    private void showImageChooser() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Choose profile picture"), CHOOSE_IMAGE);
+    }
 
 }

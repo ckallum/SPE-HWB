@@ -11,23 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Fragments.VenuesFragment"></activity>
-        <activity android:name=".Fragments.ProfileFragment"></activity>
 
-        <activity android:name=".Activity.ForgotPassActivity" />
-        <activity android:name=".Activity.MainActivity">
+        <activity
+            android:name="com.example.healthproject.Activity.LoginActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Activity.RegisterActivity"
-            android:parentActivityName=".Activity.MainActivity" />
-        <activity
-            android:name=".Activity.NavigationActivity"
-            android:parentActivityName=".Activity.MainActivity" />
+        <activity android:name=".Activity.ForgotActivity" />
+        <activity android:name=".Activity.RegisterActivity"/>
+        <activity android:name=".Activity.MainActivity"/>
+        <activity android:name=".Activity.Navigation.UserNavigationActivity"/>
+        <activity android:name=".Activity.Navigation.AdminNavigationActivity"/>
     </application>
 
 </manifest>

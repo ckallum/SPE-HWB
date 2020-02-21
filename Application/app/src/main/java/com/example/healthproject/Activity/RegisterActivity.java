@@ -1,202 +1,140 @@
 package com.example.healthproject.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
-import android.widget.*;
+import android.view.inputmethod.EditorInfo;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthproject.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import com.example.healthproject.View.FirebaseAuthResult;
+import com.example.healthproject.View.FormState;
+import com.example.healthproject.View.UserView;
+import com.example.healthproject.View.ViewModelController;
+import com.example.healthproject.View.ViewModelFactory;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText username, password, email,password2;
-    FirebaseAuth mAuth;
-
-    private FirebaseAuth.AuthStateListener mAuthS;
-
-   //
-
-
+    private ViewModelController registerViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        TextView signInText = findViewById(R.id.signInLink);
-        username = (EditText)findViewById(R.id.et_username);
-        email = (EditText)findViewById(R.id.et_email);
-        password = (EditText)findViewById(R.id.et_password);
-        password2 = (EditText)findViewById(R.id.et_password2);
-
-
-        mAuth = FirebaseAuth.getInstance();
-
-
-//        signInText.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//
-//                }
-//            }
-//        );
-
-
-
+        final EditText emailEditText = findViewById(R.id.et_email);
+        final EditText passwordEditText = findViewById(R.id.et_password);
+        final EditText password2 = findViewById(R.id.et_password2);
+        final Button registerButton = findViewById(R.id.registerButton);
+        final TextView signInText = findViewById(R.id.signInLink);
+        registerViewModel = ViewModelProviders.of(this, new ViewModelFactory()).get(ViewModelController.class);
         signInText.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
-                                              Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                              Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                                               startActivity(intent);
 
                                           }
                                       }
         );
-
-
-
-    }
-
-    public void onRegister(View view) {                 //once register button is pressed
-        final String str_username = username.getText().toString();
-        final String str_password = password.getText().toString();
-        final String str_email = email.getText().toString();
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");
-
-        //String str_retypepass = passReenter.getText().toString();
-        String type = "signup";
-
-
-        if (str_username.isEmpty()){
-            username.setError("Please enter a username");
-            username.requestFocus();
-        }else if (str_email.isEmpty()) {                    //check each text field
-            email.setError("Please enter an email");
-            email.requestFocus();
-        } else if (str_password.isEmpty()) {
-            password.setError("Please enter a password");
-            password.requestFocus();
-        }else if (str_email.isEmpty() && str_password.isEmpty() && str_username.isEmpty()){
-            Toast.makeText(RegisterActivity.this, "Fields are empty", Toast.LENGTH_SHORT).show();
-        }else if(str_password.length() < 6) {
-            Toast.makeText(RegisterActivity.this, "Password is too short ", Toast.LENGTH_SHORT).show();
-        }else if(!(isValidPassword(str_password))) {
-            Toast.makeText(RegisterActivity.this, "Please use a combo symbols/numbers", Toast.LENGTH_SHORT).show();
-
-        }else if(!(str_password.equals(password2.getText().toString()))){
-            Toast.makeText(RegisterActivity.this, "Passwords don't match", Toast.LENGTH_SHORT).show();
-
-        } else if (!(str_email.isEmpty()) && !(str_password.isEmpty()) && !(str_username.isEmpty()) && str_password.equals(password2.getText().toString())) {
-
-            ref.orderByChild("username").equalTo(str_username).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if(dataSnapshot.exists()){
-                        Toast.makeText(RegisterActivity.this, "Username taken ", Toast.LENGTH_SHORT).show();
-                    }
-
-                    else{
-
-                        mAuth.createUserWithEmailAndPassword(str_email, str_password).addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (!task.isSuccessful()) {
-                                    Toast.makeText(RegisterActivity.this, "Sign up failed,Please try again", Toast.LENGTH_SHORT).show();
-
-                                } else {
-
-
-                                    User user = new User(str_username,str_email,false);
-
-                                    user.getEmail();
-                                    user.getUsername();
-                                    user.getIsAdmin();
-
-                                    FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-
-
-                                        @Override
-                                        public void onComplete(@NonNull Task<Void> task) {
-
-
-                                            if (task.isSuccessful()) {
-                                                Toast.makeText(RegisterActivity.this, "User Added", Toast.LENGTH_SHORT).show();
-
-
-                                            }
-                                            else {
-                                                Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-                                            }
-                                        }
-
-                                    });
-
-
-
-                                    //   current_user_db.child("users").child(user_id).setValue(newPost);
-
-                                    //Toast.makeText(RegisterActivity.this, "Account created", Toast.LENGTH_SHORT).show();
-                                    //startActivity(new Intent(RegisterActivity.this, NavigationActivity.class));
-                                }
-
-                            }
-                        });
-
-                    }
+        registerViewModel.getFormState().observe(this, new Observer<
+                FormState>() {
+            @Override
+            public void onChanged(@Nullable FormState registerFormState) {
+                if (registerFormState == null) {
+                    return;
                 }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
+                registerButton.setEnabled(registerFormState.isDataValid());
+                if (registerFormState.getEmailError() != null) {
+                    emailEditText.setError(getString(registerFormState.getEmailError()));
+                }
+                if (registerFormState.getPasswordError() != null) {
+                    passwordEditText.setError(getString(registerFormState.getPasswordError()));
+                }
+            }
+        });
+        registerViewModel.getAuthResult().observe(this, new Observer<FirebaseAuthResult>() {
+            @Override
+            public void onChanged(@Nullable FirebaseAuthResult registerResult) {
+                if (registerResult == null) {
+                    return;
+                }
+                if (registerResult.getError() != null) {
+                    showRegisterFailed(registerResult.getError());
+                }
+                if (registerResult.getSuccess() != null) {
+                    userRegistered(registerResult.getSuccess());
 
                 }
-            });
+                setResult(Activity.RESULT_OK);
 
+//                Complete and destroy forgot activity once successful
+                finish();
+            }
+        });
+        TextWatcher afterTextChangedListener = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // ignore
+            }
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // ignore
+            }
 
+            @Override
+            public void afterTextChanged(Editable s) {
+                registerViewModel.registerDataChanged(emailEditText.getText().toString(),
+                        passwordEditText.getText().toString(), password2.getText().toString());
+            }
+        };
+        emailEditText.addTextChangedListener(afterTextChangedListener);
+        passwordEditText.addTextChangedListener(afterTextChangedListener);
+        passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
 
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    registerViewModel.register(emailEditText.getText().toString(),
+                            passwordEditText.getText().toString());
+                }
+                return false;
+            }
+        });
 
-
-        } else {
-            Toast.makeText(RegisterActivity.this, "Please fill all boxes", Toast.LENGTH_SHORT).show();
-        }
-
-
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registerViewModel.register(emailEditText.getText().toString(),
+                        passwordEditText.getText().toString());
+            }
+        });
     }
 
-
-    public static boolean isValidPassword(final String password) {     //password validation
-
-        Pattern pattern;
-        Matcher matcher;
-        final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$";
-        pattern = Pattern.compile(PASSWORD_PATTERN);
-        matcher = pattern.matcher(password);
-
-        return matcher.matches();
-
+    private void userRegistered(UserView success) {
+        Toast.makeText(RegisterActivity.this, "User Added", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
     }
 
-
-
+    private void showRegisterFailed(@StringRes Integer errorString) {
+        Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+    }
 }
-
 
 
