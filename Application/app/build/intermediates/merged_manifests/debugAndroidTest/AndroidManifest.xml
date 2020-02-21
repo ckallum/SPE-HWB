@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.healthproject_beta.test" >
+    package="com.spe.app.test" >
 
     <uses-sdk
-        android:minSdkVersion="16"
+        android:minSdkVersion="29"
         android:targetSdkVersion="29" />
 
     <instrumentation
         android:name="androidx.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for com.example.healthproject_beta"
-        android:targetPackage="com.example.healthproject_beta" />
+        android:label="Tests for com.spe.app"
+        android:targetPackage="com.spe.app" />
 
     <uses-permission android:name="android.permission.REORDER_TASKS" />
 
