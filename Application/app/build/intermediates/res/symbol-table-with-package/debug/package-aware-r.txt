@@ -1212,7 +1212,6 @@ id activity_chooser_view_content
 id add
 id adjust_height
 id adjust_width
-id ageBox
 id alertTitle
 id all
 id always
@@ -1303,6 +1302,7 @@ id left
 id light
 id line1
 id line3
+id linearLayout
 id linearLayout2
 id listMode
 id list_item
@@ -1318,7 +1318,6 @@ id multiply
 id nav_controller_view_tag
 id navigation_header_container
 id never
-id newPasswordBox
 id none
 id normal
 id notification_background
@@ -1333,7 +1332,6 @@ id parent
 id parentPanel
 id parent_matrix
 id password
-id passwordBox
 id percent
 id pin
 id profile
@@ -1508,6 +1506,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_admin_events
 layout fragment_booking
 layout fragment_events
 layout fragment_home

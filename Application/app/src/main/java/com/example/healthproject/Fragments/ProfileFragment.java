@@ -48,8 +48,8 @@ public class ProfileFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_profile,container,false);
 
         final EditText emailText = rootView.findViewById(R.id.emailBox);     //rootView looks at what's on the fragment, not the navigation activity
-        final EditText passwordText = rootView.findViewById(R.id.password);
-        final EditText newPasswordText = rootView.findViewById(R.id.newPasswordBox);
+        //final EditText passwordText = rootView.findViewById(R.id.password);
+       // final EditText newPasswordText = rootView.findViewById(R.id.newPasswordBox);
         final Button updateBtn = rootView.findViewById(R.id.updateButton);
         final EditText usernameBox = rootView.findViewById(R.id.usernameBox);
 
@@ -126,7 +126,7 @@ public class ProfileFragment extends Fragment {
 
 
 
-        updateBtn.setOnClickListener(new View.OnClickListener() {
+       /* updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -141,7 +141,7 @@ public class ProfileFragment extends Fragment {
                         });
 
             }
-        });
+        });    */
 
 
 
