@@ -1303,6 +1303,7 @@ id left
 id light
 id line1
 id line3
+id linearLayout
 id linearLayout2
 id listMode
 id list_item
@@ -1508,6 +1509,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout fragment_admin_events
 layout fragment_booking
 layout fragment_events
 layout fragment_home
