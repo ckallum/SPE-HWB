@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         } else if (password.isEmpty()) {
             PasswordET.setError("Please enter a password");
             PasswordET.requestFocus();
-        } else if (username.isEmpty() && username.isEmpty()) {
+        } else if (username.isEmpty() && password.isEmpty()) {
             Toast.makeText(MainActivity.this, "Fields are empty", Toast.LENGTH_SHORT).show();
         } else if (!(username.isEmpty()) && !(password.isEmpty())) {
             mAuth.signInWithEmailAndPassword(username,password).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
