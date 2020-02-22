@@ -6,11 +6,11 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.healthproject.Data.FirebaseDataSource;
-import com.example.healthproject.Data.GlobalUser;
-import com.example.healthproject.Data.Result;
-import com.example.healthproject.Data.model.LoggedInUser;
-import com.example.healthproject.Data.model.UserUpdateModel;
+import com.example.healthproject.Model.FirebaseDataSource;
+import com.example.healthproject.Model.GlobalUser;
+import com.example.healthproject.Model.Result;
+import com.example.healthproject.Model.dto.LoggedInUser;
+import com.example.healthproject.Model.dto.UserUpdateModel;
 import com.example.healthproject.R;
 
 

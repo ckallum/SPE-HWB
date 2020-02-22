@@ -19,8 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.healthproject.Data.FirebaseDataSource;
-import com.example.healthproject.Data.GlobalUser;
+import com.example.healthproject.Model.FirebaseDataSource;
+import com.example.healthproject.Model.GlobalUser;
 import com.example.healthproject.R;
 import com.example.healthproject.View.FirebaseAuthResult;
 import com.example.healthproject.View.FormState;
@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                 setResult(Activity.RESULT_OK);
 
                 //Complete and destroy forgot activity once successful
-//                finish();
+                finish();
             }
         });
 

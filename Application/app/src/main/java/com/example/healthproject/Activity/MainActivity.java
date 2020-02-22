@@ -6,8 +6,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthproject.Activity.Navigation.UserNavigationActivity;
-import com.example.healthproject.Data.FirebaseDataSource;
-import com.example.healthproject.Data.GlobalUser;
+import com.example.healthproject.Model.FirebaseDataSource;
+import com.example.healthproject.Model.GlobalUser;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
         if (!user.isLoggedIn()){
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
             finish();
         }
-
     }
 
     @Override

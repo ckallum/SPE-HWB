@@ -4,8 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.healthproject.Data.FirebaseDataSource;
-import com.example.healthproject.Data.GlobalUser;
+import com.example.healthproject.Model.FirebaseDataSource;
+import com.example.healthproject.Model.GlobalUser;
 public class ViewModelFactory implements ViewModelProvider.Factory {
 
     /**
