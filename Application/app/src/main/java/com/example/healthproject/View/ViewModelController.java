@@ -18,11 +18,10 @@ public class ViewModelController extends ViewModel {
 
     private MutableLiveData<FormState> formState = new MutableLiveData<>();
     private MutableLiveData<FirebaseAuthResult> authResult = new MutableLiveData<>();
-    private GlobalUser globalUser;
-    private FirebaseDataSource data;
+    private GlobalUser user;
 
-    public ViewModelController(GlobalUser globalUser) {
-        this.globalUser = globalUser;
+    public ViewModelController(GlobalUser user) {
+        this.user = user;
     }
 
     public LiveData<FormState> getFormState() {
@@ -35,7 +34,7 @@ public class ViewModelController extends ViewModel {
 
     public void login(String username, String password) {
         // can be launched in a separate asynchronous job
-        Result<LoggedInUser> result = globalUser.login(username, password);
+        Result<LoggedInUser> result = user.login(username, password);
 
         if (result instanceof Result.Success) {
             LoggedInUser data = ((Result.Success<LoggedInUser>) result).getData();
@@ -48,7 +47,7 @@ public class ViewModelController extends ViewModel {
     public void register(String email, String password) {
         // can be launched in a separate asynchronous job
 
-        Result<UserUpdateModel> result = data.register(email, password);
+        Result<UserUpdateModel> result = user.register(email, password);
         if (result instanceof Result.Success) {
             authResult.setValue(new FirebaseAuthResult(new UserView(((Result.Success) result).getData().toString())));
         } else {
@@ -59,7 +58,7 @@ public class ViewModelController extends ViewModel {
     public void forgot(String email) {
         // can be launched in a separate asynchronous job
 
-        Result<UserUpdateModel> result = data.forgot(email);
+        Result<UserUpdateModel> result = user.forgot(email);
         if (result instanceof Result.Success) {
             authResult.setValue(new FirebaseAuthResult(new UserView(((Result.Success) result).getData().toString())));
 
@@ -103,7 +102,7 @@ public class ViewModelController extends ViewModel {
     public void forgotDataChanged(String email) {
         if (!isUserNameValid(email)) {
             formState.setValue(new FormState(R.string.fui_invalid_email_address));
-        }else{
+        } else {
             formState.setValue(new FormState(true));
         }
     }

@@ -31,7 +31,7 @@ import com.example.healthproject.View.ViewModelFactory;
 public class LoginActivity extends AppCompatActivity {
 
     private ViewModelController loginViewModel;
-    GlobalUser repo;
+    GlobalUser user;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,12 +39,16 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         loginViewModel = ViewModelProviders.of(this, new ViewModelFactory())
                 .get(ViewModelController.class);
-        repo = GlobalUser.getInstance(new FirebaseDataSource());
+        user = GlobalUser.getInstance(new FirebaseDataSource());
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
         final TextView signUpText = findViewById(R.id.signUpLink);
         final TextView forgotPassText = findViewById(R.id.forgotPassLink);
+        if (user.isLoggedIn()) {
+            updateUiWithUser(new UserView(user.getDisplayName()));
+
+        }
 
 
 
@@ -127,7 +131,6 @@ public class LoginActivity extends AppCompatActivity {
                                           public void onClick(View v) {
                                               Intent i = new Intent(v.getContext(), RegisterActivity.class);
                                               startActivity(i);
-//                                              finish();
 
                                           }
                                       }
@@ -141,19 +144,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-    @Override
-    public void onStart(){
-        super.onStart();
-        if (repo.isLoggedIn()) {
-            updateUiWithUser(new UserView(repo.getDisplayName()));
-        }
-    }
 
     private void updateUiWithUser(UserView model) {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         Intent toHome = new Intent(this, MainActivity.class);
         startActivity(toHome);
+        finish();
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {

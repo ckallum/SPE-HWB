@@ -46,7 +46,7 @@ public class ForgotActivity extends AppCompatActivity {
                                           public void onClick(View v) {
                                               Intent intent = new Intent(ForgotActivity.this, LoginActivity.class);
                                               startActivity(intent);
-
+                                              finish();
                                           }
                                       }
         );

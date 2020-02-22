@@ -2,9 +2,11 @@ package com.example.healthproject.Model;
 
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
 import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.Model.dto.LoggedInUser;
+import com.example.healthproject.Model.dto.UserUpdateModel;
 
 
 /**
@@ -54,14 +56,13 @@ public class GlobalUser {
         // @see https://developer.android.com/training/articles/keystore
     }
 
-    public String getDisplayName(){
+    public String getDisplayName() {
         return user.getDisplayName();
     }
 
 
-
-    public boolean isAdmin(){
-        return user.isAdmin();
+    public boolean isAdmin() {
+        return user != null && user.isAdmin();
     }
 
     public Result<LoggedInUser> login(String username, String password) {
@@ -69,7 +70,27 @@ public class GlobalUser {
         Result<LoggedInUser> result = dataSource.login(username, password);
         if (result instanceof Result.Success) {
             setLoggedInUser(((Result.Success<LoggedInUser>) result).getData());
+        }else{
+            Toast.makeText(context.getApplicationContext(), "Login Error", Toast.LENGTH_SHORT).show();
         }
         return result;
     }
+
+    public Result<UserUpdateModel> register(String email ,String password){
+        Result<UserUpdateModel> result = dataSource.register(email, password);
+        if (result instanceof Result.Error) {
+            Toast.makeText(context.getApplicationContext(), "Register Error", Toast.LENGTH_SHORT).show();
+        }
+        return result;
+    }
+
+    public Result<UserUpdateModel> forgot(String email){
+
+            Result<UserUpdateModel> result = dataSource.forgot(email);
+            if (result instanceof Result.Error) {
+                Toast.makeText(context.getApplicationContext(), "Forgot Pass Error", Toast.LENGTH_SHORT).show();
+            }
+            return result;
+    }
+
 }
