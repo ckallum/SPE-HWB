@@ -16,3 +16,4 @@
  - step tracking,resgitering for events when in close proximity 
  - intramural 
  - app name: UoB Active
+ - Share
