@@ -18,3 +18,4 @@
  - app name: UoB Active
  - Share to Social Media
  - User profile descriptions/bio/Social media links/@'s
+ - Request Event for Clubs and Societies.
