@@ -1,5 +1,7 @@
 package com.example.healthproject.Fragments;
 
+import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.healthproject.R;
 
@@ -36,7 +39,11 @@ public class VenuesFragment extends Fragment {
         indoor.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(rootView.getContext(), "indoor", Toast.LENGTH_SHORT).show();
+                Fragment someFragment = new IndoorFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(((ViewGroup)getView().getParent()).getId(), someFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
             }
         });
 
