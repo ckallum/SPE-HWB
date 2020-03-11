@@ -43,7 +43,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Indoor Sports Center"
+            android:text="Indoor Sports Centre"
             android:textColor="#FFFFFF"
             android:gravity="center"
             android:textSize="23sp"/>
