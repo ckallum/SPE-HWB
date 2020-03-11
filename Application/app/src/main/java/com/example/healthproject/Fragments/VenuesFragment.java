@@ -63,4 +63,6 @@ public class VenuesFragment extends Fragment {
 
         return rootView;
     }
+
+
 }

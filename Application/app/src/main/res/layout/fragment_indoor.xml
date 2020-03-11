@@ -8,7 +8,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="25dp">
 
         <ImageView
             android:id="@+id/back"
@@ -51,11 +52,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/blackout_1"
                     android:foregroundTint="@color/colorPrimary"
-                    android:text="Contact Information"
+                    android:text="Contact Info"
                     android:textColor="#A2A1A3"
                     android:textSize="14sp" />
 
@@ -64,7 +65,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:paddingBottom="10dp"
                     app:srcCompat="@drawable/contact" />
 
@@ -73,8 +74,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginStart="67dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="14dp"
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical">
@@ -129,7 +130,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/blackout_1"
                     android:foregroundTint="@color/colorPrimary"
@@ -142,7 +143,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:paddingBottom="10dp"
                     app:srcCompat="@drawable/time" />
 
@@ -151,8 +152,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="37dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginStart="51dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="14dp"
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical">
@@ -219,7 +220,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/blackout_1"
                     android:foregroundTint="@color/colorPrimary"
@@ -232,7 +233,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_weight="1"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:paddingBottom="10dp"
                     app:srcCompat="@drawable/location" />
 
@@ -241,8 +242,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="77dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginStart="92dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="14dp"
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical">
@@ -291,11 +292,23 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/blackout_1"
+                    android:foregroundTint="@color/colorPrimary"
+                    android:text="Facilities"
+                    android:textColor="#444444"
+                    android:textSize="16sp"
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -353,6 +366,7 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:paddingBottom="10dp"
+                    android:layout_marginStart="10dp"
                     app:srcCompat="@drawable/map" />
 
                 <ImageView
