@@ -15,4 +15,11 @@
  - user journey, access users account information, i.e. check how far a user has come, events they've visited etc.
  - step tracking,resgitering for events when in close proximity 
  - intramural 
- - app name: UoB Active
+ - app name: UoB:Active
+ ----------------------------------------------------
+ 
+ 26/02/2020
+ - Share to Social Media
+ - User profile descriptions/bio/Social media links/@'s
+ - Clubs and Societies tier -> can request event creation -> channels to communicate with UoB Admins->Admins can promote.
+ - 
