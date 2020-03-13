@@ -10,13 +10,13 @@ import java.io.IOException;
  * Class that handles authentication with Firebase w/ forgot credentials and retrieves user information.
  */
 public class FirebaseDataSource {
-    FirebaseAuth auth;
+    private FirebaseAuth auth;
 
     public FirebaseDataSource() {
         this.auth = FirebaseAuth.getInstance();
     }
 
-    public Result<LoggedInUser> login(String email, String password) {
+    Result<LoggedInUser> login(String email, String password) {
 
         try {
             auth.signInWithEmailAndPassword(email, password);
@@ -29,7 +29,7 @@ public class FirebaseDataSource {
         }
     }
 
-    public Result<UserUpdateModel> register(String email, String password) {
+    Result<UserUpdateModel> register(String email, String password) {
 
         try {
             auth.createUserWithEmailAndPassword(email, password);
@@ -40,7 +40,7 @@ public class FirebaseDataSource {
         }
     }
 
-    public Result<UserUpdateModel> forgot(String email) {
+    Result<UserUpdateModel> forgot(String email) {
         try {
             auth.sendPasswordResetEmail(email);
             UserUpdateModel reg = new UserUpdateModel();
@@ -50,7 +50,7 @@ public class FirebaseDataSource {
         }
     }
 
-    public void logout() {
+    void logout() {
         FirebaseAuth.getInstance().signOut();
     }
 
