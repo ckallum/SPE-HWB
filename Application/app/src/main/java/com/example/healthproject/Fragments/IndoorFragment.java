@@ -5,6 +5,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,6 +36,12 @@ public class IndoorFragment extends Fragment {
         backArrow.setClickable(true);
         map.setClickable(true);
 
+        // Create a Uri from an intent string. Use the result to create an Intent.
+        Uri gmmIntentUri = Uri.parse("geo:51.459199, -2.603105?q=indoor+sports+centre");
+        final Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+
+
         backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +56,8 @@ public class IndoorFragment extends Fragment {
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openApp(getActivity(), "com.google.android.gms.maps");
+//                openApp(getActivity(), "com.google.android.apps.maps");
+                startActivity(mapIntent);
             }
         });
 
