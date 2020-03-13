@@ -37,7 +37,7 @@ public class IndoorFragment extends Fragment {
         map.setClickable(true);
 
         // Create a Uri from an intent string. Use the result to create an Intent.
-        Uri gmmIntentUri = Uri.parse("geo:51.459199, -2.603105?q=indoor+sports+centre");
+        Uri gmmIntentUri = Uri.parse("geo:51.459199, -2.603105?q= Tyndall Avenue, University+of+Bristol+Indoor+Sports+Centre, Bristol");
         final Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
 
