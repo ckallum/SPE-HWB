@@ -71,7 +71,7 @@ public class GlobalUser {
         if (result instanceof Result.Success) {
             setLoggedInUser(((Result.Success<LoggedInUser>) result).getData());
         }else{
-            Toast.makeText(context.getApplicationContext(), "Login Error", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context.getApplicationContext(), "Login Error", Toast.LENGTH_SHORT).show();
         }
         return result;
     }
@@ -79,7 +79,7 @@ public class GlobalUser {
     public Result<UserUpdateModel> register(String email ,String password){
         Result<UserUpdateModel> result = dataSource.register(email, password);
         if (result instanceof Result.Error) {
-            Toast.makeText(context.getApplicationContext(), "Register Error", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(context.getApplicationContext(), "Register Error", Toast.LENGTH_SHORT).show();
         }
         return result;
     }
@@ -88,7 +88,7 @@ public class GlobalUser {
 
             Result<UserUpdateModel> result = dataSource.forgot(email);
             if (result instanceof Result.Error) {
-                Toast.makeText(context.getApplicationContext(), "Forgot Pass Error", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(context.getApplicationContext(), "Forgot Pass Error", Toast.LENGTH_SHORT).show();
             }
             return result;
     }
