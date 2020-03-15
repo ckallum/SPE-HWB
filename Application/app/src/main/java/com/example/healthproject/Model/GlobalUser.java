@@ -3,7 +3,6 @@ package com.example.healthproject.Model;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
 import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.Model.dto.User;
@@ -70,7 +69,7 @@ public class GlobalUser {
         if (result instanceof Result.Success) {
             setLoggedInUser(((Result.Success<User>) result).getData());
         }else{
-            Toast.makeText(context.getApplicationContext(), "Login Error", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context.getApplicationContext(), "Login Error", Toast.LENGTH_SHORT).show();
         }
         return result;
     }
@@ -78,7 +77,7 @@ public class GlobalUser {
     public Result<UserUpdateModel> register(String email ,String password){
         Result<UserUpdateModel> result = dataSource.register(email, password);
         if (result instanceof Result.Error) {
-            Toast.makeText(context.getApplicationContext(), "Register Error", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(context.getApplicationContext(), "Register Error", Toast.LENGTH_SHORT).show();
         }
         return result;
     }
@@ -87,7 +86,7 @@ public class GlobalUser {
 
             Result<UserUpdateModel> result = dataSource.forgot(email);
             if (result instanceof Result.Error) {
-                Toast.makeText(context.getApplicationContext(), "Forgot Pass Error", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context.getApplicationContext(), "Forgot Pass Error", Toast.LENGTH_SHORT).show();
             }
             return result;
     }
