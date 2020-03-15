@@ -58,11 +58,11 @@ public class FirebaseDataSource {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d("Success", "signInWithEmail:success");
+                    Log.d("Success", "registerEmail:success");
                     setResult(true);
                 } else {
                     // If sign in fails, display a message to the user.
-                    Log.w("Fail", "signInWithEmail:failure", task.getException());
+                    Log.w("Fail", "registerEmail:failure", task.getException());
                     setResult(false);
                 }
 
@@ -84,11 +84,11 @@ public class FirebaseDataSource {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d("Success", "signInWithEmail:success");
+                    Log.d("Success", "forgotEmail:success");
                     setResult(true);
                 } else {
                     // If sign in fails, display a message to the user.
-                    Log.w("Fail", "signInWithEmail:failure", task.getException());
+                    Log.w("Fail", "forgotEmail:failure", task.getException());
                     setResult(false);
 
                 }
@@ -108,7 +108,7 @@ public class FirebaseDataSource {
         try {
             FirebaseAuth.getInstance().signOut();
         } catch (Exception e) {
-            Log.w("Logout Fail", "signInWithEmail:failure", e);
+            Log.w("Logout Fail", "logout:failure", e);
         }
     }
     private void setResult(boolean result){

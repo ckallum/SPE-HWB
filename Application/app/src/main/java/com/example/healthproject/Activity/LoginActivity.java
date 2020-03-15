@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         final TextView forgotPassText = findViewById(R.id.forgotPassLink);
         if (user.isLoggedIn()) {
             updateUiWithUser(new UserView(user.getDisplayName()));
-
+            finish();
         }
 
 
