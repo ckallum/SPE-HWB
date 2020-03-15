@@ -10,23 +10,32 @@ import androidx.fragment.app.Fragment;
 import com.example.healthproject.Fragments.BookingsFragment;
 import com.example.healthproject.Fragments.EventsFragment;
 import com.example.healthproject.Fragments.HomeFragment;
+import com.example.healthproject.Fragments.ManageFragment;
 import com.example.healthproject.Fragments.ProfileFragment;
 import com.example.healthproject.Fragments.VenuesFragment;
+import com.example.healthproject.Model.FirebaseDataSource;
+import com.example.healthproject.Model.GlobalUser;
 import com.example.healthproject.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class AdminNavigationActivity extends AppCompatActivity {
+public class NavigationActivity extends AppCompatActivity {
 
 
     BottomNavigationView bottomNav;
+    GlobalUser user;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        user = GlobalUser.getInstance(new FirebaseDataSource());
 
-        setContentView(R.layout.activity_user);
-        bottomNav = findViewById(R.id.user_navbar);
+        setContentView(R.layout.activity_main);
+        if (user.isAdmin()){
+            bottomNav = findViewById(R.id.admin_navbar);
+        }else{
+            bottomNav = findViewById(R.id.user_navbar);
+        }
 
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
@@ -56,7 +65,12 @@ public class AdminNavigationActivity extends AppCompatActivity {
                         case R.id.profile:
                             selectedFragment = new ProfileFragment();
                             break;
-
+                        case R.id.manage:
+                            selectedFragment = new ManageFragment();
+                            break;
+//                        case R.id.create:
+//                            selectedFragment = new CreateEventFragment();
+//                            break;
 
                     }
 

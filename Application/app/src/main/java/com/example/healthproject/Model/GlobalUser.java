@@ -2,10 +2,9 @@ package com.example.healthproject.Model;
 
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
 import com.example.healthproject.Activity.LoginActivity;
-import com.example.healthproject.Model.dto.LoggedInUser;
+import com.example.healthproject.Model.dto.User;
 import com.example.healthproject.Model.dto.UserUpdateModel;
 
 
@@ -19,7 +18,7 @@ public class GlobalUser {
 
     private FirebaseDataSource dataSource;
     private Context context;
-    private LoggedInUser user = null;
+    private User user = null;
 
     // If user credentials will be cached in local storage, it is recommended it be encrypted
     // @see https://developer.android.com/training/articles/keystore
@@ -50,7 +49,7 @@ public class GlobalUser {
         context.startActivity(i);
     }
 
-    private void setLoggedInUser(LoggedInUser user) {
+    private void setLoggedInUser(User user) {
         this.user = user;
         // If user credentials will be cached in local storage, it is recommended it be encrypted
         // @see https://developer.android.com/training/articles/keystore
@@ -65,11 +64,11 @@ public class GlobalUser {
         return user != null && user.isAdmin();
     }
 
-    public Result<LoggedInUser> login(String username, String password) {
+    public Result<User> login(String username, String password) {
         // handle forgot
-        Result<LoggedInUser> result = dataSource.login(username, password);
+        Result<User> result = dataSource.login(username, password);
         if (result instanceof Result.Success) {
-            setLoggedInUser(((Result.Success<LoggedInUser>) result).getData());
+            setLoggedInUser(((Result.Success<User>) result).getData());
         }else{
 //            Toast.makeText(context.getApplicationContext(), "Login Error", Toast.LENGTH_SHORT).show();
         }

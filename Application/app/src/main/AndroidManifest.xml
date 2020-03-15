@@ -24,8 +24,7 @@
         <activity android:name=".Activity.ForgotActivity" />
         <activity android:name=".Activity.RegisterActivity"/>
         <activity android:name=".Activity.MainActivity"/>
-        <activity android:name=".Activity.Navigation.UserNavigationActivity"/>
-        <activity android:name=".Activity.Navigation.AdminNavigationActivity"/>
+        <activity android:name=".Activity.Navigation.NavigationActivity"/>
     </application>
 
 </manifest>

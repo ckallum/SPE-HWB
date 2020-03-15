@@ -6,10 +6,9 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.healthproject.Model.FirebaseDataSource;
 import com.example.healthproject.Model.GlobalUser;
 import com.example.healthproject.Model.Result;
-import com.example.healthproject.Model.dto.LoggedInUser;
+import com.example.healthproject.Model.dto.User;
 import com.example.healthproject.Model.dto.UserUpdateModel;
 import com.example.healthproject.R;
 
@@ -34,10 +33,10 @@ public class ViewModelController extends ViewModel {
 
     public void login(String username, String password) {
         // can be launched in a separate asynchronous job
-        Result<LoggedInUser> result = user.login(username, password);
+        Result<User> result = user.login(username, password);
 
         if (result instanceof Result.Success) {
-            LoggedInUser data = ((Result.Success<LoggedInUser>) result).getData();
+            User data = ((Result.Success<User>) result).getData();
             authResult.setValue(new FirebaseAuthResult(new UserView(data.getDisplayName())));
         } else {
             authResult.setValue(new FirebaseAuthResult(R.string.login_failed));

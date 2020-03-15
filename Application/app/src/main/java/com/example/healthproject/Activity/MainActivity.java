@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.healthproject.Activity.Navigation.UserNavigationActivity;
+import com.example.healthproject.Activity.Navigation.NavigationActivity;
 import com.example.healthproject.Model.FirebaseDataSource;
 import com.example.healthproject.Model.GlobalUser;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
-        startActivity(new Intent(MainActivity.this, UserNavigationActivity.class));
+        startActivity(new Intent(MainActivity.this, NavigationActivity.class));
 //
 //        if (user.isAdmin()){
 //            startActivity(new Intent(MainActivity.this, UserNavigationActivity.class));

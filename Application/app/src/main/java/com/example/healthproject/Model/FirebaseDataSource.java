@@ -1,6 +1,6 @@
 package com.example.healthproject.Model;
 
-import com.example.healthproject.Model.dto.LoggedInUser;
+import com.example.healthproject.Model.dto.User;
 import com.example.healthproject.Model.dto.UserUpdateModel;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -16,12 +16,12 @@ public class FirebaseDataSource {
         this.auth = FirebaseAuth.getInstance();
     }
 
-    Result<LoggedInUser> login(String email, String password) {
+    Result<User> login(String email, String password) {
 
         try {
             auth.signInWithEmailAndPassword(email, password);
-            LoggedInUser fakeUser =
-                    new LoggedInUser(
+            User fakeUser =
+                    new User(
                             auth.getCurrentUser());
             return new Result.Success<>(fakeUser);
         } catch (Exception e) {
