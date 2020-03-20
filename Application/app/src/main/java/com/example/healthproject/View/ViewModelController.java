@@ -63,7 +63,7 @@ public class ViewModelController extends ViewModel {
             authResult.setValue(new FirebaseAuthResult(new UserView(((Result.Success) result).getData().toString())));
 
         } else {
-            authResult.setValue(new FirebaseAuthResult(R.string.login_failed));
+            authResult.setValue(new FirebaseAuthResult(R.string.invalid_email));
         }
     }
 

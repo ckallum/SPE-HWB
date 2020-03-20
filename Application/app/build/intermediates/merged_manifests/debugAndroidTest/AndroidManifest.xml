@@ -3,7 +3,7 @@
     package="com.example.healthproject_beta.test" >
 
     <uses-sdk
-        android:minSdkVersion="29"
+        android:minSdkVersion="16"
         android:targetSdkVersion="29" />
 
     <instrumentation

@@ -149,14 +149,14 @@ public final class R {
         public static final int light = 0x7f0900d0;
         public static final int line1 = 0x7f0900d1;
         public static final int line3 = 0x7f0900d2;
-        public static final int none = 0x7f090112;
-        public static final int normal = 0x7f090113;
-        public static final int notification_background = 0x7f090114;
-        public static final int notification_main_column = 0x7f090115;
-        public static final int notification_main_column_container = 0x7f090116;
-        public static final int right = 0x7f090133;
-        public static final int right_icon = 0x7f090134;
-        public static final int right_side = 0x7f090135;
+        public static final int none = 0x7f090113;
+        public static final int normal = 0x7f090114;
+        public static final int notification_background = 0x7f090115;
+        public static final int notification_main_column = 0x7f090116;
+        public static final int notification_main_column_container = 0x7f090117;
+        public static final int right = 0x7f090134;
+        public static final int right_icon = 0x7f090135;
+        public static final int right_side = 0x7f090136;
         public static final int standard = 0x7f090167;
         public static final int start = 0x7f090168;
         public static final int tag_transition_group = 0x7f090173;
@@ -206,7 +206,7 @@ public final class R {
         public static final int common_open_on_phone = 0x7f100034;
         public static final int common_signin_button_text = 0x7f100035;
         public static final int common_signin_button_text_long = 0x7f100036;
-        public static final int status_bar_notification_info_overflow = 0x7f1000d9;
+        public static final int status_bar_notification_info_overflow = 0x7f1000da;
     }
     public static final class style {
         private style() {}

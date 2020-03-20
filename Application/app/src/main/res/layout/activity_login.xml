@@ -73,7 +73,7 @@
             android:layout_marginTop="96dp"
             android:layout_marginEnd="24dp"
             android:autofillHints="@string/prompt_email"
-            android:background="@drawable/text_top"
+
             android:hint="@string/prompt_email"
             android:inputType="textEmailAddress"
             android:padding="15dp"
@@ -90,7 +90,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="24dp"
             android:autofillHints="@string/prompt_password"
-            android:background="@drawable/text_bottom"
+
             android:hint="@string/prompt_password"
             android:imeActionLabel="@string/action_sign_in_short"
             android:imeOptions="actionDone"
@@ -140,8 +140,9 @@
             android:layout_marginTop="5dp"
             android:background="@drawable/button"
             android:enabled="false"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:text="@string/action_sign_in_short"
+
+            android:text="Sign In
+"
             android:textColor="#FFFFFF"
             android:textSize="17sp" />
 
