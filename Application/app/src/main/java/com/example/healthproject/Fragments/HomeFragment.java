@@ -48,18 +48,7 @@ public class HomeFragment extends Fragment {
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("http://www.bristol.ac.uk/sport/news/");
 
-
-
-
-
         settings.setDomStorageEnabled(true);
-
-
-
-
-
-
-
 
         return v;
 
