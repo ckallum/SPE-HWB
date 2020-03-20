@@ -21,23 +21,23 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.healthproject.Activity.MainActivity;
 import com.example.healthproject.R;
 
-public class IndoorFragment extends Fragment {
+public class CoombeFragment extends Fragment {
     ImageView backArrow;
     ImageView map;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.fragment_indoor,container,false);
+        final View rootView = inflater.inflate(R.layout.fragment_coombe,container,false);
 
         backArrow = rootView.findViewById(R.id.back);
-        map = rootView.findViewById(R.id.tyndallmap);
+        map = rootView.findViewById(R.id.coombemap);
 
         backArrow.setClickable(true);
         map.setClickable(true);
 
         // Create a Uri from an intent string. Use the result to create an Intent.
-        Uri gmmIntentUri = Uri.parse("geo:51.459199, -2.603105?q= Tyndall Avenue, University+of+Bristol+Indoor+Sports+Centre, Bristol");
+        Uri gmmIntentUri = Uri.parse("geo:51.489964, -2.630744?q= Coombe Ln, Coombe+Dingle+Sports+Complex, Bristol");
         final Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
         mapIntent.setPackage("com.google.android.apps.maps");
 

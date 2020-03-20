@@ -50,7 +50,11 @@ public class VenuesFragment extends Fragment {
         coombe.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(rootView.getContext(), "coombe", Toast.LENGTH_SHORT).show();
+                Fragment someFragment = new CoombeFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(((ViewGroup)getView().getParent()).getId(), someFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to
+                transaction.commit();
             }
         });
 
