@@ -120,6 +120,10 @@
         "source": "C:\\Users\\Shahin\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
     },
     {
+        "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_coombe_location.png.flat",
+        "source": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\src\\main\\res\\drawable-v24\\coombe_location.png"
+    },
+    {
         "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\layout_fui_activity_register_phone.xml.flat",
         "source": "C:\\Users\\Shahin\\.gradle\\caches\\transforms-2\\files-2.1\\cd2ad84837f944df0f57c1c9f191e9f6\\jetified-firebase-ui-auth-6.2.0\\res\\layout\\fui_activity_register_phone.xml"
     },
@@ -154,6 +158,10 @@
     {
         "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\layout_fui_welcome_back_password_prompt_layout.xml.flat",
         "source": "C:\\Users\\Shahin\\.gradle\\caches\\transforms-2\\files-2.1\\cd2ad84837f944df0f57c1c9f191e9f6\\jetified-firebase-ui-auth-6.2.0\\res\\layout\\fui_welcome_back_password_prompt_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_coombe.xml.flat",
+        "source": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\src\\main\\res\\layout\\fragment_coombe.xml"
     },
     {
         "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
