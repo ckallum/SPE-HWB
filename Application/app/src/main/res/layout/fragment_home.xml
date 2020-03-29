@@ -1,14 +1,156 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.example.healthproject.Fragments.StepsFragment"
+    android:orientation="vertical"
     android:background="@drawable/background"
-    android:orientation="vertical">
+    >
 
-    <WebView
-        android:id="@+id/newsPage"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="start">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/blackout_1"
+            android:text="Home"
+            android:layout_marginLeft="20dp"
+            android:textSize="35dp"
+            android:textColor="#FFFFFF"/>
 
-        />
-</RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="top">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/blackout_1"
+            android:height="150dp"
+            android:width="150dp"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+            android:text="News"
+            android:id="@+id/newsLink"
+            android:layout_marginLeft="30dp"
+            android:textSize="35dp"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/stepLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/button"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginTop="-150dp"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:width="150dp"
+            android:height="150dp"
+            android:fontFamily="@font/blackout_1"
+            android:text="Step Tracker"
+            android:textColor="#FFFFFF"
+
+            android:textSize="31dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="top">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/blackout_1"
+            android:height="150dp"
+            android:width="150dp"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+
+            android:text="Twitter"
+            android:id="@+id/twitterLink"
+            android:layout_marginLeft="30dp"
+            android:textSize="30dp"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/instaLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/button"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginTop="-150dp"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:width="150dp"
+            android:height="150dp"
+            android:fontFamily="@font/blackout_1"
+            android:text="Instagram"
+            android:textColor="#FFFFFF"
+
+            android:textSize="25dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="top">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/blackout_1"
+            android:height="150dp"
+            android:width="150dp"
+            android:layout_weight="1"
+            android:background="@drawable/button"
+
+            android:text="Membership"
+
+            android:layout_marginLeft="30dp"
+            android:textSize="25dp"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@drawable/button"
+            android:layout_marginLeft="10dp"
+
+            android:layout_marginTop="-150dp"
+            android:layout_marginRight="30dp"
+            android:layout_weight="1"
+            android:width="150dp"
+            android:height="150dp"
+            android:fontFamily="@font/blackout_1"
+            android:text="About us"
+            android:textColor="#FFFFFF"
+
+            android:textSize="25dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
