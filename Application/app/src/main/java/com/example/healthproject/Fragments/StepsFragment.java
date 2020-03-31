@@ -7,6 +7,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,7 +24,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 
+
 import com.example.healthproject.R;
+import com.example.healthproject.Utils.DateUtil;
 
 import java.util.ArrayList;
 
@@ -48,6 +51,8 @@ Boolean running = false;
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+
 
         steps = getActivity().findViewById(R.id.tv_steps);
         sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
@@ -87,6 +92,12 @@ Boolean running = false;
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
+
+    public String getStepCount(){
+        steps = getActivity().findViewById(R.id.tv_steps);
+        return steps.getText().toString();
+    }
+
 }
 
 

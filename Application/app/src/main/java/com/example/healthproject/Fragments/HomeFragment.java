@@ -37,6 +37,7 @@ public class HomeFragment extends Fragment {
     Button stepTracker;
     Button twitter;
     Button instagram;
+    Button members;
 
 
     @Override
@@ -48,6 +49,7 @@ public class HomeFragment extends Fragment {
         stepTracker = v.findViewById(R.id.stepLink);
         twitter = v.findViewById(R.id.twitterLink);
         instagram = v.findViewById(R.id.instaLink);
+        members = v.findViewById(R.id.membersLink);
 
         news.setClickable(true);
         stepTracker.setClickable(true);
@@ -96,6 +98,18 @@ public class HomeFragment extends Fragment {
                 transaction.commit();
             }
         });
+
+        members.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment someFragment = new FragmentMembership();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, someFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to backstack
+                transaction.commit();
+            }
+        });
+/*
 /*
 
         WebView webView = v.findViewById(R.id.newsPage);
