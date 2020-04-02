@@ -87,7 +87,13 @@
             android:id="@+id/twitterLink"
             android:layout_marginLeft="30dp"
             android:textSize="30dp"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#FFFFFF">
+
+
+
+
+        </Button>
+
 
         <Button
             android:id="@+id/instaLink"

@@ -1292,6 +1292,10 @@
         "source": "C:\\Users\\Shahin\\.gradle\\caches\\transforms-2\\files-2.1\\88b8882e6a15c728169a63194a12dedc\\material-1.1.0\\res\\anim\\design_snackbar_in.xml"
     },
     {
+        "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_instagram.jpeg.flat",
+        "source": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\src\\main\\res\\drawable-v24\\instagram.jpeg"
+    },
+    {
         "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Shahin\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
@@ -1872,6 +1876,10 @@
         "source": "C:\\Users\\Shahin\\.gradle\\caches\\transforms-2\\files-2.1\\331630a23dfa1f0594bcf54d5352aa36\\core-1.1.0\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
     },
     {
+        "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_rsz_insta.png.flat",
+        "source": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\src\\main\\res\\drawable-v24\\rsz_insta.png"
+    },
+    {
         "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_scrubber_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Shahin\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_scrubber_track_mtrl_alpha.9.png"
     },
@@ -2298,6 +2306,10 @@
     {
         "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
         "source": "C:\\Users\\Shahin\\.gradle\\caches\\transforms-2\\files-2.1\\fb8f7031ef66b8147647717c2aecca12\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_insta.png.flat",
+        "source": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\src\\main\\res\\drawable-v24\\insta.png"
     },
     {
         "merged": "C:\\Users\\Shahin\\Documents\\GitHub\\SPE-HWB\\Application\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_logout_w.png.flat",
