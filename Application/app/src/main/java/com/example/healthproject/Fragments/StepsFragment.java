@@ -1,5 +1,6 @@
 package com.example.healthproject.Fragments;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
@@ -12,10 +13,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +41,7 @@ Context context;
 private TextView steps;
 private double previousMag = 0;
 private Integer stepCount = 0;
+    private Integer lastCount = 0;
 
 Boolean running = false;
 
@@ -80,6 +84,15 @@ Boolean running = false;
 
         sensorManager.registerListener(stepDetector,sensor,SensorManager.SENSOR_DELAY_NORMAL);
 
+
+        ProgressBar progressBar = v.findViewById(R.id.progressBar);
+        ObjectAnimator animation = ObjectAnimator.ofInt(progressBar, "progress", 50, stepCount); //animate only from last known step to current step count
+        animation.setDuration(5000); // in milliseconds
+        animation.setInterpolator(new DecelerateInterpolator());
+        animation.start();
+
+
+
         return v;
 
     }
@@ -106,15 +119,13 @@ Boolean running = false;
         editor.apply();
     }
 
-    public void onResume() {  //set value when resume app, default 0. Maybe implement an alarm?
+    public void onResume() {
         super.onResume();
 
         SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
-        stepCount = sharedPreferences.getInt("stepCount",0);
+        stepCount = sharedPreferences.getInt("stepcount",0);
 
     }
-
-
 
 }
 

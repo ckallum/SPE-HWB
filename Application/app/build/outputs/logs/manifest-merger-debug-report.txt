@@ -4,7 +4,6 @@ ADDED from C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\And
 INJECTED from C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\AndroidManifest.xml:2:1-34:12
 INJECTED from C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\AndroidManifest.xml:2:1-34:12
 INJECTED from C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\AndroidManifest.xml:2:1-34:12
-MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Shahin\.gradle\caches\transforms-2\files-2.1\af502843a250d406ebae42d3f4079425\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.firebaseui:firebase-ui-auth:6.2.0] C:\Users\Shahin\.gradle\caches\transforms-2\files-2.1\cd2ad84837f944df0f57c1c9f191e9f6\jetified-firebase-ui-auth-6.2.0\AndroidManifest.xml:2:1-109:12
 MERGED from [androidx.navigation:navigation-ui:2.2.1] C:\Users\Shahin\.gradle\caches\transforms-2\files-2.1\8999e838a9dabf821c0fd274d213a032\navigation-ui-2.2.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.1.0] C:\Users\Shahin\.gradle\caches\transforms-2\files-2.1\88b8882e6a15c728169a63194a12dedc\material-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -253,8 +252,6 @@ uses-sdk
 INJECTED from C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\AndroidManifest.xml
-MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Shahin\.gradle\caches\transforms-2\files-2.1\af502843a250d406ebae42d3f4079425\multidex-2.0.0\AndroidManifest.xml:20:5-43
-MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\Shahin\.gradle\caches\transforms-2\files-2.1\af502843a250d406ebae42d3f4079425\multidex-2.0.0\AndroidManifest.xml:20:5-43
 MERGED from [com.firebaseui:firebase-ui-auth:6.2.0] C:\Users\Shahin\.gradle\caches\transforms-2\files-2.1\cd2ad84837f944df0f57c1c9f191e9f6\jetified-firebase-ui-auth-6.2.0\AndroidManifest.xml:8:5-10:41
 MERGED from [com.firebaseui:firebase-ui-auth:6.2.0] C:\Users\Shahin\.gradle\caches\transforms-2\files-2.1\cd2ad84837f944df0f57c1c9f191e9f6\jetified-firebase-ui-auth-6.2.0\AndroidManifest.xml:8:5-10:41
 MERGED from [androidx.navigation:navigation-ui:2.2.1] C:\Users\Shahin\.gradle\caches\transforms-2\files-2.1\8999e838a9dabf821c0fd274d213a032\navigation-ui-2.2.1\AndroidManifest.xml:20:5-22:41
