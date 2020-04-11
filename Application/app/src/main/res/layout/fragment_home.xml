@@ -144,6 +144,7 @@
             android:layout_gravity="right"
             android:background="@drawable/button"
             android:layout_marginLeft="10dp"
+            android:id="@+id/bActiveLink"
 
             android:layout_marginTop="-150dp"
             android:layout_marginRight="30dp"
@@ -151,7 +152,7 @@
             android:width="150dp"
             android:height="150dp"
             android:fontFamily="@font/blackout_1"
-            android:text="About us"
+            android:text="B:ACTive"
             android:textColor="#FFFFFF"
 
             android:textSize="25dp" />

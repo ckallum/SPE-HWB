@@ -1,7 +1,9 @@
 package com.example.healthproject.Fragments;
 
 import android.animation.ObjectAnimator;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -17,6 +19,8 @@ import android.view.animation.DecelerateInterpolator;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -41,7 +45,8 @@ Context context;
 private TextView steps;
 private double previousMag = 0;
 private Integer stepCount = 0;
-    private Integer lastCount = 0;
+private Integer lastCount = 0;
+private Integer stepGoalcount = 500;
 
 Boolean running = false;
 
@@ -54,6 +59,29 @@ Boolean running = false;
         steps = v.findViewById(R.id.tv_steps);
         sensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        final TextView stepsGoal = v.findViewById(R.id.stepGoal);
+        //final Button confirmSteps = v.findViewById(R.id.setButton);
+        //final EditText chooseSteps = v.findViewById(R.id.goalSet);
+
+
+
+        /*confirmSteps.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!chooseSteps.getText().toString().equals("")){
+                    stepsGoal.setText(chooseSteps.getText().toString());
+
+                    confirmSteps.setClickable(false);
+                }
+            }
+
+
+        });*/
+
+        stepsGoal.setText(stepGoalcount.toString());
+
+
+
 
         SensorEventListener stepDetector = new SensorEventListener() {
             @Override
@@ -67,10 +95,20 @@ Boolean running = false;
                     double magDelta = magnitude - previousMag;
                     previousMag = magnitude;
 
+
+
                     if(magDelta > 6){
                         stepCount++;
                     }
                     steps.setText(stepCount.toString());
+
+
+
+
+
+
+
+
 
                 }
 
@@ -83,6 +121,12 @@ Boolean running = false;
         };
 
         sensorManager.registerListener(stepDetector,sensor,SensorManager.SENSOR_DELAY_NORMAL);
+
+
+        if(stepGoalcount == stepCount || stepCount > stepGoalcount){
+            stepCount = 0;
+
+        }
 
 
         ProgressBar progressBar = v.findViewById(R.id.progressBar);
@@ -104,6 +148,7 @@ Boolean running = false;
         SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor     =  sharedPreferences.edit();
         editor.clear();
+        editor.putInt("stepGoal",stepGoalcount);
         editor.putInt("stepcount",stepCount);
         editor.apply();
     }
@@ -115,6 +160,7 @@ Boolean running = false;
         SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor     =  sharedPreferences.edit();
         editor.clear();
+        editor.putInt("stepGoal",stepGoalcount);
         editor.putInt("stepcount",stepCount);
         editor.apply();
     }
@@ -124,6 +170,12 @@ Boolean running = false;
 
         SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
         stepCount = sharedPreferences.getInt("stepcount",0);
+
+        if(stepGoalcount == stepCount || stepCount > stepGoalcount){
+            stepCount = 0;
+            stepCount = sharedPreferences.getInt("steacount",0);
+        }
+        stepGoalcount = sharedPreferences.getInt("stepGoal", 0);
 
     }
 

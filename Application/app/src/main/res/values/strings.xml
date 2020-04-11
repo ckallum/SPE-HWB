@@ -13,6 +13,8 @@
     <string name="desc">University of Bristol Sport</string>
     <string name="sign_up">Sign Up</string>
     <string name="events">Events</string>
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
     <string name="retype">Retype Password</string>
 
 

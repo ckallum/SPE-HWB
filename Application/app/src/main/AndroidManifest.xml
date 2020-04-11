@@ -13,8 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-
+        <activity android:name=".Fragments.BactiveFragment"></activity>
         <activity
             android:name=".Activity.LoginActivity"
             android:label="@string/app_name">

@@ -9,6 +9,7 @@
     android:background="@drawable/background">
 
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,27 +20,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/blackout_1"
-            android:text="Welcome back"
+            android:text="Step Tracker"
             android:layout_marginLeft="10dp"
             android:textSize="35dp"
             android:textColor="#FFFFFF"/>
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center">
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="380dp"
-            android:layout_height="400dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:max="500"
-            android:progress="0"
-            android:progressDrawable="@drawable/circular" />
     </LinearLayout>
 
     <LinearLayout
@@ -47,7 +32,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="150dp"
         >
 
         <TextView
@@ -58,6 +43,9 @@
             android:layout_marginLeft="10dp"
             android:textColor="#FFFFFF"
             android:text="Number of Steps:"/>
+
+
+
 
 
         <LinearLayout
@@ -77,6 +65,39 @@
                 android:textColor="#FFFFFF"
                 android:fontFamily="@font/blackout_1"/>
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:fontFamily="@font/blackout_1"
+                android:text="Daily Goal: "
+                android:textColor="#FFFFFF"
+                android:textSize="35dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/stepGoal"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-30dp"
+                android:layout_gravity="top"
+                android:fontFamily="@font/blackout_1"
+                android:layout_marginLeft="250dp"
+                android:text="0"
+                android:textColor="#FFFFFF"
+                android:textSize="35dp" />
+
+
+        </LinearLayout>
+
 
     </LinearLayout>
 
