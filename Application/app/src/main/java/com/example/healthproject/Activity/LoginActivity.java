@@ -47,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         final TextView forgotPassText = findViewById(R.id.forgotPassLink);
         if (user.isLoggedIn()) {
             updateUiWithUser(new UserView(user.getDisplayName()));
+            finish();
 
         }
 
@@ -83,8 +84,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 setResult(Activity.RESULT_OK);
 
-                //Complete and destroy forgot activity once successful
-                finish();
+
             }
         });
 
@@ -105,6 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                         passwordEditText.getText().toString());
             }
         };
+
         usernameEditText.addTextChangedListener(afterTextChangedListener);
         passwordEditText.addTextChangedListener(afterTextChangedListener);
         passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -150,7 +151,6 @@ public class LoginActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         Intent toHome = new Intent(this, MainActivity.class);
         startActivity(toHome);
-        finish();
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
