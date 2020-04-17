@@ -47,7 +47,6 @@ public class LoginActivity extends AppCompatActivity {
         final TextView forgotPassText = findViewById(R.id.forgotPassLink);
         if (user.isLoggedIn()) {
             updateUiWithUser(new UserView(user.getDisplayName()));
-            finish();
         }
 
 
@@ -68,23 +67,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        loginViewModel.getAuthResult().observe(this, new Observer<FirebaseAuthResult>() {
-            @Override
-            public void onChanged(@Nullable FirebaseAuthResult loginResult) {
-                if (loginResult == null) {
-                    return;
-                }
-                if (loginResult.getError() != null) {
-                    showLoginFailed(loginResult.getError());
-                }
-                if (loginResult.getSuccess() != null) {
-                    updateUiWithUser(loginResult.getSuccess());
-                    finish();
-                }
-                setResult(Activity.RESULT_OK);
-
-            }
-        });
 
         TextWatcher afterTextChangedListener = new TextWatcher() {
             @Override
@@ -129,7 +111,6 @@ public class LoginActivity extends AppCompatActivity {
                                           public void onClick(View v) {
                                               Intent i = new Intent(v.getContext(), RegisterActivity.class);
                                               startActivity(i);
-
                                           }
                                       }
         );
@@ -140,14 +121,31 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        loginViewModel.getAuthResult().observe(this, new Observer<FirebaseAuthResult>() {
+            @Override
+            public void onChanged(@Nullable FirebaseAuthResult loginResult) {
+                if (loginResult == null) {
+                    return;
+                }
+                if (loginResult.getError() != null) {
+                    showLoginFailed(loginResult.getError());
+                }
+                if (loginResult.getSuccess() != null) {
+                    updateUiWithUser(loginResult.getSuccess());
+                }
+                setResult(Activity.RESULT_OK);
+
+            }
+        });
 
     }
 
     private void updateUiWithUser(UserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
+        String welcome = getString(R.string.welcome);
         Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
         Intent toHome = new Intent(this, MainActivity.class);
         startActivity(toHome);
+        finish();
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {

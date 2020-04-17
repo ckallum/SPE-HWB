@@ -3,6 +3,7 @@ package com.example.healthproject.Model;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
 import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.Model.dto.User;
@@ -19,7 +20,6 @@ public class GlobalUser {
     private static volatile GlobalUser instance;
 
     private FirebaseDataSource dataSource;
-    private Context context;
     private User user = null;
 
 
@@ -44,10 +44,6 @@ public class GlobalUser {
     public void logout() {
         user = null;
         dataSource.logout();
-        Intent i = new Intent(context, LoginActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(i);
     }
 
     private void setLoggedInUser(User user) {

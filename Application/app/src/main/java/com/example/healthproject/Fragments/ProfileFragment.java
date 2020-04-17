@@ -65,9 +65,11 @@ public class ProfileFragment extends Fragment {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
                 user.logout();
+
                 Intent toMain = new Intent(getActivity(), LoginActivity.class);
+                toMain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                toMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
                 startActivity(toMain);
             }

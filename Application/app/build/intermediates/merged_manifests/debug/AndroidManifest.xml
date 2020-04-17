@@ -45,8 +45,7 @@
         <activity android:name="com.example.healthproject.Activity.ForgotActivity" />
         <activity android:name="com.example.healthproject.Activity.RegisterActivity" />
         <activity android:name="com.example.healthproject.Activity.MainActivity" />
-        <activity android:name="com.example.healthproject.Activity.Navigation.UserNavigationActivity" />
-        <activity android:name="com.example.healthproject.Activity.Navigation.AdminNavigationActivity" />
+        <activity android:name="com.example.healthproject.Activity.Navigation.NavigationActivity" />
 
         <meta-data
             android:name="com.google.android.gms.version"
