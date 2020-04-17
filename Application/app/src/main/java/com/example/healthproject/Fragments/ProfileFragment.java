@@ -49,6 +49,7 @@ public class ProfileFragment extends Fragment {
 
     ImageView camera;
     EditText username;
+    EditText email;
     Uri uriProfileImage;
     ProgressBar progressBar;
     String profileImageUrl;
@@ -76,6 +77,7 @@ public class ProfileFragment extends Fragment {
 
         camera = rootView.findViewById(R.id.cameraImage);
         username = rootView.findViewById(R.id.usernameBox);
+        email = rootView.findViewById(R.id.emailBox);
         progressBar = rootView.findViewById(R.id.progressBar);
 
         camera.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +115,10 @@ public class ProfileFragment extends Fragment {
 
             if (user.getDisplayName() != null) {
                 username.setText(user.getDisplayName());
+            }
+
+            if (user.getEmail() != null){
+                email.setText(user.getEmail());
             }
         }
     }

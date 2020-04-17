@@ -61,7 +61,11 @@ public class VenuesFragment extends Fragment {
         su.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(rootView.getContext(), "su", Toast.LENGTH_SHORT).show();
+                Fragment someFragment = new SuFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(((ViewGroup)getView().getParent()).getId(), someFragment ); // give your fragment container id in first parameter
+                transaction.addToBackStack(null);  // if written, this transaction will be added to
+                transaction.commit();
             }
         });
 
