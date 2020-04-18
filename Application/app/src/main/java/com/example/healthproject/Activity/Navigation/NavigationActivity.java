@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.healthproject.Fragments.BookingsFragment;
+import com.example.healthproject.Fragments.CreateEventFragment;
 import com.example.healthproject.Fragments.EventsFragment;
 import com.example.healthproject.Fragments.HomeFragment;
 import com.example.healthproject.Fragments.ManageFragment;
@@ -68,9 +69,9 @@ public class NavigationActivity extends AppCompatActivity {
                         case R.id.manage:
                             selectedFragment = new ManageFragment();
                             break;
-//                        case R.id.create:
-//                            selectedFragment = new CreateEventFragment();
-//                            break;
+                        case R.id.add:
+                            selectedFragment = new CreateEventFragment();
+                            break;
 
                     }
 
