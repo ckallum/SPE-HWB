@@ -43,8 +43,8 @@ public class FirebaseDataSource {
 
         try {
             auth.signInWithEmailAndPassword(email, password);
-            authUser = auth.getCurrentUser();
-            Log.d("Test", authUser.getUid());
+            authUser=auth.getCurrentUser();
+            Log.d("CHECK", auth.getUid()+authUser.getEmail());
             ref = db.collection("users");
             ref.document(authUser.getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
@@ -64,7 +64,7 @@ public class FirebaseDataSource {
             });
 //            DocumentSnapshot document = ref.document("users").get().getResult();
 //            Log.d("SUCCESS", "DocumentSnapshot data: " + document.getData());
-            return new Result.Success<>(new User(authUser.getEmail(), true));
+            return new Result.Success<>(new User( authUser.getEmail(), true));
         } catch (Exception e) {
             return new Result.Error(new IOException("Error logging in", e));
         }
