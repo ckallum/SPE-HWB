@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private ViewModelController loginViewModel;
     GlobalUser user;
-
+    //TODO Check admin status to added user -> collection.("admins")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

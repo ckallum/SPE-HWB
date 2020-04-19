@@ -28,6 +28,8 @@ import com.example.healthproject.View.ViewModelFactory;
 
 public class RegisterActivity extends AppCompatActivity {
     private ViewModelController registerViewModel;
+    //TODO Add to firestore users entry->collection.("admins")
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

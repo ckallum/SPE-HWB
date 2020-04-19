@@ -1,4 +1,6 @@
 package com.example.healthproject.Model.dto;
+import android.widget.TimePicker;
+
 import com.google.firebase.Timestamp;
 
 public class EventModel {

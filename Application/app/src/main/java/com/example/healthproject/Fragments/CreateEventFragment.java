@@ -1,140 +1,139 @@
 package com.example.healthproject.Fragments;
 
-import android.app.Activity;
-import android.content.Intent;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.KeyEvent;
+import android.text.InputType;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.Spinner;
+import android.widget.TimePicker;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.example.healthproject.Activity.ForgotActivity;
-import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.R;
-import com.example.healthproject.View.FirebaseAuthResult;
-import com.example.healthproject.View.FormState;
-import com.example.healthproject.View.UserView;
 import com.example.healthproject.View.ViewModelController;
 import com.example.healthproject.View.ViewModelFactory;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
-import static com.firebase.ui.auth.AuthUI.getApplicationContext;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 public class CreateEventFragment extends Fragment {
-    private ViewModelController forgotViewModel;
+    private ViewModelController createViewModel;
+    private FirebaseFirestore mdb;
+    private CollectionReference ref;
+    private EditText eventName;
+    private EditText eventSpaces;
+    private Spinner eventVenue;
+    private EditText eventDate;
+    private EditText eventStart;
+    private EditText eventEnd;
+    private Button createButton;
+    DatePickerDialog dPicker;
+    TimePickerDialog tPicker;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_create);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable final Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_create, container, false );
+        mdb = FirebaseFirestore.getInstance();
+        ref = mdb.collection("venues");
+        createViewModel = ViewModelProviders.of(this, new ViewModelFactory()).get(ViewModelController.class);
+        eventName = getView().findViewById(R.id.event_name);
+        eventSpaces= getView().findViewById(R.id.event_spaces);// TODO Check for  Number
+        eventVenue = getView().findViewById(R.id.event_location);
+        eventDate = getView().findViewById(R.id.event_date); //TODO check if it complies with venue opening and closing
+        eventStart = getView().findViewById(R.id.event_start);
+        eventEnd = getView().findViewById(R.id.event_end);
+        createButton = getView().findViewById(R.id.button_create);
 
-        final Button forgotButton = findViewById(R.id.sendEmail);              // create instances of buttons/txt fields
-        final EditText emailEditText = findViewById(R.id.emailTxtBox);
-        Button backButton = findViewById(R.id.backButton);
 
-
-        forgotViewModel = ViewModelProviders.of(this, new ViewModelFactory()).get(ViewModelController.class);
-        backButton.setOnClickListener(new View.OnClickListener() {
-                                          @Override
-                                          public void onClick(View v) {
-                                              Intent intent = new Intent(ForgotActivity.this, LoginActivity.class);
-                                              startActivity(intent);
-                                              finish();
-                                          }
-                                      }
-        );
-        forgotViewModel.getFormState().observe(this, new Observer<FormState>() {
+        final List<String> venues = new ArrayList<>();
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, venues);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        eventVenue.setAdapter(adapter);
+        ref.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
-            public void onChanged(@Nullable FormState forgotFormState) {
-                if (forgotFormState == null) {
-                    return;
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if ( task.isSuccessful() ){
+                    for(QueryDocumentSnapshot document:task.getResult()){
+                        String v = document.getString("name");
+                        venues.add(v);
+                    }
+                    adapter.notifyDataSetChanged();
                 }
-                forgotButton.setEnabled(forgotFormState.isDataValid());
-                if (forgotFormState.getEmailError() != null) {
-                    emailEditText.setError(getString(forgotFormState.getEmailError()));
-                }
-
-            }
-        });
-        forgotViewModel.getAuthResult().observe(this, new Observer<FirebaseAuthResult>() {
-            @Override
-            public void onChanged(@Nullable FirebaseAuthResult forgotResult) {
-                if (forgotResult == null) {
-                    return;
-                }
-                if (forgotResult.getError() != null) {
-                    showForgotFailed(forgotResult.getError());
-                }
-                if (forgotResult.getSuccess() != null) {
-                    userForgot(forgotResult.getSuccess());
-
-                }
-                setResult(Activity.RESULT_OK);
-
-//                Complete and destroy forgot activity once successful
-                finish();
-            }
-        });
-        TextWatcher afterTextChangedListener = new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                // ignore
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // ignore
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                forgotViewModel.forgotDataChanged(emailEditText.getText().toString());
-            }
-        };
-        emailEditText.addTextChangedListener(afterTextChangedListener);
-        emailEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    forgotViewModel.forgot(emailEditText.getText().toString());
-                }
-                return false;
             }
         });
 
-        forgotButton.setOnClickListener(new View.OnClickListener() {
+        eventDate.setInputType(InputType.TYPE_NULL);
+        eventDate.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                forgotViewModel.forgot(emailEditText.getText().toString());
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                dPicker = new DatePickerDialog(getContext(),
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                eventDate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                            }
+                        }, year, month, day);
+                dPicker.show();
+            }
+        });
+        eventStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Calendar mcurrentTime = Calendar.getInstance();
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = mcurrentTime.get(Calendar.MINUTE);
+                tPicker = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        eventStart.setText( selectedHour + ":" + selectedMinute);
+                    }
+                }, hour, minute, true);//Yes 24 hour time
+               tPicker.show();
+
+            }
+        });
+        eventEnd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Calendar mcurrentTime = Calendar.getInstance();
+                int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
+                int minute = mcurrentTime.get(Calendar.MINUTE);
+                tPicker = new TimePickerDialog(getContext(), new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        eventEnd.setText( selectedHour + ":" + selectedMinute);
+                    }
+                }, hour, minute, true);//Yes 24 hour time
+                tPicker.show();
+
             }
         });
 
+        return root;
     }
-
-    private void userForgot(UserView success) {
-        Toast.makeText(getApplicationContext(), "Email Sent", Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(ForgotActivity.this, LoginActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();
-    }
-
-    private void showForgotFailed(@StringRes Integer errorString) {
-        Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
-    }
-}
 
 
 }
