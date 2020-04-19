@@ -32,38 +32,37 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Objects;
 
 public class CreateEventFragment extends Fragment {
     private ViewModelController createViewModel;
-    private FirebaseFirestore mdb;
-    private CollectionReference ref;
     private EditText eventName;
     private EditText eventSpaces;
-    private Spinner eventVenue;
     private EditText eventDate;
     private EditText eventStart;
     private EditText eventEnd;
     private Button createButton;
-    DatePickerDialog dPicker;
-    TimePickerDialog tPicker;
+    private DatePickerDialog dPicker;
+    private TimePickerDialog tPicker;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_create, container, false );
-        mdb = FirebaseFirestore.getInstance();
-        ref = mdb.collection("venues");
+
+        FirebaseFirestore mdb = FirebaseFirestore.getInstance();
+        CollectionReference ref = mdb.collection("venues");
         createViewModel = ViewModelProviders.of(this, new ViewModelFactory()).get(ViewModelController.class);
-        eventName = getView().findViewById(R.id.event_name);
-        eventSpaces= getView().findViewById(R.id.event_spaces);// TODO Check for  Number
-        eventVenue = getView().findViewById(R.id.event_location);
-        eventDate = getView().findViewById(R.id.event_date); //TODO check if it complies with venue opening and closing
-        eventStart = getView().findViewById(R.id.event_start);
-        eventEnd = getView().findViewById(R.id.event_end);
-        createButton = getView().findViewById(R.id.button_create);
+        eventName = root.findViewById(R.id.event_name);
+        eventSpaces= root.findViewById(R.id.event_spaces);// TODO Check for  Number
+        Spinner eventVenue = root.findViewById(R.id.event_location);
+        eventDate = root.findViewById(R.id.event_date); //TODO check if it complies with venue opening and closing
+        eventStart = root.findViewById(R.id.event_start);
+        eventEnd = root.findViewById(R.id.event_end);
+        createButton = root.findViewById(R.id.button_create);
 
 
         final List<String> venues = new ArrayList<>();
-        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_spinner_item, venues);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(requireActivity(), android.R.layout.simple_spinner_item, venues);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         eventVenue.setAdapter(adapter);
         ref.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {

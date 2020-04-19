@@ -25,17 +25,17 @@
 17-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:11:5-81
 17-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:11:22-78
 18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-18-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:12:5-79
-18-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:12:22-76
+18-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:12:5-79
+18-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:12:22-76
 19    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
-19-->[com.google.android.gms:play-services-measurement-api:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/426f2a6c254e6003ea1bd3c0058d0765/jetified-play-services-measurement-api-17.2.3/AndroidManifest.xml:24:5-68
-19-->[com.google.android.gms:play-services-measurement-api:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/426f2a6c254e6003ea1bd3c0058d0765/jetified-play-services-measurement-api-17.2.3/AndroidManifest.xml:24:22-65
+19-->[com.google.android.gms:play-services-measurement-api:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/d734e85b2ea2f6b5c3dd2e12b4244ac5/jetified-play-services-measurement-api-17.3.0/AndroidManifest.xml:24:5-68
+19-->[com.google.android.gms:play-services-measurement-api:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/d734e85b2ea2f6b5c3dd2e12b4244ac5/jetified-play-services-measurement-api-17.3.0/AndroidManifest.xml:24:22-65
 20    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-20-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/fdf35e2646cc7d6e6f0ccd9276867112/jetified-firebase-iid-20.0.2/AndroidManifest.xml:26:5-82
-20-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/fdf35e2646cc7d6e6f0ccd9276867112/jetified-firebase-iid-20.0.2/AndroidManifest.xml:26:22-79
+20-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/14092e63484c408036652bf98e042e26/jetified-firebase-iid-20.0.2/AndroidManifest.xml:26:5-82
+20-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/14092e63484c408036652bf98e042e26/jetified-firebase-iid-20.0.2/AndroidManifest.xml:26:22-79
 21    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-21-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:26:5-110
-21-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:26:22-107
+21-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:26:5-110
+21-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:26:22-107
 22
 23    <application
 23-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:13:5-37:19
@@ -43,7 +43,7 @@
 25        android:allowBackup="true"
 25-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:14:9-35
 26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-26-->[androidx.core:core:1.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/d8e6145ebd5f6e1099b739484795a4bd/core-1.1.0/AndroidManifest.xml:24:18-86
+26-->[androidx.core:core:1.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/bcfc0b80df78591183083cc148e1cf2c/core-1.1.0/AndroidManifest.xml:24:18-86
 27        android:debuggable="true"
 28        android:hardwareAccelerated="true"
 28-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:15:9-43
@@ -91,357 +91,357 @@
 48-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:36:19-73
 49
 50        <meta-data
-50-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:16:9-18:69
+50-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:16:9-18:69
 51            android:name="com.google.android.gms.version"
-51-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:17:13-58
+51-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:17:13-58
 52            android:value="@integer/google_play_services_version" />
-52-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:18:13-66
+52-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:18:13-66
 53        <meta-data
-53-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:19:9-21:63
+53-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:19:9-21:63
 54            android:name="com.facebook.sdk.ApplicationId"
-54-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:20:13-58
+54-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:20:13-58
 55            android:value="@string/facebook_application_id" />
-55-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:21:13-60
+55-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:21:13-60
 56
 57        <activity
-57-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:23:9-27:61
+57-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:23:9-27:61
 58            android:name="com.firebase.ui.auth.KickoffActivity"
-58-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:24:13-64
+58-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:24:13-64
 59            android:exported="false"
-59-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:25:13-37
+59-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:25:13-37
 60            android:label=""
-60-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:26:13-29
+60-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:26:13-29
 61            android:theme="@style/FirebaseUI.Transparent" />
-61-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:27:13-58
+61-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:27:13-58
 62        <activity
-62-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:28:9-32:61
+62-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:28:9-32:61
 63            android:name="com.firebase.ui.auth.ui.idp.SingleSignInActivity"
-63-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:29:13-76
+63-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:29:13-76
 64            android:exported="false"
-64-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:30:13-37
+64-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:30:13-37
 65            android:label=""
-65-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:31:13-29
+65-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:31:13-29
 66            android:theme="@style/FirebaseUI.Transparent" />
-66-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:32:13-58
+66-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:32:13-58
 67        <activity
-67-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:33:9-37:61
+67-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:33:9-37:61
 68            android:name="com.firebase.ui.auth.ui.credentials.CredentialSaveActivity"
-68-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:34:13-86
+68-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:34:13-86
 69            android:exported="false"
-69-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:35:13-37
+69-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:35:13-37
 70            android:label=""
-70-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:36:13-29
+70-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:36:13-29
 71            android:theme="@style/FirebaseUI.Transparent" />
-71-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:37:13-58
+71-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:37:13-58
 72        <activity
-72-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:38:9-42:58
+72-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:38:9-42:58
 73            android:name="com.firebase.ui.auth.ui.email.RecoverPasswordActivity"
-73-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:39:13-81
+73-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:39:13-81
 74            android:exported="false"
-74-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:40:13-37
+74-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:40:13-37
 75            android:label="@string/fui_title_recover_password_activity"
-75-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:41:13-72
+75-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:41:13-72
 76            android:windowSoftInputMode="adjustResize" />
-76-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:42:13-55
+76-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:42:13-55
 77        <activity
-77-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:43:9-47:58
+77-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:43:9-47:58
 78            android:name="com.firebase.ui.auth.ui.email.EmailActivity"
-78-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:44:13-71
+78-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:44:13-71
 79            android:exported="false"
-79-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:45:13-37
+79-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:45:13-37
 80            android:label="@string/fui_sign_in_default"
-80-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:46:13-56
+80-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:46:13-56
 81            android:windowSoftInputMode="adjustResize" />
-81-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:47:13-55
+81-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:47:13-55
 82        <activity
-82-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:48:9-52:77
+82-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:48:9-52:77
 83            android:name="com.firebase.ui.auth.ui.phone.PhoneActivity"
-83-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:49:13-71
+83-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:49:13-71
 84            android:exported="false"
-84-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:50:13-37
+84-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:50:13-37
 85            android:label="@string/fui_sign_in_with_phone_number"
-85-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:51:13-66
+85-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:51:13-66
 86            android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
-86-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:52:13-74
+86-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:52:13-74
 87        <activity
-87-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:53:9-57:58
+87-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:53:9-57:58
 88            android:name="com.firebase.ui.auth.ui.idp.WelcomeBackIdpPrompt"
-88-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:54:13-76
+88-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:54:13-76
 89            android:exported="false"
-89-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:55:13-37
+89-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:55:13-37
 90            android:label="@string/fui_title_welcome_back_idp_prompt"
-90-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:56:13-70
+90-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:56:13-70
 91            android:windowSoftInputMode="adjustResize" />
-91-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:57:13-55
+91-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:57:13-55
 92        <activity
-92-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:58:9-62:58
+92-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:58:9-62:58
 93            android:name="com.firebase.ui.auth.ui.email.WelcomeBackPasswordPrompt"
-93-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:59:13-83
+93-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:59:13-83
 94            android:exported="false"
-94-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:60:13-37
+94-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:60:13-37
 95            android:label="@string/fui_title_welcome_back_password_prompt"
-95-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:61:13-75
+95-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:61:13-75
 96            android:windowSoftInputMode="adjustResize" />
-96-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:62:13-55
+96-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:62:13-55
 97        <activity
-97-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:63:9-67:58
+97-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:63:9-67:58
 98            android:name="com.firebase.ui.auth.ui.email.WelcomeBackEmailLinkPrompt"
-98-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:64:13-84
+98-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:64:13-84
 99            android:exported="false"
-99-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:65:13-37
+99-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:65:13-37
 100            android:label="@string/fui_title_welcome_back_password_prompt"
-100-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:66:13-75
+100-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:66:13-75
 101            android:windowSoftInputMode="adjustResize" />
-101-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:67:13-55
+101-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:67:13-55
 102        <activity
-102-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:68:9-73:58
+102-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:68:9-73:58
 103            android:name="com.firebase.ui.auth.ui.email.EmailLinkCatcherActivity"
-103-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:69:13-82
+103-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:69:13-82
 104            android:exported="false"
-104-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:70:13-37
+104-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:70:13-37
 105            android:label=""
-105-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:71:13-29
+105-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:71:13-29
 106            android:theme="@style/FirebaseUI.Transparent"
-106-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:72:13-58
+106-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:72:13-58
 107            android:windowSoftInputMode="adjustResize" />
-107-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:73:13-55
+107-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:73:13-55
 108        <activity
-108-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:74:9-78:58
+108-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:74:9-78:58
 109            android:name="com.firebase.ui.auth.ui.email.EmailLinkErrorRecoveryActivity"
-109-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:75:13-88
+109-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:75:13-88
 110            android:exported="false"
-110-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:76:13-37
+110-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:76:13-37
 111            android:label="@string/fui_sign_in_default"
-111-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:77:13-56
+111-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:77:13-56
 112            android:windowSoftInputMode="adjustResize" />
-112-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:78:13-55
+112-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:78:13-55
 113        <activity
-113-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:79:9-82:65
+113-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:79:9-82:65
 114            android:name="com.firebase.ui.auth.ui.idp.AuthMethodPickerActivity"
-114-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:80:13-80
+114-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:80:13-80
 115            android:exported="false"
-115-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:81:13-37
+115-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:81:13-37
 116            android:label="@string/fui_default_toolbar_title" />
-116-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:82:13-62
+116-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:82:13-62
 117        <activity
-117-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:83:9-87:48
+117-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:83:9-87:48
 118            android:name="com.facebook.FacebookActivity"
-118-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:84:13-57
+118-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:84:13-57
 119            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-119-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:85:13-96
+119-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:85:13-96
 120            android:label="@string/app_name" />
-120-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:86:13-45
+120-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:86:13-45
 121        <activity
-121-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:88:9-100:20
+121-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:88:9-100:20
 122            android:name="com.facebook.CustomTabActivity"
-122-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:89:13-58
+122-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:89:13-58
 123            android:exported="true" >
-123-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:90:13-36
+123-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:90:13-36
 124            <intent-filter>
-124-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:92:13-99:29
+124-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:92:13-99:29
 125                <action android:name="android.intent.action.VIEW" />
-125-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:93:17-69
-125-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:93:25-66
+125-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:93:17-69
+125-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:93:25-66
 126
 127                <category android:name="android.intent.category.DEFAULT" />
-127-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:95:17-76
-127-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:95:27-73
+127-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:95:17-76
+127-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:95:27-73
 128                <category android:name="android.intent.category.BROWSABLE" />
-128-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:96:17-78
-128-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:96:27-75
+128-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:96:17-78
+128-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:96:27-75
 129
 130                <data android:scheme="@string/facebook_login_protocol_scheme" />
-130-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:98:17-81
-130-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:98:23-78
+130-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:98:17-81
+130-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:98:23-78
 131            </intent-filter>
 132        </activity>
 133
 134        <provider
-134-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:102:9-106:38
+134-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:102:9-106:38
 135            android:name="com.firebase.ui.auth.data.client.AuthUiInitProvider"
-135-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:103:13-79
+135-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:103:13-79
 136            android:authorities="com.example.healthproject_beta.authuiinitprovider"
-136-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:104:13-70
+136-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:104:13-70
 137            android:exported="false"
-137-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:105:13-37
+137-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:105:13-37
 138            android:initOrder="90" />
-138-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c02f769c4a348c18b771dcd3414806f3/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:106:13-35
+138-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:106:13-35
 139
 140        <service
-140-->[com.google.firebase:firebase-firestore:21.4.1] /home/callum/.gradle/caches/transforms-2/files-2.1/396265654ae34b1d5ad68bd300d49e52/jetified-firebase-firestore-21.4.1/AndroidManifest.xml:17:9-23:19
+140-->[com.google.firebase:firebase-firestore:21.4.2] /home/callum/.gradle/caches/transforms-2/files-2.1/a0caa087ff7c9746c70a3a7411a20608/jetified-firebase-firestore-21.4.2/AndroidManifest.xml:17:9-23:19
 141            android:name="com.google.firebase.components.ComponentDiscoveryService"
-141-->[com.google.firebase:firebase-firestore:21.4.1] /home/callum/.gradle/caches/transforms-2/files-2.1/396265654ae34b1d5ad68bd300d49e52/jetified-firebase-firestore-21.4.1/AndroidManifest.xml:18:13-84
+141-->[com.google.firebase:firebase-firestore:21.4.2] /home/callum/.gradle/caches/transforms-2/files-2.1/a0caa087ff7c9746c70a3a7411a20608/jetified-firebase-firestore-21.4.2/AndroidManifest.xml:18:13-84
 142            android:directBootAware="true"
-142-->[com.google.firebase:firebase-common:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/89e8c50f4adcfa71f0d90282494b2c06/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
+142-->[com.google.firebase:firebase-common:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/3deb10f8139ef5717b3d54ada2a19ca4/jetified-firebase-common-19.3.0/AndroidManifest.xml:34:13-43
 143            android:exported="false" >
-143-->[com.google.firebase:firebase-firestore:21.4.1] /home/callum/.gradle/caches/transforms-2/files-2.1/396265654ae34b1d5ad68bd300d49e52/jetified-firebase-firestore-21.4.1/AndroidManifest.xml:19:13-37
+143-->[com.google.firebase:firebase-firestore:21.4.2] /home/callum/.gradle/caches/transforms-2/files-2.1/a0caa087ff7c9746c70a3a7411a20608/jetified-firebase-firestore-21.4.2/AndroidManifest.xml:19:13-37
 144            <meta-data
-144-->[com.google.firebase:firebase-firestore:21.4.1] /home/callum/.gradle/caches/transforms-2/files-2.1/396265654ae34b1d5ad68bd300d49e52/jetified-firebase-firestore-21.4.1/AndroidManifest.xml:20:13-22:85
+144-->[com.google.firebase:firebase-firestore:21.4.2] /home/callum/.gradle/caches/transforms-2/files-2.1/a0caa087ff7c9746c70a3a7411a20608/jetified-firebase-firestore-21.4.2/AndroidManifest.xml:20:13-22:85
 145                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-145-->[com.google.firebase:firebase-firestore:21.4.1] /home/callum/.gradle/caches/transforms-2/files-2.1/396265654ae34b1d5ad68bd300d49e52/jetified-firebase-firestore-21.4.1/AndroidManifest.xml:21:17-111
+145-->[com.google.firebase:firebase-firestore:21.4.2] /home/callum/.gradle/caches/transforms-2/files-2.1/a0caa087ff7c9746c70a3a7411a20608/jetified-firebase-firestore-21.4.2/AndroidManifest.xml:21:17-111
 146                android:value="com.google.firebase.components.ComponentRegistrar" />
-146-->[com.google.firebase:firebase-firestore:21.4.1] /home/callum/.gradle/caches/transforms-2/files-2.1/396265654ae34b1d5ad68bd300d49e52/jetified-firebase-firestore-21.4.1/AndroidManifest.xml:22:17-82
+146-->[com.google.firebase:firebase-firestore:21.4.2] /home/callum/.gradle/caches/transforms-2/files-2.1/a0caa087ff7c9746c70a3a7411a20608/jetified-firebase-firestore-21.4.2/AndroidManifest.xml:22:17-82
 147            <meta-data
-147-->[com.google.firebase:firebase-database:19.2.1] /home/callum/.gradle/caches/transforms-2/files-2.1/468b182d948a813c175d023b96c3e587/jetified-firebase-database-19.2.1/AndroidManifest.xml:32:13-34:85
+147-->[com.google.firebase:firebase-database:19.2.1] /home/callum/.gradle/caches/transforms-2/files-2.1/3e824c51aee14a2eb43534159ffb335f/jetified-firebase-database-19.2.1/AndroidManifest.xml:32:13-34:85
 148                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
-148-->[com.google.firebase:firebase-database:19.2.1] /home/callum/.gradle/caches/transforms-2/files-2.1/468b182d948a813c175d023b96c3e587/jetified-firebase-database-19.2.1/AndroidManifest.xml:33:17-109
+148-->[com.google.firebase:firebase-database:19.2.1] /home/callum/.gradle/caches/transforms-2/files-2.1/3e824c51aee14a2eb43534159ffb335f/jetified-firebase-database-19.2.1/AndroidManifest.xml:33:17-109
 149                android:value="com.google.firebase.components.ComponentRegistrar" />
-149-->[com.google.firebase:firebase-database:19.2.1] /home/callum/.gradle/caches/transforms-2/files-2.1/468b182d948a813c175d023b96c3e587/jetified-firebase-database-19.2.1/AndroidManifest.xml:34:17-82
+149-->[com.google.firebase:firebase-database:19.2.1] /home/callum/.gradle/caches/transforms-2/files-2.1/3e824c51aee14a2eb43534159ffb335f/jetified-firebase-database-19.2.1/AndroidManifest.xml:34:17-82
 150            <meta-data
-150-->[com.google.firebase:firebase-storage:19.1.1] /home/callum/.gradle/caches/transforms-2/files-2.1/c35340ecdc147c31bde9b8bd18c18794/jetified-firebase-storage-19.1.1/AndroidManifest.xml:33:13-35:85
+150-->[com.google.firebase:firebase-storage:19.1.1] /home/callum/.gradle/caches/transforms-2/files-2.1/c8c55a9dfb88ee84ed4b575295b8e34f/jetified-firebase-storage-19.1.1/AndroidManifest.xml:33:13-35:85
 151                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-151-->[com.google.firebase:firebase-storage:19.1.1] /home/callum/.gradle/caches/transforms-2/files-2.1/c35340ecdc147c31bde9b8bd18c18794/jetified-firebase-storage-19.1.1/AndroidManifest.xml:34:17-107
+151-->[com.google.firebase:firebase-storage:19.1.1] /home/callum/.gradle/caches/transforms-2/files-2.1/c8c55a9dfb88ee84ed4b575295b8e34f/jetified-firebase-storage-19.1.1/AndroidManifest.xml:34:17-107
 152                android:value="com.google.firebase.components.ComponentRegistrar" />
-152-->[com.google.firebase:firebase-storage:19.1.1] /home/callum/.gradle/caches/transforms-2/files-2.1/c35340ecdc147c31bde9b8bd18c18794/jetified-firebase-storage-19.1.1/AndroidManifest.xml:35:17-82
+152-->[com.google.firebase:firebase-storage:19.1.1] /home/callum/.gradle/caches/transforms-2/files-2.1/c8c55a9dfb88ee84ed4b575295b8e34f/jetified-firebase-storage-19.1.1/AndroidManifest.xml:35:17-82
 153            <meta-data
-153-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/14604c0a6af4167a1fbdfbf9ae7c8710/jetified-firebase-auth-19.3.0/AndroidManifest.xml:36:13-38:85
+153-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/4189c7719053123afa41922c68903b5b/jetified-firebase-auth-19.3.0/AndroidManifest.xml:36:13-38:85
 154                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-154-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/14604c0a6af4167a1fbdfbf9ae7c8710/jetified-firebase-auth-19.3.0/AndroidManifest.xml:37:17-109
+154-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/4189c7719053123afa41922c68903b5b/jetified-firebase-auth-19.3.0/AndroidManifest.xml:37:17-109
 155                android:value="com.google.firebase.components.ComponentRegistrar" />
-155-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/14604c0a6af4167a1fbdfbf9ae7c8710/jetified-firebase-auth-19.3.0/AndroidManifest.xml:38:17-82
+155-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/4189c7719053123afa41922c68903b5b/jetified-firebase-auth-19.3.0/AndroidManifest.xml:38:17-82
 156            <meta-data
-156-->[com.google.android.gms:play-services-measurement-api:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/426f2a6c254e6003ea1bd3c0058d0765/jetified-play-services-measurement-api-17.2.3/AndroidManifest.xml:30:13-32:85
+156-->[com.google.android.gms:play-services-measurement-api:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/d734e85b2ea2f6b5c3dd2e12b4244ac5/jetified-play-services-measurement-api-17.3.0/AndroidManifest.xml:30:13-32:85
 157                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-157-->[com.google.android.gms:play-services-measurement-api:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/426f2a6c254e6003ea1bd3c0058d0765/jetified-play-services-measurement-api-17.2.3/AndroidManifest.xml:31:17-139
+157-->[com.google.android.gms:play-services-measurement-api:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/d734e85b2ea2f6b5c3dd2e12b4244ac5/jetified-play-services-measurement-api-17.3.0/AndroidManifest.xml:31:17-139
 158                android:value="com.google.firebase.components.ComponentRegistrar" />
-158-->[com.google.android.gms:play-services-measurement-api:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/426f2a6c254e6003ea1bd3c0058d0765/jetified-play-services-measurement-api-17.2.3/AndroidManifest.xml:32:17-82
+158-->[com.google.android.gms:play-services-measurement-api:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/d734e85b2ea2f6b5c3dd2e12b4244ac5/jetified-play-services-measurement-api-17.3.0/AndroidManifest.xml:32:17-82
 159            <meta-data
-159-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/fdf35e2646cc7d6e6f0ccd9276867112/jetified-firebase-iid-20.0.2/AndroidManifest.xml:32:13-34:85
+159-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/14092e63484c408036652bf98e042e26/jetified-firebase-iid-20.0.2/AndroidManifest.xml:32:13-34:85
 160                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
-160-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/fdf35e2646cc7d6e6f0ccd9276867112/jetified-firebase-iid-20.0.2/AndroidManifest.xml:33:17-96
+160-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/14092e63484c408036652bf98e042e26/jetified-firebase-iid-20.0.2/AndroidManifest.xml:33:17-96
 161                android:value="com.google.firebase.components.ComponentRegistrar" />
-161-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/fdf35e2646cc7d6e6f0ccd9276867112/jetified-firebase-iid-20.0.2/AndroidManifest.xml:34:17-82
+161-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/14092e63484c408036652bf98e042e26/jetified-firebase-iid-20.0.2/AndroidManifest.xml:34:17-82
 162        </service>
 163
 164        <activity
-164-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/14604c0a6af4167a1fbdfbf9ae7c8710/jetified-firebase-auth-19.3.0/AndroidManifest.xml:24:9-31:50
+164-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/4189c7719053123afa41922c68903b5b/jetified-firebase-auth-19.3.0/AndroidManifest.xml:24:9-31:50
 165            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-165-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/14604c0a6af4167a1fbdfbf9ae7c8710/jetified-firebase-auth-19.3.0/AndroidManifest.xml:25:13-85
+165-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/4189c7719053123afa41922c68903b5b/jetified-firebase-auth-19.3.0/AndroidManifest.xml:25:13-85
 166            android:excludeFromRecents="true"
-166-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/14604c0a6af4167a1fbdfbf9ae7c8710/jetified-firebase-auth-19.3.0/AndroidManifest.xml:26:13-46
+166-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/4189c7719053123afa41922c68903b5b/jetified-firebase-auth-19.3.0/AndroidManifest.xml:26:13-46
 167            android:exported="true"
-167-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/14604c0a6af4167a1fbdfbf9ae7c8710/jetified-firebase-auth-19.3.0/AndroidManifest.xml:27:13-36
+167-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/4189c7719053123afa41922c68903b5b/jetified-firebase-auth-19.3.0/AndroidManifest.xml:27:13-36
 168            android:launchMode="singleTask"
-168-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/14604c0a6af4167a1fbdfbf9ae7c8710/jetified-firebase-auth-19.3.0/AndroidManifest.xml:28:13-44
+168-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/4189c7719053123afa41922c68903b5b/jetified-firebase-auth-19.3.0/AndroidManifest.xml:28:13-44
 169            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-169-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/14604c0a6af4167a1fbdfbf9ae7c8710/jetified-firebase-auth-19.3.0/AndroidManifest.xml:29:13-102
+169-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/4189c7719053123afa41922c68903b5b/jetified-firebase-auth-19.3.0/AndroidManifest.xml:29:13-102
 170            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-170-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/14604c0a6af4167a1fbdfbf9ae7c8710/jetified-firebase-auth-19.3.0/AndroidManifest.xml:30:13-72
+170-->[com.google.firebase:firebase-auth:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/4189c7719053123afa41922c68903b5b/jetified-firebase-auth-19.3.0/AndroidManifest.xml:30:13-72
 171        <activity
-171-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/2fadf9f6cca7009db7528ce924b53246/jetified-play-services-auth-17.0.0/AndroidManifest.xml:23:9-27:75
+171-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/5a57908a311c7d138895fbf09792d441/jetified-play-services-auth-17.0.0/AndroidManifest.xml:23:9-27:75
 172            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-172-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/2fadf9f6cca7009db7528ce924b53246/jetified-play-services-auth-17.0.0/AndroidManifest.xml:24:13-93
+172-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/5a57908a311c7d138895fbf09792d441/jetified-play-services-auth-17.0.0/AndroidManifest.xml:24:13-93
 173            android:excludeFromRecents="true"
-173-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/2fadf9f6cca7009db7528ce924b53246/jetified-play-services-auth-17.0.0/AndroidManifest.xml:25:13-46
+173-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/5a57908a311c7d138895fbf09792d441/jetified-play-services-auth-17.0.0/AndroidManifest.xml:25:13-46
 174            android:exported="false"
-174-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/2fadf9f6cca7009db7528ce924b53246/jetified-play-services-auth-17.0.0/AndroidManifest.xml:26:13-37
+174-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/5a57908a311c7d138895fbf09792d441/jetified-play-services-auth-17.0.0/AndroidManifest.xml:26:13-37
 175            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-175-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/2fadf9f6cca7009db7528ce924b53246/jetified-play-services-auth-17.0.0/AndroidManifest.xml:27:13-72
+175-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/5a57908a311c7d138895fbf09792d441/jetified-play-services-auth-17.0.0/AndroidManifest.xml:27:13-72
 176        <!--
 177            Service handling Google Sign-In user revocation. For apps that do not integrate with
 178            Google Sign-In, this service will never be started.
 179        -->
 180        <service
-180-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/2fadf9f6cca7009db7528ce924b53246/jetified-play-services-auth-17.0.0/AndroidManifest.xml:33:9-36:110
+180-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/5a57908a311c7d138895fbf09792d441/jetified-play-services-auth-17.0.0/AndroidManifest.xml:33:9-36:110
 181            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-181-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/2fadf9f6cca7009db7528ce924b53246/jetified-play-services-auth-17.0.0/AndroidManifest.xml:34:13-89
+181-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/5a57908a311c7d138895fbf09792d441/jetified-play-services-auth-17.0.0/AndroidManifest.xml:34:13-89
 182            android:exported="true"
-182-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/2fadf9f6cca7009db7528ce924b53246/jetified-play-services-auth-17.0.0/AndroidManifest.xml:35:13-36
+182-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/5a57908a311c7d138895fbf09792d441/jetified-play-services-auth-17.0.0/AndroidManifest.xml:35:13-36
 183            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
-183-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/2fadf9f6cca7009db7528ce924b53246/jetified-play-services-auth-17.0.0/AndroidManifest.xml:36:13-107
+183-->[com.google.android.gms:play-services-auth:17.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/5a57908a311c7d138895fbf09792d441/jetified-play-services-auth-17.0.0/AndroidManifest.xml:36:13-107
 184
 185        <receiver
-185-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/fdf35e2646cc7d6e6f0ccd9276867112/jetified-firebase-iid-20.0.2/AndroidManifest.xml:37:9-44:20
+185-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/14092e63484c408036652bf98e042e26/jetified-firebase-iid-20.0.2/AndroidManifest.xml:37:9-44:20
 186            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-186-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/fdf35e2646cc7d6e6f0ccd9276867112/jetified-firebase-iid-20.0.2/AndroidManifest.xml:38:13-78
+186-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/14092e63484c408036652bf98e042e26/jetified-firebase-iid-20.0.2/AndroidManifest.xml:38:13-78
 187            android:exported="true"
-187-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/fdf35e2646cc7d6e6f0ccd9276867112/jetified-firebase-iid-20.0.2/AndroidManifest.xml:39:13-36
+187-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/14092e63484c408036652bf98e042e26/jetified-firebase-iid-20.0.2/AndroidManifest.xml:39:13-36
 188            android:permission="com.google.android.c2dm.permission.SEND" >
-188-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/fdf35e2646cc7d6e6f0ccd9276867112/jetified-firebase-iid-20.0.2/AndroidManifest.xml:40:13-73
+188-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/14092e63484c408036652bf98e042e26/jetified-firebase-iid-20.0.2/AndroidManifest.xml:40:13-73
 189            <intent-filter>
-189-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/fdf35e2646cc7d6e6f0ccd9276867112/jetified-firebase-iid-20.0.2/AndroidManifest.xml:41:13-43:29
+189-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/14092e63484c408036652bf98e042e26/jetified-firebase-iid-20.0.2/AndroidManifest.xml:41:13-43:29
 190                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-190-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/fdf35e2646cc7d6e6f0ccd9276867112/jetified-firebase-iid-20.0.2/AndroidManifest.xml:42:17-81
-190-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/fdf35e2646cc7d6e6f0ccd9276867112/jetified-firebase-iid-20.0.2/AndroidManifest.xml:42:25-78
+190-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/14092e63484c408036652bf98e042e26/jetified-firebase-iid-20.0.2/AndroidManifest.xml:42:17-81
+190-->[com.google.firebase:firebase-iid:20.0.2] /home/callum/.gradle/caches/transforms-2/files-2.1/14092e63484c408036652bf98e042e26/jetified-firebase-iid-20.0.2/AndroidManifest.xml:42:25-78
 191            </intent-filter>
 192        </receiver>
 193
 194        <provider
-194-->[com.google.firebase:firebase-common:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/89e8c50f4adcfa71f0d90282494b2c06/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
+194-->[com.google.firebase:firebase-common:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/3deb10f8139ef5717b3d54ada2a19ca4/jetified-firebase-common-19.3.0/AndroidManifest.xml:26:9-30:39
 195            android:name="com.google.firebase.provider.FirebaseInitProvider"
-195-->[com.google.firebase:firebase-common:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/89e8c50f4adcfa71f0d90282494b2c06/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
+195-->[com.google.firebase:firebase-common:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/3deb10f8139ef5717b3d54ada2a19ca4/jetified-firebase-common-19.3.0/AndroidManifest.xml:27:13-77
 196            android:authorities="com.example.healthproject_beta.firebaseinitprovider"
-196-->[com.google.firebase:firebase-common:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/89e8c50f4adcfa71f0d90282494b2c06/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
+196-->[com.google.firebase:firebase-common:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/3deb10f8139ef5717b3d54ada2a19ca4/jetified-firebase-common-19.3.0/AndroidManifest.xml:28:13-72
 197            android:exported="false"
-197-->[com.google.firebase:firebase-common:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/89e8c50f4adcfa71f0d90282494b2c06/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
+197-->[com.google.firebase:firebase-common:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/3deb10f8139ef5717b3d54ada2a19ca4/jetified-firebase-common-19.3.0/AndroidManifest.xml:29:13-37
 198            android:initOrder="100" />
-198-->[com.google.firebase:firebase-common:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/89e8c50f4adcfa71f0d90282494b2c06/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
+198-->[com.google.firebase:firebase-common:19.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/3deb10f8139ef5717b3d54ada2a19ca4/jetified-firebase-common-19.3.0/AndroidManifest.xml:30:13-36
 199
 200        <activity
-200-->[com.google.android.gms:play-services-base:17.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/8d306c96d5671c46c09e41df093ec68f/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
+200-->[com.google.android.gms:play-services-base:17.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/75e7c473eccef2b3a0eec97fa3a7825b/jetified-play-services-base-17.1.0/AndroidManifest.xml:23:9-26:75
 201            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-201-->[com.google.android.gms:play-services-base:17.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/8d306c96d5671c46c09e41df093ec68f/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
+201-->[com.google.android.gms:play-services-base:17.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/75e7c473eccef2b3a0eec97fa3a7825b/jetified-play-services-base-17.1.0/AndroidManifest.xml:24:13-79
 202            android:exported="false"
-202-->[com.google.android.gms:play-services-base:17.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/8d306c96d5671c46c09e41df093ec68f/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
+202-->[com.google.android.gms:play-services-base:17.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/75e7c473eccef2b3a0eec97fa3a7825b/jetified-play-services-base-17.1.0/AndroidManifest.xml:25:13-37
 203            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-203-->[com.google.android.gms:play-services-base:17.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/8d306c96d5671c46c09e41df093ec68f/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
+203-->[com.google.android.gms:play-services-base:17.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/75e7c473eccef2b3a0eec97fa3a7825b/jetified-play-services-base-17.1.0/AndroidManifest.xml:26:13-72
 204
 205        <receiver
-205-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:29:9-33:20
+205-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:29:9-33:20
 206            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-206-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:30:13-85
+206-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:30:13-85
 207            android:enabled="true"
-207-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:31:13-35
+207-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:31:13-35
 208            android:exported="false" >
-208-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:32:13-37
+208-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:32:13-37
 209        </receiver>
 210        <receiver
-210-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:34:9-42:20
+210-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:34:9-42:20
 211            android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver"
-211-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:35:13-100
+211-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:35:13-100
 212            android:enabled="true"
-212-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:36:13-35
+212-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:36:13-35
 213            android:exported="true"
-213-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:37:13-36
+213-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:37:13-36
 214            android:permission="android.permission.INSTALL_PACKAGES" >
-214-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:38:13-69
+214-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:38:13-69
 215            <intent-filter>
-215-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:39:13-41:29
+215-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:39:13-41:29
 216                <action android:name="com.android.vending.INSTALL_REFERRER" />
-216-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:40:17-79
-216-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:40:25-76
+216-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:40:17-79
+216-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:40:25-76
 217            </intent-filter>
 218        </receiver>
 219
 220        <service
-220-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:44:9-47:40
+220-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:44:9-47:40
 221            android:name="com.google.android.gms.measurement.AppMeasurementService"
-221-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:45:13-84
+221-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:45:13-84
 222            android:enabled="true"
-222-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:46:13-35
+222-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:46:13-35
 223            android:exported="false" />
-223-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:47:13-37
+223-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:47:13-37
 224        <service
-224-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:48:9-52:72
+224-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:48:9-52:72
 225            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-225-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:49:13-87
+225-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:49:13-87
 226            android:enabled="true"
-226-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:50:13-35
+226-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:50:13-35
 227            android:exported="false"
-227-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:51:13-37
+227-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:51:13-37
 228            android:permission="android.permission.BIND_JOB_SERVICE" />
-228-->[com.google.android.gms:play-services-measurement:17.2.3] /home/callum/.gradle/caches/transforms-2/files-2.1/a93410e57c6510f93e025374ec34c794/jetified-play-services-measurement-17.2.3/AndroidManifest.xml:52:13-69
+228-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:52:13-69
 229
 230        <provider
-230-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/dc5b001a60b389d2ab88bff44fb7f033/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+230-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/f8e2b213c9c6535c422622afbf842b10/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
 231            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-231-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/dc5b001a60b389d2ab88bff44fb7f033/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+231-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/f8e2b213c9c6535c422622afbf842b10/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
 232            android:authorities="com.example.healthproject_beta.lifecycle-process"
-232-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/dc5b001a60b389d2ab88bff44fb7f033/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+232-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/f8e2b213c9c6535c422622afbf842b10/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
 233            android:exported="false"
-233-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/dc5b001a60b389d2ab88bff44fb7f033/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+233-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/f8e2b213c9c6535c422622afbf842b10/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
 234            android:multiprocess="true" />
-234-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/dc5b001a60b389d2ab88bff44fb7f033/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+234-->[androidx.lifecycle:lifecycle-process:2.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/f8e2b213c9c6535c422622afbf842b10/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
 235    </application>
 236
 237</manifest>

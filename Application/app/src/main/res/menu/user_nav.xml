@@ -5,30 +5,30 @@
 
     <item
         android:id = "@+id/home"
-        android:title="Home"
+        android:title="@string/home"
         android:icon="@drawable/ic_home_black_24dp"
         />
 
 
     <item
         android:id = "@+id/booking"
-        android:title="Booking"
+        android:title="@string/booking"
         android:icon="@drawable/ic_event_black_24dp"
         />
 
     <item
         android:id = "@+id/venues"
-        android:title="Venues"
+        android:title="@string/venues"
         android:icon="@drawable/ic_place_black_24dp"/>
 
     <item
         android:id = "@+id/events"
-        android:title="Events"
+        android:title="@string/events"
         android:icon = "@drawable/ic_event_available_black_24dp"/>
 
     <item
         android:id = "@+id/profile"
-        android:title="Profile"
+        android:title="@string/profile"
         android:icon = "@drawable/ic_person_black_24dp"/>
 
 

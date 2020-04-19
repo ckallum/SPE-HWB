@@ -9,21 +9,24 @@ import com.google.firebase.auth.FirebaseUser;
  */
 public class User {
 
-    private String userId;
     private String displayName;
     private boolean isAdmin;
     private String email;
 
-    public User(FirebaseUser user) {
-        this.userId = user.getUid();
-        this.displayName = user.getDisplayName();
-        this.isAdmin = false;
-        this.email = user.getEmail();
+    public User(String email,  Boolean isAdmin) {
+        this.isAdmin = isAdmin;
+        this.email = email;
     }
 
-    public String getUserId() {
-        return userId;
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
 
     public String getDisplayName() {
         return displayName;

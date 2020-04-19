@@ -4,30 +4,26 @@
 
     <item
         android:id = "@+id/home"
-        android:title="Home"
+        android:title="@string/home"
         android:icon="@drawable/ic_home_black_24dp"
         />
 
 
     <item
         android:id = "@+id/add"
-        android:title="Add Event"
+        android:title="@string/create"
         android:icon="@drawable/ic_add_circle_black_24dp"
         />
 
     <item
         android:id = "@+id/manage"
-        android:title="Manage Event"
+        android:title="@string/manage_events"
         android:icon="@drawable/ic_edit_black_24dp"/>
 
-<!--    <item-->
-<!--        android:id = "@+id/events"-->
-<!--        android:title="Events"-->
-<!--        android:icon = "@drawable/ic_event_available_black_24dp"/>-->
 
     <item
         android:id = "@+id/profile"
-        android:title="Profile"
+        android:title="@string/profile"
         android:icon = "@drawable/ic_person_black_24dp"/>
 
 

@@ -93,7 +93,6 @@
                     android:text="" />
 
 
-
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -113,24 +112,25 @@
                     android:text="" />
 
 
-
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:paddingLeft="5dp"
+                app:helperText="@string/venues">
 
-                <EditText
+                <Spinner
                     android:id="@+id/event_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Venue"
-                    android:maxLines="1"
-                    android:inputType="textNoSuggestions"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:focusable="false"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+                />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -140,12 +140,15 @@
 
                 <EditText
                     android:id="@+id/event_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="330dp"
+                    android:layout_height="50dp"
                     android:layout_marginLeft="00dp"
                     android:layout_marginTop="150dp"
                     android:ems="10"
-                    android:hint="@string/enter_date" />
+                    android:hint="@string/enter_date"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+                />
+
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -156,22 +159,24 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2">
+
             <EditText
                 android:id="@+id/event_start"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="25dp"
-                android:hint="Start Time"
                 android:layout_weight="1"
-                style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+                android:hint="Start Time" />
+
             <EditText
                 android:id="@+id/event_end"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="330dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:hint="End Time"
                 android:layout_weight="1"
-                style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+                android:hint="End Time" />
         </LinearLayout>
 
         <LinearLayout
@@ -186,8 +191,8 @@
                 android:layout_width="330dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_horizontal"
-                android:hint="@string/description"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:hint="@string/description" />
 
 
         </LinearLayout>
@@ -212,7 +217,6 @@
 
 
         </LinearLayout>
-
 
 
     </LinearLayout>

@@ -31,12 +31,14 @@ public class NavigationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         user = GlobalUser.getInstance(new FirebaseDataSource());
 
-        setContentView(R.layout.activity_main);
         if (user.isAdmin()){
+            setContentView(R.layout.activity_admin);
             bottomNav = findViewById(R.id.admin_navbar);
         }else{
+            setContentView(R.layout.activity_main);
             bottomNav = findViewById(R.id.user_navbar);
         }
+        assert bottomNav!=null;
 
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 

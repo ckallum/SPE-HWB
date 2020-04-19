@@ -142,7 +142,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void updateUiWithUser(UserView model) {
         String welcome = getString(R.string.welcome);
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), welcome+user.getDisplayName(), Toast.LENGTH_LONG).show();
         Intent toHome = new Intent(this, MainActivity.class);
         startActivity(toHome);
         finish();

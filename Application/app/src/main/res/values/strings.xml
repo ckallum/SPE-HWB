@@ -17,14 +17,17 @@
     <string name="create"> Create Event</string>
     <string name="spaces">Spaces</string>
     <string name="event_name">Event Name</string>
-    <string name="event_name">Event Name</string>
-    <string name="spaces">Spaces</string>
     <string name="date">Date</string>
     <string name="enter_time">Enter Time</string>
     <string name="enter_date">Enter Date</string>
     <string name="event_start">event_start</string>
     <string name="create_event">Create Event</string>
     <string name="description">Description</string>
+    <string name="home">Home</string>
+    <string name="booking">Booking</string>
+    <string name="venues">Venues</string>
+    <string name="profile">Profile</string>
+    <string name="manage_events">Manage Events</string>
 
 
 </resources>
