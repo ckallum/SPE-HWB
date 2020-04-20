@@ -99,10 +99,10 @@ public class GlobalUser {
 
     public Result<UserUpdateModel> register(String email ,String password){
         dataSource.register(email, password);
-        if (dataSource.getAuthUser() == null) {
-            Log.d("FAILURE", "User Failed to Register");
-            return new Result.Error( new IOException("Error Registering Email"));
-        }
+//        if (dataSource.getAuthUser() == null) {
+//            Log.d("FAILURE", "User Failed to Register");
+//            return new Result.Error( new IOException("Error Registering Email"));
+//        }
         return new Result.Success<>(new UserUpdateModel());
     }
 

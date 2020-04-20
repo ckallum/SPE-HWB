@@ -64,20 +64,17 @@ public class FirebaseDataSource extends Activity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Log.println(Log.ASSERT, "CHECK", email + auth.getCurrentUser().getEmail());
+                    Log.w("Success", "createUserWithEmail:success");
                     // Sign in success, update UI with the signed-in user's information
                     addDocument();
 
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("FAIL", "createUserWithEmail:failure", task.getException());
-
                 }
                 // ...
             }
         });
-        ;
-        Log.w("FAIL", "createUserWithEmail:failure");
     }
 
 
