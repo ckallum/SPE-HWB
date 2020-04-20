@@ -34,6 +34,7 @@
         <activity android:name=".Activity.RegisterActivity" />
         <activity android:name=".Activity.MainActivity" />
         <activity android:name=".Activity.Navigation.NavigationActivity"/>
+        <activity android:name=".Model.FirebaseDataSource"/>
     </application>
 
 </manifest>

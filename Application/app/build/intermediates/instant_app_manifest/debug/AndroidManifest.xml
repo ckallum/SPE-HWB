@@ -47,6 +47,7 @@
         <activity android:name="com.example.healthproject.Activity.RegisterActivity" />
         <activity android:name="com.example.healthproject.Activity.MainActivity" />
         <activity android:name="com.example.healthproject.Activity.Navigation.NavigationActivity" />
+        <activity android:name="com.example.healthproject.Model.FirebaseDataSource" />
 
         <meta-data
             android:name="com.google.android.gms.version"

@@ -33,13 +33,12 @@ public class ViewModelController extends ViewModel {
 
     public void login(String username, String password) {
         // can be launched in a separate asynchronous job
-        Result<User> result = user.login(username, password);
+        user.login(username, password);
 
-        if (result instanceof Result.Success) {
-            User data = ((Result.Success<User>) result).getData();
-            authResult.setValue(new FirebaseAuthResult(new UserView(data.getDisplayName())));
+        if (user.isLoggedIn()) {
+            authResult.setValue(new FirebaseAuthResult( new UserView("Enjoy the App")));
         } else {
-            authResult.setValue(new FirebaseAuthResult(R.string.login_failed));
+            authResult.setValue(new FirebaseAuthResult(1));
         }
     }
 
@@ -50,7 +49,7 @@ public class ViewModelController extends ViewModel {
         if (result instanceof Result.Success) {
             authResult.setValue(new FirebaseAuthResult(new UserView(((Result.Success) result).getData().toString())));
         } else {
-            authResult.setValue(new FirebaseAuthResult(R.string.login_failed));
+            authResult.setValue(new FirebaseAuthResult(R.string.register_failed));
         }
     }
 
@@ -111,7 +110,7 @@ public class ViewModelController extends ViewModel {
         return password != null && password.trim().length() > 5;
     }
 
-    private boolean isPasswordValid(String password, String password2) {
+    private boolean isPasswordValid(String password2, String password) {
         return password != null && password.trim().length() > 5 && password.equals(password2);
     }
 }
