@@ -38,7 +38,7 @@ public class ViewModelController extends ViewModel {
         if (user.isLoggedIn()) {
             authResult.setValue(new FirebaseAuthResult( new UserView("Enjoy the App")));
         } else {
-            authResult.setValue(new FirebaseAuthResult(1));
+            authResult.setValue(new FirebaseAuthResult(R.string.login_failed));
         }
     }
 
