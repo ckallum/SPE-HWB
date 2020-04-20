@@ -30,6 +30,9 @@
     <string name="manage_events">Manage Events</string>
     <string name="register_failed">Register Failed</string>
     <string name="success_string">Enjoy the App!</string>
+    <string name="event_name_error">Invalid Event Name</string>
+    <string name="event_time_error">Time Invalid</string>
+    <string name="attendee_error">Invalid Number of Attendees</string>
 
 
 </resources>

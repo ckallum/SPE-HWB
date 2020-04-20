@@ -6,6 +6,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 
 import com.example.healthproject.Activity.LoginActivity;
+import com.example.healthproject.Model.dto.Event;
 import com.example.healthproject.Model.dto.User;
 import com.example.healthproject.Model.dto.UserUpdateModel;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,6 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -40,7 +42,7 @@ public class FirebaseDataSource extends Activity {
 
     void login(String email, String password) {
 
-        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener( this, new OnCompleteListener<AuthResult>() {
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
@@ -60,7 +62,7 @@ public class FirebaseDataSource extends Activity {
 
     void register(final String email, String password) {
 
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener( this, new OnCompleteListener<AuthResult>() {
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
@@ -108,6 +110,21 @@ public class FirebaseDataSource extends Activity {
                         Log.w("FAILURE", "Error adding document", e);
                     }
                 });
+    }
+
+    public void add_event(Event event) {
+        ref = db.collection("events");
+        ref.add(event).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Log.d("Success", "Event Created");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w("FAIL", "Error adding document", e);
+            }
+        });
     }
 
     public FirebaseUser getAuthUser() {

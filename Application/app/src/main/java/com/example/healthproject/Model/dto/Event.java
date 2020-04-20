@@ -7,20 +7,50 @@ public class Event {
     private long attendees;
     private long interested;
     private long spaces;
-    private Timestamp date;
+    private String description;
+    private String start;
+    private String end;
+    private String date;
     private String name;
     private String location;
 
     public Event() {
     }
 
-    public Event(long attendees, long interested, long spaces, Timestamp date, String name, String location) {
+    public Event(Integer attendees, Integer interested, Integer spaces, String date, String name, String location, String start, String end, String description) {
         this.attendees = attendees;
         this.interested = interested;
         this.spaces = spaces;
         this.date = date;
+        this.start = start;
+        this.end = end;
+        this.description = description;
         this.name = name;
         this.location = location;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public String getEnd() {
+        return end;
+    }
+
+    public void setEnd(String end) {
+        this.end = end;
     }
 
     public long getAttendees() {
@@ -47,11 +77,11 @@ public class Event {
         this.spaces = spaces;
     }
 
-    public Timestamp getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Timestamp date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
