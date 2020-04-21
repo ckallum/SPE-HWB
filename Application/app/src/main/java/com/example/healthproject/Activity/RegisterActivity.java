@@ -61,9 +61,13 @@ public class RegisterActivity extends AppCompatActivity {
                 registerButton.setEnabled(registerFormState.isDataValid());
                 if (registerFormState.getEmailError() != null) {
                     emailEditText.setError(getString(registerFormState.getEmailError()));
+                }else {
+                    emailEditText.setError(null);
                 }
                 if (registerFormState.getPasswordError() != null) {
                     passwordEditText.setError(getString(registerFormState.getPasswordError()));
+                } else {
+                    emailEditText.setError(null);
                 }
             }
         });

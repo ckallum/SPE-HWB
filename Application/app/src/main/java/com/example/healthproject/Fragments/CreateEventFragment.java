@@ -41,6 +41,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -75,6 +76,7 @@ public class CreateEventFragment extends Fragment {
         createButton = root.findViewById(R.id.button_create);
 
 
+
         createViewModel.getFormState().observe(getViewLifecycleOwner(), new Observer<FormState>() {
             @Override
             public void onChanged(FormState formState) {
@@ -84,18 +86,32 @@ public class CreateEventFragment extends Fragment {
                 createButton.setEnabled(formState.isDataValid());
                 if (formState.getEventNameError() != null) {
                     eventName.setError(getString(formState.getEventNameError()));
+                }else{
+                    eventName.setError(null);
                 }
                 if (formState.getEventDateError() != null) {
                     eventDate.setError(getString(formState.getEventDateError()));
                 }
+                else{
+                    eventDate.setError(null);
+                }
                 if (formState.getEventStartTimeError() != null) {
                     eventStart.setError(getString(formState.getEventStartTimeError()));
+                }
+                else{
+                    eventStart.setError(null);
                 }
                 if (formState.getEventEndTimeError() != null) {
                     eventEnd.setError(getString(formState.getEventEndTimeError()));
                 }
+                else{
+                    eventEnd.setError(null);
+                }
                 if (formState.getEventAttendeeError() != null){
                     eventSpaces.setError(getString(formState.getEventAttendeeError()));
+                }
+                else{
+                    eventSpaces.setError(null);
                 }
             }
         });
@@ -163,11 +179,10 @@ public class CreateEventFragment extends Fragment {
             }
         });
 
-        eventDate.setInputType(InputType.TYPE_NULL);
         eventDate.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Calendar cldr = Calendar.getInstance();
+                Calendar cldr = Calendar.getInstance();
                 int day = cldr.get(Calendar.DAY_OF_MONTH);
                 int month = cldr.get(Calendar.MONTH);
                 int year = cldr.get(Calendar.YEAR);
@@ -184,7 +199,6 @@ public class CreateEventFragment extends Fragment {
         eventStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 Calendar mcurrentTime = Calendar.getInstance();
                 int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
                 int minute = mcurrentTime.get(Calendar.MINUTE);
@@ -201,7 +215,6 @@ public class CreateEventFragment extends Fragment {
         eventEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
                 Calendar mcurrentTime = Calendar.getInstance();
                 int hour = mcurrentTime.get(Calendar.HOUR_OF_DAY);
                 int minute = mcurrentTime.get(Calendar.MINUTE);

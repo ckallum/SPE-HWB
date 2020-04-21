@@ -146,14 +146,15 @@ public class ViewModelController extends ViewModel {
     }
 
     private boolean TimeValid(String timestamp) {
-        Log.d("TIME", timestamp);
-
-        return timestamp.matches("^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$");
+        Log.d("TimeReg", String.valueOf(timestamp.matches("^(2[0-3]|[0-1][0-9]|[0-9]):([0-5][0-9]|[0-9])$")));
+        Log.d("Time", timestamp);
+        return timestamp.matches("^(2[0-3]|[0-1][0-9]|[0-9]):([0-5][0-9]|[0-9])$");
     }
 
     private boolean DateValid(String date) {
-        Log.d("DATE", date);
-        return date.matches("^\\d{1,2}/\\d{1,2}/\\d{4}$");
+        Log.d("Date", date);
+        Log.d("DateReg", String.valueOf(date.matches("^([0-2][0-9]|3[0-1]|[0-9])/(0[0-9]|1[0-2]|[0-9])/([0-9][0-9])?[0-9][0-9]$")));
+        return date.matches("^([0-2][0-9]|3[0-1]|[0-9])/(0[0-9]|1[0-2]|[0-9])/([0-9][0-9])?[0-9][0-9]$");
     }
 
     private boolean EventNameValid(String name) {
@@ -161,13 +162,8 @@ public class ViewModelController extends ViewModel {
     }
 
     private boolean AttendeesValid(String number) {
-        if (number == null) {
-            return false;
-        }
-        if (!number.equals("") && number_matches(number)) {
-            return true;
-        }
-        return false;
+        return number != null && number_matches(number);
+
     }
 
     private boolean number_matches(String number){
