@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,17 +23,24 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthproject.Model.FirebaseDataSource;
 import com.example.healthproject.Model.GlobalUser;
+import com.example.healthproject.Model.dto.User;
 import com.example.healthproject.R;
 import com.example.healthproject.View.FirebaseAuthResult;
 import com.example.healthproject.View.FormState;
 import com.example.healthproject.View.UserView;
 import com.example.healthproject.View.ViewModelController;
 import com.example.healthproject.View.ViewModelFactory;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
     private ViewModelController loginViewModel;
     GlobalUser user;
+    FirebaseAuth auth;
+
     //TODO Check admin status to added user -> collection.("admins")
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,7 +57,6 @@ public class LoginActivity extends AppCompatActivity {
         if (user.isLoggedIn()) {
             updateUiWithUser(new UserView(user.getDisplayName()));
         }
-
 
 
         loginViewModel.getFormState().observe(this, new Observer<FormState>() {
@@ -100,12 +108,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginViewModel.login(usernameEditText.getText().toString(),
-                        passwordEditText.getText().toString());
-            }
-        });
+                                           @Override
+                                           public void onClick(View v) {
+                                                loginViewModel.login( usernameEditText.getText().toString(), passwordEditText.getText().toString());
+                                           }
+                                       }
+
+        );
         signUpText.setOnClickListener(new View.OnClickListener() {
                                           @Override
                                           public void onClick(View v) {
@@ -140,15 +149,15 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void updateUiWithUser(UserView model) {
-        String welcome = getString(R.string.welcome)+" ";
-        Toast.makeText(getApplicationContext(), welcome+model.getString(), Toast.LENGTH_LONG).show();
+    public void updateUiWithUser(UserView model) {
+        String welcome = getString(R.string.welcome) + " ";
+        Toast.makeText(getApplicationContext(), welcome + model.getString(), Toast.LENGTH_LONG).show();
         Intent toHome = new Intent(this, MainActivity.class);
         startActivity(toHome);
         finish();
     }
 
-    private void showLoginFailed(@StringRes Integer errorString) {
+    public void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
 

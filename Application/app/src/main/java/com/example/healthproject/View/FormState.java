@@ -15,7 +15,9 @@ public class FormState {
     @Nullable
     private Integer eventDateError;
     @Nullable
-    private Integer eventTimeError;
+    private Integer eventStartTimeError;
+    @Nullable
+    private Integer eventEndTimeError;
     @Nullable
     private Integer eventAttendeeError;
     @Nullable
@@ -28,9 +30,10 @@ public class FormState {
         this.isDataValid = false;
     }
 
-    public FormState(@Nullable Integer eventNameError, @Nullable Integer eventTimeError, @Nullable Integer eventDateError, @Nullable Integer eventAttendeeError) {
+    public FormState(@Nullable Integer eventNameError, @Nullable Integer eventStartTimeError, @Nullable Integer eventEndTimeError,@Nullable Integer eventDateError, @Nullable Integer eventAttendeeError) {
         this.eventNameError = eventNameError;
-        this.eventTimeError = eventTimeError;
+        this.eventStartTimeError = eventStartTimeError;
+        this.eventEndTimeError = eventEndTimeError;
         this.eventDateError = eventDateError;
         this.eventAttendeeError = eventAttendeeError;
         this.isDataValid = false;
@@ -40,9 +43,11 @@ public class FormState {
         this.usernameError = null;
         this.passwordError = null;
         this.emailError = null;
+        this.eventAttendeeError = null;
         this.eventDateError = null;
         this.eventNameError = null;
-        this.eventTimeError = null;
+        this.eventStartTimeError = null;
+        this.eventEndTimeError = null;
         this.isDataValid = isDataValid;
     }
 
@@ -80,9 +85,13 @@ public class FormState {
     }
 
     @Nullable
-    public Integer getEventTimeError() {
-        return eventTimeError;
+    public Integer getEventStartTimeError() {
+        return eventStartTimeError;
     }
+    public Integer getEventEndTimeError() {
+        return eventEndTimeError;
+    }
+
 
     @Nullable
     public Integer getEventAttendeeError() {

@@ -1,11 +1,12 @@
 package com.example.healthproject.Model;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.Model.dto.Event;
 import com.example.healthproject.Model.dto.User;
 import com.example.healthproject.Model.dto.UserUpdateModel;
@@ -27,7 +28,7 @@ import java.util.concurrent.Executor;
 /**
  * Class that handles authentication with Firebase w/ forgot credentials and retrieves user information.
  */
-public class FirebaseDataSource extends Activity {
+public class FirebaseDataSource extends AppCompatActivity {
     private FirebaseAuth auth;
 
 
@@ -48,9 +49,11 @@ public class FirebaseDataSource extends Activity {
                 if (task.isSuccessful()) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d("SUCCESS", "signInWithEmail:success");
+
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w("FAIL", "signInWithEmail:failure", task.getException());
+
                     // ...
                 }
                 // ...

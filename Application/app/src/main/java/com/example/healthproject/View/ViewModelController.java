@@ -37,7 +37,6 @@ public class ViewModelController extends ViewModel {
     public void login(String username, String password) {
         // can be launched in a separate asynchronous job
         user.login(username, password);
-
         if (user.isLoggedIn()) {
             authResult.setValue(new FirebaseAuthResult(new UserView("Enjoy the App")));
         } else {
@@ -88,12 +87,19 @@ public class ViewModelController extends ViewModel {
 
     public void eventDataChanged(String name, String start, String end, String date, String spaces) {
         if (!EventNameValid(name)) {
-            formState.setValue(new FormState(R.string.event_name_error, null, null, null));
+            formState.setValue(new FormState(R.string.event_name_error, null, null, null, null));
         } else if (!AttendeesValid(spaces)) {
-            formState.setValue(new FormState(null, null, null, R.string.attendee_error));
+            formState.setValue(new FormState(null, null, null, null, R.string.attendee_error));
         }
-        else if (!TimeValid(start) || !TimeValid(end) || !DateValid(date)) {
-            formState.setValue(new FormState(null, R.string.event_time_error, R.string.event_time_error, null));}
+        else if (!TimeValid(start)) {
+            formState.setValue(new FormState(null, R.string.event_time_error, null, null, null));
+        }
+        else if (!DateValid(date)){
+            formState.setValue(new FormState(null, null, null ,R.string.date_invalid, null));
+        }
+        else if (!TimeValid(end)) {
+            formState.setValue(new FormState(null, null,  R.string.event_time_error, null, null));
+        }
         else {
             formState.setValue(new FormState(true));
         }
@@ -139,11 +145,11 @@ public class ViewModelController extends ViewModel {
     }
 
     private boolean TimeValid(String timestamp) {
-        return timestamp != null && !timestamp.isEmpty()&& time_matches(timestamp);
+        return timestamp != null && !timestamp.isEmpty() && time_matches(timestamp);
     }
 
     private boolean DateValid(String date) {
-        return date != null && !date.isEmpty()&& date_matches(date);
+        return date != null && !date.isEmpty() &&date_matches(date);
     }
 
     private boolean EventNameValid(String name) {

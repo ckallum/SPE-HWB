@@ -35,12 +35,12 @@ import com.example.healthproject.View.ViewModelController;
 import com.example.healthproject.View.ViewModelFactory;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -74,6 +74,7 @@ public class CreateEventFragment extends Fragment {
         description = root.findViewById(R.id.event_description);
         createButton = root.findViewById(R.id.button_create);
 
+
         createViewModel.getFormState().observe(getViewLifecycleOwner(), new Observer<FormState>() {
             @Override
             public void onChanged(FormState formState) {
@@ -85,10 +86,13 @@ public class CreateEventFragment extends Fragment {
                     eventName.setError(getString(formState.getEventNameError()));
                 }
                 if (formState.getEventDateError() != null) {
-                    eventSpaces.setError(getString(formState.getEventDateError()));
+                    eventDate.setError(getString(formState.getEventDateError()));
                 }
-                if (formState.getEventTimeError() != null) {
-                    eventSpaces.setError(getString(formState.getEventTimeError()));
+                if (formState.getEventStartTimeError() != null) {
+                    eventStart.setError(getString(formState.getEventStartTimeError()));
+                }
+                if (formState.getEventEndTimeError() != null) {
+                    eventEnd.setError(getString(formState.getEventEndTimeError()));
                 }
                 if (formState.getEventAttendeeError() != null){
                     eventSpaces.setError(getString(formState.getEventAttendeeError()));
@@ -166,7 +170,7 @@ public class CreateEventFragment extends Fragment {
                 int day = cldr.get(Calendar.DAY_OF_MONTH);
                 int month = cldr.get(Calendar.MONTH);
                 int year = cldr.get(Calendar.YEAR);
-                dPicker = new DatePickerDialog(getContext(),
+                dPicker = new DatePickerDialog(requireContext(),
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
