@@ -1,5 +1,6 @@
 package com.example.healthproject.View;
 
+import android.util.Log;
 import android.util.Patterns;
 
 import androidx.lifecycle.LiveData;
@@ -91,11 +92,11 @@ public class ViewModelController extends ViewModel {
         } else if (!AttendeesValid(spaces)) {
             formState.setValue(new FormState(null, null, null, null, R.string.attendee_error));
         }
-        else if (!TimeValid(start)) {
-            formState.setValue(new FormState(null, R.string.event_time_error, null, null, null));
-        }
         else if (!DateValid(date)){
             formState.setValue(new FormState(null, null, null ,R.string.date_invalid, null));
+        }
+        else if (!TimeValid(start)) {
+            formState.setValue(new FormState(null, R.string.event_time_error, null, null, null));
         }
         else if (!TimeValid(end)) {
             formState.setValue(new FormState(null, null,  R.string.event_time_error, null, null));
@@ -145,11 +146,14 @@ public class ViewModelController extends ViewModel {
     }
 
     private boolean TimeValid(String timestamp) {
-        return timestamp != null && !timestamp.isEmpty() && time_matches(timestamp);
+        Log.d("TIME", timestamp);
+
+        return timestamp.matches("^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$");
     }
 
     private boolean DateValid(String date) {
-        return date != null && !date.isEmpty() &&date_matches(date);
+        Log.d("DATE", date);
+        return date.matches("^\\d{1,2}/\\d{1,2}/\\d{4}$");
     }
 
     private boolean EventNameValid(String name) {
@@ -164,22 +168,6 @@ public class ViewModelController extends ViewModel {
             return true;
         }
         return false;
-    }
-
-   private boolean date_matches(String date) {
-        if (date.isEmpty()) {
-            return false;
-        }
-        Pattern pattern = Pattern.compile("^\\d{2}-\\d-\\d{4}$");
-        return pattern.matcher(date).matches();
-    }
-
-    private boolean time_matches(String time) {
-        if (time.isEmpty() ) {
-            return false;
-        }
-        Pattern pattern = Pattern.compile("([01]?[0-9]|2[0-3]):[0-5][0-9]");
-        return pattern.matcher(time).matches();
     }
 
     private boolean number_matches(String number){
