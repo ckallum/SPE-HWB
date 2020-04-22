@@ -40,12 +40,12 @@ public class RecyclerViewConfig {
             super(LayoutInflater.from(mContext)
                     .inflate(R.layout.event_manage_item, parent, false));
 
-            mName = itemView.findViewById(R.id.list_name2);
-            mDate = itemView.findViewById(R.id.list_date2);
-            mLocation = itemView.findViewById(R.id.list_location2);
-            mSpaces = itemView.findViewById(R.id.list_spaces2);
-            mInterested = itemView.findViewById(R.id.list_interested2);
-            mAttendees = itemView.findViewById(R.id.list_attendees2);
+            mName = itemView.findViewById(R.id.list_name);
+            mDate = itemView.findViewById(R.id.list_date);
+            mLocation = itemView.findViewById(R.id.list_location);
+            mSpaces = itemView.findViewById(R.id.list_spaces);
+            mInterested = itemView.findViewById(R.id.list_interested);
+            mAttendees = itemView.findViewById(R.id.list_attendees);
             mTime = itemView.findViewById(R.id.list_duration);
         }
 

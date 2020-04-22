@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.healthproject.Model.dto.Event;
 import com.example.healthproject.Model.dto.EventModel;
 import com.example.healthproject.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -46,10 +47,10 @@ public class EventsFragment extends Fragment {
         Query query = firebaseFirestore.collection("events");
 
         //Recycler Options
-        FirestoreRecyclerOptions<EventModel> options = new FirestoreRecyclerOptions.Builder<EventModel>()
-                .setQuery(query, EventModel.class).build();
+        FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>()
+                .setQuery(query, Event.class).build();
 
-        adapter = new FirestoreRecyclerAdapter<EventModel, EventsViewHolder>(options) {
+        adapter = new FirestoreRecyclerAdapter<Event, EventsViewHolder>(options) {
             @NonNull
             @Override
             public EventsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -58,13 +59,14 @@ public class EventsFragment extends Fragment {
             }
 
             @Override
-            protected void onBindViewHolder(@NonNull final EventsViewHolder holder, int position, @NonNull final EventModel model) {
+            protected void onBindViewHolder(@NonNull final EventsViewHolder holder, int position, @NonNull final Event model) {
                 holder.list_name.setText(model.getName());
                 holder.list_location.setText(model.getLocation());
                 holder.list_date.setText(model.getDate() + "");
                 holder.list_attendees.setText("Attendees:" + " " + model.getAttendees() + "");
                 holder.list_interested.setText("Interested:" + " " + model.getInterested() + "");
                 holder.list_spaces.setText("Spaces:" + " " + model.getSpaces() + "");
+                holder.list_duration.setText("Time:" + " " + model.getStart() + " - "+ model.getEnd());
 
                 holder.interested.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -82,7 +84,7 @@ public class EventsFragment extends Fragment {
                                 if (!dataSnapshot.exists()) {
                                     DatabaseReference pushRef = eventRef.push();
                                     String pushId = pushRef.getKey();
-                                    model.setPushId(pushId);
+                                    model.setId(pushId);
                                     pushRef.setValue(model);
 
                                     Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
@@ -122,6 +124,7 @@ public class EventsFragment extends Fragment {
         private TextView list_attendees;
         private TextView list_interested;
         private TextView list_spaces;
+        private TextView list_duration;
         private TextView interested;
 
         public EventsViewHolder(@NonNull View itemView) {
@@ -133,7 +136,8 @@ public class EventsFragment extends Fragment {
             list_attendees = itemView.findViewById(R.id.list_attendees);
             list_interested = itemView.findViewById(R.id.list_interested);
             list_spaces = itemView.findViewById(R.id.list_spaces);
-            interested = itemView.findViewById(R.id.interested);
+            list_duration = itemView.findViewById(R.id.list_duration);
+            interested = itemView.findViewById(R.id.button_interested);
         }
     }
 

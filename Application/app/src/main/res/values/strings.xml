@@ -36,6 +36,9 @@
     <string name="date_invalid">Date Invalid</string>
     <string name="manage_event">Manage Event</string>
     <string name="filter">Filter</string>
+    <string name="interested">Interested</string>
+    <string name="delete_event">Delete</string>
+    <string name="update_event">Update</string>
 
 
 </resources>

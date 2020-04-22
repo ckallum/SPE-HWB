@@ -1,7 +1,5 @@
 package com.example.healthproject.Model;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
@@ -19,11 +17,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.IOException;
-import java.util.concurrent.Executor;
 
 /**
  * Class that handles authentication with Firebase w/ forgot credentials and retrieves user information.
@@ -115,17 +111,48 @@ public class FirebaseDataSource extends AppCompatActivity {
                 });
     }
 
-    public void add_event(Event event) {
+    public void add_event(final Event event) {
         ref = db.collection("events");
         ref.add(event).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public void onSuccess(DocumentReference documentReference) {
                 Log.d("Success", "Event Created");
+                ref.document(documentReference.getId()).update("id", documentReference.getId());
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 Log.w("FAIL", "Error adding document", e);
+            }
+        });
+    }
+
+    public void delete_event( String id ){
+        ref = db.collection("events");
+        ref.document(id).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("Success", "Event Deleted");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w("FAIL", "Error deleting document", e);
+            }
+        });
+    }
+
+    public void change_event( Event event ){
+        ref = db.collection("events");
+        ref.document(event.getId()).set(event).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("Success", "Event Updated");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w("FAIL", "Error Updating Document", e);
             }
         });
     }

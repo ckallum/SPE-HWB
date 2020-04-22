@@ -1,5 +1,6 @@
 package com.example.healthproject.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -7,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,17 +16,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.example.healthproject.Model.dto.EventModel;
+import com.example.healthproject.Activity.UpdateEvent;
+import com.example.healthproject.Model.dto.Event;
 import com.example.healthproject.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -34,88 +28,73 @@ import com.google.firebase.firestore.Query;
 public class ManageFragment extends Fragment {
     private FirebaseFirestore firebaseFirestore;
     private FirestoreRecyclerAdapter adapter;
-    private RecyclerView mFirestoreList;
+    private RecyclerView recyclerView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View x = inflater.inflate(R.layout.fragment_manage, container, false);
-        mFirestoreList = x.findViewById(R.id.eventRecycler);
+        recyclerView = x.findViewById(R.id.eventRecycler);
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         //Query
         Query query = firebaseFirestore.collection("events");
 
         //Recycler Options
-        FirestoreRecyclerOptions<EventModel> options = new FirestoreRecyclerOptions.Builder<EventModel>()
-                .setQuery(query, EventModel.class).build();
+        FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>()
+                .setQuery(query, Event.class).build();
 
-        adapter = new FirestoreRecyclerAdapter<EventModel, EventsManageViewHolder>(options) {
+        adapter = new FirestoreRecyclerAdapter<Event, EventsViewHolder>(options) {
+//            private Filter filter = new Filter() {
+//                @Override
+//                protected FilterResults performFiltering(CharSequence constraint) {
+//                    return null;
+//                }
+//
+//                @Override
+//                protected void publishResults(CharSequence constraint, FilterResults results) {
+//
+//                }
+//            }
             @NonNull
             @Override
-            public EventsManageViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_2, parent, false);
-                return new EventsManageViewHolder(view);
+            public EventsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.event_manage_item, parent, false);
+                return new EventsViewHolder(view);
             }
 
             @Override
-            protected void onBindViewHolder(@NonNull final EventsManageViewHolder holder, int position, @NonNull final EventModel model) {
-                holder.name.setText(model.getName());
-                holder.location.setText(model.getLocation());
-                holder.date.setText(model.getDate() + "");
-                holder.attendees.setText("Attendees:" + " " + model.getAttendees() + "");
-                holder.interested.setText("Interested:" + " " + model.getInterested() + "");
-                holder.spaces.setText("Spaces:" + " " + model.getSpaces() + "");
-
+            protected void onBindViewHolder(@NonNull final EventsViewHolder holder, int position, @NonNull final Event event) {
+                holder.name.setText(event.getName());
+                holder.location.setText(event.getLocation());
+                holder.date.setText(event.getDate() + "");
+                holder.attendees.setText("Attendees:" + " " + event.getAttendees() + "");
+                holder.interested.setText("Interested:" + " " + event.getInterested() + "");
+                holder.duration.setText( "Time" + " " + event.getStart() + " - " + event.getEnd()+"" );
+                holder.spaces.setText("Spaces:" + " " + event.getSpaces() + "");
+                Log.d("Debug", event.getId());
                 holder.manage.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // do something
-                        //Gets current user to save the event
-                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        String uid = user.getUid();
-                        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-                        final DatabaseReference eventRef = rootRef.child(uid).child(model.getName());
-
-                        ValueEventListener eventListener = new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                if (!dataSnapshot.exists()) {
-                                    DatabaseReference pushRef = eventRef.push();
-                                    String pushId = pushRef.getKey();
-                                    model.setPushId(pushId);
-                                    pushRef.setValue(model);
-
-                                    Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(getContext(), "Already saved", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-                                Log.d("stefan", databaseError.getMessage());
-                            }
-                        };
-
-                        eventRef.addListenerForSingleValueEvent(eventListener);
-
-
+                        // set new Intent with event id -> load event data
+                        Intent intent = new Intent(getActivity(), UpdateEvent.class);
+                        intent.putExtra("ID", event.getId());
+                        startActivity(intent);
                     }
                 });
 
             }
         };
 
-        mFirestoreList.setHasFixedSize(true);
-        mFirestoreList.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mFirestoreList.setAdapter(adapter);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(adapter);
 
         return x;
     }
 
 
-    private static class EventsManageViewHolder extends RecyclerView.ViewHolder {
+    private class EventsViewHolder extends RecyclerView.ViewHolder {
 
         private TextView name;
         private TextView location;
@@ -126,11 +105,16 @@ public class ManageFragment extends Fragment {
         private TextView duration;
         private Button manage;
 
-        public EventsManageViewHolder(@NonNull View itemView) {
+        private EventsViewHolder(@NonNull View itemView) {
             super(itemView);
-            name = itemView.findViewById(R.id.list_event)
-
-
+            name = itemView.findViewById(R.id.list_manage_name);
+            location = itemView.findViewById(R.id.list_manage_location);
+            date = itemView.findViewById(R.id.list_manage_date);
+            attendees = itemView.findViewById(R.id.list_manage_attendees);
+            interested = itemView.findViewById(R.id.list_manage_interested);
+            spaces = itemView.findViewById(R.id.list_manage_space);
+            duration = itemView.findViewById(R.id.list_manage_duration);
+            manage = itemView.findViewById(R.id.list_button_manage);
 
         }
     }

@@ -50,6 +50,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginRight="3dp"
+        android:layout_marginLeft="3dp"
         android:background="@color/fui_bgGoogle">
         <EditText
             android:layout_width="330dp"
@@ -64,6 +66,7 @@
 
         <Spinner
             android:id="@+id/eventFilter"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
            />
@@ -75,6 +78,9 @@
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/eventRecycler"
             android:layout_width="match_parent"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="3dp"
             android:layout_height="match_parent"
             android:background="@color/fui_bgGoogle"
             android:scrollbars="vertical" />

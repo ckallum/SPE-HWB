@@ -13,6 +13,7 @@ public class Event {
     private String date;
     private String name;
     private String location;
+    private String id;
 
     public Event() {
     }
@@ -100,4 +101,13 @@ public class Event {
     public void setLocation(String location) {
         this.location = location;
     }
+
+    public String getId() {
+        return this.id;
+    }
+
+    public void setId ( String id ){
+        this.id = id;
+    }
+
 }
