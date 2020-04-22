@@ -32,19 +32,21 @@ public class RecyclerViewConfig {
         private TextView mSpaces;
         private TextView mInterested;
         private TextView mAttendees;
+        private TextView mTime;
 
         private String key;
 
         public EventItemView(ViewGroup parent) {
             super(LayoutInflater.from(mContext)
-                    .inflate(R.layout.event_item, parent, false));
+                    .inflate(R.layout.event_manage_item, parent, false));
 
-            mName = (TextView) itemView.findViewById(R.id.list_name2);
-            mDate = (TextView) itemView.findViewById(R.id.list_date2);
-            mLocation = (TextView) itemView.findViewById(R.id.list_location2);
-            mSpaces = (TextView) itemView.findViewById(R.id.list_spaces2);
-            mInterested = (TextView) itemView.findViewById(R.id.list_interested2);
-            mAttendees = (TextView) itemView.findViewById(R.id.list_attendees2);
+            mName = itemView.findViewById(R.id.list_name2);
+            mDate = itemView.findViewById(R.id.list_date2);
+            mLocation = itemView.findViewById(R.id.list_location2);
+            mSpaces = itemView.findViewById(R.id.list_spaces2);
+            mInterested = itemView.findViewById(R.id.list_interested2);
+            mAttendees = itemView.findViewById(R.id.list_attendees2);
+            mTime = itemView.findViewById(R.id.list_duration);
         }
 
         public void bind(Event event, String key) {
@@ -54,6 +56,7 @@ public class RecyclerViewConfig {
             mSpaces.setText("Spaces: " + event.getSpaces());
             mInterested.setText("Interested: " + event.getInterested());
             mAttendees.setText("Attendees: " + event.getAttendees());
+            mTime.setText("Duration:" + event.getStart() + "-" + event.getEnd());
             this.key = key;
 
         }

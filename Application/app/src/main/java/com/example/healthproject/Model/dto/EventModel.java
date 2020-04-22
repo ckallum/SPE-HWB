@@ -1,14 +1,11 @@
 package com.example.healthproject.Model.dto;
-import android.widget.TimePicker;
-
-import com.google.firebase.Timestamp;
 
 public class EventModel {
 
-    private long attendees;
-    private long interested;
-    private long spaces;
-    private Timestamp date;
+    private Integer attendees;
+    private Integer interested;
+    private Integer spaces;
+    private String date;
     private String name;
     private String location;
     private String pushId;
@@ -17,7 +14,7 @@ public class EventModel {
 
     }
 
-    private EventModel(long attendees, long interested, long spaces, Timestamp date, String name, String location) {
+    private EventModel(Integer attendees, Integer interested, Integer spaces, String date, String name, String location) {
         this.attendees = attendees;
         this.interested = interested;
         this.spaces = spaces;
@@ -30,7 +27,7 @@ public class EventModel {
         return attendees;
     }
 
-    public void setAttendees(long attendees) {
+    public void setAttendees(Integer attendees) {
         this.attendees = attendees;
     }
 
@@ -38,7 +35,7 @@ public class EventModel {
         return interested;
     }
 
-    public void setInterested(long interested) {
+    public void setInterested(Integer interested) {
         this.interested = interested;
     }
 
@@ -46,15 +43,15 @@ public class EventModel {
         return spaces;
     }
 
-    public void setSpaces(long spaces) {
+    public void setSpaces(Integer spaces) {
         this.spaces = spaces;
     }
 
-    public Timestamp getDate() {
+    public String  getDate() {
         return date;
     }
 
-    public void setDate(Timestamp link) {
+    public void setDate(String link) {
         this.date = link;
     }
 

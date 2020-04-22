@@ -72,7 +72,7 @@
             android:textColor="#000000"
             android:padding="8dp"
             android:layout_gravity="center"
-            android:background="@drawable/button_interested"/>
+            android:background="@drawable/button"/>
     </FrameLayout>
     <!--    <View-->
     <!--        android:layout_width="match_parent"-->

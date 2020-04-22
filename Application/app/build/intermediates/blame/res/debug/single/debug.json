@@ -4,6 +4,10 @@
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/indoor.png"
     },
     {
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_fragment_manage.xml.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/fragment_manage.xml"
+    },
+    {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_coombe_location.png.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/coombe_location.png"
     },
@@ -36,12 +40,12 @@
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/time.png"
     },
     {
-        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_richmond.jpg.flat",
-        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/richmond.jpg"
-    },
-    {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_activity_forgot_pass.xml.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/activity_forgot_pass.xml"
+    },
+    {
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_richmond.jpg.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/richmond.jpg"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
@@ -90,6 +94,10 @@
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_button_interested.xml.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/button_interested.xml"
+    },
+    {
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_event_manage_item.xml.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/event_manage_item.xml"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_ic_place_black_24dp.xml.flat",
@@ -266,6 +274,10 @@
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_ic_event_black_24dp.xml.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/ic_event_black_24dp.xml"
+    },
+    {
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_fragment_event_dialogue.xml.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/fragment_event_dialogue.xml"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/menu_user_nav.xml.flat",

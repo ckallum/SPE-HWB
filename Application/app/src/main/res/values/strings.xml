@@ -34,6 +34,8 @@
     <string name="event_time_error">Time Invalid</string>
     <string name="attendee_error">Invalid Number of Attendees</string>
     <string name="date_invalid">Date Invalid</string>
+    <string name="manage_event">Manage Event</string>
+    <string name="filter">Filter</string>
 
 
 </resources>

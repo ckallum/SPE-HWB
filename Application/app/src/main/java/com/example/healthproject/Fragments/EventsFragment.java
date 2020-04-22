@@ -53,7 +53,7 @@ public class EventsFragment extends Fragment {
             @NonNull
             @Override
             public EventsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_2, parent, false);
+                View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
                 return new EventsViewHolder(view);
             }
 
@@ -61,7 +61,7 @@ public class EventsFragment extends Fragment {
             protected void onBindViewHolder(@NonNull final EventsViewHolder holder, int position, @NonNull final EventModel model) {
                 holder.list_name.setText(model.getName());
                 holder.list_location.setText(model.getLocation());
-                holder.list_date.setText(model.getDate().toDate() + "");
+                holder.list_date.setText(model.getDate() + "");
                 holder.list_attendees.setText("Attendees:" + " " + model.getAttendees() + "");
                 holder.list_interested.setText("Interested:" + " " + model.getInterested() + "");
                 holder.list_spaces.setText("Spaces:" + " " + model.getSpaces() + "");
