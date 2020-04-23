@@ -4,16 +4,16 @@
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/indoor.png"
     },
     {
-        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_fragment_manage.xml.flat",
-        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/fragment_manage.xml"
-    },
-    {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_coombe_location.png.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/coombe_location.png"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_fragment_booking.xml.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/fragment_booking.xml"
+    },
+    {
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_fragment_manage.xml.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/fragment_manage.xml"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_gradient_btn.xml.flat",
@@ -40,12 +40,12 @@
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/time.png"
     },
     {
-        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_activity_forgot_pass.xml.flat",
-        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/activity_forgot_pass.xml"
-    },
-    {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_richmond.jpg.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/richmond.jpg"
+    },
+    {
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_activity_forgot_pass.xml.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/activity_forgot_pass.xml"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
@@ -104,16 +104,16 @@
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/ic_place_black_24dp.xml"
     },
     {
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_user_list_item.xml.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/user_list_item.xml"
+    },
+    {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_contact.png.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/contact.png"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_logout.png.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/logout.png"
-    },
-    {
-        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_user_list_item.xml.flat",
-        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/user_list_item.xml"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_fragment_su.xml.flat",
@@ -298,6 +298,10 @@
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_fragment_societies.xml.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/fragment_societies.xml"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
