@@ -39,6 +39,7 @@
     <string name="interested">Interested</string>
     <string name="delete_event">Delete</string>
     <string name="update_event">Update</string>
+    <string name="search">Search by Name</string>
 
 
 </resources>

@@ -4,16 +4,16 @@
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/indoor.png"
     },
     {
-        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_fragment_booking.xml.flat",
-        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/fragment_booking.xml"
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_fragment_manage.xml.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/fragment_manage.xml"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_coombe_location.png.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/coombe_location.png"
     },
     {
-        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_fragment_manage.xml.flat",
-        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/fragment_manage.xml"
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_fragment_booking.xml.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/fragment_booking.xml"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_gradient_btn.xml.flat",
@@ -24,28 +24,28 @@
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/separator.xml"
     },
     {
-        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_text_bottom.xml.flat",
-        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/text_bottom.xml"
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_ic_edit_black_24dp.xml.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/ic_edit_black_24dp.xml"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/font_blackout_1.ttf.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/font/blackout_1.ttf"
     },
     {
-        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_ic_edit_black_24dp.xml.flat",
-        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/ic_edit_black_24dp.xml"
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_text_bottom.xml.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/text_bottom.xml"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_time.png.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/time.png"
     },
     {
-        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_richmond.jpg.flat",
-        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/richmond.jpg"
-    },
-    {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/layout_activity_forgot_pass.xml.flat",
         "source": "/home/callum/SPE-HWB/Application/app/src/main/res/layout/activity_forgot_pass.xml"
+    },
+    {
+        "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/drawable-v24_richmond.jpg.flat",
+        "source": "/home/callum/SPE-HWB/Application/app/src/main/res/drawable-v24/richmond.jpg"
     },
     {
         "merged": "/home/callum/SPE-HWB/Application/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",

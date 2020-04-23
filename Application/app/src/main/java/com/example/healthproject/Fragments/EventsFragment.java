@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.healthproject.Model.dto.Event;
-import com.example.healthproject.Model.dto.EventModel;
 import com.example.healthproject.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -29,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+
 
 
 public class EventsFragment extends Fragment {
@@ -67,6 +67,7 @@ public class EventsFragment extends Fragment {
                 holder.list_interested.setText("Interested:" + " " + model.getInterested() + "");
                 holder.list_spaces.setText("Spaces:" + " " + model.getSpaces() + "");
                 holder.list_duration.setText("Time:" + " " + model.getStart() + " - "+ model.getEnd());
+
 
                 holder.interested.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -126,6 +127,8 @@ public class EventsFragment extends Fragment {
         private TextView list_spaces;
         private TextView list_duration;
         private TextView interested;
+        private TextView filter;
+
 
         public EventsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -138,6 +141,7 @@ public class EventsFragment extends Fragment {
             list_spaces = itemView.findViewById(R.id.list_spaces);
             list_duration = itemView.findViewById(R.id.list_duration);
             interested = itemView.findViewById(R.id.button_interested);
+            filter = itemView.findViewById(R.id.eventFilter);
         }
     }
 

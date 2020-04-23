@@ -104,6 +104,7 @@ public class ManageFragment extends Fragment {
         private TextView spaces;
         private TextView duration;
         private Button manage;
+        private TextView filter;
 
         private EventsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -115,6 +116,7 @@ public class ManageFragment extends Fragment {
             spaces = itemView.findViewById(R.id.list_manage_space);
             duration = itemView.findViewById(R.id.list_manage_duration);
             manage = itemView.findViewById(R.id.list_button_manage);
+            filter = itemView.findViewById(R.id.eventFilter);
 
         }
     }

@@ -14,10 +14,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.IOException;
@@ -47,7 +45,7 @@ public class FirebaseDataSource extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Log.w("Success", "createUserWithEmail:success");
                     // Sign in success, update UI with the signed-in user's information
-                    addDocument();
+                    add_new_user();
 
                 } else {
                     // If sign in fails, display a message to the user.
@@ -73,7 +71,7 @@ public class FirebaseDataSource extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
     }
 
-    private void addDocument() {
+    private void add_new_user() {
         Log.println(Log.ASSERT, "CHECK", auth.getCurrentUser().getEmail());
         ref = db.collection("users");
         User user = new User(auth.getCurrentUser().getEmail(), false);
@@ -81,6 +79,7 @@ public class FirebaseDataSource extends AppCompatActivity {
             @Override
             public void onSuccess(Void aVoid) {
                 Log.d("SUCCESS", "DocumentSnapshot successfully written!");
+                logout();
             }
         })
                 .addOnFailureListener(new OnFailureListener() {
