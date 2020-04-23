@@ -151,6 +151,18 @@ public class FirebaseDataSource extends AppCompatActivity {
             }
         });
     }
+
+    public void update_password(String password) {
+        auth.getCurrentUser().updatePassword(password).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Log.d("Success", "User password updated.");
+                }
+            }
+        });
+
+    }
 //    private Result<UserUpdateModel> successResult(UserUpdateModel res){
 //        return new Result.Success<>(res);
 //    }

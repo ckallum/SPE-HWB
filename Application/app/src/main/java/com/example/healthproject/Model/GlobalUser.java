@@ -99,4 +99,8 @@ public class GlobalUser {
         user.setDisplayName( name );
         dataSource.update_user_displayName(user.getEmail(), name);
     }
+
+    public void update_password(String password) {
+        dataSource.update_password( password);
+    }
 }

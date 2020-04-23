@@ -36,6 +36,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.google.protobuf.Empty;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -50,6 +51,7 @@ public class ProfileFragment extends Fragment {
     ImageView camera;
     EditText username;
     EditText email;
+    EditText password;
     Uri uriProfileImage;
     ProgressBar progressBar;
     String profileImageUrl;
@@ -80,6 +82,8 @@ public class ProfileFragment extends Fragment {
         camera = rootView.findViewById(R.id.cameraImage);
         username = rootView.findViewById(R.id.usernameBox);
         email = rootView.findViewById(R.id.emailBox);
+        password = rootView.findViewById(R.id.passwordBox);
+
         progressBar = rootView.findViewById(R.id.progressBar);
 
         camera.setOnClickListener(new View.OnClickListener() {
@@ -144,12 +148,15 @@ public class ProfileFragment extends Fragment {
                         .setDisplayName(displayName)
                         .setPhotoUri( uriProfileImage)
                         .build();
-            }else {
+            }else{
                 profile = new UserProfileChangeRequest.Builder()
                         .setDisplayName(displayName)
                         .build();
             }
 
+            if (!password.getText().toString().isEmpty()){
+                user.update_password( password.getText().toString());
+            }
             user.update_displayName(displayName);
             mUser.updateProfile(profile).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
