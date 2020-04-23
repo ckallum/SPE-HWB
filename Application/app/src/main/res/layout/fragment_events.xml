@@ -53,21 +53,11 @@
         android:layout_marginRight="3dp"
         android:layout_marginLeft="3dp"
         android:background="@color/fui_bgGoogle">
-        <EditText
-            android:layout_width="330dp"
-            android:layout_height="wrap_content"
-
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:ems="10"
-            android:hint="@string/search"
-            android:text=""
-            />
 
         <SearchView
             android:id="@+id/eventFilter"
-
-            android:layout_width="wrap_content"
+            android:queryHint="@string/search"
+            android:layout_width="330dp"
             android:layout_height="wrap_content"
             />
 

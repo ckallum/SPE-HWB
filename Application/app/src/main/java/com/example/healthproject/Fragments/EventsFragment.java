@@ -43,6 +43,7 @@ public class EventsFragment extends Fragment {
         View x = inflater.inflate(R.layout.fragment_events, container, false);
         mFirestoreList = x.findViewById(R.id.firestore_events);
         firebaseFirestore = FirebaseFirestore.getInstance();
+        SearchView filter = x.findViewById(R.id.eventFilter);
 
         //Query
         Query query = firebaseFirestore.collection("events");
@@ -50,6 +51,23 @@ public class EventsFragment extends Fragment {
         //Recycler Options
         FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>()
                 .setQuery(query, Event.class).build();
+
+        filter.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                Query query = firebaseFirestore.collection("events").orderBy("name").startAt(newText).endAt(newText+"\uf8ff");
+                FirestoreRecyclerOptions<Event> newOptions = new FirestoreRecyclerOptions.Builder<Event>()
+                        .setQuery(query, Event.class).build();
+                adapter.updateOptions(newOptions);
+                return false;
+            }
+
+        });
 
         adapter = new FirestoreRecyclerAdapter<Event, EventsViewHolder>(options) {
             @NonNull

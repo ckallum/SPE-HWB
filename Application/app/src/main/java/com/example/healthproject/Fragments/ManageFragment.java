@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,31 +37,39 @@ public class ManageFragment extends Fragment {
         View x = inflater.inflate(R.layout.fragment_manage, container, false);
         recyclerView = x.findViewById(R.id.eventRecycler);
         firebaseFirestore = FirebaseFirestore.getInstance();
-
-        //Query
+        SearchView filter = x.findViewById(R.id.eventFilter);
         Query query = firebaseFirestore.collection("events");
-
-        //Recycler Options
         FirestoreRecyclerOptions<Event> options = new FirestoreRecyclerOptions.Builder<Event>()
                 .setQuery(query, Event.class).build();
 
+        filter.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                Query query = firebaseFirestore.collection("events").orderBy("name").startAt(newText).endAt(newText+"\uf8ff");
+                FirestoreRecyclerOptions<Event> newOptions = new FirestoreRecyclerOptions.Builder<Event>()
+                        .setQuery(query, Event.class).build();
+                adapter.updateOptions(newOptions);
+                return false;
+            }
+
+        });
+
         adapter = new FirestoreRecyclerAdapter<Event, EventsViewHolder>(options) {
-//            private Filter filter = new Filter() {
-//                @Override
-//                protected FilterResults performFiltering(CharSequence constraint) {
-//                    return null;
-//                }
-//
-//                @Override
-//                protected void publishResults(CharSequence constraint, FilterResults results) {
-//
-//                }
-//            }
             @NonNull
             @Override
             public EventsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.event_manage_item, parent, false);
                 return new EventsViewHolder(view);
+            }
+
+            @Override
+            public void updateOptions(@NonNull FirestoreRecyclerOptions<Event> options) {
+                super.updateOptions(options);
             }
 
             @Override
@@ -70,7 +79,7 @@ public class ManageFragment extends Fragment {
                 holder.date.setText(event.getDate() + "");
                 holder.attendees.setText("Attendees:" + " " + event.getAttendees() + "");
                 holder.interested.setText("Interested:" + " " + event.getInterested() + "");
-                holder.duration.setText( "Time" + " " + event.getStart() + " - " + event.getEnd()+"" );
+                holder.duration.setText("Time" + " " + event.getStart() + " - " + event.getEnd() + "");
                 holder.spaces.setText("Spaces:" + " " + event.getSpaces() + "");
                 Log.d("Debug", event.getId());
                 holder.manage.setOnClickListener(new View.OnClickListener() {
@@ -82,19 +91,18 @@ public class ManageFragment extends Fragment {
                         startActivity(intent);
                     }
                 });
-
             }
-        };
 
+        };
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(adapter);
-
         return x;
     }
 
 
-    private class EventsViewHolder extends RecyclerView.ViewHolder {
+
+    public static class EventsViewHolder extends RecyclerView.ViewHolder {
 
         private TextView name;
         private TextView location;
@@ -104,7 +112,6 @@ public class ManageFragment extends Fragment {
         private TextView spaces;
         private TextView duration;
         private Button manage;
-        private TextView filter;
 
         private EventsViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -116,7 +123,6 @@ public class ManageFragment extends Fragment {
             spaces = itemView.findViewById(R.id.list_manage_space);
             duration = itemView.findViewById(R.id.list_manage_duration);
             manage = itemView.findViewById(R.id.list_button_manage);
-            filter = itemView.findViewById(R.id.eventFilter);
 
         }
     }
