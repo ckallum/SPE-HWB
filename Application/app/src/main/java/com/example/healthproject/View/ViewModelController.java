@@ -74,13 +74,13 @@ public class ViewModelController extends ViewModel {
     public void update_event(String name, String start, String end, String date, String spaces, String location, String description, String id) {
         FirebaseDataSource dataSource = new FirebaseDataSource();
         Event event = new Event(0, 0, Integer.parseInt(spaces), date, name, location, start, end, description);
-        dataSource.change_event(event);
+        dataSource.changeEvent(event);
         authResult.setValue(new FirebaseAuthResult(new UserView("Event Updated")));
     }
 
     public void delete_event(String id ){
         FirebaseDataSource dataSource = new FirebaseDataSource();
-        dataSource.delete_event(id);
+        dataSource.deleteEvent(id);
         authResult.setValue(new FirebaseAuthResult(new UserView("Event Deleted")));
 
     }

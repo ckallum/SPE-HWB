@@ -1,23 +1,10 @@
 package com.example.healthproject.Model;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-
-import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.Model.dto.User;
 import com.example.healthproject.Model.dto.UserUpdateModel;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.io.IOException;
 
 
 /**
@@ -68,7 +55,7 @@ public class GlobalUser {
         return user != null && user.isAdmin();
     }
 
-    public String get_Id(){
+    public String getId(){
         return user.getEmail();
     }
 
@@ -95,12 +82,20 @@ public class GlobalUser {
         return result;
     }
 
-    public void update_displayName(String name){
+    public void updateDisplayName(String name){
         user.setDisplayName( name );
-        dataSource.update_user_displayName(user.getEmail(), name);
+        dataSource.updateUserDisplayName(user.getEmail(), name);
     }
 
-    public void update_password(String password) {
-        dataSource.update_password( password);
+    public void updatePassword(String password) {
+        dataSource.updatePassword( password);
+    }
+
+    public void subscribeEvent(String eventId){
+        dataSource.eventSubscribe(user.getEmail(), eventId);
+    }
+
+    public void unsubscribeEvent(String eventId){
+        dataSource.eventUnsubscribe(user.getEmail(), eventId);
     }
 }

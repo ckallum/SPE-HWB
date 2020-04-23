@@ -36,10 +36,8 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.google.protobuf.Empty;
 
 import java.io.IOException;
-import java.util.Objects;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -155,9 +153,9 @@ public class ProfileFragment extends Fragment {
             }
 
             if (!password.getText().toString().isEmpty()){
-                user.update_password( password.getText().toString());
+                user.updatePassword( password.getText().toString());
             }
-            user.update_displayName(displayName);
+            user.updateDisplayName(displayName);
             mUser.updateProfile(profile).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {

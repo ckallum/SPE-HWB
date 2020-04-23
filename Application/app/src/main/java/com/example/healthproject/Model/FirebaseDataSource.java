@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.healthproject.Model.dto.Event;
 import com.example.healthproject.Model.dto.User;
+import com.example.healthproject.Model.dto.UserEvent;
 import com.example.healthproject.Model.dto.UserUpdateModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -16,7 +17,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.IOException;
 
@@ -106,7 +111,7 @@ public class FirebaseDataSource extends AppCompatActivity {
         });
     }
 
-    public void delete_event( String id ){
+    public void deleteEvent(String id) {
         ref = db.collection("events");
         ref.document(id).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -121,7 +126,7 @@ public class FirebaseDataSource extends AppCompatActivity {
         });
     }
 
-    public void change_event( Event event ){
+    public void changeEvent(Event event) {
         ref = db.collection("events");
         ref.document(event.getId()).set(event).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -136,7 +141,7 @@ public class FirebaseDataSource extends AppCompatActivity {
         });
     }
 
-    public void update_user_displayName( String id, String name){
+    public void updateUserDisplayName(String id, String name) {
         ref = db.collection("users");
         ref.document(id).update("displayName", name).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -151,7 +156,7 @@ public class FirebaseDataSource extends AppCompatActivity {
         });
     }
 
-    public void update_password(String password) {
+    public void updatePassword(String password) {
         auth.getCurrentUser().updatePassword(password).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -162,6 +167,50 @@ public class FirebaseDataSource extends AppCompatActivity {
         });
 
     }
+
+    public void eventSubscribe(String uId, String eId) {
+        UserEvent userEvent = new UserEvent(uId, eId);
+        ref = db.collection("user_event_link");
+        ref.add(userEvent).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Log.d("Success", "Event Created");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w("FAIL", "Error adding document", e);
+            }
+
+        });
+    }
+
+
+
+    public void eventUnsubscribe(String email, String eventId) {
+        db.collection("user_event_link").whereEqualTo("eventId", eventId).whereEqualTo("userId", email).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        Log.d("Success", document.getId() + " => " + document.getData());
+                        db.collection("user_event_link").document(document.getId()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d("Success", "Event Unsubscribed");
+                            }
+                        });
+                    }
+                } else {
+                    Log.d("Fail", "Error getting documents: ", task.getException());
+                }
+            }
+        });
+
+
+
+    }
+
 //    private Result<UserUpdateModel> successResult(UserUpdateModel res){
 //        return new Result.Success<>(res);
 //    }

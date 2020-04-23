@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.healthproject.Model.FirebaseDataSource;
+import com.example.healthproject.Model.GlobalUser;
 import com.example.healthproject.Model.dto.Event;
 import com.example.healthproject.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -36,6 +38,7 @@ public class EventsFragment extends Fragment {
     private FirebaseFirestore firebaseFirestore;
     private FirestoreRecyclerAdapter adapter;
     private RecyclerView mFirestoreList;
+    private GlobalUser user;
 
     @Nullable
     @Override
@@ -44,6 +47,7 @@ public class EventsFragment extends Fragment {
         mFirestoreList = x.findViewById(R.id.firestore_events);
         firebaseFirestore = FirebaseFirestore.getInstance();
         SearchView filter = x.findViewById(R.id.eventFilter);
+        user = GlobalUser.getInstance(new FirebaseDataSource());
 
         //Query
         Query query = firebaseFirestore.collection("events");
@@ -91,36 +95,7 @@ public class EventsFragment extends Fragment {
                 holder.interested.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        // do something
-                        //Gets current user to save the event
-                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                        String uid = user.getUid();
-                        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-                        final DatabaseReference eventRef = rootRef.child(uid).child(model.getName());
-
-                        ValueEventListener eventListener = new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                if (!dataSnapshot.exists()) {
-                                    DatabaseReference pushRef = eventRef.push();
-                                    String pushId = pushRef.getKey();
-                                    model.setId(pushId);
-                                    pushRef.setValue(model);
-
-                                    Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
-                                } else {
-                                    Toast.makeText(getContext(), "Already saved", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-                                Log.d("stefan", databaseError.getMessage());
-                            }
-                        };
-
-                        eventRef.addListenerForSingleValueEvent(eventListener);
-
+                        user.subscribeEvent(model.getId());
 
                     }
                 });

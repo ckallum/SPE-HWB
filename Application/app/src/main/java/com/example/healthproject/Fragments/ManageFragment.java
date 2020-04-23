@@ -102,7 +102,7 @@ public class ManageFragment extends Fragment {
 
 
 
-    public static class EventsViewHolder extends RecyclerView.ViewHolder {
+    private static class EventsViewHolder extends RecyclerView.ViewHolder {
 
         private TextView name;
         private TextView location;
