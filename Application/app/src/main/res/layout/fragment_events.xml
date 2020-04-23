@@ -64,7 +64,7 @@
             android:text=""
             />
 
-        <EditText
+        <SearchView
             android:id="@+id/eventFilter"
 
             android:layout_width="wrap_content"

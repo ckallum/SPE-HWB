@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -127,7 +128,7 @@ public class EventsFragment extends Fragment {
         private TextView list_spaces;
         private TextView list_duration;
         private TextView interested;
-        private TextView filter;
+        private SearchView filter;
 
 
         public EventsViewHolder(@NonNull View itemView) {
