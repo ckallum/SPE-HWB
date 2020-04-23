@@ -17,6 +17,7 @@ import com.example.healthproject.R;
 import java.util.regex.Pattern;
 
 
+
 public class ViewModelController extends ViewModel {
 
     private MutableLiveData<FormState> formState = new MutableLiveData<>();
@@ -35,14 +36,9 @@ public class ViewModelController extends ViewModel {
         return authResult;
     }
 
-    public void login(String username, String password) {
+    public void login(String username, Boolean admin) {
         // can be launched in a separate asynchronous job
-        user.login(username, password);
-        if (user.isLoggedIn()) {
-            authResult.setValue(new FirebaseAuthResult(new UserView("Enjoy the App")));
-        } else {
-            authResult.setValue(new FirebaseAuthResult(R.string.login_failed));
-        }
+        user.login(username, admin);
     }
 
     public void register(String email, String password) {
@@ -85,7 +81,7 @@ public class ViewModelController extends ViewModel {
     public void delete_event(String id ){
         FirebaseDataSource dataSource = new FirebaseDataSource();
         dataSource.delete_event(id);
-        authResult.setValue(new FirebaseAuthResult(new UserView("Event Updated")));
+        authResult.setValue(new FirebaseAuthResult(new UserView("Event Deleted")));
 
     }
 

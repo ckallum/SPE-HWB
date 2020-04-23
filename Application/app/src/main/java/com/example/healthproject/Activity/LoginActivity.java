@@ -1,8 +1,12 @@
 package com.example.healthproject.Activity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -34,6 +38,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -49,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         loginViewModel = ViewModelProviders.of(this, new ViewModelFactory())
                 .get(ViewModelController.class);
         user = GlobalUser.getInstance(new FirebaseDataSource());
+        auth = FirebaseAuth.getInstance();
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
@@ -95,22 +103,48 @@ public class LoginActivity extends AppCompatActivity {
         };
         usernameEditText.addTextChangedListener(afterTextChangedListener);
         passwordEditText.addTextChangedListener(afterTextChangedListener);
-        passwordEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    loginViewModel.login(usernameEditText.getText().toString(),
-                            passwordEditText.getText().toString());
-                }
-                return false;
-            }
-        });
 
         loginButton.setOnClickListener(new View.OnClickListener() {
                                            @Override
                                            public void onClick(View v) {
-                                                loginViewModel.login( usernameEditText.getText().toString(), passwordEditText.getText().toString());
+                                               auth.signInWithEmailAndPassword(usernameEditText.getText().toString(), passwordEditText.getText().toString()).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                                                   @Override
+                                                   public void onComplete(@NonNull Task<AuthResult> task) {
+                                                       if (task.isSuccessful()) {
+                                                           // Sign in success, update UI with the signed-in user's information
+                                                           Log.d("SUCCESS", "signInWithEmail:success");
+                                                           FirebaseFirestore db = FirebaseFirestore.getInstance();
+                                                           CollectionReference ref = db.collection("users");
+                                                           ref.document(usernameEditText.getText().toString()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                                               @Override
+                                                               public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                                                   if (task.isSuccessful()) {
+                                                                       DocumentSnapshot document = task.getResult();
+                                                                       assert document != null;
+                                                                       if (document.exists()) {
+                                                                           Log.d("SUCCESS", "DocumentSnapshot data: " + document.getData());
+                                                                           loginViewModel.login(usernameEditText.getText().toString(), document.getBoolean("admin"));
+                                                                           updateUiWithUser(new UserView(document.getString("displayName")));
+                                                                       } else {
+                                                                           Log.d("FAILURE", "No such document");
+                                                                       }
+                                                                   } else {
+                                                                       Log.d("FAILURE", "get failed with ", task.getException());
+                                                                   }
+                                                               }
+                                                           });
+                                                       } else {
+                                                           // If sign in fails, display a message to the user.
+                                                           Log.w("FAIL", "signInWithEmail:failure", task.getException());
+                                                           showLoginFailed(R.string.login_failed);
+
+                                                           // ...
+                                                       }
+                                                       // ...
+                                                   }
+                                               });
+                                               ;
+
                                            }
                                        }
 
@@ -128,22 +162,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {                 //allows text view to be clickable , if clicked, go to forgot password activity
                 Intent i = new Intent(v.getContext(), ForgotActivity.class);
                 startActivity(i);
-            }
-        });
-        loginViewModel.getAuthResult().observe(this, new Observer<FirebaseAuthResult>() {
-            @Override
-            public void onChanged(@Nullable FirebaseAuthResult loginResult) {
-                if (loginResult == null) {
-                    return;
-                }
-                if (loginResult.getError() != null) {
-                    showLoginFailed(loginResult.getError());
-                }
-                if (loginResult.getSuccess() != null) {
-                    updateUiWithUser(loginResult.getSuccess());
-                }
-                setResult(Activity.RESULT_OK);
-
             }
         });
 

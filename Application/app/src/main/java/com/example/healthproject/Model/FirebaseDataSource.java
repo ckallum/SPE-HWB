@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.IOException;
@@ -30,32 +31,11 @@ public class FirebaseDataSource extends AppCompatActivity {
 
     private FirebaseFirestore db;
     CollectionReference ref;
+    GlobalUser user;
 
     public FirebaseDataSource() {
         this.auth = FirebaseAuth.getInstance();
         this.db = FirebaseFirestore.getInstance();
-
-    }
-
-    void login(String email, String password) {
-
-        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    // Sign in success, update UI with the signed-in user's information
-                    Log.d("SUCCESS", "signInWithEmail:success");
-
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w("FAIL", "signInWithEmail:failure", task.getException());
-
-                    // ...
-                }
-                // ...
-            }
-        });
-        ;
 
     }
 
@@ -157,8 +137,19 @@ public class FirebaseDataSource extends AppCompatActivity {
         });
     }
 
-    public FirebaseUser getAuthUser() {
-        return auth.getCurrentUser();
+    public void update_user_displayName( String id, String name){
+        ref = db.collection("users");
+        ref.document(id).update("displayName", name).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Log.d("Success", "Name Updated");
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.w("FAIL", "Error Updating Document", e);
+            }
+        });
     }
 //    private Result<UserUpdateModel> successResult(UserUpdateModel res){
 //        return new Result.Success<>(res);

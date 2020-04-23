@@ -135,14 +135,23 @@ public class ProfileFragment extends Fragment {
 
         }
 
-        FirebaseUser user = mAuth.getCurrentUser();
+        FirebaseUser mUser = mAuth.getCurrentUser();
+        UserProfileChangeRequest profile;
 
-        if (user != null && profileImageUrl != null) {
-            UserProfileChangeRequest profile = new UserProfileChangeRequest.Builder()
-                    .setDisplayName(displayName)
-                    .setPhotoUri(Uri.parse(profileImageUrl)).build();
+        if (mUser != null) {
+            if ( profileImageUrl != null ){
+                profile = new UserProfileChangeRequest.Builder()
+                        .setDisplayName(displayName)
+                        .setPhotoUri( uriProfileImage)
+                        .build();
+            }else {
+                profile = new UserProfileChangeRequest.Builder()
+                        .setDisplayName(displayName)
+                        .build();
+            }
 
-            user.updateProfile(profile).addOnCompleteListener(new OnCompleteListener<Void>() {
+            user.update_displayName(displayName);
+            mUser.updateProfile(profile).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {
@@ -164,7 +173,7 @@ public class ProfileFragment extends Fragment {
             uriProfileImage = data.getData();
 
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(Objects.requireNonNull(getActivity()).getContentResolver(), uriProfileImage);
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(requireActivity().getContentResolver(), uriProfileImage);
                 camera.setImageBitmap(bitmap);
 
                 uploadImageToFireBaseStorage();

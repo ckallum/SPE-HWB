@@ -33,7 +33,6 @@ public class GlobalUser {
     private User user = null;
 
 
-
     // private constructor : singleton access
     private GlobalUser(FirebaseDataSource dataSource) {
         this.dataSource = dataSource;
@@ -56,8 +55,8 @@ public class GlobalUser {
         dataSource.logout();
     }
 
-    private void setLoggedInUser( String email, Boolean status ) {
-        this.user = new User( email, status );
+    public void setLoggedInUser(String email, Boolean status) {
+        this.user = new User(email, status);
     }
 
     public String getDisplayName() {
@@ -69,35 +68,16 @@ public class GlobalUser {
         return user != null && user.isAdmin();
     }
 
-    public void login(final String username, String password) {
-        // handle forgot
-        dataSource.login(username, password);
-        if (dataSource.getAuthUser() != null ) {
-            FirebaseFirestore db = FirebaseFirestore.getInstance();
-            CollectionReference ref = db.collection("users");
-            ref.document(username).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    if (task.isSuccessful()) {
-                        DocumentSnapshot document = task.getResult();
-                        assert document != null;
-                        if (document.exists()) {
-                            Log.d("SUCCESS", "DocumentSnapshot data: " + document.getData());
-                            setLoggedInUser( username, document.getBoolean("admin"));
-                        } else {
-                            Log.d("FAILURE", "No such document");
-                        }
-                    } else {
-                        Log.d("FAILURE", "get failed with ", task.getException());
-                    }
-                }
-            });
-        }else {
-            Log.d("FAILURE", "User Failed to Login");
-        }
+    public String get_Id(){
+        return user.getEmail();
     }
 
-    public Result<UserUpdateModel> register(String email ,String password){
+    public void login(final String username, Boolean admin) {
+        setLoggedInUser(username, admin);
+
+    }
+
+    public Result<UserUpdateModel> register(String email, String password) {
         dataSource.register(email, password);
 //        if (dataSource.getAuthUser() == null) {
 //            Log.d("FAILURE", "User Failed to Register");
@@ -106,13 +86,17 @@ public class GlobalUser {
         return new Result.Success<>(new UserUpdateModel());
     }
 
-    public Result<UserUpdateModel> forgot(String email){
+    public Result<UserUpdateModel> forgot(String email) {
 
-            Result<UserUpdateModel> result = dataSource.forgot(email);
-            if (result instanceof Result.Error) {
-                Log.d("FAILURE", "Failed to Send Email");
-            }
-            return result;
+        Result<UserUpdateModel> result = dataSource.forgot(email);
+        if (result instanceof Result.Error) {
+            Log.d("FAILURE", "Failed to Send Email");
+        }
+        return result;
     }
 
+    public void update_displayName(String name){
+        user.setDisplayName( name );
+        dataSource.update_user_displayName(user.getEmail(), name);
+    }
 }
