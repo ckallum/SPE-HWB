@@ -26,6 +26,7 @@ public class BookingsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_booking,container,false);
 
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.firestore_events);
+        // Find events associated with current user email in user_event_link collection
 
         new FirebaseDatabaseHelper().readEvents(new FirebaseDatabaseHelper.DataStatus() {
             @Override
