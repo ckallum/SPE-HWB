@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c79a97c9-cdb1-427b-86a8-19af46cc55f9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileChanges/last-build.bin" beforeDir="false" />
@@ -89,9 +90,12 @@
     <option name="MODULE_TAB" value="Default Config" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+      <recent name="C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\res\layout" />
       <recent name="C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\res\font" />
     </key>
     <key name="android.template.packageName">
       <recent name="com.example.healthproject.Fragments" />
@@ -105,12 +109,10 @@
       <recent name="com.example.healthproject.Utils" />
       <recent name="com.example.healthproject.Fragments" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.circleci" />
       <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
-      <recent name="C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\res\layout" />
       <recent name="C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\res\drawable-v24" />
-      <recent name="C:\Users\Shahin\Documents\GitHub\SPE-HWB\Application\app\src\main\res\font" />
-      <recent name="$PROJECT_DIR$/app/src/main/java/com/example/healthproject" />
     </key>
   </component>
   <component name="RunDashboard">
