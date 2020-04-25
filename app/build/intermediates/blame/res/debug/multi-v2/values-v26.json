@@ -4,7 +4,7 @@
             "outputFile": "/home/callum/SPE-HWB/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "/home/callum/.gradle/caches/transforms-2/files-2.1/6c5a1a33c151bf1b1b969a4997bc8337/appcompat-1.1.0/res/values-v26/values-v26.xml",
+                    "source": "/home/callum/.gradle/caches/transforms-2/files-2.1/c1d1fd0707ceb58863fa6253d82053e8/appcompat-1.1.0/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "/home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/res/values-v26/values-v26.xml",
+                    "source": "/home/callum/.gradle/caches/transforms-2/files-2.1/ea0f064b6bb3e776c70d2753b8ef42f5/jetified-firebase-ui-auth-6.2.0/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,6,10,14",
                         "startColumns": "4,4,4,4",
