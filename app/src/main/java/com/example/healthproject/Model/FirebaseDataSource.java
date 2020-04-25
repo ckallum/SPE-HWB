@@ -124,6 +124,23 @@ public class FirebaseDataSource extends AppCompatActivity {
                 Log.w("FAIL", "Error deleting document", e);
             }
         });
+        db.collection("user_event_link").whereEqualTo("eventId", id).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        db.collection("user_event_link").document(document.getId()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d("Success", "Event Deleted");
+                            }
+                        });
+                    }
+                } else {
+                    Log.d("Fail", "Error deleting event: ", task.getException());
+                }
+            }
+        });
     }
 
     public void changeEvent(Event event) {
