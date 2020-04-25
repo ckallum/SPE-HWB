@@ -5,7 +5,7 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="24"
+8        android:minSdkVersion="20"
 8-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="29" />
 9-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml
@@ -39,12 +39,12 @@
 22
 23    <application
 23-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:13:5-38:19
-24        android:allowBackup="true"
-24-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:14:9-35
-25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-25-->[androidx.core:core:1.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/bcfc0b80df78591183083cc148e1cf2c/core-1.1.0/AndroidManifest.xml:24:18-86
-26        android:debuggable="true"
-27        android:extractNativeLibs="false"
+24        android:name="androidx.multidex.MultiDexApplication"
+25        android:allowBackup="true"
+25-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:14:9-35
+26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+26-->[androidx.core:core:1.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/bcfc0b80df78591183083cc148e1cf2c/core-1.1.0/AndroidManifest.xml:24:18-86
+27        android:debuggable="true"
 28        android:hardwareAccelerated="true"
 28-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:15:9-43
 29        android:icon="@mipmap/ic_launcher"

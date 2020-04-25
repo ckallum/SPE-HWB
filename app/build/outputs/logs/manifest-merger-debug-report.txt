@@ -6,6 +6,7 @@ INJECTED from /home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:2:1-40:12
 INJECTED from /home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:2:1-40:12
 MERGED from [androidx.databinding:databinding-adapters:3.6.3] /home/callum/.gradle/caches/transforms-2/files-2.1/8c82e308849a9dd9b543062702201129/databinding-adapters-3.6.3/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.databinding:databinding-runtime:3.6.3] /home/callum/.gradle/caches/transforms-2/files-2.1/1e09ebd828d4524bf4cb08f14835fb1e/databinding-runtime-3.6.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.multidex:multidex:2.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/df7dd1f1723aca614bb5bb7724d5e01d/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:2:1-109:12
 MERGED from [androidx.navigation:navigation-ui:2.2.2] /home/callum/.gradle/caches/transforms-2/files-2.1/dc1096d7f866fa71b43709b75f47427d/navigation-ui-2.2.2/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/6029c1862846be4a7ec1743d4d20ec64/material-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -283,6 +284,8 @@ MERGED from [androidx.databinding:databinding-adapters:3.6.3] /home/callum/.grad
 MERGED from [androidx.databinding:databinding-adapters:3.6.3] /home/callum/.gradle/caches/transforms-2/files-2.1/8c82e308849a9dd9b543062702201129/databinding-adapters-3.6.3/AndroidManifest.xml:22:5-44
 MERGED from [androidx.databinding:databinding-runtime:3.6.3] /home/callum/.gradle/caches/transforms-2/files-2.1/1e09ebd828d4524bf4cb08f14835fb1e/databinding-runtime-3.6.3/AndroidManifest.xml:22:5-44
 MERGED from [androidx.databinding:databinding-runtime:3.6.3] /home/callum/.gradle/caches/transforms-2/files-2.1/1e09ebd828d4524bf4cb08f14835fb1e/databinding-runtime-3.6.3/AndroidManifest.xml:22:5-44
+MERGED from [androidx.multidex:multidex:2.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/df7dd1f1723aca614bb5bb7724d5e01d/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] /home/callum/.gradle/caches/transforms-2/files-2.1/df7dd1f1723aca614bb5bb7724d5e01d/multidex-2.0.0/AndroidManifest.xml:20:5-43
 MERGED from [com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:8:5-10:41
 MERGED from [com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:8:5-10:41
 MERGED from [androidx.navigation:navigation-ui:2.2.2] /home/callum/.gradle/caches/transforms-2/files-2.1/dc1096d7f866fa71b43709b75f47427d/navigation-ui-2.2.2/AndroidManifest.xml:20:5-22:41
