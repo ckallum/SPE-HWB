@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/callum/SPE-HWB/Application/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "/home/callum/SPE-HWB/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/home/callum/.gradle/caches/transforms-2/files-2.1/5a57908a311c7d138895fbf09792d441/jetified-play-services-auth-17.0.0/res/values-watch-v20/values.xml",

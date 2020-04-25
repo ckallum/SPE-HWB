@@ -6,24 +6,24 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="20"
-8-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml
+8-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml
+9-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:5:5-67
-11-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:5:22-64
+11-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:5:5-67
+11-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:5:22-64
 12
 13    <uses-feature
-13-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:7:5-9:35
+13-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:7:5-9:35
 14        android:name="android.hardware.sensor.stepcounter"
-14-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:8:9-59
+14-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:8:9-59
 15        android:required="true" />
-15-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:9:9-32
+15-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:9:9-32
 16
 17    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-17-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:11:5-81
-17-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:11:22-78
+17-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:11:5-81
+17-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:11:22-78
 18    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 18-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:12:5-79
 18-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:12:22-76
@@ -38,66 +38,66 @@
 21-->[com.google.android.gms:play-services-measurement:17.3.0] /home/callum/.gradle/caches/transforms-2/files-2.1/c286a662b2c14e12c87c511e7fbec4aa/jetified-play-services-measurement-17.3.0/AndroidManifest.xml:26:22-107
 22
 23    <application
-23-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:13:5-38:19
+23-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:13:5-38:19
 24        android:name="androidx.multidex.MultiDexApplication"
 25        android:allowBackup="true"
-25-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:14:9-35
+25-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:14:9-35
 26        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 26-->[androidx.core:core:1.1.0] /home/callum/.gradle/caches/transforms-2/files-2.1/bcfc0b80df78591183083cc148e1cf2c/core-1.1.0/AndroidManifest.xml:24:18-86
 27        android:debuggable="true"
 28        android:hardwareAccelerated="true"
-28-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:15:9-43
+28-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:15:9-43
 29        android:icon="@mipmap/ic_launcher"
-29-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:16:9-43
+29-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:16:9-43
 30        android:label="@string/app_name"
-30-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:17:9-41
+30-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:17:9-41
 31        android:roundIcon="@mipmap/ic_launcher_round"
-31-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:18:9-54
+31-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:18:9-54
 32        android:supportsRtl="true"
-32-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:19:9-35
+32-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:19:9-35
 33        android:testOnly="true"
 34        android:theme="@style/AppTheme"
-34-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:20:9-40
+34-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:20:9-40
 35        android:usesCleartextTraffic="true" >
-35-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:21:9-44
+35-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:21:9-44
 36        <activity android:name="com.example.healthproject.Fragments.SocietiesFragment" />
-36-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:22:9-74
-36-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:22:19-62
+36-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:22:9-74
+36-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:22:19-62
 37        <activity
-37-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:23:9-31:20
+37-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:23:9-31:20
 38            android:name="com.example.healthproject.Activity.LoginActivity"
-38-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:24:13-51
+38-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:24:13-51
 39            android:label="@string/app_name" >
-39-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:25:13-45
+39-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:25:13-45
 40            <intent-filter>
-40-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:26:13-30:29
+40-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:26:13-30:29
 41                <action android:name="android.intent.action.MAIN" />
-41-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:27:17-69
-41-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:27:25-66
+41-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:27:17-69
+41-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:27:25-66
 42
 43                <category android:name="android.intent.category.LAUNCHER" />
-43-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:29:17-77
-43-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:29:27-74
+43-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:29:17-77
+43-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:29:27-74
 44            </intent-filter>
 45        </activity>
 46        <activity android:name="com.example.healthproject.Activity.ForgotActivity" />
-46-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:32:9-61
-46-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:32:19-58
+46-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:32:9-61
+46-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:32:19-58
 47        <activity android:name="com.example.healthproject.Activity.RegisterActivity" />
-47-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:33:9-63
-47-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:33:19-60
+47-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:33:9-63
+47-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:33:19-60
 48        <activity android:name="com.example.healthproject.Activity.MainActivity" />
-48-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:34:9-59
-48-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:34:19-56
+48-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:34:9-59
+48-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:34:19-56
 49        <activity android:name="com.example.healthproject.Activity.Navigation.NavigationActivity" />
-49-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:35:9-76
-49-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:35:19-73
+49-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:35:9-76
+49-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:35:19-73
 50        <activity android:name="com.example.healthproject.Model.FirebaseDataSource" />
-50-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:36:9-62
-50-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:36:19-59
+50-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:36:9-62
+50-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:36:19-59
 51        <activity android:name="com.example.healthproject.Activity.UpdateEvent" />
-51-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:37:9-58
-51-->/home/callum/SPE-HWB/Application/app/src/main/AndroidManifest.xml:37:19-55
+51-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:37:9-58
+51-->/home/callum/SPE-HWB/app/src/main/AndroidManifest.xml:37:19-55
 52
 53        <meta-data
 53-->[com.firebaseui:firebase-ui-auth:6.2.0] /home/callum/.gradle/caches/transforms-2/files-2.1/174a6f6c382285cd930fa94d5a6e3697/jetified-firebase-ui-auth-6.2.0/AndroidManifest.xml:16:9-18:69
