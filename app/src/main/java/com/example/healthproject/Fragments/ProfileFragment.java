@@ -21,21 +21,15 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-
 import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.Model.FirebaseDataSource;
 import com.example.healthproject.Model.GlobalUser;
 import com.example.healthproject.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -60,7 +54,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         user = GlobalUser.getInstance(new FirebaseDataSource());
 
-        View rootView = inflater.inflate(R.layout.fragment_profile,container,false);
+        View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
         Button logoutButton = rootView.findViewById(R.id.logoutBtn);
         logoutButton.setOnClickListener(v -> {
             user.logout();
@@ -107,7 +101,7 @@ public class ProfileFragment extends Fragment {
                 username.setText(user.getDisplayName());
             }
 
-            if (user.getEmail() != null){
+            if (user.getEmail() != null) {
                 email.setText(user.getEmail());
             }
         }
@@ -116,7 +110,7 @@ public class ProfileFragment extends Fragment {
     private void saveUserInformation() {
         String displayName = username.getText().toString();
 
-        if(displayName.isEmpty()) {
+        if (displayName.isEmpty()) {
             username.setError("Name required");
             username.requestFocus();
             return;
@@ -127,26 +121,25 @@ public class ProfileFragment extends Fragment {
         UserProfileChangeRequest profile;
 
         if (mUser != null) {
-            if ( profileImageUrl != null ){
+            if (profileImageUrl != null) {
                 profile = new UserProfileChangeRequest.Builder()
                         .setDisplayName(displayName)
-                        .setPhotoUri( uriProfileImage)
+                        .setPhotoUri(uriProfileImage)
                         .build();
-            }else{
+            } else {
                 profile = new UserProfileChangeRequest.Builder()
                         .setDisplayName(displayName)
                         .build();
             }
 
-            if (!password.getText().toString().isEmpty()){
-                user.updatePassword( password.getText().toString());
+            if (!password.getText().toString().isEmpty()) {
+                user.updatePassword(password.getText().toString());
             }
             user.updateDisplayName(displayName);
             mUser.updateProfile(profile).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     Toast.makeText(getContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
-                }
-                else {
+                } else {
                     Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -157,7 +150,7 @@ public class ProfileFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == CHOOSE_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
+        if (requestCode == CHOOSE_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null) {
             uriProfileImage = data.getData();
 
             try {
@@ -184,7 +177,7 @@ public class ProfileFragment extends Fragment {
 
                         profileImageRef.getDownloadUrl().addOnCompleteListener(task -> {
                             profileImageUrl = Objects.requireNonNull(task.getResult()).toString();
-                            Log.i("URL",profileImageUrl);
+                            Log.i("URL", profileImageUrl);
                         });
                     })
                     .addOnFailureListener(e -> {

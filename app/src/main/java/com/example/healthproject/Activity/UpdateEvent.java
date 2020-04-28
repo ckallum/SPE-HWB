@@ -142,9 +142,9 @@ public class UpdateEvent extends AppCompatActivity {
         eventEnd.addTextChangedListener(afterTextChangedListener);
         eventDate.addTextChangedListener(afterTextChangedListener);
 
-        updateButton.setOnClickListener(v -> updateViewModel.update_event(eventName.getText().toString(), eventStart.getText().toString(), eventEnd.getText().toString(), eventDate.getText().toString(), eventSpaces.getText().toString(), eventVenue.getSelectedItem().toString(), description.getText().toString(), intent.getStringExtra("ID")));
+        updateButton.setOnClickListener(v -> updateViewModel.updateEvent(eventName.getText().toString(), eventStart.getText().toString(), eventEnd.getText().toString(), eventDate.getText().toString(), eventSpaces.getText().toString(), eventVenue.getSelectedItem().toString(), description.getText().toString(), intent.getStringExtra("ID")));
 
-        deleteButton.setOnClickListener(v -> updateViewModel.delete_event(intent.getStringExtra("ID")));
+        deleteButton.setOnClickListener(v -> updateViewModel.deleteEvent(intent.getStringExtra("ID")));
         updateViewModel.getAuthResult().observe(this, firebaseAuthResult -> {
             if (firebaseAuthResult == null){
                 return;

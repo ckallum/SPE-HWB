@@ -42,7 +42,7 @@ public class GlobalUser {
         dataSource.logout();
     }
 
-    public void setLoggedInUser(String email, Boolean status) {
+    private void setLoggedInUser(String email, Boolean status) {
         this.user = new User(email, status);
     }
 

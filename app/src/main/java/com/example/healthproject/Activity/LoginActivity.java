@@ -29,8 +29,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class LoginActivity extends AppCompatActivity {
 
     private ViewModelController loginViewModel;
-    GlobalUser user;
-    FirebaseAuth auth;
+    private FirebaseAuth auth;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         loginViewModel = ViewModelProviders.of(this, new ViewModelFactory())
                 .get(ViewModelController.class);
-        user = GlobalUser.getInstance(new FirebaseDataSource());
+        GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
         auth = FirebaseAuth.getInstance();
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);

@@ -24,7 +24,7 @@ public class ViewModelController extends ViewModel {
     private MutableLiveData<FirebaseAuthResult> authResult = new MutableLiveData<>();
     private GlobalUser user;
 
-    public ViewModelController(GlobalUser user) {
+    ViewModelController(GlobalUser user) {
         this.user = user;
     }
 
@@ -64,21 +64,21 @@ public class ViewModelController extends ViewModel {
         }
     }
 
-    public void create_event(String name, String start, String end, String date, String spaces, String location, String description) {
+    public void createEvent(String name, String start, String end, String date, String spaces, String location, String description) {
         FirebaseDataSource dataSource = new FirebaseDataSource();
         Event event = new Event(0, 0, Integer.parseInt(spaces), date, name, location, start, end, description);
         dataSource.add_event(event);
         authResult.setValue(new FirebaseAuthResult(new UserView("Event Added")));
     }
 
-    public void update_event(String name, String start, String end, String date, String spaces, String location, String description, String id) {
+    public void updateEvent(String name, String start, String end, String date, String spaces, String location, String description, String id) {
         FirebaseDataSource dataSource = new FirebaseDataSource();
         Event event = new Event(0, 0, Integer.parseInt(spaces), date, name, location, start, end, description);
         dataSource.changeEvent(event);
         authResult.setValue(new FirebaseAuthResult(new UserView("Event Updated")));
     }
 
-    public void delete_event(String id ){
+    public void deleteEvent(String id ){
         FirebaseDataSource dataSource = new FirebaseDataSource();
         dataSource.deleteEvent(id);
         authResult.setValue(new FirebaseAuthResult(new UserView("Event Deleted")));
@@ -97,18 +97,18 @@ public class ViewModelController extends ViewModel {
     }
 
     public void eventDataChanged(String name, String start, String end, String date, String spaces) {
-        if (!EventNameValid(name)) {
+        if (!eventNameValid(name)) {
             formState.setValue(new FormState(R.string.event_name_error, null, null, null, null));
-        } else if (!AttendeesValid(spaces)) {
+        } else if (!attendeesValid(spaces)) {
             formState.setValue(new FormState(null, null, null, null, R.string.attendee_error));
         }
-        else if (!DateValid(date)){
+        else if (!dateValid(date)){
             formState.setValue(new FormState(null, null, null ,R.string.date_invalid, null));
         }
-        else if (!TimeValid(start)) {
+        else if (!timeValid(start)) {
             formState.setValue(new FormState(null, R.string.event_time_error, null, null, null));
         }
-        else if (!TimeValid(end)) {
+        else if (!timeValid(end)) {
             formState.setValue(new FormState(null, null,  R.string.event_time_error, null, null));
         }
         else {
@@ -155,28 +155,28 @@ public class ViewModelController extends ViewModel {
         return password != null && password.trim().length() > 5 && password.equals(password2);
     }
 
-    private boolean TimeValid(String timestamp) {
+    private boolean timeValid(String timestamp) {
         Log.d("TimeReg", String.valueOf(timestamp.matches("^(2[0-3]|[0-1][0-9]|[0-9]):([0-5][0-9]|[0-9])$")));
         Log.d("Time", timestamp);
         return timestamp.matches("^(2[0-3]|[0-1][0-9]|[0-9]):([0-5][0-9]|[0-9])$");
     }
 
-    private boolean DateValid(String date) {
+    private boolean dateValid(String date) {
         Log.d("Date", date);
         Log.d("DateReg", String.valueOf(date.matches("^([0-2][0-9]|3[0-1]|[0-9])/(0[0-9]|1[0-2]|[0-9])/([0-9][0-9])?[0-9][0-9]$")));
         return date.matches("^([0-2][0-9]|3[0-1]|[0-9])/(0[0-9]|1[0-2]|[0-9])/([0-9][0-9])?[0-9][0-9]$");
     }
 
-    private boolean EventNameValid(String name) {
+    private boolean eventNameValid(String name) {
         return name != null && !name.isEmpty();
     }
 
-    private boolean AttendeesValid(String number) {
-        return number != null && number_matches(number);
+    private boolean attendeesValid(String number) {
+        return number != null && numberMatches(number);
 
     }
 
-    private boolean number_matches(String number){
+    private boolean numberMatches(String number){
         if (number.isEmpty() ){
             return false;
         }

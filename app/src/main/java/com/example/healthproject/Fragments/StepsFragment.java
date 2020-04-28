@@ -21,7 +21,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.healthproject.R;
 
-public class StepsFragment extends Fragment{
+public class StepsFragment extends Fragment {
 
     private TextView steps;
     private double previousMag = 0;
@@ -33,7 +33,7 @@ public class StepsFragment extends Fragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        final View v =inflater.inflate(R.layout.steps_fragment, container, false);
+        final View v = inflater.inflate(R.layout.steps_fragment, container, false);
 
         steps = v.findViewById(R.id.tv_steps);
         SensorManager sensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
@@ -57,33 +57,23 @@ public class StepsFragment extends Fragment{
         stepsGoal.setText(stepGoalcount.toString());
 
 
-
-
         SensorEventListener stepDetector = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent event) {
-                if(event != null){
+                if (event != null) {
                     float x_acc = event.values[0];  //acceleration
                     float y_acc = event.values[1];
                     float z_acc = event.values[2];
 
-                    double magnitude = Math.sqrt(x_acc*x_acc + y_acc*y_acc + z_acc* z_acc);
+                    double magnitude = Math.sqrt(x_acc * x_acc + y_acc * y_acc + z_acc * z_acc);
                     double magDelta = magnitude - previousMag;
                     previousMag = magnitude;
 
 
-
-                    if(magDelta > 6){
+                    if (magDelta > 6) {
                         stepCount++;
                     }
                     steps.setText(stepCount.toString());
-
-
-
-
-
-
-
 
 
                 }
@@ -96,10 +86,10 @@ public class StepsFragment extends Fragment{
             }
         };
 
-        sensorManager.registerListener(stepDetector,sensor,SensorManager.SENSOR_DELAY_NORMAL);
+        sensorManager.registerListener(stepDetector, sensor, SensorManager.SENSOR_DELAY_NORMAL);
 
 
-        if(stepGoalcount == stepCount || stepCount > stepGoalcount){
+        if (stepGoalcount.equals(stepCount) || stepCount > stepGoalcount) {
             stepCount = 0;
 
         }
@@ -112,7 +102,6 @@ public class StepsFragment extends Fragment{
         animation.start();
 
 
-
         return v;
 
     }
@@ -122,10 +111,10 @@ public class StepsFragment extends Fragment{
         super.onPause();
 
         SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor     =  sharedPreferences.edit();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
-        editor.putInt("stepGoal",stepGoalcount);
-        editor.putInt("stepcount",stepCount);
+        editor.putInt("stepGoal", stepGoalcount);
+        editor.putInt("stepcount", stepCount);
         editor.apply();
     }
 
@@ -134,10 +123,10 @@ public class StepsFragment extends Fragment{
         super.onStop();
 
         SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor     =  sharedPreferences.edit();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.clear();
-        editor.putInt("stepGoal",stepGoalcount);
-        editor.putInt("stepcount",stepCount);
+        editor.putInt("stepGoal", stepGoalcount);
+        editor.putInt("stepcount", stepCount);
         editor.apply();
     }
 
@@ -145,11 +134,11 @@ public class StepsFragment extends Fragment{
         super.onResume();
 
         SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
-        stepCount = sharedPreferences.getInt("stepcount",0);
+        stepCount = sharedPreferences.getInt("stepcount", 0);
 
-        if(stepGoalcount == stepCount || stepCount > stepGoalcount){
+        if (stepGoalcount == stepCount || stepCount > stepGoalcount) {
             stepCount = 0;
-            stepCount = sharedPreferences.getInt("steacount",0);
+            stepCount = sharedPreferences.getInt("steacount", 0);
         }
         stepGoalcount = sharedPreferences.getInt("stepGoal", 0);
 

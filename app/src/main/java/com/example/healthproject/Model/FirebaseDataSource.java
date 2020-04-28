@@ -32,7 +32,7 @@ public class FirebaseDataSource extends AppCompatActivity {
 
     }
 
-    void register(final String email, String password) {
+    public void register(final String email, String password) {
 
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
             if (task.isSuccessful()) {
@@ -49,7 +49,7 @@ public class FirebaseDataSource extends AppCompatActivity {
     }
 
 
-    Result<UserUpdateModel> forgot(String email) {
+    public Result<UserUpdateModel> forgot(String email) {
         try {
             auth.sendPasswordResetEmail(email);
             UserUpdateModel reg = new UserUpdateModel();
@@ -59,7 +59,7 @@ public class FirebaseDataSource extends AppCompatActivity {
         }
     }
 
-    void logout() {
+    public void logout() {
         FirebaseAuth.getInstance().signOut();
     }
 

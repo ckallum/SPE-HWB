@@ -17,19 +17,10 @@ import com.example.healthproject.R;
 public class SocietiesFragment extends Fragment {
 
 
-    public SocietiesFragment(){
-
-    }
-
-
-
-
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View v =inflater.inflate(R.layout.fragment_twitter, container, false);
-
+        View v = inflater.inflate(R.layout.fragment_twitter, container, false);
 
 
         WebView webView = v.findViewById(R.id.twitterPage);
@@ -45,8 +36,6 @@ public class SocietiesFragment extends Fragment {
         return v;
 
     }
-
-
 
 
 }
