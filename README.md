@@ -17,10 +17,11 @@ The features we plan to have potentially include:
 PLAN
 ===========
 
-  - Look at different technologies available to us and decide which will be best for our solution.
 
-  - Look over what the Be:Active program already offers, such as web functionalities.
+- Look at different technologies available to us and decide which will be best for our solution.
 
-  - Read the possible app functionalities mentioned by client and see what can be realistically implemented.
+- Look over what the Be:Active program already offers, such as web functionalities.
 
-  - Look over similar style apps and see how they function.
+- Read the possible app functionalities mentioned by client and see what can be realistically implemented.
+
+- Look over similar style apps and see how they function.
