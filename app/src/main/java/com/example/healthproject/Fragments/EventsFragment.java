@@ -1,13 +1,11 @@
 package com.example.healthproject.Fragments;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,13 +20,6 @@ import com.example.healthproject.Model.dto.Event;
 import com.example.healthproject.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -37,14 +28,13 @@ import com.google.firebase.firestore.Query;
 public class EventsFragment extends Fragment {
     private FirebaseFirestore firebaseFirestore;
     private FirestoreRecyclerAdapter adapter;
-    private RecyclerView mFirestoreList;
     private GlobalUser user;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View x = inflater.inflate(R.layout.fragment_events, container, false);
-        mFirestoreList = x.findViewById(R.id.firestore_events);
+        RecyclerView mFirestoreList = x.findViewById(R.id.firestore_events);
         firebaseFirestore = FirebaseFirestore.getInstance();
         SearchView filter = x.findViewById(R.id.eventFilter);
         user = GlobalUser.getInstance(new FirebaseDataSource());
@@ -121,7 +111,6 @@ public class EventsFragment extends Fragment {
         private TextView list_spaces;
         private TextView list_duration;
         private TextView interested;
-        private SearchView filter;
 
 
         public EventsViewHolder(@NonNull View itemView) {
@@ -135,7 +124,6 @@ public class EventsFragment extends Fragment {
             list_spaces = itemView.findViewById(R.id.list_spaces);
             list_duration = itemView.findViewById(R.id.list_duration);
             interested = itemView.findViewById(R.id.button_interested);
-            filter = itemView.findViewById(R.id.eventFilter);
         }
     }
 

@@ -38,22 +38,22 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import static android.app.Activity.RESULT_OK;
 
 public class ProfileFragment extends Fragment {
     private static final int CHOOSE_IMAGE = 808;
-    private Button logoutButton;
-    FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
 
-    ImageView camera;
-    EditText username;
-    EditText email;
-    EditText password;
-    Uri uriProfileImage;
-    ProgressBar progressBar;
-    String profileImageUrl;
-    GlobalUser user;
+    private ImageView camera;
+    private EditText username;
+    private EditText email;
+    private EditText password;
+    private Uri uriProfileImage;
+    private ProgressBar progressBar;
+    private String profileImageUrl;
+    private GlobalUser user;
 
     @Nullable
     @Override
@@ -61,18 +61,15 @@ public class ProfileFragment extends Fragment {
         user = GlobalUser.getInstance(new FirebaseDataSource());
 
         View rootView = inflater.inflate(R.layout.fragment_profile,container,false);
-        logoutButton = rootView.findViewById(R.id.logoutBtn);
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                user.logout();
+        Button logoutButton = rootView.findViewById(R.id.logoutBtn);
+        logoutButton.setOnClickListener(v -> {
+            user.logout();
 
-                Intent toMain = new Intent(getActivity(), LoginActivity.class);
-                toMain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                toMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            Intent toMain = new Intent(getActivity(), LoginActivity.class);
+            toMain.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            toMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                startActivity(toMain);
-            }
+            startActivity(toMain);
         });
 
         mAuth = FirebaseAuth.getInstance();
@@ -84,22 +81,11 @@ public class ProfileFragment extends Fragment {
 
         progressBar = rootView.findViewById(R.id.progressBar);
 
-        camera.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                showImageChooser();
-            }
-        });
+        camera.setOnClickListener(v -> showImageChooser());
 
         loadUserInformation();
 
-        rootView.findViewById(R.id.button_save).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                saveUserInformation();
-            }
-        });
+        rootView.findViewById(R.id.button_save).setOnClickListener(v -> saveUserInformation());
 
         return rootView;
 
@@ -156,15 +142,12 @@ public class ProfileFragment extends Fragment {
                 user.updatePassword( password.getText().toString());
             }
             user.updateDisplayName(displayName);
-            mUser.updateProfile(profile).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-                    if (task.isSuccessful()) {
-                        Toast.makeText(getContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
-                        Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
-                    }
+            mUser.updateProfile(profile).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Toast.makeText(getContext(), "Profile Updated", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getContext(), "Error", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -196,26 +179,17 @@ public class ProfileFragment extends Fragment {
             progressBar.setVisibility(View.VISIBLE);
 
             profileImageRef.putFile(uriProfileImage)
-                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                        @Override
-                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                            progressBar.setVisibility(View.GONE);
+                    .addOnSuccessListener(taskSnapshot -> {
+                        progressBar.setVisibility(View.GONE);
 
-                            profileImageRef.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Uri> task) {
-                                    profileImageUrl = task.getResult().toString();
-                                    Log.i("URL",profileImageUrl);
-                                }
-                            });
-                        }
+                        profileImageRef.getDownloadUrl().addOnCompleteListener(task -> {
+                            profileImageUrl = Objects.requireNonNull(task.getResult()).toString();
+                            Log.i("URL",profileImageUrl);
+                        });
                     })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            progressBar.setVisibility(View.GONE);
-                            Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
+                    .addOnFailureListener(e -> {
+                        progressBar.setVisibility(View.GONE);
+                        Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
                     });
         }
     }

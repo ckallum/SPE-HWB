@@ -1,17 +1,10 @@
 package com.example.healthproject.Fragments;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,25 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 
 import com.example.healthproject.R;
-
-import java.util.ArrayList;
-
-import static androidx.constraintlayout.widget.Constraints.TAG;
-
 public class HomeFragment extends Fragment {
-
-
-    public HomeFragment(){
-
-    }
-
-
-    Button news;
-    Button stepTracker;
-    Button twitter;
-    Button instagram;
-    Button members;
-    Button societies;
 
 
     @Override
@@ -46,12 +21,12 @@ public class HomeFragment extends Fragment {
 
        final View v =inflater.inflate(R.layout.fragment_home, container, false);
 
-        news = v.findViewById(R.id.newsLink);
-        stepTracker = v.findViewById(R.id.stepLink);
-        twitter = v.findViewById(R.id.twitterLink);
-        instagram = v.findViewById(R.id.instaLink);
-        members = v.findViewById(R.id.membersLink);
-        societies = v.findViewById(R.id.societiesLink);
+        Button news = v.findViewById(R.id.newsLink);
+        Button stepTracker = v.findViewById(R.id.stepLink);
+        Button twitter = v.findViewById(R.id.twitterLink);
+        Button instagram = v.findViewById(R.id.instaLink);
+        Button members = v.findViewById(R.id.membersLink);
+        Button societies = v.findViewById(R.id.societiesLink);
 
         news.setClickable(true);
         stepTracker.setClickable(true);

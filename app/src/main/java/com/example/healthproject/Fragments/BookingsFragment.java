@@ -30,18 +30,18 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class BookingsFragment extends Fragment {
     private FirebaseFirestore firebaseFirestore;
-    private FirestoreRecyclerAdapter adapter;
-    private RecyclerView mRecyclerView;
+    private FirestoreRecyclerAdapter<Event, EventsViewHolder> adapter;
     private GlobalUser user;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View x = inflater.inflate(R.layout.fragment_booking, container, false);
-        mRecyclerView = x.findViewById(R.id.firestore_events);
+        RecyclerView mRecyclerView = x.findViewById(R.id.firestore_events);
         user = GlobalUser.getInstance(new FirebaseDataSource());
         firebaseFirestore = FirebaseFirestore.getInstance();
         SearchView filter = x.findViewById(R.id.eventFilter);
@@ -53,9 +53,9 @@ public class BookingsFragment extends Fragment {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot document : task.getResult()) {
+                    for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())) {
                         Log.d("Success", document.getId() + " => " + document.getData());
-                        eventIds.add(document.get("eventId").toString());
+                        eventIds.add(Objects.requireNonNull(document.get("eventId")).toString());
                     }
                     if ( !eventIds.isEmpty() ){
                         Query query = firebaseFirestore.collection("events").whereIn("id", eventIds);
@@ -123,12 +123,9 @@ public class BookingsFragment extends Fragment {
                 holder.duration.setText("Time" + " " + event.getStart() + " - " + event.getEnd() + "");
                 holder.spaces.setText("Spaces:" + " " + event.getSpaces() + "");
                 Log.d("Debug", event.getId());
-                holder.unsubscribe.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        // set new Intent with event id -> load event data
-                        user.unsubscribeEvent(event.getId());
-                    }
+                holder.unsubscribe.setOnClickListener(v -> {
+                    // set new Intent with event id -> load event data
+                    user.unsubscribeEvent(event.getId());
                 });
             }
 

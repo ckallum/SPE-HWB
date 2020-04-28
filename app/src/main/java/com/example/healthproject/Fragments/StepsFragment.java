@@ -1,54 +1,33 @@
 package com.example.healthproject.Fragments;
 
 import android.animation.ObjectAnimator;
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-
 import com.example.healthproject.R;
-
-import java.util.ArrayList;
-
-import static android.view.View.getDefaultSize;
-import static androidx.constraintlayout.widget.Constraints.TAG;
 
 public class StepsFragment extends Fragment{
 
-    SensorManager sensorManager;
-    Context context;
     private TextView steps;
     private double previousMag = 0;
     private Integer stepCount = 0;
-    private Integer lastCount = 0;
     private Integer stepGoalcount = 500;
 
-    Boolean running = false;
 
     @Nullable
     @Override
@@ -57,7 +36,7 @@ public class StepsFragment extends Fragment{
         final View v =inflater.inflate(R.layout.steps_fragment, container, false);
 
         steps = v.findViewById(R.id.tv_steps);
-        sensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
+        SensorManager sensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
         Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         final TextView stepsGoal = v.findViewById(R.id.stepGoal);
         //final Button confirmSteps = v.findViewById(R.id.setButton);

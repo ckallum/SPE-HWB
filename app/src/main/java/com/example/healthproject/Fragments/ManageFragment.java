@@ -29,13 +29,12 @@ import com.google.firebase.firestore.Query;
 public class ManageFragment extends Fragment {
     private FirebaseFirestore firebaseFirestore;
     private FirestoreRecyclerAdapter adapter;
-    private RecyclerView recyclerView;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View x = inflater.inflate(R.layout.fragment_manage, container, false);
-        recyclerView = x.findViewById(R.id.eventRecycler);
+        RecyclerView recyclerView = x.findViewById(R.id.eventRecycler);
         firebaseFirestore = FirebaseFirestore.getInstance();
         SearchView filter = x.findViewById(R.id.eventFilter);
         Query query = firebaseFirestore.collection("events");

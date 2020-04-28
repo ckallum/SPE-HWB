@@ -14,14 +14,13 @@ The features we plan to have potentially include:
 
 • Track participation numbers as well as feedback to get more indepth knowledge of potential improvements to programmes.
 
-# PLAN
+PLAN
+===========
 
-- Look at different technologies available to us and decide which will be best for our solution.
+  - Look at different technologies available to us and decide which will be best for our solution.
 
-- Look over what the Be:Active program already offers, such as web functionalities. 
+  - Look over what the Be:Active program already offers, such as web functionalities.
 
-- Read the possible app functionalities mentioned by client and see what can be realistically implemented. 
+  - Read the possible app functionalities mentioned by client and see what can be realistically implemented.
 
-- Look over similar style apps and see how they function. 
-
-
+  - Look over similar style apps and see how they function.
