@@ -101,7 +101,7 @@ public class EventsFragment extends Fragment {
     }
 
 
-    private class EventsViewHolder extends RecyclerView.ViewHolder {
+    private static class EventsViewHolder extends RecyclerView.ViewHolder {
 
         private TextView list_name;
         private TextView list_location;
@@ -113,7 +113,7 @@ public class EventsFragment extends Fragment {
         private TextView interested;
 
 
-        public EventsViewHolder(@NonNull View itemView) {
+        EventsViewHolder(@NonNull View itemView) {
             super(itemView);
 
             list_name = itemView.findViewById(R.id.list_name);
