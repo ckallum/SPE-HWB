@@ -17,14 +17,6 @@ import com.example.healthproject.R;
 public class InstagramFragment extends Fragment {
 
 
-    public InstagramFragment(){
-
-    }
-
-
-
-
-
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 

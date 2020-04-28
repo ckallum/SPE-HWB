@@ -5,24 +5,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.healthproject.R;
-import com.example.healthproject.View.FirebaseAuthResult;
-import com.example.healthproject.View.FormState;
-import com.example.healthproject.View.UserView;
 import com.example.healthproject.View.ViewModelController;
 import com.example.healthproject.View.ViewModelFactory;
 
@@ -50,37 +43,31 @@ public class ForgotActivity extends AppCompatActivity {
                                           }
                                       }
         );
-        forgotViewModel.getFormState().observe(this, new Observer<FormState>() {
-            @Override
-            public void onChanged(@Nullable FormState forgotFormState) {
-                if (forgotFormState == null) {
-                    return;
-                }
-                forgotButton.setEnabled(forgotFormState.isDataValid());
-                if (forgotFormState.getEmailError() != null) {
-                    emailEditText.setError(getString(forgotFormState.getEmailError()));
-                }
+        forgotViewModel.getFormState().observe(this, forgotFormState -> {
+            if (forgotFormState == null) {
+                return;
+            }
+            forgotButton.setEnabled(forgotFormState.isDataValid());
+            if (forgotFormState.getEmailError() != null) {
+                emailEditText.setError(getString(forgotFormState.getEmailError()));
+            }
+
+        });
+        forgotViewModel.getAuthResult().observe(this, forgotResult -> {
+            if (forgotResult == null) {
+                return;
+            }
+            if (forgotResult.getError() != null) {
+                showForgotFailed(forgotResult.getError());
+            }
+            if (forgotResult.getSuccess() != null) {
+                userForgot();
 
             }
-        });
-        forgotViewModel.getAuthResult().observe(this, new Observer<FirebaseAuthResult>() {
-            @Override
-            public void onChanged(@Nullable FirebaseAuthResult forgotResult) {
-                if (forgotResult == null) {
-                    return;
-                }
-                if (forgotResult.getError() != null) {
-                    showForgotFailed(forgotResult.getError());
-                }
-                if (forgotResult.getSuccess() != null) {
-                    userForgot(forgotResult.getSuccess());
-
-                }
-                setResult(Activity.RESULT_OK);
+            setResult(Activity.RESULT_OK);
 
 //                Complete and destroy forgot activity once successful
-                finish();
-            }
+            finish();
         });
         TextWatcher afterTextChangedListener = new TextWatcher() {
             @Override
@@ -99,26 +86,17 @@ public class ForgotActivity extends AppCompatActivity {
             }
         };
         emailEditText.addTextChangedListener(afterTextChangedListener);
-        emailEditText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-
-            @Override
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    forgotViewModel.forgot(emailEditText.getText().toString());
-                }
-                return false;
-            }
-        });
-
-        forgotButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        emailEditText.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
                 forgotViewModel.forgot(emailEditText.getText().toString());
             }
+            return false;
         });
 
+        forgotButton.setOnClickListener(v -> forgotViewModel.forgot(emailEditText.getText().toString()));
+
     }
-    private void userForgot(UserView success) {
+    private void userForgot() {
         Toast.makeText(ForgotActivity.this, "Email Sent", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(ForgotActivity.this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

@@ -1,9 +1,7 @@
 package com.example.healthproject.Activity.Navigation;
 
 import android.os.Bundle;
-import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -21,16 +19,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class NavigationActivity extends AppCompatActivity {
 
-
-    BottomNavigationView bottomNav;
-    GlobalUser user;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        user = GlobalUser.getInstance(new FirebaseDataSource());
+        GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
 
+        BottomNavigationView bottomNav;
         if (user.isAdmin()){
             setContentView(R.layout.activity_admin);
             bottomNav = findViewById(R.id.admin_navbar);
@@ -38,7 +32,7 @@ public class NavigationActivity extends AppCompatActivity {
             setContentView(R.layout.activity_main);
             bottomNav = findViewById(R.id.user_navbar);
         }
-        assert bottomNav!=null;
+        assert bottomNav !=null;
 
         bottomNav.setOnNavigationItemSelectedListener(navListener);
 
@@ -47,40 +41,39 @@ public class NavigationActivity extends AppCompatActivity {
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =           //select fragment
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                    Fragment selectedFragment = null;
+            menuItem -> {
+                Fragment selectedFragment = null;
 
-                    switch (menuItem.getItemId()){
-                        case R.id.venues:
-                            selectedFragment = new VenuesFragment();
-                            break;
-                        case R.id.home:
-                            selectedFragment = new HomeFragment();
-                            break;
-                        case R.id.booking:
-                            selectedFragment = new BookingsFragment();
-                            break;
-                        case R.id.events:
-                            selectedFragment = new EventsFragment();
-                            break;
-                        case R.id.profile:
-                            selectedFragment = new ProfileFragment();
-                            break;
-                        case R.id.manage:
-                            selectedFragment = new ManageFragment();
-                            break;
-                        case R.id.add:
-                            selectedFragment = new CreateEventFragment();
-                            break;
+                switch (menuItem.getItemId()){
+                    case R.id.venues:
+                        selectedFragment = new VenuesFragment();
+                        break;
+                    case R.id.home:
+                        selectedFragment = new HomeFragment();
+                        break;
+                    case R.id.booking:
+                        selectedFragment = new BookingsFragment();
+                        break;
+                    case R.id.events:
+                        selectedFragment = new EventsFragment();
+                        break;
+                    case R.id.profile:
+                        selectedFragment = new ProfileFragment();
+                        break;
+                    case R.id.manage:
+                        selectedFragment = new ManageFragment();
+                        break;
+                    case R.id.add:
+                        selectedFragment = new CreateEventFragment();
+                        break;
+                    default:
+                        break;
 
-                    }
-
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
-
-                    return true;
                 }
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        selectedFragment).commit();
+
+                return true;
             };
 }

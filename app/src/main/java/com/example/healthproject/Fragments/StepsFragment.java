@@ -82,7 +82,6 @@ public class StepsFragment extends Fragment {
 
             @Override
             public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
             }
         };
 
@@ -136,7 +135,7 @@ public class StepsFragment extends Fragment {
         SharedPreferences sharedPreferences = getActivity().getPreferences(Context.MODE_PRIVATE);
         stepCount = sharedPreferences.getInt("stepcount", 0);
 
-        if (stepGoalcount == stepCount || stepCount > stepGoalcount) {
+        if (stepGoalcount.equals(stepCount) || stepCount > stepGoalcount) {
             stepCount = 0;
             stepCount = sharedPreferences.getInt("steacount", 0);
         }

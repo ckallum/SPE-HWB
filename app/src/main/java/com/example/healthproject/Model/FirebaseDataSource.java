@@ -24,7 +24,7 @@ public class FirebaseDataSource extends AppCompatActivity {
 
 
     private FirebaseFirestore db;
-    CollectionReference ref;
+    private CollectionReference ref;
 
     public FirebaseDataSource() {
         this.auth = FirebaseAuth.getInstance();
@@ -38,7 +38,7 @@ public class FirebaseDataSource extends AppCompatActivity {
             if (task.isSuccessful()) {
                 Log.w("Success", "createUserWithEmail:success");
                 // Sign in success, update UI with the signed-in user's information
-                add_new_user();
+                addNewUser();
 
             } else {
                 // If sign in fails, display a message to the user.
@@ -63,7 +63,7 @@ public class FirebaseDataSource extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
     }
 
-    private void add_new_user() {
+    private void addNewUser() {
         Log.println(Log.ASSERT, "CHECK", auth.getCurrentUser().getEmail());
         ref = db.collection("users");
         User user = new User(auth.getCurrentUser().getEmail(), false);
@@ -74,7 +74,7 @@ public class FirebaseDataSource extends AppCompatActivity {
                 .addOnFailureListener(e -> Log.w("FAILURE", "Error adding document", e));
     }
 
-    public void add_event(final Event event) {
+    public void addEvent(final Event event) {
         ref = db.collection("events");
         ref.add(event).addOnSuccessListener(documentReference -> {
             Log.d("Success", "Event Created");

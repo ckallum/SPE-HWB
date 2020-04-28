@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 jobs:
   test:
@@ -86,8 +86,10 @@ workflows:
       - build-apk:
           filters:
             branches:
+              # Ignores all branches
               ignore: /.*/
             tags:
+              # APK is built + released only when git tag has version name change
               only: /^\d+\.\d+\.\d+$/
 
       - publish-github-debug-release:

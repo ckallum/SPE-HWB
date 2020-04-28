@@ -1,7 +1,5 @@
 package com.example.healthproject.Model.dto;
 
-import com.google.firebase.Timestamp;
-
 public class Event {
 
     private long attendees;
@@ -14,9 +12,6 @@ public class Event {
     private String name;
     private String location;
     private String id;
-
-    public Event() {
-    }
 
     public Event(Integer attendees, Integer interested, Integer spaces, String date, String name, String location, String start, String end, String description) {
         this.attendees = attendees;

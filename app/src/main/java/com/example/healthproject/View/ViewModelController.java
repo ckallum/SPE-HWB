@@ -67,7 +67,7 @@ public class ViewModelController extends ViewModel {
     public void createEvent(String name, String start, String end, String date, String spaces, String location, String description) {
         FirebaseDataSource dataSource = new FirebaseDataSource();
         Event event = new Event(0, 0, Integer.parseInt(spaces), date, name, location, start, end, description);
-        dataSource.add_event(event);
+        dataSource.addEvent(event);
         authResult.setValue(new FirebaseAuthResult(new UserView("Event Added")));
     }
 
