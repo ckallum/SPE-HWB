@@ -22,7 +22,6 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.healthproject.R;
 import com.example.healthproject.View.FirebaseAuthResult;
 import com.example.healthproject.View.FormState;
-import com.example.healthproject.View.UserView;
 import com.example.healthproject.View.ViewModelController;
 import com.example.healthproject.View.ViewModelFactory;
 
@@ -80,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
                     showRegisterFailed(registerResult.getError());
                 }
                 if (registerResult.getSuccess() != null) {
-                    userRegistered(registerResult.getSuccess());
+                    userRegistered();
 
                 }
                 setResult(Activity.RESULT_OK);
@@ -120,16 +119,11 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                registerViewModel.register(emailEditText.getText().toString(),
-                        passwordEditText.getText().toString());
-            }
-        });
+        registerButton.setOnClickListener(v -> registerViewModel.register(emailEditText.getText().toString(),
+                passwordEditText.getText().toString()));
     }
 
-    private void userRegistered(UserView success) {
+    private void userRegistered() {
         Toast.makeText(RegisterActivity.this, "User Added", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

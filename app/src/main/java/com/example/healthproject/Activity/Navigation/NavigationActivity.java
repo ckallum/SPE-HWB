@@ -19,27 +19,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class NavigationActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
-
-        BottomNavigationView bottomNav;
-        if (user.isAdmin()){
-            setContentView(R.layout.activity_admin);
-            bottomNav = findViewById(R.id.admin_navbar);
-        }else{
-            setContentView(R.layout.activity_main);
-            bottomNav = findViewById(R.id.user_navbar);
-        }
-        assert bottomNav !=null;
-
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,  //a fragment container will store each activity
-                new HomeFragment()).commit();
-    }
-
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =           //select fragment
             menuItem -> {
                 Fragment selectedFragment = null;
@@ -76,4 +55,27 @@ public class NavigationActivity extends AppCompatActivity {
 
                 return true;
             };
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
+
+        BottomNavigationView bottomNav;
+        if (user.isAdmin()){
+            setContentView(R.layout.activity_admin);
+            bottomNav = findViewById(R.id.admin_navbar);
+        }else{
+            setContentView(R.layout.activity_main);
+            bottomNav = findViewById(R.id.user_navbar);
+        }
+        assert bottomNav !=null;
+
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,  //a fragment container will store each activity
+                new HomeFragment()).commit();
+    }
+
+
 }
