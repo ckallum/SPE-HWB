@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 import androidx.test.espresso.ViewInteraction;
+import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.filters.LargeTest;
-import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
 import com.example.healthproject.R;
@@ -15,6 +15,7 @@ import com.example.healthproject.R;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,6 +24,8 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.intent.Intents.intended;
+import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -35,12 +38,16 @@ import static org.hamcrest.Matchers.is;
 public class ForgotActivityTest {
 
     @Rule
-    public ActivityTestRule<LoginActivity> mActivityTestRule = new ActivityTestRule<>(LoginActivity.class);
+    public IntentsTestRule<LoginActivity> mActivityTestRule = new IntentsTestRule<>(LoginActivity.class);
 
+    @Before
+    public void setUp(){
+        mActivityTestRule.getActivity().getSupportFragmentManager().beginTransaction();
+    }
     @Test
     public void forgotActivityTest() {
         ViewInteraction appCompatTextView = onView(
-                allOf(withId(R.id.forgotPassLink), withText("Forgotten Password?"),
+                allOf(withText("Forgotten Password?"),
                         childAtPosition(
                                 childAtPosition(
                                         withClassName(is("android.widget.LinearLayout")),
@@ -48,6 +55,7 @@ public class ForgotActivityTest {
                                 0),
                         isDisplayed()));
         appCompatTextView.perform(click());
+        intended(hasComponent(ForgotActivity.class.getName()));
 
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.emailTxtBox),
@@ -59,6 +67,7 @@ public class ForgotActivityTest {
                                 0),
                         isDisplayed()));
         appCompatEditText.perform(replaceText("user@uobactive.ac.uk"), closeSoftKeyboard());
+        assert(!mActivityTestRule.getActivity().findViewById(R.id.emailTxtBox).toString().isEmpty());
 
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.sendEmail), withText("Send"),

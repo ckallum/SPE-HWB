@@ -43,7 +43,7 @@ public class HomeButtonTest {
     public IntentsTestRule<LoginActivity> mActivityTestRule = new IntentsTestRule<>(LoginActivity.class);
 
     @Before
-    public void setup(){
+    public void setUp(){
         mActivityTestRule.getActivity().getSupportFragmentManager().beginTransaction();
     }
 
@@ -68,6 +68,8 @@ public class HomeButtonTest {
                                 0),
                         isDisplayed()));
         appCompatEditText2.perform(replaceText("Users1"), closeSoftKeyboard());
+        assert(!mActivityTestRule.getActivity().findViewById(R.id.username).toString().isEmpty());
+        assert(!mActivityTestRule.getActivity().findViewById(R.id.password).toString().isEmpty());
 
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.login), withText("Sign In "),

@@ -11,6 +11,7 @@ import androidx.test.filters.LargeTest;
 import androidx.test.runner.AndroidJUnit4;
 
 import com.example.healthproject.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -42,11 +43,15 @@ public class VenuesTest {
     public IntentsTestRule<LoginActivity> mActivityTestRule = new IntentsTestRule<>(LoginActivity.class);
 
     @Before
-    public void setup(){
+    public void setUp(){
         mActivityTestRule.getActivity().getSupportFragmentManager().beginTransaction();
     }
+
+
     @Test
     public void venuesTest() throws InterruptedException {
+
+
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.username),
                         childAtPosition(
@@ -79,6 +84,7 @@ public class VenuesTest {
         Thread.sleep(2000L);
         intended(hasComponent(MainActivity.class.getName()));
 
+
         ViewInteraction bottomNavigationItemView = onView(
                 allOf(withId(R.id.venues), withContentDescription("Venues"),
                         childAtPosition(
@@ -87,7 +93,9 @@ public class VenuesTest {
                                         0),
                                 2),
                         isDisplayed()));
+        BottomNavigationView nav = mActivityTestRule.getActivity().findViewById(R.id.user_navbar);
         bottomNavigationItemView.perform(click());
+        assert(nav.getMenu().findItem(R.id.venues).isChecked());
 
         ViewInteraction appCompatImageView = onView(
                 allOf(withId(R.id.indoor),

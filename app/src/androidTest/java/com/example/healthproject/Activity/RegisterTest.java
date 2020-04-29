@@ -71,6 +71,7 @@ public class RegisterTest {
                         isDisplayed()));
         appCompatEditText2.perform(replaceText("Testing1"), closeSoftKeyboard());
 
+
         ViewInteraction editText = onView(
                 allOf(withId(R.id.et_email_register), withText("instrumentation@gmail.com"),
                         childAtPosition(

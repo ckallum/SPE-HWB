@@ -11,6 +11,7 @@ import androidx.test.filters.LargeTest;
 import androidx.test.runner.AndroidJUnit4;
 
 import com.example.healthproject.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
@@ -42,7 +43,7 @@ public class AdminLoginAndNavigationTest {
     public IntentsTestRule<LoginActivity> mActivityTestRule = new IntentsTestRule<>(LoginActivity.class);
 
     @Before
-    public void setup(){
+    public void setUp(){
         mActivityTestRule.getActivity().getSupportFragmentManager().beginTransaction();
     }
 
@@ -81,6 +82,8 @@ public class AdminLoginAndNavigationTest {
 
         Thread.sleep(2000L);
         intended(hasComponent(MainActivity.class.getName()));
+        BottomNavigationView nav = mActivityTestRule.getActivity().findViewById(R.id.user_navbar);
+
 
         ViewInteraction bottomNavigationItemView = onView(
                 allOf(withId(R.id.add), withContentDescription("Create Event"),
@@ -91,6 +94,7 @@ public class AdminLoginAndNavigationTest {
                                 1),
                         isDisplayed()));
         bottomNavigationItemView.perform(click());
+        assert(nav.getMenu().findItem(R.id.add).isChecked());
 
 
         ViewInteraction bottomNavigationItemView2 = onView(
@@ -102,6 +106,8 @@ public class AdminLoginAndNavigationTest {
                                 2),
                         isDisplayed()));
         bottomNavigationItemView2.perform(click());
+        assert(nav.getMenu().findItem(R.id.manage).isChecked());
+
     }
 
     private static Matcher<View> childAtPosition(

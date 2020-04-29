@@ -130,6 +130,9 @@ public class LoginActivityTest {
                                 0),
                         isDisplayed()));
         appCompatEditText7.perform(closeSoftKeyboard());
+        assert(!mActivityTestRule.getActivity().findViewById(R.id.username).toString().isEmpty());
+        assert(!mActivityTestRule.getActivity().findViewById(R.id.password).toString().isEmpty());
+
 
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.login), withText("Sign In "),

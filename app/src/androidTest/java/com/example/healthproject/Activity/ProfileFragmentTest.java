@@ -44,7 +44,7 @@ public class ProfileFragmentTest {
     public IntentsTestRule<LoginActivity> mActivityTestRule = new IntentsTestRule<>(LoginActivity.class);
 
     @Before
-    public void setup(){
+    public void setUp(){
         mActivityTestRule.getActivity().getSupportFragmentManager().beginTransaction();
     }
     @Test
