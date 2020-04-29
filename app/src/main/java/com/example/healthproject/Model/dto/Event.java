@@ -25,6 +25,10 @@ public class Event {
         this.location = location;
     }
 
+    public Event() {
+
+    }
+
     public String getDescription() {
         return description;
     }

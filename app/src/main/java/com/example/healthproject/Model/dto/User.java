@@ -14,6 +14,9 @@ public class User {
         this.email = email;
     }
 
+    public User(){
+
+    }
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;

@@ -9,6 +9,7 @@ public class UserEvent {
         this.eventId = eId;
     }
 
+
     public String getUserId() {
         return userId;
     }
