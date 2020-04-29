@@ -32,23 +32,6 @@ public class FirebaseDataSource extends AppCompatActivity {
 
     }
 
-    public void register(final String email, String password) {
-
-        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
-            if (task.isSuccessful()) {
-                Log.w("Success", "createUserWithEmail:success");
-                // Sign in success, update UI with the signed-in user's information
-                addNewUser();
-
-            } else {
-                // If sign in fails, display a message to the user.
-                Log.w("FAIL", "createUserWithEmail:failure", task.getException());
-            }
-            // ...
-        });
-    }
-
-
     public Result<UserUpdateModel> forgot(String email) {
         try {
             auth.sendPasswordResetEmail(email);
@@ -63,7 +46,7 @@ public class FirebaseDataSource extends AppCompatActivity {
         FirebaseAuth.getInstance().signOut();
     }
 
-    private void addNewUser() {
+    public void addNewUser() {
         Log.println(Log.ASSERT, "CHECK", auth.getCurrentUser().getEmail());
         ref = db.collection("users");
         User user = new User(auth.getCurrentUser().getEmail(), false);
@@ -120,7 +103,7 @@ public class FirebaseDataSource extends AppCompatActivity {
         ref = db.collection("user_event_link");
         ref.add(userEvent).addOnSuccessListener(documentReference -> Log.d("Success", "Event Created")).addOnFailureListener(e -> Log.w("FAIL", "Error adding document", e));
         ref = db.collection("events");
-        ref.document("eId").get().addOnSuccessListener(documentSnapshot -> ref.document("eId").update("interested", Objects.requireNonNull(documentSnapshot.getLong("attendees")).intValue()+1));
+        ref.document("eId").get().addOnSuccessListener(documentSnapshot -> ref.document("eId").update("interested", Objects.requireNonNull(documentSnapshot.getLong("interested")).intValue()+1));
     }
 
 
@@ -136,8 +119,8 @@ public class FirebaseDataSource extends AppCompatActivity {
                 Log.d("Fail", "Error getting documents: ", task.getException());
             }
         });
-
-
+        ref = db.collection("events");
+        ref.document("eventId").get().addOnSuccessListener(documentSnapshot -> ref.document("eventId").update("interested", Objects.requireNonNull(documentSnapshot.getLong("interested")).intValue()-1));
 
     }
 

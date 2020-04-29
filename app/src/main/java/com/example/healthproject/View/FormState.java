@@ -7,7 +7,7 @@ import androidx.annotation.Nullable;
  */
 public class FormState {
     @Nullable
-    private Integer usernameError;
+    private Integer emailError;
     @Nullable
     private Integer passwordError;
     @Nullable
@@ -21,11 +21,10 @@ public class FormState {
     @Nullable
     private Integer eventAttendeeError;
     @Nullable
-    private Integer emailError;
     private boolean isDataValid;
 
-    public FormState(@Nullable Integer usernameError, @Nullable Integer passwordError) {
-        this.usernameError = usernameError;
+    public FormState(@Nullable Integer emailError, @Nullable Integer passwordError) {
+        this.emailError = emailError;
         this.passwordError = passwordError;
         this.isDataValid = false;
     }
@@ -40,9 +39,8 @@ public class FormState {
     }
 
     public FormState(boolean isDataValid) {
-        this.usernameError = null;
-        this.passwordError = null;
         this.emailError = null;
+        this.passwordError = null;
         this.eventAttendeeError = null;
         this.eventDateError = null;
         this.eventNameError = null;
@@ -53,11 +51,6 @@ public class FormState {
 
     public FormState(@Nullable Integer emailError) {
         this.emailError = emailError;
-    }
-
-    @Nullable
-    public Integer getUsernameError() {
-        return usernameError;
     }
 
     @Nullable

@@ -41,16 +41,10 @@ public class ViewModelController extends ViewModel {
         user.login(username, admin);
     }
 
-    public void register(String email, String password) {
-        // can be launched in a separate asynchronous job
-
-        Result<UserUpdateModel> result = user.register(email, password);
-        if (result instanceof Result.Success) {
-            authResult.setValue(new FirebaseAuthResult(new UserView(((Result.Success) result).getData().toString())));
-        } else {
-            authResult.setValue(new FirebaseAuthResult(R.string.register_failed));
-        }
+    public void register(){
+        user.register();
     }
+
 
     public void forgot(String email) {
         // can be launched in a separate asynchronous job
@@ -87,7 +81,7 @@ public class ViewModelController extends ViewModel {
 
 
     public void loginDataChanged(String username, String password) {
-        if (!isUserNameValid(username)) {
+        if (!isEmailValid(username)) {
             formState.setValue(new FormState(R.string.invalid_username, null));
         } else if (!isPasswordValid(password)) {
             formState.setValue(new FormState(null, R.string.invalid_password));
@@ -117,19 +111,13 @@ public class ViewModelController extends ViewModel {
     }
 
     // A placeholder username validation check
-    private boolean isUserNameValid(String username) {
-        if (username == null) {
-            return false;
-        }
-        if (username.contains("@")) {
-            return Patterns.EMAIL_ADDRESS.matcher(username).matches();
-        } else {
-            return !username.trim().isEmpty();
-        }
+    private boolean isEmailValid(String username) {
+
+        return username!=null && !username.isEmpty()&&  username.contains("@") && Patterns.EMAIL_ADDRESS.matcher(username).matches();
     }
 
     public void registerDataChanged(String username, String password, String password2) {
-        if (!isUserNameValid(username)) {
+        if (!isEmailValid(username)) {
             formState.setValue(new FormState(R.string.fui_invalid_email_address, null));
         } else if (!isPasswordValid(password, password2)) {
             formState.setValue(new FormState(null, R.string.invalid_password));
@@ -139,7 +127,7 @@ public class ViewModelController extends ViewModel {
     }
 
     public void forgotDataChanged(String email) {
-        if (!isUserNameValid(email)) {
+        if (!isEmailValid(email)) {
             formState.setValue(new FormState(R.string.fui_invalid_email_address));
         } else {
             formState.setValue(new FormState(true));
