@@ -10,11 +10,11 @@ import com.example.healthproject.Model.dto.UserEvent;
 import com.example.healthproject.Model.dto.UserUpdateModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.io.IOException;
-import java.util.Objects;
 
 /**
  * Class that handles authentication with Firebase w/ forgot credentials and retrieves user information.
@@ -69,7 +69,7 @@ public class FirebaseDataSource extends AppCompatActivity {
         ref = db.collection("events");
         ref.document(id).delete().addOnSuccessListener(aVoid -> Log.d("Success", "Event Deleted")).addOnFailureListener(e -> Log.w("FAIL", "Error deleting document", e));
         db.collection("user_event_link").whereEqualTo("eventId", id).get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()){
+            if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     db.collection("user_event_link").document(document.getId()).delete().addOnSuccessListener(aVoid -> Log.d("Success", "Event Deleted"));
                 }
@@ -101,26 +101,25 @@ public class FirebaseDataSource extends AppCompatActivity {
     public void eventSubscribe(String uId, String eId) {
         UserEvent userEvent = new UserEvent(uId, eId);
         ref = db.collection("user_event_link");
-        ref.add(userEvent).addOnSuccessListener(documentReference -> Log.d("Success", "Event Created")).addOnFailureListener(e -> Log.w("FAIL", "Error adding document", e));
-        ref = db.collection("events");
-        ref.document("eId").get().addOnSuccessListener(documentSnapshot -> ref.document("eId").update("interested", Objects.requireNonNull(documentSnapshot.getLong("interested")).intValue()+1));
+        ref.add(userEvent).addOnSuccessListener(documentReference -> {
+            Log.d("Success", "Event Created");
+            db.collection("events").document(eId).update("interested", FieldValue.increment(1));
+        }).addOnFailureListener(e -> Log.w("FAIL", "Error adding document", e));
     }
-
 
 
     public void eventUnsubscribe(String email, String eventId) {
         db.collection("user_event_link").whereEqualTo("eventId", eventId).whereEqualTo("userId", email).get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()){
+            if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {
                     Log.d("Success", document.getId() + " => " + document.getData());
                     db.collection("user_event_link").document(document.getId()).delete().addOnSuccessListener(aVoid -> Log.d("Success", "Event Unsubscribed"));
+                    db.collection("events").document(eventId).update("interested", FieldValue.increment(-1));
                 }
             } else {
                 Log.d("Fail", "Error getting documents: ", task.getException());
             }
         });
-        ref = db.collection("events");
-        ref.document("eventId").get().addOnSuccessListener(documentSnapshot -> ref.document("eventId").update("interested", Objects.requireNonNull(documentSnapshot.getLong("interested")).intValue()-1));
 
     }
 

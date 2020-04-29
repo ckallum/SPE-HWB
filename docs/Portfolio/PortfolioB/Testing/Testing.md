@@ -10,6 +10,7 @@ Things to Include:
     - Instrumentation Test
         - Unit test for physical device -> slower execution -> evaluates apps behaviour against 
           device hardware.
+        - Using Espresso
           
 - Local Tests
     - Mock tests
