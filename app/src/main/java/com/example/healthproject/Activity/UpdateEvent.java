@@ -19,7 +19,6 @@ import com.example.healthproject.R;
 import com.example.healthproject.View.UserView;
 import com.example.healthproject.View.ViewModelController;
 import com.example.healthproject.View.ViewModelFactory;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -54,7 +53,6 @@ public class UpdateEvent extends AppCompatActivity {
         updateButton = findViewById(R.id.button_change);
         Button deleteButton = findViewById(R.id.button_delete);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
-        CollectionReference ref = db.collection("events");
         DocumentReference docRef = db.collection("events").document(Objects.requireNonNull(intent.getStringExtra("ID")));
 
         docRef.get().addOnSuccessListener(documentSnapshot -> {
@@ -73,7 +71,7 @@ public class UpdateEvent extends AppCompatActivity {
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, venues);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         eventVenue.setAdapter(adapter);
-        ref.get().addOnCompleteListener(task -> {
+        db.collection("venues").get().addOnCompleteListener(task -> {
             if ( task.isSuccessful() ){
                 for(QueryDocumentSnapshot document: Objects.requireNonNull(task.getResult())){
                     String v = document.getString("name");
@@ -144,7 +142,12 @@ public class UpdateEvent extends AppCompatActivity {
 
         updateButton.setOnClickListener(v -> updateViewModel.updateEvent(eventName.getText().toString(), eventStart.getText().toString(), eventEnd.getText().toString(), eventDate.getText().toString(), eventSpaces.getText().toString(), eventVenue.getSelectedItem().toString(), description.getText().toString(), intent.getStringExtra("ID")));
 
-        deleteButton.setOnClickListener(v -> updateViewModel.deleteEvent(intent.getStringExtra("ID")));
+        deleteButton.setOnClickListener(v -> {
+            updateViewModel.deleteEvent(intent.getStringExtra("ID"));
+            Intent i = new Intent(this, MainActivity.class);
+            startActivity(i);
+            finish();
+        });
         updateViewModel.getAuthResult().observe(this, firebaseAuthResult -> {
             if (firebaseAuthResult == null){
                 return;
