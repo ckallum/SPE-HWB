@@ -190,6 +190,7 @@ public class ProfileFragmentTest {
                                 0),
                         isDisplayed()));
         editText4.check(matches(withText("Users1")));
+        assert(!mActivityTestRule.getActivity().findViewById(R.id.password).toString().isEmpty());
 
         ViewInteraction appCompatButton3 = onView(
                 allOf(withId(R.id.button_save), withText("Save"),

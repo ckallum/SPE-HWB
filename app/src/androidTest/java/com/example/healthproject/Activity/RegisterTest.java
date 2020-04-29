@@ -102,6 +102,8 @@ public class RegisterTest {
                         isDisplayed()));
         appCompatEditText3.perform(replaceText("Testing1"), closeSoftKeyboard());
 
+        assert(mActivityTestRule.getActivity().findViewById(R.id.et_password_register).toString().equals(mActivityTestRule.getActivity().findViewById(R.id.et_password_register2).toString()) && mActivityTestRule.getActivity().findViewById(R.id.et_email_register).toString().matches("^[\\\\w!#$%&’*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$"));
+
         ViewInteraction appCompatButton = onView(
                 allOf(withId(R.id.registerButton), withText("Sign Up"),
                         childAtPosition(
