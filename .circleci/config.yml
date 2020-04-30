@@ -92,7 +92,7 @@ references:
       command: echo $GOOGLE_SERVICES_KEY | base64 -di > google-services.json
 
   export_gcloud_key: &export_gcloud_key
-    run:d
+    run:
       name: Export Google Cloud Service key environment variable
       command: echo 'export GOOGLE_SERVICE_KEY="$GOOGLE_SERVICE_KEY"' >> $BASH_ENV
 
