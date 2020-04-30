@@ -94,10 +94,10 @@ references:
     run:
       name: Export Google Cloud Service key environment variable
       command: echo 'export GOOGLE_SERVICE_KEY="$GOOGLE_SERVICE_KEY"' >> $BASH_ENV
-    decode_gcloud_key: &decode_gcloud_key
-      run:
-        name: Decode Google Cloud credentials
-        command: echo $GOOGLE_SERVICE_KEY | base64 -di > ${HOME}/client-secret.json
+  decode_gcloud_key: &decode_gcloud_key
+    run:
+      name: Decode Google Cloud credentials
+      command: echo $GOOGLE_SERVICE_KEY | base64 -di > ${HOME}/client-secret.json
 
 
 
