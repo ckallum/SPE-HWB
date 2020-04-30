@@ -18,7 +18,7 @@ references:
   ## Workspace
 
   workspace: &workspace
-    ~/workspace
+               ~/workspace
   attach_debug_workspace: &attach_debug_workspace
     attach_workspace:
       at: *workspace
@@ -219,6 +219,19 @@ jobs:
           path: firebase/
           destination: /firebase/
 
+  publish-github-release:
+    docker:
+      - image: cibuilds/github:0.10
+      steps:
+        - attach_workspace:
+            at: ./workspace
+        - run:
+            name: "Publish Release on GitHub"
+            command: |
+              VERSION=$(grep -o '[[:digit:]]\+\.[[:digit:]]\+\.[[:digit:]]\+' ./workspace/build/outputs/apk/debug/output.json)
+              ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete $VERSION ./workspace/build/outputs/apk/debug/app-debug.apk
+
+
 workflows:
   version: 2
   workflow:
@@ -229,8 +242,15 @@ workflows:
       - test_instrumented:
           requires:
             - build_debug
+      - publish-github-release:
+          requires:
+            - build_release
+            - check_quality
+            - test_unit
+            - test_instrumented
           filters:
             branches:
-              only:
-                - master
+              ignore: /.*/
+            tags:
+              only: /^\d+\.\d+\.\d+$/
 
