@@ -195,11 +195,15 @@ jobs:
 workflows:
   version: 2
   workflow:
-    jobs:
-      - build-debug
-      - build_release
-      - test_unit
-      - test_instrumented:
-          requires:
-            - build-debug
+    build_and_test:
+      jobs:
+        - build-debug
+        - build_release
+        - test_unit
+        - test_instrumented:
+            requires:
+              - build-debug
+            filters:
+              branches:
+                only:master
 
