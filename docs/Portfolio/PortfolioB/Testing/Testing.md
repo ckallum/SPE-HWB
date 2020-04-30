@@ -1,4 +1,6 @@
 Things to Include:
+https://medium.com/@ayltai/all-you-need-to-know-about-circleci-2-0-with-firebase-test-lab-2a66785ff3c2
+
 
 - Firebase Test Lab
     - Didn't include in CI as it was too costly if run on every push
