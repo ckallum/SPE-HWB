@@ -205,5 +205,5 @@ workflows:
               - build-debug
             filters:
               branches:
-                only:master
+                only: master
 
