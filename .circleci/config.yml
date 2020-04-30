@@ -99,7 +99,7 @@ references:
   decode_gcloud_key: &decode_gcloud_key
     run:
       name: Decode Google Cloud credentials
-      command: echo $GOOGLE_SERVICE_KEY | base64 -d > ${HOME}/client-secret.json
+      command: echo $GOOGLE_SERVICE_KEY  > ${HOME}/client-secret.json
 
 
 
