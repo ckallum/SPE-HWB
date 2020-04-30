@@ -205,7 +205,7 @@ workflows:
         filters:
           branches:
             only:
-              master
+              - master
         requires:
             - build_release
             - test_unit
