@@ -214,20 +214,20 @@ workflows:
   version: 2
   workflow:
     jobs:
-      - build_debug
-      - build_release
-      - test_unit
-      - test_instrumented:
-          requires:
-            - build_debug
-      - publish-github-release:
-          requires:
-            - build_release
-            - test_unit
-            - test_instrumented
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^\d+\.\d+\.\d+$/
+#      - build_debug
+#      - build_release
+#      - test_unit
+      - test_instrumented
+#          requires:
+#            - build_debug
+#      - publish-github-release:
+#          requires:
+#            - build_release
+#            - test_unit
+#            - test_instrumented
+#          filters:
+#            branches:
+#              ignore: /.*/
+#            tags:
+#              only: /^\d+\.\d+\.\d+$/
 
