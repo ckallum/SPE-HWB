@@ -99,6 +99,9 @@ references:
         name: Decode Google Cloud credentials
         command: echo $GOOGLE_SERVICE_KEY | base64 -di > ${HOME}/client-secret.json
 
+
+
+
 jobs:
   build_debug:
     <<: *android_config
@@ -166,6 +169,28 @@ jobs:
           path: app/build/test-results/
           destination: /test-results/
 
+  check_quality:
+    <<: *android_config
+    steps:
+      - checkout
+      - *restore_cache
+      - run:
+          name: Download dependencies
+          command: ./gradlew androidDependencies
+      - *save_cache
+      - *export_gservices_key
+      - *decode_gservices_key
+      - run:
+          name: Run Checkstyle
+          command: ./gradlew -PciBuild=true :mobile:customCheckstyle
+      - run:
+          name: Run FindBugs
+          command: ./gradlew -PciBuild=true :mobile:customFindBugs
+      - *persist_debug_workspace
+      - store_artifacts:
+          path: app/build/reports/
+          destination: /reports/
+
   test_instrumented:
     <<: *gcloud_config
     steps:
@@ -195,15 +220,14 @@ jobs:
 workflows:
   version: 2
   workflow:
-    build_and_test:
-      jobs:
-        - build-debug
-        - build_release
-        - test_unit
-        - test_instrumented:
-            requires:
-              - build-debug
-            filters:
-              branches:
-                only: master
+    jobs:
+      - build-debug
+      - build_release
+      - test_unit
+      - test_instrumented:
+          requires:
+            - build-debug
+          filters:
+            branches:
+              only: master
 
