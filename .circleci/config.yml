@@ -18,7 +18,7 @@ references:
   ## Workspace
 
   workspace: &workspace
-               ~/workspace
+    ~/workspace
   attach_debug_workspace: &attach_debug_workspace
     attach_workspace:
       at: *workspace
@@ -229,5 +229,6 @@ workflows:
             - build-debug
           filters:
             branches:
-              only: master
+              only:
+                - master
 
