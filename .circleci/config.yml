@@ -223,12 +223,12 @@ workflows:
   version: 2
   workflow:
     jobs:
-      - build-debug
+      - build_debug
       - build_release
       - test_unit
       - test_instrumented:
           requires:
-            - build-debug
+            - build_debug
           filters:
             branches:
               only:

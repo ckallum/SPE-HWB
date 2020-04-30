@@ -1,8 +1,6 @@
 
 package com.example.healthproject;
 
-import android.util.Patterns;
-
 import com.example.healthproject.View.ViewModelController;
 
 import org.junit.Before;
@@ -21,43 +19,39 @@ public class FormStateTest {
 
     @Before
     public void setUp(){
-//        testController = ViewModelProviders.of(this, new ViewModelFactory()).get(ViewModelController.class);
+//        testController = ViewModelProviders.of(this, new ViewModelFactory().get(ViewModelController.class);
 
     }
 
 
     @Test
     public void emailValidator_CorrectEmailSimple_ReturnsTrue() {
-        assertTrue(Patterns.EMAIL_ADDRESS.matcher("name@email.com").matches());
+        assertTrue("name@email.com".matches("^[\\\\w!#$%&’*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$"));
     }
 
     @Test
     public void emailValidator_CorrectEmailSubDomain_ReturnsTrue() {
-        assertTrue(Patterns.EMAIL_ADDRESS.matcher("name@email.co.uk").matches());
+        assertTrue("name@email.co.uk".matches("^[\\\\w!#$%&’*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$"));
     }
 
     @Test
     public void emailValidator_InvalidEmailNoTld_ReturnsFalse() {
-        assertFalse(Patterns.EMAIL_ADDRESS.matcher("name@email").matches());
+        assertFalse("name@email".matches("^[\\\\w!#$%&’*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$"));
     }
 
     @Test
     public void emailValidator_InvalidEmailDoubleDot_ReturnsFalse() {
-        assertFalse(Patterns.EMAIL_ADDRESS.matcher("name@email..com").matches());
+        assertFalse("name@email..com".matches("^[\\\\w!#$%&’*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$"));
     }
 
     @Test
     public void emailValidator_InvalidEmailNoUsername_ReturnsFalse() {
-        assertFalse(Patterns.EMAIL_ADDRESS.matcher("@email.com").matches());
+        assertFalse("@email.com".matches("^[\\\\w!#$%&’*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$"));
     }
 
     @Test
     public void emailValidator_EmptyString_ReturnsFalse() {
-        assertFalse(Patterns.EMAIL_ADDRESS.matcher("").matches());
+        assertFalse("".matches("^[\\\\w!#$%&’*+/=?`{|}~^-]+(?:\\\\.[\\\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\\\.)+[a-zA-Z]{2,6}$"));
     }
 
-    @Test
-    public void emailValidator_NullEmail_ReturnsFalse() {
-        assertFalse(Patterns.EMAIL_ADDRESS.matcher(null).matches());
-    }
 }
