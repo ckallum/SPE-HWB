@@ -171,28 +171,6 @@ jobs:
           path: app/build/test-results/
           destination: /test-results/
 
-  check_quality:
-    <<: *android_config
-    steps:
-      - checkout
-      - *restore_cache
-      - run:
-          name: Download dependencies
-          command: ./gradlew androidDependencies
-      - *save_cache
-      - *export_gservices_key
-      - *decode_gservices_key
-      - run:
-          name: Run Checkstyle
-          command: ./gradlew -PciBuild=true :mobile:customCheckstyle
-      - run:
-          name: Run FindBugs
-          command: ./gradlew -PciBuild=true :mobile:customFindBugs
-      - *persist_debug_workspace
-      - store_artifacts:
-          path: app/build/reports/
-          destination: /reports/
-
   test_instrumented:
     <<: *gcloud_config
     steps:
@@ -238,9 +216,6 @@ workflows:
     jobs:
       - build_debug
       - build_release
-      - check_quality:
-          requires:
-            - build_debug
       - test_unit
       - test_instrumented:
           requires:
@@ -248,7 +223,6 @@ workflows:
       - publish-github-release:
           requires:
             - build_release
-            - check_quality
             - test_unit
             - test_instrumented
           filters:
