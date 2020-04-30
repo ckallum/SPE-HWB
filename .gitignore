@@ -75,6 +75,7 @@ fabric.properties
 # *.iml
 # modules.xml
 
+build/
 local.properties
 firebase.properties
 .DS_Store
