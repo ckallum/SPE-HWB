@@ -238,7 +238,7 @@ workflows:
     jobs:
       - build_debug
       - build_release
-      - check_quality
+      - check_quality:
           requires:
             - build_debug
       - test_unit
