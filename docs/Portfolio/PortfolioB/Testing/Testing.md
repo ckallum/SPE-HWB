@@ -1,7 +1,8 @@
 Things to Include:
 https://medium.com/@ayltai/all-you-need-to-know-about-circleci-2-0-with-firebase-test-lab-2a66785ff3c2
 
-
+- Mockito -> unit testing , add Roboelectric for Android dependencies/fragments etc.
+- Instrumentation -> Espresso -> tests UI
 - Firebase Test Lab
     - Didn't include in CI as it was too costly if run on every push
     - Test Lab to test your app on physical devices before you release app updates with significant changes in UI and functionality. This will help to ensure that your app runs well on a wide range of popular physical devices, and also ensures test coverage for any app functionality that relies on physical device features that are not simulated by virtual devices
