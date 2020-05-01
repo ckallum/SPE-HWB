@@ -26,5 +26,6 @@ https://medium.com/@ayltai/all-you-need-to-know-about-circleci-2-0-with-firebase
     - Mock tests via Mockito -> mock dependencies of classes i.e. Firebase databases 
     - Junit
     
+    - Smoke Tests -> essential underlying behaviour tests
 - Codacy
 - Circle Ci

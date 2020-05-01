@@ -41,6 +41,8 @@
     <string name="update_event">Update</string>
     <string name="search">Search by Name</string>
     <string name="unsubscribe">Unsubscribe</string>
+    <string name="forgotten_password">Forgotten Password?</string>
+    <string name="sign_up_hint">Don\'t have an Account? Click Here!</string>
 
 
 </resources>

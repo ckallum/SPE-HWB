@@ -1,6 +1,9 @@
 
-package com.example.healthproject;
+package com.example.healthproject.Global;
 
+import androidx.lifecycle.MutableLiveData;
+
+import com.example.healthproject.View.FormState;
 import com.example.healthproject.View.ViewModelController;
 
 import org.junit.Before;
@@ -13,13 +16,13 @@ import static junit.framework.Assert.assertFalse;
  * Unit tests for Formstate validation Logic i.e. valid email, matching passwords, valid dates etc.
  */
 
-public class FormStateTest {
+public class LoginFormStateTest {
     private ViewModelController testController;
+    private MutableLiveData<FormState> formState;
 
     @Before
     public void setUp(){
-//        testController = ViewModelProviders.of(this, new ViewModelFactory().get(ViewModelController.class);
-
+        formState = new MutableLiveData<>();
     }
 
 

@@ -1,4 +1,4 @@
-package com.example.healthproject.Activity;
+package com.example.healthproject.Global;
 
 
 import android.view.View;
@@ -10,6 +10,7 @@ import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.filters.LargeTest;
 import androidx.test.runner.AndroidJUnit4;
 
+import com.example.healthproject.Activity.ForgotActivity;
 import com.example.healthproject.R;
 
 import org.hamcrest.Description;
@@ -24,8 +25,6 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
-import static androidx.test.espresso.intent.Intents.intended;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -38,7 +37,7 @@ import static org.hamcrest.Matchers.is;
 public class ForgotActivityTest {
 
     @Rule
-    public IntentsTestRule<LoginActivity> mActivityTestRule = new IntentsTestRule<>(LoginActivity.class);
+    public IntentsTestRule<ForgotActivity> mActivityTestRule = new IntentsTestRule<>(ForgotActivity.class);
 
     @Before
     public void setUp(){
@@ -46,16 +45,6 @@ public class ForgotActivityTest {
     }
     @Test
     public void forgotActivityTest() {
-        ViewInteraction appCompatTextView = onView(
-                allOf(withText("Forgotten Password?"),
-                        childAtPosition(
-                                childAtPosition(
-                                        withClassName(is("android.widget.LinearLayout")),
-                                        2),
-                                0),
-                        isDisplayed()));
-        appCompatTextView.perform(click());
-        intended(hasComponent(ForgotActivity.class.getName()));
 
         ViewInteraction appCompatEditText = onView(
                 allOf(withId(R.id.emailTxtBox),

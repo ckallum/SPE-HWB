@@ -2,8 +2,6 @@ package com.example.healthproject.Model;
 
 import android.util.Log;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.healthproject.Model.dto.Event;
 import com.example.healthproject.Model.dto.User;
 import com.example.healthproject.Model.dto.UserEvent;
@@ -19,10 +17,8 @@ import java.io.IOException;
 /**
  * Class that handles authentication with Firebase w/ forgot credentials and retrieves user information.
  */
-public class FirebaseDataSource extends AppCompatActivity {
+public class FirebaseDataSource{
     private FirebaseAuth auth;
-
-
     private FirebaseFirestore db;
     private CollectionReference ref;
 
@@ -32,7 +28,7 @@ public class FirebaseDataSource extends AppCompatActivity {
 
     }
 
-    public Result<UserUpdateModel> forgot(String email) {
+    Result<UserUpdateModel> forgot(String email) {
         try {
             auth.sendPasswordResetEmail(email);
             UserUpdateModel reg = new UserUpdateModel();
@@ -42,11 +38,11 @@ public class FirebaseDataSource extends AppCompatActivity {
         }
     }
 
-    public void logout() {
+    void logout() {
         FirebaseAuth.getInstance().signOut();
     }
 
-    public void addNewUser() {
+    void addNewUser() {
         Log.println(Log.ASSERT, "CHECK", auth.getCurrentUser().getEmail());
         ref = db.collection("users");
         User user = new User(auth.getCurrentUser().getEmail(), false);
@@ -84,12 +80,12 @@ public class FirebaseDataSource extends AppCompatActivity {
         ref.document(event.getId()).set(event).addOnSuccessListener(aVoid -> Log.d("Success", "Event Updated")).addOnFailureListener(e -> Log.w("FAIL", "Error Updating Document", e));
     }
 
-    public void updateUserDisplayName(String id, String name) {
+    void updateUserDisplayName(String id, String name) {
         ref = db.collection("users");
         ref.document(id).update("displayName", name).addOnSuccessListener(aVoid -> Log.d("Success", "Name Updated")).addOnFailureListener(e -> Log.w("FAIL", "Error Updating Document", e));
     }
 
-    public void updatePassword(String password) {
+    void updatePassword(String password) {
         auth.getCurrentUser().updatePassword(password).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 Log.d("Success", "User password updated.");
@@ -98,7 +94,7 @@ public class FirebaseDataSource extends AppCompatActivity {
 
     }
 
-    public void eventSubscribe(String uId, String eId) {
+    void eventSubscribe(String uId, String eId) {
         UserEvent userEvent = new UserEvent(uId, eId);
         ref = db.collection("user_event_link");
         ref.add(userEvent).addOnSuccessListener(documentReference -> {
@@ -108,7 +104,7 @@ public class FirebaseDataSource extends AppCompatActivity {
     }
 
 
-    public void eventUnsubscribe(String email, String eventId) {
+    void eventUnsubscribe(String email, String eventId) {
         db.collection("user_event_link").whereEqualTo("eventId", eventId).whereEqualTo("userId", email).get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 for (QueryDocumentSnapshot document : task.getResult()) {

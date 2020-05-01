@@ -1,7 +1,6 @@
 package com.example.healthproject.View;
 
 import android.util.Log;
-import android.util.Patterns;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -114,7 +113,7 @@ public class ViewModelController extends ViewModel {
     // A placeholder username validation check
     private boolean isEmailValid(String username) {
 
-        return username!=null && !username.isEmpty()&&  username.contains("@") && Patterns.EMAIL_ADDRESS.matcher(username).matches();
+        return username!=null && !username.isEmpty()&&  username.matches("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
     }
 
     public void registerDataChanged(String username, String password, String password2) {

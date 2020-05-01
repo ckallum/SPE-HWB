@@ -80,7 +80,6 @@
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-
                     android:autofillHints="@string/prompt_email"
 
                     android:hint="@string/prompt_email"
@@ -138,7 +137,7 @@
 
                 android:fontFamily="sans-serif"
                 android:padding="10dp"
-                android:text="Forgotten Password?"
+                android:text="@string/forgotten_password"
                 android:textColor="#0B0000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -157,7 +156,7 @@
                 android:layout_gravity="center_horizontal"
                 android:fontFamily="sans-serif"
                 android:padding="10dp"
-                android:text="Don't have an account? Sign up now"
+                android:text="@string/sign_up_hint"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -181,8 +180,7 @@
                 android:background="@drawable/button"
                 android:enabled="false"
 
-                android:text="Sign In
-"
+                android:text="@string/sign_up"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp" />
 
