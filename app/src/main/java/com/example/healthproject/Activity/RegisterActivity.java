@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         final EditText email = findViewById(R.id.et_email_register);
         final EditText password = findViewById(R.id.et_password_register);
-        final EditText password2 = findViewById(R.id.et_password_register2);
+        final EditText password2 = findViewById(R.id.et_password_retype);
         final Button registerButton = findViewById(R.id.registerButton);
         registerButton.setEnabled(false);
         final TextView signInText = findViewById(R.id.signInLink);

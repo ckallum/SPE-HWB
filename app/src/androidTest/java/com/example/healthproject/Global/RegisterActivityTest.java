@@ -15,14 +15,19 @@ import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.Activity.RegisterActivity;
 import com.example.healthproject.R;
 
+import net.andreinc.mockneat.MockNeat;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.Random;
+
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
@@ -39,9 +44,9 @@ public class RegisterActivityTest {
     @Rule
     public ActivityTestRule<RegisterActivity> activityTestRule = new ActivityTestRule<>(RegisterActivity.class);
 
-    static final String userEmail = "user@uobactive.ac.uk";
-    static final String userPassword = "Users1";
-    static final String userPassword2 = "Users1";
+    static String userEmail = MockNeat.secure().emails().val();
+    static final String userPassword = "Register1";
+    static final String userPassword2 = "Register1";
 
 
 
@@ -61,8 +66,8 @@ public class RegisterActivityTest {
         EditText passwordText = activity.findViewById(R.id.et_password_register);
         assertTrue(passwordText.isShown());
 
-        assertNotNull(activity.findViewById(R.id.et_password_register2));
-        EditText passwordText2 = activity.findViewById(R.id.et_password_register2);
+        assertNotNull(activity.findViewById(R.id.et_password_retype));
+        EditText passwordText2 = activity.findViewById(R.id.et_password_retype);
         assertTrue(passwordText2.isShown());
 
         assertNotNull(activity.findViewById(R.id.signInLink));
@@ -83,20 +88,34 @@ public class RegisterActivityTest {
 
     @Test
     public void testRegisterWithValidCredentials() throws InterruptedException {
-        onView(withId(R.id.et_email_register)).perform(typeText(userEmail));
-        onView(withId(R.id.et_password_register)).perform(typeText(userPassword));
-        onView(withId(R.id.et_password_register2)).perform(typeText(userPassword2)).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_email_register)).perform(typeText(userEmail)).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_password_register)).perform(typeText(userPassword)).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_password_retype)).perform(click(),replaceText(userPassword2)).perform(closeSoftKeyboard());
         onView(withId(R.id.registerButton)).perform(click());
         Thread.sleep(2000L);
         intended(hasComponent(LoginActivity.class.getName()));
     }
 
     @Test
-    public void testRegisterWithInValidCredentials(){
+    public void testRegisterWithInValidCredentials() throws InterruptedException {
         onView(withId(R.id.et_email_register)).perform(typeText(userEmail));
-        onView(withId(R.id.et_password_register)).perform(typeText(userPassword));
-        onView(withId(R.id.et_password_register2)).perform(typeText("")).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_password_register)).perform(typeText(userPassword)).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_password_retype)).perform(replaceText("")).perform(closeSoftKeyboard());
         onView(withId(R.id.registerButton)).perform(click());
+        Thread.sleep(2000L);
         assertEquals("RegisterActivity", activityTestRule.getActivity().getClass().getName());
+    }
+
+    String getSaltString() {
+        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 10) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String saltStr = salt.toString();
+        return saltStr;
+
     }
 }

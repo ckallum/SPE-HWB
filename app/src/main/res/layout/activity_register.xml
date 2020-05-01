@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/background"
+    android:orientation="vertical"
     tools:context=".Activity.RegisterActivity">
 
     <LinearLayout
         android:id="@+id/relativeLayout"
         android:layout_width="380dp"
         android:layout_height="310dp"
-        android:orientation="vertical"
         android:background="@drawable/round_border_text"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".2"
@@ -29,21 +29,22 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center_horizontal">
+            android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal">
+
                 <EditText
                     android:id="@+id/et_email_register"
 
-                    android:layout_gravity="center_horizontal"
                     android:layout_width="350dp"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="40dp"
                     android:autofillHints="email"
                     android:hint="@string/prompt_email"
@@ -60,14 +61,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-            >
+            android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal">
+
                 <EditText
                     android:id="@+id/et_password_register"
                     android:layout_width="350dp"
@@ -75,12 +76,10 @@
                     android:layout_centerHorizontal="true"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="0dp"
-                    android:autofillHints="password"
                     android:hint="@string/prompt_password"
                     android:inputType="textPassword"
                     android:padding="15dp" />
             </com.google.android.material.textfield.TextInputLayout>
-
 
 
         </LinearLayout>
@@ -88,44 +87,37 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center_horizontal"
-            >
+            android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal">
 
-            <EditText
-                android:id="@+id/et_password_register2"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="0dp"
-                android:layout_gravity="center_horizontal"
-                android:autofillHints="password"
-                android:hint="@string/retype"
-                android:inputType="textPassword"
-                android:padding="15dp" />
+                <EditText
+                    android:id="@+id/et_password_retype"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="0dp"
+                    android:hint="@string/retype"
+                    android:inputType="textPassword"
+                    android:padding="15dp" />
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 
 
-
-
-
-
         <LinearLayout
-            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="0dp"
             android:layout_centerHorizontal="true"
-            >
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="0dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/signInLink"
