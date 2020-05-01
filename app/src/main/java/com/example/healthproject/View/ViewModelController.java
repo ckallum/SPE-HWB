@@ -140,7 +140,7 @@ public class ViewModelController extends ViewModel {
     }
 
     private boolean isPasswordValid(String password2, String password) {
-        return password != null && password.trim().length() > 5 && password.equals(password2);
+        return password != null && password.trim().length() > 5 && password2 != null && password2.trim().length() > 5 && password.equals(password2);
     }
 
     private boolean timeValid(String timestamp) {

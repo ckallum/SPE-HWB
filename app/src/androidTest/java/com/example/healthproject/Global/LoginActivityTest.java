@@ -78,7 +78,7 @@ public class LoginActivityTest {
         assertEquals("Don't have an Account? Click Here!", registerText.getText().toString());
 
         Button loginButton = activity.findViewById(R.id.login);
-        assertEquals("Sign Up", loginButton.getText().toString());
+        assertEquals("Sign in", loginButton.getText().toString());
     }
 
     @Test

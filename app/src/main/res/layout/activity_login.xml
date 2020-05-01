@@ -180,7 +180,7 @@
                 android:background="@drawable/button"
                 android:enabled="false"
 
-                android:text="@string/sign_up"
+                android:text="@string/action_sign_in"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp" />
 

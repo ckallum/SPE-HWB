@@ -11,6 +11,7 @@ import androidx.test.filters.LargeTest;
 import androidx.test.runner.AndroidJUnit4;
 
 import com.example.healthproject.Activity.ForgotActivity;
+import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.R;
 
 import org.hamcrest.Description;
@@ -25,6 +26,8 @@ import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.intent.Intents.intended;
+import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -68,6 +71,12 @@ public class ForgotActivityTest {
                                 1),
                         isDisplayed()));
         appCompatButton.perform(click());
+    }
+
+    @Test
+    public void backButton(){
+        onView(withId(R.id.backButton)).perform(click());
+        intended(hasComponent(LoginActivity.class.getName()));
     }
 
     private static Matcher<View> childAtPosition(

@@ -53,6 +53,8 @@ public class RegisterActivity extends AppCompatActivity {
             }
             if (registerFormState.getPasswordError() != null) {
                 password.setError(getString(registerFormState.getPasswordError()));
+            }else{
+                password.setError(null);
             }
         });
         TextWatcher afterTextChangedListener = new TextWatcher() {
