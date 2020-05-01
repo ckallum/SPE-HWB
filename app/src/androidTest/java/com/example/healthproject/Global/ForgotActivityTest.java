@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 
 import androidx.test.espresso.ViewInteraction;
+import androidx.test.espresso.intent.Intents;
 import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.filters.LargeTest;
 import androidx.test.runner.AndroidJUnit4;
@@ -17,6 +18,7 @@ import com.example.healthproject.R;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -46,6 +48,12 @@ public class ForgotActivityTest {
     public void setUp(){
         mActivityTestRule.getActivity().getSupportFragmentManager().beginTransaction();
     }
+
+    @After
+    public void cleanUp() {
+        Intents.release();
+    }
+
     @Test
     public void forgotActivityTest() {
 

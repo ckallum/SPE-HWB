@@ -82,10 +82,10 @@
                     android:layout_gravity="center"
 
                     android:ems="10"
+                    android:autofillHints="Username"
 
-                    android:hint="Username"
-                    android:inputType="textPersonName"
-                    android:text="" />
+                    android:hint="@string/username"
+                    android:inputType="textEmailAddress"/>
 
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -115,10 +115,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
 
-                    android:hint="Email"
+                    android:autofillHints="Email"
+                    android:inputType="textEmailAddress"
+
+
+                    android:hint="@string/prompt_email"
 
                     android:ems="10"
-                    android:inputType="textEmailAddress"
                     />
 
 
@@ -150,7 +153,9 @@
 
                     android:layout_gravity="center"
                     android:ems="10"
-                    android:hint = "Password"
+                    android:hint = "@string/prompt_password"
+                    android:autofillHints="Password"
+
                     android:inputType="textPassword"
                     android:text="" />
 
@@ -175,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/button"
-                android:text="Save"
+                android:text="@string/fui_button_text_save"
 
 
                 android:textColor="#FFFFFF" />

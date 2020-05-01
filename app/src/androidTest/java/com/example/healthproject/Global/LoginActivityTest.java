@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.test.espresso.assertion.ViewAssertions;
 import androidx.test.espresso.intent.Intents;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
@@ -19,6 +20,7 @@ import com.example.healthproject.Model.FirebaseDataSource;
 import com.example.healthproject.Model.GlobalUser;
 import com.example.healthproject.R;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -30,11 +32,15 @@ import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
+import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertTrue;
+import static org.hamcrest.Matchers.not;
 
 
 @LargeTest
@@ -54,6 +60,11 @@ public class LoginActivityTest {
     @Before
     public void setUp(){
         Intents.init();
+    }
+
+    @After
+    public void cleanUp() {
+        Intents.release();
     }
 
     @Test
@@ -103,6 +114,9 @@ public class LoginActivityTest {
         GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
         assertTrue(user.isLoggedIn());
         assertFalse(user.isAdmin());
+        onView(withText("Welcome ! User1")).
+                inRoot(withDecorView(not(activityTestRule.getActivity().getWindow().getDecorView()))).
+                check(ViewAssertions.matches(isDisplayed()));
     }
 
     @Test
@@ -115,6 +129,10 @@ public class LoginActivityTest {
         GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
         assertTrue(user.isLoggedIn());
         assertTrue(user.isAdmin());
+        onView(withText("Welcome ! Admin")).
+                inRoot(withDecorView(not(activityTestRule.getActivity().getWindow().getDecorView()))).
+                check(ViewAssertions.matches(isDisplayed()));
+
     }
 
     @Test
@@ -125,6 +143,9 @@ public class LoginActivityTest {
         Thread.sleep(150);
         GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
         assertFalse(user.isLoggedIn());
+        onView(withText("Login failed")).
+                inRoot(withDecorView(not(activityTestRule.getActivity().getWindow().getDecorView()))).
+                check(ViewAssertions.matches(isDisplayed()));
     }
 
 }

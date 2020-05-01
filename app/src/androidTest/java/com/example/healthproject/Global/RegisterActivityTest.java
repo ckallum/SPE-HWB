@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.test.espresso.assertion.ViewAssertions;
 import androidx.test.espresso.intent.Intents;
 import androidx.test.filters.LargeTest;
 import androidx.test.rule.ActivityTestRule;
@@ -17,12 +18,11 @@ import com.example.healthproject.R;
 
 import net.andreinc.mockneat.MockNeat;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import java.util.Random;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -31,10 +31,14 @@ import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
+import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
+import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertTrue;
+import static org.hamcrest.Matchers.not;
 
 
 @LargeTest
@@ -53,6 +57,11 @@ public class RegisterActivityTest {
     @Before
     public void setUp(){
         Intents.init();
+    }
+
+    @After
+    public void cleanUp() {
+        Intents.release();
     }
 
     @Test
@@ -94,6 +103,21 @@ public class RegisterActivityTest {
         onView(withId(R.id.registerButton)).perform(click());
         Thread.sleep(2000L);
         intended(hasComponent(LoginActivity.class.getName()));
+        onView(withText("User Added")).
+                inRoot(withDecorView(not(activityTestRule.getActivity().getWindow().getDecorView()))).
+                check(ViewAssertions.matches(isDisplayed()));
+    }
+
+    @Test
+    public void testRegisterWithExistingCredentials() throws InterruptedException {
+        onView(withId(R.id.et_email_register)).perform(typeText("registerTest@uobactive.ac.uk"));
+        onView(withId(R.id.et_password_register)).perform(typeText(userPassword)).perform(closeSoftKeyboard());
+        onView(withId(R.id.et_password_retype)).perform(replaceText(userPassword2)).perform(closeSoftKeyboard());
+        onView(withId(R.id.registerButton)).perform(click());
+        Thread.sleep(2000L);
+        onView(withText("Register Failed")).
+                inRoot(withDecorView(not(activityTestRule.getActivity().getWindow().getDecorView()))).
+                check(ViewAssertions.matches(isDisplayed()));
     }
 
     @Test
@@ -106,16 +130,5 @@ public class RegisterActivityTest {
         assertEquals("RegisterActivity", activityTestRule.getActivity().getClass().getName());
     }
 
-    String getSaltString() {
-        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        StringBuilder salt = new StringBuilder();
-        Random rnd = new Random();
-        while (salt.length() < 10) { // length of the random string.
-            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
-            salt.append(SALTCHARS.charAt(index));
-        }
-        String saltStr = salt.toString();
-        return saltStr;
 
-    }
 }

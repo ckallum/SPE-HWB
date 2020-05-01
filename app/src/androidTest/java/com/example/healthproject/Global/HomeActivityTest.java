@@ -12,6 +12,7 @@ import com.example.healthproject.Model.GlobalUser;
 import com.example.healthproject.R;
 
 import org.hamcrest.Matchers;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -39,6 +40,11 @@ public class HomeActivityTest {
     public void setUp() throws InterruptedException {
         Intents.init();
         GlobalUser.getInstance(new FirebaseDataSource()).login(userEmail, false);
+    }
+
+    @After
+    public void cleanUp() {
+        Intents.release();
     }
 
     @Test
