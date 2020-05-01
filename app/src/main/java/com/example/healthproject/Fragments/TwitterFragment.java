@@ -27,7 +27,6 @@ public class TwitterFragment extends Fragment {
         WebSettings settings = webView.getSettings();
 
 
-        settings.setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("https://twitter.com/BristolUniSport?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor");
 

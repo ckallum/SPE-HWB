@@ -20,10 +20,10 @@ public class SocietiesFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_twitter, container, false);
+        View v = inflater.inflate(R.layout.fragment_societies, container, false);
 
 
-        WebView webView = v.findViewById(R.id.twitterPage);
+        WebView webView = v.findViewById(R.id.societiesPage);
         WebSettings settings = webView.getSettings();
 
 

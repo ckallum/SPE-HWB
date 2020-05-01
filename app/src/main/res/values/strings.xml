@@ -43,6 +43,7 @@
     <string name="unsubscribe">Unsubscribe</string>
     <string name="forgotten_password">Forgotten Password?</string>
     <string name="sign_up_hint">Don\'t have an Account? Click Here!</string>
+    <string name="step_tracker">Step Tracker</string>
 
 
 </resources>
