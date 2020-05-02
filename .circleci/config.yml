@@ -118,7 +118,7 @@ jobs:
       - *decode_gservices_key
       - run:
           name: install avd
-          command: sdkmanager "system-images;android-24;default;armeabi-v7a "
+          command: sdkmanager "system-images;android-24;default;armeabi-v7a"
       - run:
           name: Create AVD
           command: echo "no" | avdmanager create avd -n test -k "system-images;android-24;default;armeabi-v7a "
