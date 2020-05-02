@@ -10,3 +10,6 @@
 - talk about whether they'd use the app on a daily basis??
 - provide example answers/results of the questionnaire (using google forms or something)
 - talk about how we took these results and improved our app
+- maybe mention features we initially had in place but removed?
+- since it is iterative dev, maybe we implemeted each part individually and tested each part on it's own?
+- some features we didn't evaluation , so we deployed it
