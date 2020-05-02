@@ -123,10 +123,10 @@ jobs:
             TERM: dumb
       - run:
           name: Create AVD
-          command: echo no | avdmanager create avd -n testEmulator -k "system-images;android-29;google_apis_playstore;x86"
+          command: echo no | avdmanager create avd -n test -k "system-images;android-29;google_apis_playstore;x86"
       - run:
           name: Start emulator
-          command: emulator -avd testEmulator -no-audio -no-window
+          command: emulator -avd test -no-audio -no-window
           background: true
           environment:
             TERM: dumb
