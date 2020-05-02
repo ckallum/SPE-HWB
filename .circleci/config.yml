@@ -117,24 +117,8 @@ jobs:
       - *export_gservices_key
       - *decode_gservices_key
       - run:
-          name: install avd
-          command: sdkmanager "system-images;android-24;default;armeabi-v7a"
-      - run:
-          name: Create AVD
-          command: echo "no" | avdmanager create avd -n test -k "system-images;android-24;default;armeabi-v7a"
-      - run:
-          name: Launch Emulator
-          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator -avd test -noaudio -no-boot-anim -no-window -accel auto -verbose
-          background: true
-          parallel: true
-      - run:
-          name: Wait emulator
-          command: |
-            circle-android wait-for-boot
-            adb shell input keyevent 82
-      - run:
           name: Gradle build (debug)
-          command: ./gradlew -PciBuild=true :app:connectedCheck
+          command: ./gradlew -PciBuild=true :app:assembleDebug app:assembleAndroidTest
       - *persist_debug_workspace
       - store_artifacts:
           path: app/build/outputs/apk/
@@ -201,7 +185,7 @@ jobs:
           command: gcloud auth activate-service-account --key-file ${HOME}/client-secret.json
       - run:
           name: Run instrumented test on Firebase Test Lab
-          command: gcloud firebase test android run --type instrumentation --app app/build/outputs/apk/debug/app-debug.apk --test app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk --device model=Pixel2,version=29,locale=en_US,orientation=portrait --environment-variables coverage=true,coverageFile=/sdcard/tmp/code-coverage/connected/coverage.ec --directories-to-pull=/sdcard/tmp --timeout 20m
+          command: gcloud firebase test android run --type instrumentation --app app/build/outputs/apk/debug/app-debug.apk --test app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk --device model=Pixel2,version=29,locale=en_US,orientation=portrait --environment-variables coverage=true,coverageFile=/sdcard/tmp/code-coverage/connected/coverage.ec --directories-to-pull=/sdcard/tmp --timeout 20m --use-orcherstrator
       - run:
           name: Create directory to store test results
           command: mkdir firebase
@@ -231,19 +215,19 @@ workflows:
   workflow:
     jobs:
       - build_debug
-#      - build_release
-#      - test_unit
-#      - test_instrumented:
-#          requires:
-#            - build_debug
-#      - publish-github-release:
-#          requires:
-#            - build_release
-#            - test_unit
-#            - test_instrumented
-#          filters:
-#            branches:
-#              ignore: /.*/
-#            tags:
-#              only: /^\d+\.\d+\.\d+$/
+      - build_release
+      - test_unit
+      - test_instrumented:
+          requires:
+            - build_debug
+      - publish-github-release:
+          requires:
+            - build_release
+            - test_unit
+            - test_instrumented
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^\d+\.\d+\.\d+$/
 
