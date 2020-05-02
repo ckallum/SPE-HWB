@@ -118,12 +118,12 @@ jobs:
       - *decode_gservices_key
       - run:
           name: install avd
-          command: sdkmanager "system-images;android-29;"
+          command: sdkmanager "system-images;android-29;default;x86_64;"
           environment:
             TERM: dumb
       - run:
           name: Create AVD
-          command: echo no | avdmanager create avd -n testEmulator -k "system-images;android-29"
+          command: echo no | avdmanager create avd -n testEmulator -k "system-images;android-29;default;x86_64"
       - run:
           name: Start emulator
           command: emulator -avd testEmulator -no-audio -no-window
