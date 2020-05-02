@@ -48,6 +48,18 @@ public class VenuesTest {
         onView(withId(R.id.indoor)).check(matches(isDisplayed()));
         onView(withId(R.id.coombe)).check(matches(isDisplayed()));
         onView(withId(R.id.richmond)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void imageViewPressTest(){
+        onView(withId(R.id.indoor)).perform(click());
+        onView(withId(R.id.fragment_indoor)).check(matches(isDisplayed()));
+        onView(withId(R.id.back)).perform(click());
+        onView(withId(R.id.coombe)).perform(click());
+        onView(withId(R.id.fragment_coombe)).check(matches(isDisplayed()));
+        onView(withId(R.id.back)).perform(click());
+        onView(withId(R.id.richmond)).perform(click());
+        onView(withId(R.id.fragment_su)).check(matches(isDisplayed()));
 
     }
 }

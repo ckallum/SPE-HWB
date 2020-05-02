@@ -117,6 +117,9 @@ jobs:
       - *export_gservices_key
       - *decode_gservices_key
       - run:
+          - name: Setup emulator
+              command: sdkmanager "system-images;android-29;default;armeabi-v7a" && echo "no" | avdmanager create avd -n test -k "system-images;android-29;default;armeabi-v7a"
+      - run:
           name: Gradle build (debug)
           command: ./gradlew -PciBuild=true :app:connectedCheck
       - *persist_debug_workspace
