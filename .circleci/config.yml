@@ -125,11 +125,17 @@ jobs:
           name: Create AVD
           command: echo no | avdmanager create avd -n test -k "system-images;android-29;google_apis_playstore;x86"
       - run:
-          name: Start emulator
-          command: emulator -avd test -no-audio -no-window
+          name: Launch Emulator
+          command: |
+            cd ${ANDROID_HOME}/emulator;ls
+            export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib
+            emulator -avd test -no-window -noaudio -no-boot-anim -no-window -accel on
           background: true
-          environment:
-            TERM: dumb
+      - run:
+          name: Wait emulator
+          command: |
+            circle-android wait-for-boot
+            adb shell input keyevent 82
 
       - checkout
 
