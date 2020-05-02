@@ -83,9 +83,10 @@ public class HomeActivityTest {
     }
 
     @Test
-    public void testNewsButtonPress() {
+    public void testNewsButtonPress() throws InterruptedException {
         onView(withId(R.id.newsLink)).perform(click());
         onView(withId(R.id.newsPage)).perform(click());
+        Thread.sleep(1000L);
         onWebView().check(webMatches(getCurrentUrl(), Matchers.containsString("http://www.bristol.ac.uk/sport/news/")));
 
     }
@@ -100,7 +101,7 @@ public class HomeActivityTest {
     public void testTwitterButtonPress() throws InterruptedException {
         onView(withId(R.id.twitterLink)).perform(click());
         onView(withId(R.id.twitterPage)).perform(click());
-        Thread.sleep(3000L);
+        Thread.sleep(1000L);
         onWebView().check(webMatches(getCurrentUrl(), Matchers.containsString("https://twitter.com/BristolUniSport")));
 
     }
@@ -109,7 +110,7 @@ public class HomeActivityTest {
     public void testInstagramButtonPress() throws InterruptedException {
         onView(withId(R.id.instaLink)).perform(click());
         onView(withId(R.id.instPage)).perform(click());
-        Thread.sleep(3000L);
+        Thread.sleep(1000L);
         onWebView().check(webMatches(getCurrentUrl(), Matchers.containsString("https://www.instagram.com/bristolunisport/?hl=en")));
 
     }
@@ -118,8 +119,7 @@ public class HomeActivityTest {
     public void testMembershipButtonPress() throws InterruptedException {
         onView(withId(R.id.membersLink)).perform(click());
         onView(withId(R.id.membersPage)).perform(click());
-        Thread.sleep(3000L);
-
+        Thread.sleep(1000L);
         onWebView().check(webMatches(getCurrentUrl(), Matchers.containsString("http://www.bristol.ac.uk/sport/memberships/")));
 
     }
@@ -128,7 +128,7 @@ public class HomeActivityTest {
     public void testSuButtonPress() throws InterruptedException {
         onView(withId(R.id.societiesLink)).perform(click());
         onView(withId(R.id.societiesPage)).perform(click());
-        Thread.sleep(3000L);
+        Thread.sleep(1000L);
         onWebView().check(webMatches(getCurrentUrl(), Matchers.containsString("https://www.bristolsu.org.uk/sports-clubs-societies")));
     }
 

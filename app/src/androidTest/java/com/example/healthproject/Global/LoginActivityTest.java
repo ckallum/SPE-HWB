@@ -137,12 +137,13 @@ public class LoginActivityTest {
         onView(withId(R.id.username)).perform(typeText(invalidEmail));
         onView(withId(R.id.password)).perform(typeText(invalidPassword)).perform(closeSoftKeyboard());
         onView(withId(R.id.login)).perform(click());
-        Thread.sleep(4000L);
-        GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
-        assertFalse(user.isLoggedIn());
+        Thread.sleep(2000L);
         onView(withText("Login failed")).
                 inRoot(withDecorView(not(activityTestRule.getActivity().getWindow().getDecorView()))).
                 check(ViewAssertions.matches(isDisplayed()));
+        GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
+        assertFalse(user.isLoggedIn());
+
     }
 
 }
