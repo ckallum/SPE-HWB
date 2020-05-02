@@ -124,27 +124,7 @@ jobs:
       - run:
           name: Create AVD
           command: echo no | avdmanager create avd -n test -k "system-images;android-29;google_apis_playstore;x86"
-      - run:
-          name: Launch Emulator
-          command: |
-            cd ${ANDROID_HOME}/emulator;ls
-            export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib
-            emulator -avd test -no-window -noaudio -no-boot-anim -no-window
-          background: true
-      - run:
-          name: Wait emulator
-          command: |
-            circle-android wait-for-boot
-            adb shell input keyevent 82
 
-      - checkout
-
-
-      - run:
-          name: Remove lock screen
-          command: adb shell input keyevent 82
-          environment:
-            TERM: dumb
       - run:
           name: Gradle build (debug)
           command: ./gradlew -PciBuild=true :app:connectedCheck
