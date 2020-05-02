@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical"
-    android:id="@+id/venues">
+    android:id="@+id/fragment_venues">
 
     <LinearLayout
         android:layout_width="match_parent"

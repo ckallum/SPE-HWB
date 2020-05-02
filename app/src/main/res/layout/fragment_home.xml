@@ -7,6 +7,7 @@
     tools:context="com.example.healthproject.Fragments.StepsFragment"
     android:orientation="vertical"
     android:background="@drawable/background"
+    android:id="@+id/fragment_home"
 
     >
 

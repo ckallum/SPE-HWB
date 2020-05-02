@@ -140,7 +140,7 @@ public class LoginActivityTest {
         onView(withId(R.id.username)).perform(typeText(invalidEmail));
         onView(withId(R.id.password)).perform(typeText(invalidPassword)).perform(closeSoftKeyboard());
         onView(withId(R.id.login)).perform(click());
-        Thread.sleep(150);
+        Thread.sleep(2000L);
         GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
         assertFalse(user.isLoggedIn());
         onView(withText("Login failed")).
