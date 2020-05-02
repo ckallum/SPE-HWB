@@ -118,13 +118,13 @@ jobs:
       - *decode_gservices_key
       - run:
           name: install avd
-          command: sdkmanager "system-images;android-29;google_apis_playstore;x86"
+          command: sdkmanager "system-images;android-24;default;armeabi-v7a "
       - run:
           name: Create AVD
-          command: echo "no" | avdmanager create avd -n test -k "system-images;android-29;google_apis_playstore;x86"
+          command: echo "no" | avdmanager create avd -n test -k "system-images;android-24;default;armeabi-v7a "
       - run:
           name: Launch Emulator
-          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator-avd test -noaudio -no-boot-anim -no-window -accel auto -verbose
+          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator -avd test -noaudio -no-boot-anim -no-window -accel auto -verbose
           background: true
           parallel: true
       - run:
