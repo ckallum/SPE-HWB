@@ -132,7 +132,6 @@ jobs:
           command: |
             circle-android wait-for-boot
             adb shell input keyevent 82
-
       - run:
           name: Gradle build (debug)
           command: ./gradlew -PciBuild=true :app:connectedCheck
