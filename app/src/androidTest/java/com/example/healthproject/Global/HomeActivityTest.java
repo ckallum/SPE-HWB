@@ -97,33 +97,38 @@ public class HomeActivityTest {
     }
 
     @Test
-    public void testTwitterButtonPress(){
+    public void testTwitterButtonPress() throws InterruptedException {
         onView(withId(R.id.twitterLink)).perform(click());
         onView(withId(R.id.twitterPage)).perform(click());
+        Thread.sleep(3000L);
         onWebView().check(webMatches(getCurrentUrl(), Matchers.containsString("https://twitter.com/BristolUniSport")));
 
     }
 
     @Test
-    public void testInstagramButtonPress(){
+    public void testInstagramButtonPress() throws InterruptedException {
         onView(withId(R.id.instaLink)).perform(click());
         onView(withId(R.id.instPage)).perform(click());
+        Thread.sleep(3000L);
         onWebView().check(webMatches(getCurrentUrl(), Matchers.containsString("https://www.instagram.com/bristolunisport/?hl=en")));
 
     }
 
     @Test
-    public void testMembershipButtonPress(){
+    public void testMembershipButtonPress() throws InterruptedException {
         onView(withId(R.id.membersLink)).perform(click());
         onView(withId(R.id.membersPage)).perform(click());
+        Thread.sleep(3000L);
+
         onWebView().check(webMatches(getCurrentUrl(), Matchers.containsString("http://www.bristol.ac.uk/sport/memberships/")));
 
     }
 
     @Test
-    public void testSuButtonPress(){
+    public void testSuButtonPress() throws InterruptedException {
         onView(withId(R.id.societiesLink)).perform(click());
         onView(withId(R.id.societiesPage)).perform(click());
+        Thread.sleep(3000L);
         onWebView().check(webMatches(getCurrentUrl(), Matchers.containsString("https://www.bristolsu.org.uk/sports-clubs-societies")));
     }
 

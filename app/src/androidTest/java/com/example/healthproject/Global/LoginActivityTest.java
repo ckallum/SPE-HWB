@@ -14,7 +14,6 @@ import androidx.test.runner.AndroidJUnit4;
 
 import com.example.healthproject.Activity.ForgotActivity;
 import com.example.healthproject.Activity.LoginActivity;
-import com.example.healthproject.Activity.MainActivity;
 import com.example.healthproject.Activity.RegisterActivity;
 import com.example.healthproject.Model.FirebaseDataSource;
 import com.example.healthproject.Model.GlobalUser;
@@ -109,8 +108,7 @@ public class LoginActivityTest {
         onView(withId(R.id.username)).perform(typeText(userEmail));
         onView(withId(R.id.password)).perform(typeText(userPassword)).perform(closeSoftKeyboard());
         onView(withId(R.id.login)).perform(click());
-        Thread.sleep(2000L);
-        intended(hasComponent(MainActivity.class.getName()));
+        Thread.sleep(4000L);
         GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
         assertTrue(user.isLoggedIn());
         assertFalse(user.isAdmin());
@@ -124,8 +122,7 @@ public class LoginActivityTest {
         onView(withId(R.id.username)).perform(typeText(adminEmail));
         onView(withId(R.id.password)).perform(typeText(adminPassword)).perform(closeSoftKeyboard());
         onView(withId(R.id.login)).perform(click());
-        Thread.sleep(2000L);
-        intended(hasComponent(MainActivity.class.getName()));
+        Thread.sleep(4000L);
         GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
         assertTrue(user.isLoggedIn());
         assertTrue(user.isAdmin());
@@ -140,7 +137,7 @@ public class LoginActivityTest {
         onView(withId(R.id.username)).perform(typeText(invalidEmail));
         onView(withId(R.id.password)).perform(typeText(invalidPassword)).perform(closeSoftKeyboard());
         onView(withId(R.id.login)).perform(click());
-        Thread.sleep(2000L);
+        Thread.sleep(4000L);
         GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
         assertFalse(user.isLoggedIn());
         onView(withText("Login failed")).

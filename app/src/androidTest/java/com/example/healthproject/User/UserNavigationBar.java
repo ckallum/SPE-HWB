@@ -3,7 +3,6 @@ package com.example.healthproject.User;
 import androidx.test.espresso.intent.Intents;
 import androidx.test.rule.ActivityTestRule;
 
-import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.Activity.Navigation.NavigationActivity;
 import com.example.healthproject.Model.FirebaseDataSource;
 import com.example.healthproject.Model.GlobalUser;
@@ -16,11 +15,7 @@ import org.junit.Test;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.intent.Intents.intended;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static junit.framework.TestCase.assertTrue;
@@ -31,16 +26,12 @@ public class UserNavigationBar {
     static final String userPassword = "Users1";
 
     @Rule
-    public ActivityTestRule<LoginActivity> activityTestRule = new ActivityTestRule<>(LoginActivity.class);
+    public ActivityTestRule<NavigationActivity> activityTestRule = new ActivityTestRule<>(NavigationActivity.class);
 
     @Before
     public void setUp() throws InterruptedException {
         Intents.init();
-        onView(withId(R.id.username)).perform(typeText(userEmail));
-        onView(withId(R.id.password)).perform(typeText(userPassword)).perform(closeSoftKeyboard());
-        onView(withId(R.id.login)).perform(click());
-        Thread.sleep(2000L);
-
+        GlobalUser.getInstance(new FirebaseDataSource()).login(userEmail, false);
     }
 
     @After
@@ -50,7 +41,6 @@ public class UserNavigationBar {
 
     @Test
     public void testLogin(){
-        intended(hasComponent(NavigationActivity.class.getName()));
         GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
         assertTrue(user.isLoggedIn());
         assertFalse(user.isAdmin());
