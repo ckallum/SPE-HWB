@@ -119,15 +119,12 @@ jobs:
       - run:
           name: install avd
           command: sdkmanager "system-images;android-29;google_apis_playstore;x86"
-          environment:
-            TERM: dumb
       - run:
           name: Create AVD
-          command: echo no | avdmanager create avd -n test -k "system-images;android-29;google_apis_playstore;x86"
+          command: echo "no" | avdmanager create avd -n test -k "system-images;android-29;google_apis_playstore;x86"
       - run:
           name: Launch Emulator
-          command:
-            emulator -avd Pixel_2_API_29 -no-window -noaudio -no-boot-anim -no-window
+          command: export LD_LIBRARY_PATH=${ANDROID_HOME}/emulator/lib64:${ANDROID_HOME}/emulator/lib64/qt/lib && emulator64-arm -avd test -noaudio -no-boot-anim -no-window -accel auto -verbose
           background: true
           parallel: true
       - run:
@@ -135,6 +132,7 @@ jobs:
           command: |
             circle-android wait-for-boot
             adb shell input keyevent 82
+
       - run:
           name: Gradle build (debug)
           command: ./gradlew -PciBuild=true :app:connectedCheck
