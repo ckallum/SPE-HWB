@@ -1,23 +1,20 @@
 package com.example.healthproject.Global;
 
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
+import android.app.Activity;
+import android.widget.Button;
+import android.widget.EditText;
 
-import androidx.test.espresso.ViewInteraction;
+import androidx.test.espresso.assertion.ViewAssertions;
 import androidx.test.espresso.intent.Intents;
-import androidx.test.espresso.intent.rule.IntentsTestRule;
 import androidx.test.filters.LargeTest;
+import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
 import com.example.healthproject.Activity.ForgotActivity;
 import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.R;
 
-import org.hamcrest.Description;
-import org.hamcrest.Matcher;
-import org.hamcrest.TypeSafeMatcher;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -27,26 +24,29 @@ import org.junit.runner.RunWith;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
-import static androidx.test.espresso.action.ViewActions.replaceText;
+import static androidx.test.espresso.action.ViewActions.typeText;
+import static androidx.test.espresso.intent.Intents.init;
 import static androidx.test.espresso.intent.Intents.intended;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasComponent;
+import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.is;
+import static junit.framework.TestCase.assertEquals;
+import static junit.framework.TestCase.assertNotNull;
+import static junit.framework.TestCase.assertTrue;
+import static org.hamcrest.Matchers.not;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class ForgotActivityTest {
 
     @Rule
-    public IntentsTestRule<ForgotActivity> mActivityTestRule = new IntentsTestRule<>(ForgotActivity.class);
+    public ActivityTestRule<ForgotActivity> activityTestRule = new ActivityTestRule<>(ForgotActivity.class);
 
     @Before
     public void setUp(){
-        mActivityTestRule.getActivity().getSupportFragmentManager().beginTransaction();
+        init();
     }
 
     @After
@@ -55,54 +55,36 @@ public class ForgotActivityTest {
     }
 
     @Test
-    public void forgotActivityTest() {
+    public void testUI() {
+        Activity activity = activityTestRule.getActivity();
+        assertNotNull(activity.findViewById(R.id.emailTxtBox));
+        EditText emailText = activity.findViewById(R.id.emailTxtBox);
+        assertTrue(emailText.isShown());
 
-        ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.emailTxtBox),
-                        childAtPosition(
-                                allOf(withId(R.id.linearLayout2),
-                                        childAtPosition(
-                                                withClassName(is("androidx.constraintlayout.widget.ConstraintLayout")),
-                                                1)),
-                                0),
-                        isDisplayed()));
-        appCompatEditText.perform(replaceText("user@uobactive.ac.uk"), closeSoftKeyboard());
-        assert(!mActivityTestRule.getActivity().findViewById(R.id.emailTxtBox).toString().isEmpty());
+        assertNotNull(activity.findViewById(R.id.backButton));
+        assertNotNull(activity.findViewById(R.id.sendEmail));
 
-        ViewInteraction appCompatButton = onView(
-                allOf(withId(R.id.sendEmail), withText("Send"),
-                        childAtPosition(
-                                allOf(withId(R.id.linearLayout2),
-                                        childAtPosition(
-                                                withClassName(is("androidx.constraintlayout.widget.ConstraintLayout")),
-                                                1)),
-                                1),
-                        isDisplayed()));
-        appCompatButton.perform(click());
+        Button backButton = activity.findViewById(R.id.backButton);
+        assertEquals("Back", backButton.getText().toString());
+
+        Button saveButton = activity.findViewById(R.id.sendEmail);
+        assertEquals("Send", saveButton.getText().toString());
     }
 
     @Test
-    public void backButton(){
+    public void testBackButton(){
         onView(withId(R.id.backButton)).perform(click());
         intended(hasComponent(LoginActivity.class.getName()));
     }
 
-    private static Matcher<View> childAtPosition(
-            final Matcher<View> parentMatcher, final int position) {
-
-        return new TypeSafeMatcher<View>() {
-            @Override
-            public void describeTo(Description description) {
-                description.appendText("Child at position " + position + " in parent ");
-                parentMatcher.describeTo(description);
-            }
-
-            @Override
-            public boolean matchesSafely(View view) {
-                ViewParent parent = view.getParent();
-                return parent instanceof ViewGroup && parentMatcher.matches(parent)
-                        && view.equals(((ViewGroup) parent).getChildAt(position));
-            }
-        };
+    @Test
+    public void testSendButton(){
+        onView(withId(R.id.emailTxtBox)).perform(typeText("user@uobactive.ac.uk")).perform(closeSoftKeyboard());
+        onView(withId(R.id.sendEmail)).perform(click());
+        onView(withText("Email Sent")).
+                inRoot(withDecorView(not(activityTestRule.getActivity().getWindow().getDecorView()))).
+                check(ViewAssertions.matches(isDisplayed()));
     }
+
+
 }

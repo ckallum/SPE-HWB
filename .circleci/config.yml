@@ -118,7 +118,7 @@ jobs:
       - *decode_gservices_key
       - run:
           name: Gradle build (debug)
-          command: ./gradlew -PciBuild=true :app:assembleDebug :app:assembleAndroidTest
+          command: ./gradlew -PciBuild=true :app:connectedCheck
       - *persist_debug_workspace
       - store_artifacts:
           path: app/build/outputs/apk/
