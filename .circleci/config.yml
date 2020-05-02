@@ -127,7 +127,7 @@ jobs:
       - run:
           name: Launch Emulator
           command:
-            emulator -avd circleci-android29 -no-window -noaudio -no-boot-anim -no-window
+            emulator -avd Pixel_2_API_29 -no-window -noaudio -no-boot-anim -no-window
           background: true
           parallel: true
       - run:
