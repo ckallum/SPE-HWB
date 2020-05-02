@@ -117,8 +117,13 @@ jobs:
       - *export_gservices_key
       - *decode_gservices_key
       - run:
-          name: Setup emulator
-          command: sdkmanager "system-images;android-29;default;armeabi-v7a" && echo "no" | avdmanager create avd -n test -k "system-images;android-29;default;armeabi-v7a"
+          name: install avd
+          command: sdkmanager "system-images;android-24;default;armeabi-v7a"
+          environment:
+            TERM: dumb
+      - run:
+          name: Create AVD
+          command: echo no | avdmanager create avd -n testEmulator -k "system-images;android-24;default;armeabi-v7a"
       - run:
           name: Start emulator
           command: emulator -avd testEmulator -no-audio -no-window
@@ -237,19 +242,19 @@ workflows:
   workflow:
     jobs:
       - build_debug
-      - build_release
-      - test_unit
-      - test_instrumented:
-          requires:
-            - build_debug
-      - publish-github-release:
-          requires:
-            - build_release
-            - test_unit
-            - test_instrumented
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^\d+\.\d+\.\d+$/
+#      - build_release
+#      - test_unit
+#      - test_instrumented:
+#          requires:
+#            - build_debug
+#      - publish-github-release:
+#          requires:
+#            - build_release
+#            - test_unit
+#            - test_instrumented
+#          filters:
+#            branches:
+#              ignore: /.*/
+#            tags:
+#              only: /^\d+\.\d+\.\d+$/
 

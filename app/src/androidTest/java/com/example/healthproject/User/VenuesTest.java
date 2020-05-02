@@ -60,6 +60,20 @@ public class VenuesTest {
         onView(withId(R.id.back)).perform(click());
         onView(withId(R.id.richmond)).perform(click());
         onView(withId(R.id.fragment_su)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void displayIndoorTest(){
+
+    }
+
+    @Test
+    public void displayCoombeTest(){
+
+    }
+
+    @Test
+    public void displaySuTest(){
 
     }
 }
