@@ -110,9 +110,8 @@ public class HomeActivityTest {
     public void testInstagramButtonPress() throws InterruptedException {
         onView(withId(R.id.instaLink)).perform(click());
         onView(withId(R.id.instPage)).perform(click());
-        Thread.sleep(1000L);
+        Thread.sleep(2000L);
         onWebView().check(webMatches(getCurrentUrl(), Matchers.containsString("https://www.instagram.com/bristolunisport/?hl=en")));
-
     }
 
     @Test

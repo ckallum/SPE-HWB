@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-import com.example.healthproject.Activity.UpdateEvent;
+import com.example.healthproject.Activity.NavigationActivity;
 import com.example.healthproject.Model.dto.Event;
 import com.example.healthproject.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
@@ -85,7 +85,7 @@ public class ManageFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         // set new Intent with event id -> load event data
-                        Intent intent = new Intent(getActivity(), UpdateEvent.class);
+                        Intent intent = new Intent(getActivity(), NavigationActivity.class);
                         intent.putExtra("ID", event.getId());
                         startActivity(intent);
                     }

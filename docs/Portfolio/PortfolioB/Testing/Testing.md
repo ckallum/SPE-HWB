@@ -29,3 +29,8 @@ https://medium.com/@ayltai/all-you-need-to-know-about-circleci-2-0-with-firebase
     - Smoke Tests -> essential underlying behaviour tests
 - Codacy
 - Circle Ci
+
+- Testing Firestore Calls:
+    - Unit testing firestore is inherently hard because of their security rules. However, we can 
+    test our security rules using the emulator in firestore test lab. This tests who can read and 
+    write and if documents exist after reading and writing.

@@ -102,10 +102,10 @@ public class RegisterActivityTest {
         onView(withId(R.id.et_password_retype)).perform(click(),replaceText(userPassword2)).perform(closeSoftKeyboard());
         onView(withId(R.id.registerButton)).perform(click());
         Thread.sleep(2000L);
-        intended(hasComponent(LoginActivity.class.getName()));
         onView(withText("User Added")).
                 inRoot(withDecorView(not(activityTestRule.getActivity().getWindow().getDecorView()))).
                 check(ViewAssertions.matches(isDisplayed()));
+        intended(hasComponent(LoginActivity.class.getName()));
     }
 
     @Test

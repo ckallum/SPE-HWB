@@ -112,9 +112,6 @@ public class LoginActivityTest {
         GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
         assertTrue(user.isLoggedIn());
         assertFalse(user.isAdmin());
-        onView(withText("Welcome ! User1")).
-                inRoot(withDecorView(not(activityTestRule.getActivity().getWindow().getDecorView()))).
-                check(ViewAssertions.matches(isDisplayed()));
     }
 
     @Test

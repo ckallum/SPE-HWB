@@ -1,5 +1,6 @@
 package com.example.healthproject.Admin;
 
+import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.espresso.intent.Intents;
 import androidx.test.rule.ActivityTestRule;
 
@@ -7,6 +8,7 @@ import com.example.healthproject.Activity.LoginActivity;
 import com.example.healthproject.Model.FirebaseDataSource;
 import com.example.healthproject.Model.GlobalUser;
 import com.example.healthproject.R;
+import com.example.healthproject.TestUtils.MyViewAction;
 
 import org.junit.After;
 import org.junit.Before;
@@ -20,10 +22,10 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static junit.framework.TestCase.assertTrue;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
-public class AdminNavigationBar {
-    // Login with preset admin nav details
+public class UpdateEventPageTest {
+
     static final String adminEmail = "admin@uobactive.ac.uk";
     static final String adminPassword = "Admin1";
 
@@ -36,9 +38,8 @@ public class AdminNavigationBar {
         onView(withId(R.id.username)).perform(typeText(adminEmail));
         onView(withId(R.id.password)).perform(typeText(adminPassword)).perform(closeSoftKeyboard());
         onView(withId(R.id.login)).perform(click());
-        Thread.sleep(1000L);
+        Thread.sleep(2000L);
         GlobalUser.getInstance(new FirebaseDataSource()).login(adminEmail, true);
-
     }
 
     @After
@@ -47,30 +48,19 @@ public class AdminNavigationBar {
     }
 
     @Test
-    public void testLogin(){
-        GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
-        assertTrue(user.isLoggedIn());
-        assertTrue(user.isAdmin());
-    }
-
-    @Test
-    public void testNavBarUi(){
-        onView(withId(R.id.admin_navbar)).check(matches(isDisplayed()));
-        onView(withId(R.id.home)).check(matches(isDisplayed()));
-        onView(withId(R.id.add)).check(matches(isDisplayed()));
-        onView(withId(R.id.manage)).check(matches(isDisplayed()));
-        onView(withId(R.id.profile)).check(matches(isDisplayed()));
-    }
-
-    @Test
-    public void testNavBarInteraction(){
-        onView(withId(R.id.add)).perform(click());
-        onView(withId(R.id.fragment_create)).check(matches(isDisplayed()));
-        onView(withId(R.id.home)).perform(click());
-        onView(withId(R.id.fragment_home)).check(matches(isDisplayed()));
+    public void testManageButtonClick() {
         onView(withId(R.id.manage)).perform(click());
-        onView(withId(R.id.fragment_manage)).check(matches(isDisplayed()));
-        onView(withId(R.id.profile)).perform(click());
-        onView(withId(R.id.fragment_profile)).check(matches(isDisplayed()));
+        onView(withId(R.id.eventRecycler)).perform(
+                RecyclerViewActions.actionOnItemAtPosition(0, MyViewAction.clickChildViewWithId(R.id.list_button_manage)));
+        onView(withId(R.id.event_name)).check(matches(isDisplayed()));
+        onView(withId(R.id.event_spaces)).check(matches(isDisplayed()));
+        onView(withId(R.id.event_date)).check(matches(isDisplayed()));
+
+        onView(withId(R.id.event_start)).check(matches(isDisplayed()));
+        onView(withId(R.id.event_end)).check(matches(isDisplayed()));
+        onView(withId(R.id.event_description)).check(matches(isDisplayed()));
+        onView(withId(R.id.button_change)).check(matches(withText("Update")));
+        onView(withId(R.id.button_delete)).check(matches(withText("Delete")));
     }
+
 }

@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class UpdateEvent extends AppCompatActivity {
+public class NavigationActivity extends AppCompatActivity {
     private ViewModelController updateViewModel;
     private EditText eventName;
     private EditText eventSpaces;

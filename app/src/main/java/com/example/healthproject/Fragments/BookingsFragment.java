@@ -41,7 +41,7 @@ public class BookingsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View x = inflater.inflate(R.layout.fragment_booking, container, false);
-        RecyclerView mRecyclerView = x.findViewById(R.id.firestore_events);
+        RecyclerView mRecyclerView = x.findViewById(R.id.eventRecycler);
         user = GlobalUser.getInstance(new FirebaseDataSource());
         firebaseFirestore = FirebaseFirestore.getInstance();
         SearchView filter = x.findViewById(R.id.eventFilter);

@@ -69,7 +69,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/firestore_events"
+        android:id="@+id/eventRecycler"
         android:layout_width="match_parent"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"

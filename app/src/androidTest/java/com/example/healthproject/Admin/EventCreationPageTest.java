@@ -20,10 +20,10 @@ import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static junit.framework.TestCase.assertTrue;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
-public class AdminNavigationBar {
-    // Login with preset admin nav details
+public class EventCreationPageTest {
+
     static final String adminEmail = "admin@uobactive.ac.uk";
     static final String adminPassword = "Admin1";
 
@@ -38,6 +38,7 @@ public class AdminNavigationBar {
         onView(withId(R.id.login)).perform(click());
         Thread.sleep(1000L);
         GlobalUser.getInstance(new FirebaseDataSource()).login(adminEmail, true);
+        onView(withId(R.id.add)).perform(click());
 
     }
 
@@ -47,30 +48,17 @@ public class AdminNavigationBar {
     }
 
     @Test
-    public void testLogin(){
-        GlobalUser user = GlobalUser.getInstance(new FirebaseDataSource());
-        assertTrue(user.isLoggedIn());
-        assertTrue(user.isAdmin());
-    }
-
-    @Test
-    public void testNavBarUi(){
-        onView(withId(R.id.admin_navbar)).check(matches(isDisplayed()));
-        onView(withId(R.id.home)).check(matches(isDisplayed()));
-        onView(withId(R.id.add)).check(matches(isDisplayed()));
-        onView(withId(R.id.manage)).check(matches(isDisplayed()));
-        onView(withId(R.id.profile)).check(matches(isDisplayed()));
-    }
-
-    @Test
-    public void testNavBarInteraction(){
-        onView(withId(R.id.add)).perform(click());
+    public void testUiLayout() {
         onView(withId(R.id.fragment_create)).check(matches(isDisplayed()));
-        onView(withId(R.id.home)).perform(click());
-        onView(withId(R.id.fragment_home)).check(matches(isDisplayed()));
-        onView(withId(R.id.manage)).perform(click());
-        onView(withId(R.id.fragment_manage)).check(matches(isDisplayed()));
-        onView(withId(R.id.profile)).perform(click());
-        onView(withId(R.id.fragment_profile)).check(matches(isDisplayed()));
+        onView(withId(R.id.event_name)).check(matches(isDisplayed()));
+        onView(withId(R.id.event_spaces)).check(matches(isDisplayed()));
+        onView(withId(R.id.event_date)).check(matches(isDisplayed()));
+
+        onView(withId(R.id.event_start)).check(matches(isDisplayed()));
+        onView(withId(R.id.event_end)).check(matches(isDisplayed()));
+        onView(withId(R.id.event_description)).check(matches(isDisplayed()));
+        onView(withId(R.id.button_create)).check(matches(withText("Create Event")));
+
     }
 }
+

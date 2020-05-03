@@ -34,7 +34,7 @@ public class EventsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View x = inflater.inflate(R.layout.fragment_events, container, false);
-        RecyclerView mFirestoreList = x.findViewById(R.id.firestore_events);
+        RecyclerView mFirestoreList = x.findViewById(R.id.eventRecycler);
         firebaseFirestore = FirebaseFirestore.getInstance();
         SearchView filter = x.findViewById(R.id.eventFilter);
         user = GlobalUser.getInstance(new FirebaseDataSource());
