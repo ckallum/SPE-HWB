@@ -42,12 +42,14 @@ public class LoginFormStateTest {
     public void testValidLoginForm() {
         testController.loginDataChanged(validEmail, password1);
         assertTrue(testController.getFormState().getValue().getEmailError() == null && testController.getFormState().getValue().getPasswordError() == null);
+        assertTrue(testController.getFormState().getValue().isDataValid());
     }
 
     @Test
     public void testInValidLoginForm1(){
         testController.loginDataChanged(invalidEmail, password1);
         assertFalse(testController.getFormState().getValue().getEmailError() == null && testController.getFormState().getValue().getPasswordError() == null);
+        assertFalse(testController.getFormState().getValue().isDataValid());
 
     }
 
@@ -57,6 +59,7 @@ public class LoginFormStateTest {
     public void testInValidLoginForm2(){
         testController.loginDataChanged("", password1);
         assertFalse(testController.getFormState().getValue().getEmailError() == null && testController.getFormState().getValue().getPasswordError() == null);
+        assertFalse(testController.getFormState().getValue().isDataValid());
 
     }
 
@@ -64,6 +67,7 @@ public class LoginFormStateTest {
     public void testInValidLoginForm3(){
         testController.loginDataChanged(validEmail, invalidPassword);
         assertFalse(testController.getFormState().getValue().getEmailError() == null && testController.getFormState().getValue().getPasswordError() == null);
+        assertFalse(testController.getFormState().getValue().isDataValid());
 
     }
 

@@ -1,7 +1,5 @@
 package com.example.healthproject.View;
 
-import android.util.Log;
-
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -149,14 +147,10 @@ public class ViewModelController extends ViewModel {
     }
 
     private boolean timeValid(String timestamp) {
-        Log.d("TimeReg", String.valueOf(timestamp.matches("^(2[0-3]|[0-1][0-9]|[0-9]):([0-5][0-9]|[0-9])$")));
-        Log.d("Time", timestamp);
         return timestamp.matches("^(2[0-3]|[0-1][0-9]|[0-9]):([0-5][0-9]|[0-9])$");
     }
 
     private boolean dateValid(String date) {
-        Log.d("Date", date);
-        Log.d("DateReg", String.valueOf(date.matches("^([0-2][0-9]|3[0-1]|[0-9])/(0[0-9]|1[0-2]|[0-9])/([0-9][0-9])?[0-9][0-9]$")));
         return date.matches("^([0-2][0-9]|3[0-1]|[0-9])/(0[0-9]|1[0-2]|[0-9])/([0-9][0-9])?[0-9][0-9]$");
     }
 
