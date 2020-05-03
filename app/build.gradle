@@ -24,18 +24,6 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-        debug {
-            //This read the file we created
-            def fireFile = rootProject.file("firebase.properties")
-            def fireProperties = new Properties()
-            fireProperties.load(new FileInputStream(fireFile))
-
-            //This will get each key and make it available for the project
-            buildConfigField ("String", "applicationId", fireProperties['applicationId'] )
-            buildConfigField ("String", "apiKey", fireProperties['apiKey'])
-            buildConfigField ("String", "projectId", fireProperties['projectId'])
-            buildConfigField ("String", "databaseUrl", fireProperties['databaseUrl'])
-        }
     }
 
     dataBinding{

@@ -77,5 +77,4 @@ fabric.properties
 
 build/
 local.properties
-firebase.properties
 .DS_Store
