@@ -19,12 +19,17 @@ import java.util.regex.Pattern;
 
 public class ViewModelController extends ViewModel {
 
-    private MutableLiveData<FormState> formState = new MutableLiveData<>();
+    private MutableLiveData<FormState> formState;
     private MutableLiveData<FirebaseAuthResult> authResult = new MutableLiveData<>();
     private GlobalUser user;
 
     ViewModelController(GlobalUser user) {
         this.user = user;
+        this.formState = new MutableLiveData<>();
+    }
+
+    public ViewModelController(MutableLiveData<FormState> data){
+        this.formState = data;
     }
 
     public LiveData<FormState> getFormState() {

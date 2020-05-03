@@ -8,10 +8,6 @@ import com.example.healthproject.Model.FirebaseDataSource;
 import com.example.healthproject.Model.GlobalUser;
 public class ViewModelFactory implements ViewModelProvider.Factory {
 
-    /**
-     * ViewModelController provider factory to instantiate ForgotViewModel.
-     * Required given ForgotViewModel has a non-empty constructor
-     */
 
     @NonNull
     @Override

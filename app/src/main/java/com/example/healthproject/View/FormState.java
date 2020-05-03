@@ -90,4 +90,9 @@ public class FormState {
     public Integer getEventAttendeeError() {
         return eventAttendeeError;
     }
+
+    @Nullable
+    public boolean getEventError(){
+        return (getEventNameError() != null ||getEventDateError() != null ||getEventStartTimeError() != null || getEventEndTimeError() != null || getEventAttendeeError() != null);
+    }
 }

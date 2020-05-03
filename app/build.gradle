@@ -107,8 +107,10 @@ dependencies {
     testImplementation 'org.powermock:powermock-module-junit4-rule-agent:1.6.2'
     testImplementation 'org.powermock:powermock-module-junit4-rule:1.6.2'
     testImplementation 'junit:junit:4.13'
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
 
-        //Instrumentation
+
+    //Instrumentation
     androidTestUtil 'androidx.test:orchestrator:1.2.0'
     androidTestImplementation ("com.android.support.test.espresso:espresso-intents:3.1.0")
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

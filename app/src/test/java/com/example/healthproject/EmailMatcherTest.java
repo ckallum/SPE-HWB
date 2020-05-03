@@ -1,30 +1,13 @@
+package com.example.healthproject;
 
-package com.example.healthproject.Global;
-
-import androidx.lifecycle.MutableLiveData;
-
-import com.example.healthproject.View.FormState;
-import com.example.healthproject.View.ViewModelController;
-
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import static junit.framework.Assert.assertFalse;
 
-
-/**
- * Unit tests for Formstate validation Logic i.e. valid email, matching passwords, valid dates etc.
- */
-
-public class LoginFormStateTest {
-    private ViewModelController testController;
-    private MutableLiveData<FormState> formState;
-
-    @Before
-    public void setUp(){
-        formState = new MutableLiveData<>();
-    }
-
+@RunWith(JUnit4.class)
+public class EmailMatcherTest {
 
     @Test
     public void emailValidator_CorrectEmailSimple_ReturnsTrue() {
