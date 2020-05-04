@@ -1,36 +1,14 @@
-Things to Include:
-https://medium.com/@ayltai/all-you-need-to-know-about-circleci-2-0-with-firebase-test-lab-2a66785ff3c2
+# Testing
 
-- Mockito -> unit testing , add Roboelectric for Android dependencies/fragments etc.
-- Instrumentation -> Espresso -> tests UI
-- Firebase Test Lab
-    - Didn't include in CI as it was too costly if run on every push
-    - Test Lab to test your app on physical devices before you release app updates with significant changes in UI and functionality. This will help to ensure that your app runs well on a wide range of popular physical devices, and also ensures test coverage for any app functionality that relies on physical device features that are not simulated by virtual devices
-    - Robo Test
-        - Tests activities and navigation
-        - Video
-        - Sitemap
+## Continuous Integration
+For our project, we decided to use CircleCI as our continuous integration platform to iteratively and automatically implement development and release testing thus allowing us to evalutate each potential commit/push/release against previous releases before deployment; greatly increasing efficiency and the ability to push releases much faster. It also provided the security that new features won't break any previous features. CircleCI also lets the developer define specific workflows for tests and dependences between separate tests and certain criteria that must be satisfied before a release can be deployed. The overall workflow can be seen in the diagram below. It also allowed us to automatically run instrumented tests through Google's Firebase Test Lab and generate test reports that were also automatically stored in our Firebase Storage.
 
-    - Instrumentation Test
-        - Test all UI elements
-        - Unit test for physical device -> slower execution -> evaluates apps behaviour against 
-          device hardware. 
-        - These are used to control Android API -> components such as button clicks and application 
-          lifecycle -> slow 
-        - Using Espresso Scripts
-          
-- Local Tests/Unit tests
-    - Isolates components under test i.e. class specific behaviour / methods -> doesn't need to 
-      connect to android device aka faster. 
-    - Test database connections etc.
-    - Mock tests via Mockito -> mock dependencies of classes i.e. Firebase databases 
-    - Junit
-    
-    - Smoke Tests -> essential underlying behaviour tests
-- Codacy
-- Circle Ci
+<img src="CI_Workflow.png" align="right" alt="drawing" width="300"/>
 
-- Testing Firestore Calls:
-    - Unit testing firestore is inherently hard because of their security rules. However, we can 
-    test our security rules using the emulator in firestore test lab. This tests who can read and 
-    write and if documents exist after reading and writing.
+The automatically generated report coverage was also uploaded to Codacy, a tool that evaluates and reviews code against 'good' coding standards such as camel case naming conventions, DRY principles, code structure, simplicity and readability. Using this tool allowed us to keep a consistent code base and help remove ambiguity between each developers code whilst removing possibilities of code that was prone to errors later down the line/that might impact new implementations.
+
+## Development Testing
+Our development testing strategy follows the principle that testing is used to show the presence of bugs and not the absence of bugs. We adhered to this principal by following the protocol of first writing the tests before writing the code, making sure these tests revolve around identifying if the code is conforming to the specification. Using continuous integration we could re-run, refactor and optimize the tests automatically. The correctness of these tests will be ensured by using synthetic data that is chosen using methods such as equivalence partitioning to provide complete coverage of test cases without
+needing to try all possibilities. All automated tests were implemented using JUnit.
+
+Core components of the application that needed to be tested include the ability for the users to find, create, delete, update and register for events that are organised by the university Health and Wellbeing Department and to have different levels of user privileges and that users who had the administrator privilege had the ability to create, delete, update and view the data pertaining these events. These were identified through the client communicating their vision of a ‘minimum viable product’.
