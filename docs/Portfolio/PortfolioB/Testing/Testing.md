@@ -50,7 +50,7 @@ Using Google's Firebase API as our main web/cloud service provider created chall
 
  #### Front End:
   Instrumentation and Robo tests are functionalities provided by Firebase Test Lab.Bboth were used to test navigation through the app. Instrumentation tests allow us to apply assertions to UI components during navigation. Robo tests are automated application crawlers that allow us to simulate a user navigating through an app with a predefined script. Instrumentation tests provide feedback via test assertions whereas Robo Tests provide videos of the simulation and sitemaps to show where it has successfully navigated to.
-  <img src="UserRoboSitemap.png" align="right" alt="drawing" width="200"/>
+  <img src="UserRoboSitemap.png" align="right" alt="drawing" width="300"/> 
 
 
   Using the MVC design pattern allowed us to easily unit test isolated components such as form validation by generating a mock form and test data and implement tests using assertions on the result given back by the FormState model.
