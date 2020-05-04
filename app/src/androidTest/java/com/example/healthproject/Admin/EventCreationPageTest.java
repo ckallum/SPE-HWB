@@ -36,7 +36,7 @@ public class EventCreationPageTest {
         onView(withId(R.id.username)).perform(typeText(adminEmail));
         onView(withId(R.id.password)).perform(typeText(adminPassword)).perform(closeSoftKeyboard());
         onView(withId(R.id.login)).perform(click());
-        Thread.sleep(1000L);
+        Thread.sleep(2000L);
         GlobalUser.getInstance(new FirebaseDataSource()).login(adminEmail, true);
         onView(withId(R.id.add)).perform(click());
 

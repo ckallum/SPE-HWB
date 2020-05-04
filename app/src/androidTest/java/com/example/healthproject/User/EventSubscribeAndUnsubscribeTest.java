@@ -48,6 +48,7 @@ public class EventSubscribeAndUnsubscribeTest {
     @After
     public void cleanUp() {
         Intents.release();
+        GlobalUser.getInstance(new FirebaseDataSource()).logout();
     }
 
     @Test

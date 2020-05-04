@@ -36,7 +36,7 @@ public class AdminNavigationBar {
         onView(withId(R.id.username)).perform(typeText(adminEmail));
         onView(withId(R.id.password)).perform(typeText(adminPassword)).perform(closeSoftKeyboard());
         onView(withId(R.id.login)).perform(click());
-        Thread.sleep(1000L);
+        Thread.sleep(2000L);
         GlobalUser.getInstance(new FirebaseDataSource()).login(adminEmail, true);
 
     }
@@ -55,7 +55,6 @@ public class AdminNavigationBar {
 
     @Test
     public void testNavBarUi(){
-        onView(withId(R.id.admin_navbar)).check(matches(isDisplayed()));
         onView(withId(R.id.home)).check(matches(isDisplayed()));
         onView(withId(R.id.add)).check(matches(isDisplayed()));
         onView(withId(R.id.manage)).check(matches(isDisplayed()));

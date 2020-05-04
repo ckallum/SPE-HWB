@@ -40,6 +40,8 @@ public class UpdateEventPageTest {
         onView(withId(R.id.login)).perform(click());
         Thread.sleep(2000L);
         GlobalUser.getInstance(new FirebaseDataSource()).login(adminEmail, true);
+        onView(withId(R.id.manage)).perform(click());
+
     }
 
     @After
@@ -49,7 +51,6 @@ public class UpdateEventPageTest {
 
     @Test
     public void testManageButtonClick() {
-        onView(withId(R.id.manage)).perform(click());
         onView(withId(R.id.eventRecycler)).perform(
                 RecyclerViewActions.actionOnItemAtPosition(0, MyViewAction.clickChildViewWithId(R.id.list_button_manage)));
         onView(withId(R.id.event_name)).check(matches(isDisplayed()));

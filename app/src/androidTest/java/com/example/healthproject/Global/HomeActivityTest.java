@@ -118,7 +118,7 @@ public class HomeActivityTest {
     public void testMembershipButtonPress() throws InterruptedException {
         onView(withId(R.id.membersLink)).perform(click());
         onView(withId(R.id.membersPage)).perform(click());
-        Thread.sleep(1000L);
+        Thread.sleep(10000L);
         onWebView().check(webMatches(getCurrentUrl(), Matchers.containsString("http://www.bristol.ac.uk/sport/memberships/")));
 
     }
