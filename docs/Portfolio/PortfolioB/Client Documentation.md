@@ -1,10 +1,13 @@
 # Client Instructions
 
 #### Installing/Downloading the Application 
-To run the application, open Android Studio and click the small green play button at the top.
+To run the application, open Android Studio and click the small green play button at the top.</br>
+![Run Application](Images/run.png)</br>
 To download the application onto an Android smartphone, head over to the “Build” tab at the
 top of android studio and click “Build Bundle(s)/APK(s)”. Then click “Build APK(s)” to produce
-an apk of the application. This can then be transferred to your android phone and installed.
+an apk of the application. </br>
+![Download APK](Images/apk.png)</br>
+This can then be transferred to your android phone and installed.
 
 #### Logging in
 <p> Upon launching the application, you will be greeted with the following screen:
