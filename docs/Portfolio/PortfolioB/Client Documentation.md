@@ -10,7 +10,8 @@ an apk of the application. </br>
 This can then be transferred to your android phone and installed.
 
 #### Logging in
-<p> Upon launching the application, you will be greeted with the following screen:
+<p> Upon launching the application, you will be greeted with the following screen: </br>
+![Sign In](Images/signin.png)</br>
 From here, you are able to create an account by clicking the “Don’t have an Account” link or
 log in with the following pre-made accounts: </p>
 To log in as a user:
