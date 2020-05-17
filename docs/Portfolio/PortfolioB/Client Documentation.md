@@ -1,4 +1,16 @@
 # Client Instructions
+#### Supported Android Versions
+Minimum required android version: Android 4.4 API 20
+Suggested Virtual Device : Pixel 2
+
+#### Installing a Virtual Device
+In order to run the application within Android Studio, an Android Virtual Device would need to be installed.
+To install a virtual device, click the "Tools" tab at the top of android studio and click "AVD Manager".
+You should now see the following.
+Click on the "Create Virtual Device..." button. You should now see the following:
+Click on "Pixel 2" to install the Pixel 2 virtual device and click next.
+Now select the release that has an API level of 29 ("Q") and click next.
+Finally, click finish and the virtual device should start installing.
 
 #### Installing/Downloading the Application 
 To run the application, open Android Studio and click the small green play button at the top.</br>
