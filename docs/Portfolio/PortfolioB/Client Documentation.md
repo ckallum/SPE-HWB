@@ -13,7 +13,7 @@ This can then be transferred to your android phone and installed.
 Upon launching the application, you will be greeted with the following screen: </br>
 ![Sign In](Images/signin.png)</br>
 From here, you are able to create an account by clicking the “Don’t have an Account” link or
-log in with the following pre-made accounts: 
+log in with the following pre-made accounts:</br> 
 To log in as a user:
 <br> Email : ​user@uobactive.ac.uk <br />
 Password: Users </br>
