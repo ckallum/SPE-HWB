@@ -9,12 +9,17 @@ Suggested Virtual Device : Pixel 2</br>
 
 #### Installing a Virtual Device
 In order to run the application within Android Studio, an Android Virtual Device would need to be installed.
-To install a virtual device, click the "Tools" tab at the top of android studio and click "AVD Manager".
-You should now see the following.
-Click on the "Create Virtual Device..." button. You should now see the following:
-Click on "Pixel 2" to install the Pixel 2 virtual device and click next.
-Now select the release that has an API level of 29 ("Q") and click next.
-Finally, click finish and the virtual device should start installing.
+To install a virtual device, click the "Tools" tab at the top of android studio and click "AVD Manager":
+![](Images/avd.png)</br>
+</br>You should now see the following:
+![](Images/avd2.png)</br>
+</br>Click on the "Create Virtual Device..." button. You should now see the following:
+![](Images/avd3.PNG)</br>
+</br>Click on "Pixel 2" to install the Pixel 2 virtual device and click next. Now you should see the following:
+![](Images/avd4.PNG)</br>
+</br>Now select the release that has an API level of 29 ("Q") and click next:
+![](Images/avd5.PNG)</br>
+</br>Finally, click finish and the virtual device should start installing.
 
 #### Installing/Downloading the Application 
 To run the application, open Android Studio and click the small green play button at the top.</br>
