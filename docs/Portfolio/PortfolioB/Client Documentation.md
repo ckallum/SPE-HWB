@@ -1,7 +1,7 @@
 # Client Instructions
 #### Supported Android Versions
-Minimum required android version: Android 4.4 API 20
-Suggested Virtual Device : Pixel 2
+Minimum required android version: Android 4.4 API 20</br>
+Suggested Virtual Device : Pixel 2</br>
 
 #### Installing a Virtual Device
 In order to run the application within Android Studio, an Android Virtual Device would need to be installed.
