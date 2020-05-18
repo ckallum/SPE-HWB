@@ -1,6 +1,6 @@
 ## High Level Architecture
 
-![](includes/high-level.png "High Level Architecture")
+<img src="high-level.png">
 
 The high level diagram shows us the two main parts of the system. Firebase is an external service which we will use to handle our user authentication as well as our database and storage system. The Android application we will create has two versions depending on the user logging in and as such, will display a different UI.
 
