@@ -2,7 +2,7 @@
 
 <img src="high-level.png">
 
-The high level diagram shows us the two main parts of the system. Firebase is an external service which we will use to handle our user authentication as well as our database and storage system. The Android application we will create has two versions depending on the user logging in and as such, will display a different UI.
+The high level diagram shows us the two main parts of the system. Firebase is an external service which we will use to handle our user authentication as well as our database and storage system. The Android application we will create has two versions depending on the user logging in and as such, will display a different UI to a regular user and a different UI to an admin.
 
 We will be using three parts of Firebase in our application. Firebase authentication will be used for logging in and creating accounts. Firebase automatically encrypts passwords for us as well as setting up email templates to send to users for when they forget their passwords. Cloud Firestore is also used as our database for the application. It is a No-SQL database which we will use for storing event information and linking users to their interested events. Finally we will also use Firebase Storage which will be used to store images users upload to display in their profile.
 
