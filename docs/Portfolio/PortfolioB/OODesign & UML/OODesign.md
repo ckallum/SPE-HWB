@@ -10,6 +10,6 @@ The Android application will be used by the users to display events added to the
 
 ## Dynamic UML Diagram
 
-![](includes/sequence.png "Dynamic UML")
+<img src="sequence.png">
 
 The sequence diagram above displays the data flow when a user is attempting to log into the application. We use the MVC design pattern as well as the observer design pattern. Initally the user enters their information into the view and the controller receives this information. The controller observes the form being changed and waits for the FormState to send a response on whether the input is valid to enable the button press. If the data is valid, the button becomes pressable. If the data is invalid, a reason for why the data is invalid is printed until the controller eventually observes valid data from the FormState. Once the button is pressed, the data is sent to the model which verifies the user information in Firebase. If the login information is correct, it will then return what type of account has just logged in. This allows the controller to tell the view which UI to display to the user.
