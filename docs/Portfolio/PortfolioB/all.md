@@ -34,7 +34,7 @@ The sequence diagram above displays the data flow when a user is attempting to l
 
 ## Static UML Diagram
 
-<img src="/includes/View3.png">
+<img src="/includes/static.png">
 
 The static UML diagram shows the layout of how the activities are linked with the ViewModelController, showcasing our implementation of the MVC design pattern. Activities control the lifecycle of the application and are a key component of Android development. We also use Fragment to provide modularity in regards to the UI. The application starts at the MainActivity, which executes the LoginActivity or NavigationActivity, depending on if the user is already logged in. We use the ViewModelController class as the Controller in our application, which executes logic that responds to a user's input/request. Furthermore, it uses the FormState as MutableLiveData which lets the controller know if their data value has been changed. FirebaseAuthResult allows the controller to abstract the Firebase response and represent it to the User. The GlobalUser is used to model the current user instance by using the Singleton design pattern. The GlobalUser instance is our main way of accessing user information/functionalities( login/logout ) throughout the application. The Singleton pattern ensures correctness by always referencing the same user in the same instance of the application.
 
