@@ -1,7 +1,7 @@
 ## Continuous Integration
 For our project, we decided to use CircleCI as our continuous integration platform to iteratively and automatically implement development and release testing thus allowing us to evalutate each potential commit/push/release against previous releases before deployment; greatly increasing efficiency and the ability to push releases much faster. It also provided the security that new features won't break any previous features. CircleCI also lets the developer define specific workflows for tests and dependences between separate tests and certain criteria that must be satisfied before a release can be deployed. The overall workflow can be seen in the diagram below. It also allowed us to automatically run instrumented tests through Google's Firebase Test Lab and generate test reports that were also automatically stored in our Firebase Storage.
 
-<img src="CI_Workflow.png" align="right" alt="drawing" width="300"/>
+<img src="includes/CI_Workflow.png" align="right" alt="drawing" width="300"/>
 
 The automatically generated report coverage was also uploaded to Codacy, a tool that evaluates and reviews code against 'good' coding standards such as camel case naming conventions, DRY principles, code structure, simplicity and readability. Using this tool allowed us to keep a consistent code base and help remove ambiguity between each developers code whilst removing possibilities of code that was prone to errors later down the line/that might impact new implementations.
 
@@ -50,7 +50,7 @@ Using Google's Firebase API as our main web/cloud service provider created chall
 
  #### Front End:
   Instrumentation and Robo tests are functionalities provided by Firebase Test Lab.Bboth were used to test navigation through the app. Instrumentation tests allow us to apply assertions to UI components during navigation. Robo tests are automated application crawlers that allow us to simulate a user navigating through an app with a predefined script. Instrumentation tests provide feedback via test assertions whereas Robo Tests provide videos of the simulation and sitemaps to show where it has successfully navigated to.
-  <img src="UserRoboSitemap.png" align="right" alt="drawing" width="300"/> 
+  <img src="includes/UserRoboSitemap.png" align="right" alt="drawing" width="300"/> 
 
 
   Using the MVC design pattern allowed us to easily unit test isolated components such as form validation by generating a mock form and test data and implement tests using assertions on the result given back by the FormState model.
