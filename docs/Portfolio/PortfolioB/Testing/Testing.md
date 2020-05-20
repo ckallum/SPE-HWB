@@ -14,6 +14,7 @@ All unit tests were implemented using JUnit and were ran locally whereas integra
 
 Core components of the application that needed to be tested include the ability for the users to create an account and be able to find, create, delete, update and register for events that are organised by the university Health and Wellbeing Department as well as have an easy way to navigate to University affiliated accounts/websites. Different levels of user privileges were also required and that admins had the ability to create, delete, update and view the data pertaining these events.
 
+
 ### Challenges
 Using Google's Firebase API as our main web/cloud service provider created challenges when it came to development testing and implementing specific unit tests. All firebase requests run asynchronously making it difficult to use/evaluate the return data during unit testing. Various workarounds had to be used such as creating UI elements to display the result and test against the UI element instead. We are also unable to mock certain Firebase classes due to their security rules and authentication requirements limiting the capabilities to query the Firestore database. However, these security rules provide a benefit of validation criteria in terms of account creation being predefined for us.
 
