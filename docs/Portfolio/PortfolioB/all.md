@@ -18,7 +18,7 @@ We aim to eventually release the app to the public and allow students and the wi
 
 ## High Level Architecture
 
-<img src="/includes/high-level.png">
+<img src="/includes/high-level2.png">
 
 The high level diagram shows us the two main parts of the system. Firebase is an external service which we will use to handle our user authentication, database and storage system. The application has two interfaces depending on the user privileges( user and admin ).
 
