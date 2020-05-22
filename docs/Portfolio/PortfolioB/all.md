@@ -16,6 +16,145 @@ We have decided to base the application on Android since it is open-source and f
 
 We aim to eventually release the app to the public and allow students and the wider-population to have access to the app.
 
+
+
+
+## Stakeholders
+
+
+The first step in establishing the requirements of a project is to identify the stakeholders involved and how they impact/are impacted by our product.
+The key stakeholders in our project are:
+- **Students/General University Population** - They will be the primary target for our application
+
+- **Staff from the Health and Wellbeing Department** - They are the client of the product whom ultimately manage and provide the service to the University population.
+
+- **Google Cloud Services** - They are the main providers of the API and cloud services, they are responsible for hosting, storing and providing the majority of functionalities within our application and are responsible for any technical issues that may arise in terms of the cloud side of the application.
+
+### Use Case Diagram
+<img src="/includes/use_case.png" />
+
+## User Stories and Flows
+
+The next steps are to identify some “user stories” for each stakeholder and their flow steps. For our project we have identified the following ones:
+
+**1. For students and external users:**
+
+“As a user, I want to be able to view all available events in one place, so that it’s easier to find what I’m interested in.”
+
+“As a user, I want to be able to easily access information about the University Health and Wellbeing Department in one place, so that it’s easier to find what I’m interested in.”
+
+“As a user, I want to be able to view the details of the events, so that I can make an idea of what is going to happen in the event and decide whether I want to participate or not.”
+
+“As a user, I want to be able to book an event, so that I can let the staff know I want to attend it.”
+
+**Basic flow**:
+
+1. Download the app
+2. User registers an account and logs in
+3. Browse through the events
+4. Select an event that you may be interested in
+5. Read the details of that event
+6. Book the event
+7. Manage user details
+8. Navigate to University links( social media's, website etc. )
+9. Find information about the venues the University provides.
+10. Log out
+
+**Alternative Flow**:
+
+1. Download the app
+2. User forgets/resets password then logs in
+3. Filter the events
+4. Browse through them
+5. Select an event
+6. Read the description
+7. The user logs-out and the event is not booked.
+
+**Exceptional Flow**:
+- The user decides to close the app part-way through logging in
+- The user loses internet connection while logging in.
+- User tries to login with incorrect permissions/account details
+
+**2. Admins:**
+
+“As the health and wellbeing department staff, we want to be able to register attendees for events, so that we can keep track of them easier.”
+
+1. User attends event
+2. They mark the event as attended on the app
+3. The staff is able to see who has attended the event
+
+“As the health and wellbeing department staff, we want to be able to manage events inside the application, so that we can add and delete events depending on user privileges (administrator/user).”
+
+1. User books event
+2. Event gets cancelled
+3. Gym staff deletes the event from the app
+4. The user receives a notification about the cancellation
+
+“As the health and wellbeing department staff, we want to be able to receive feedback for our events, so that we know what to improve.”
+
+1. Student attends an event
+2. After the event is finished, they write a feedback for that event on the app
+
+The story we have chosen to focus on is: “As a user, I want to be able to view all available events and information about the Health and Wellbeing Department in one place, so that it’s easier to find what I’m interested in.”
+
+## Requirements
+The next step is to specify the atomic requirements, which are then divided into two categories: functional and non-functional requirements.
+
+For the main story, the atomic requirements are:
+
+“The user must be able to download the app.”
+
+“The user must be able to browse through all the available events.”
+
+“The user should be able to filter the available events.”
+
+“The user shall be able to read the description of the available events.”
+
+“The user must be able to book an event.”
+
+“The user shall be able to cancel the booking for any event.”
+
+“The user must be notified in case an event gets cancelled.”
+
+“The staff should be able to receive feedback after each event.”
+
+### Funtional Requirements
+
+BOOKING-1.0 : The user shall be able to download an application in order to allow them to use all the facilities provided by the system.
+
+BOOKING-2.0 : The user must be able to browse through all available events from the timetable, in order to allow them to decide which events they want to attend.
+
+BOOKING-2.1 : The user should be able to filter the events by their interest, in order to be easier for them to find something that they would like.
+
+BOOKING-2.2 : The user shall be able to read a description of any of the available events in order to help them decide if they want to attend the event or not.
+
+BOOKING-3.0 : The user must be able to book any available event in order to let the staff know they want to attend it.
+
+BOOKING-3.1 : The user shall be able to cancel a booking for an event in order to let the staff know they are no longer able to attend it.
+
+CANCELLATION-1.0 : The staff must be able to cancel any event, in case the event won’t take place anymore.
+
+CANCELLATION-1.1 : The user must be notified in case the staff cancels an event that the user was going to attend, in order to let them know they are not able to host it anymore.
+
+FEEDBACK-1.0 : The staff should be able to receive feedback from the attendees of their events, in order to allow them to improve their services.
+
+### Non-functional Requirements
+
+EFFICIENCY-1.0 : The application shall meet the agreed response time and capacity requirements.
+
+USABILITY-1.0 : The application should be capable enough to support 100 000 users without affecting its performance.
+
+USABILITY-1.1 : The application shall be able to accommodate increased users and volumes.
+
+USABILITY-1.2 : The application must work with any Android phone running version > 20.0
+
+USABILITY-1.3: An admin (with no programming experience) must be able to add a new event in under 5 minutes.
+
+USABILITY-1.4: An user must be able to easily book, manage, update their profile and have access to all Department links.
+
+SECURITY-1.0 : The application must provide access only to legitimate users.
+
+
 ## High Level Architecture
 
 <img src="/includes/high-level2.png">
